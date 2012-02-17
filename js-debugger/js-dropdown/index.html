@@ -1,0 +1,54 @@
+<!doctype html>
+<title>test drop down</title>
+<script>var hello = 1;</script>
+<script src=aa.js></script>
+<script src="bb.js?query=a-very-long-string-with-at-lot-of-arguments-and-other-stuff-too-interesting-and-not-so-much-interesting"></script>
+<script src=cc.js></script>
+<script src=dd.js></script>
+<script src=ee.js></script>
+<script src=ff.js></script>
+<script src=dir/a.js></script>
+<script src=dir/b.js></script>
+<script src=dir/c.js></script>
+<script src=dir/d.js></script>
+<script src=dir/e.js></script>
+<script src=bir/f.js></script>
+<script src=bir/a.js></script>
+<script src=bir/b.js></script>
+<script src=bir/c.js></script>
+<script src=bir/d.js></script>
+<script src=bir/e.js></script>
+<script src=bir/f.js></script>
+<div onclick=alert(this)>test</div>
+<script>
+var URL = function(url)
+{
+  this._a = document.createElement("a");
+  this._a.href = url;
+};
+URL.prototype = new function()
+{
+  [
+    "hash",
+    "host",
+    "hostname",
+    "href",
+    "pathname",
+    "port",
+    "protocol",
+    "search"
+  ].forEach(function(prop)
+  {
+    this.__defineGetter__(prop, function()
+    {
+      return this._a[prop];  
+    });
+
+    this.__defineSetter__(prop, function() {});
+
+  }, this);
+
+};
+
+
+</script>
