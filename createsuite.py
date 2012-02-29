@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import shutil
 from urllib import quote, unquote
 
 BLACKLIST = [".hg"]
@@ -68,7 +69,7 @@ class Entry(object):
         self._desc = None
 
     def __repr__(self):
-        return str(self.raw_desc) + ", " + str(self.raw_label) + ", " + str(self.raw_url)
+        return self.label + ", " + str(self.desc)
 
     @property
     def label(self):
@@ -155,6 +156,9 @@ def parse_readme(path):
                 entry.deprecated = "true" in line.lower() and True or False
             else:
                 cur.append(line)
+
+        if entry.label:
+            entries.append(entry)
     return entries
 
 def get_tests(ctx, blacklist=[]):
@@ -168,15 +172,17 @@ def get_tests(ctx, blacklist=[]):
         parts = rel_path.split(os.path.sep)
         path = []
         cur_ctx = None
+        web_path = ""
         while len(parts):
             part = parts.pop(0)
             if cur_ctx and not part in cur_ctx.dirs:
                 cur_ctx.dirs.append(part)
-            path.append(part) 
-            if not path in  ctx.dir_list:
-                ctx.dir_list.append("/".join(path))
-                ctx.dir_map["/".join(path)] = Folder(path)
-            cur_ctx = ctx.dir_map["/".join(path)]
+            path.append(part)
+            web_path = "/".join(path)
+            if not web_path in  ctx.dir_list:
+                ctx.dir_list.append(web_path)
+                ctx.dir_map[web_path] = Folder(path)
+            cur_ctx = ctx.dir_map[web_path]
         if not cur_ctx:
             raise ReadmeContextError(dirpath)
         if README in files:
@@ -185,6 +191,7 @@ def get_tests(ctx, blacklist=[]):
                 cur_ctx.labels.append(e)
                 if not e.label.strip():
                     print "empty entry"
+        # TODO add dirs and files
 
 
 ENTRY_JSON = """{
@@ -202,6 +209,8 @@ if __name__ == "__main__":
     if len(argv) > 2:
         target = argv[2]
     ctx = CTX(src, target)
+    if os.path.exists(target):
+        shutil.rmtree(target)
     get_tests(ctx, BLACKLIST)
     for d in ctx.dir_map:
         dir_ = ctx.dir_map[d]
@@ -216,4 +225,3 @@ if __name__ == "__main__":
                     f.write(json.dumps(e_dict, indent=4))
                 except:
                     print repr(e.desc)
-
