@@ -1,0 +1,22 @@
+
+label: Edit attributes
+url: ./index.html
+desc:
+  - Turn the 'Find element' switch on.
+  - Go the the url above.
+  - Select the paragraph 'some text' in the host.
+  - Double click the class value 'foo' in the client.
+  - Verify that the attribute value is displayed in a edit field.
+  - Change the value to 'bar' and verify that the background-color in the host changes instantly to green.
+  - Verify that escape reverts the background-color back to cyan.
+  - Verify that enter does keep the changes an leaves the edit mode.
+  - Verify that tab moves to the edit field to the next attribute.
+  - Verify that at the end of a tag an empty field is shown to add a new attribute.
+
+label: Edit markup
+url: ./index.html
+desc:
+  - Double click a tag name.
+  - Change the content.
+  - Verify that the changes apply instantly in the host.
+  - Verify that you can remove and edit also the body and html element.
