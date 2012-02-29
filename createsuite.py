@@ -29,6 +29,7 @@ class Folder(object):
         self.path = path
         self.dirs = []
         self.labels = []
+        self.files = []
 
 """
 class C(object):
@@ -171,27 +172,29 @@ def get_tests(ctx, blacklist=[]):
         rel_path = abs_path[len(ctx.abs_src):].lstrip(os.path.sep)
         parts = rel_path.split(os.path.sep)
         path = []
-        cur_ctx = None
+        cur_dir = None
         web_path = ""
         while len(parts):
             part = parts.pop(0)
-            if cur_ctx and not part in cur_ctx.dirs:
-                cur_ctx.dirs.append(part)
+            # if cur_dir and not part in cur_dir.dirs:
+            #     cur_dir.dirs.append(part)
             path.append(part)
             web_path = "/".join(path)
             if not web_path in  ctx.dir_list:
                 ctx.dir_list.append(web_path)
                 ctx.dir_map[web_path] = Folder(path)
-            cur_ctx = ctx.dir_map[web_path]
-        if not cur_ctx:
+            cur_dir = ctx.dir_map[web_path]
+        if not cur_dir:
             raise ReadmeContextError(dirpath)
         if README in files:
+            files.pop(files.index(README))
             entries = parse_readme(os.path.join(dirpath, README))
             for e in entries:
-                cur_ctx.labels.append(e)
+                cur_dir.labels.append(e)
                 if not e.label.strip():
                     print "empty entry"
-        # TODO add dirs and files
+        cur_dir.dirs = dirs
+        cur_dir.files = files
 
 
 ENTRY_JSON = """{
@@ -214,14 +217,21 @@ if __name__ == "__main__":
     get_tests(ctx, BLACKLIST)
     for d in ctx.dir_map:
         dir_ = ctx.dir_map[d]
-        path = os.path.join(target, *dir_.path)
-        if not os.path.exists(path):
-            os.makedirs(path)
+        target_path = os.path.join(target, *dir_.path)
+        src_path = os.path.join(src, *dir_.path)
+        if not os.path.exists(target_path):
+            os.makedirs(target_path)
         for e in dir_.labels:
             name = "%s.json" % e.label.lower().replace(" ", "_")
-            with open(os.path.join(path, name), "wb") as f:
+            with open(os.path.join(target_path, name), "wb") as f:
                 try:
                     e_dict = {"label": e.label, "url": e.url, "desc": e.desc}
                     f.write(json.dumps(e_dict, indent=4))
                 except:
                     print repr(e.desc)
+        for d in dir_.dirs:
+            d_path = os.path.join(target_path, d)
+            if not os.path.exists(d_path):
+                os.mkdir(d_path)
+        for f in dir_.files:
+            shutil.copyfile(os.path.join(src_path, f), os.path.join(target_path, f))
