@@ -1,0 +1,11 @@
+{
+    "url": "../../js-debugger/tooltip/index.html", 
+    "desc": [
+        "Go to the test page.", 
+        "Set a breakpoint on line 34 an hit the 'test' button in the document.", 
+        "Press continue if you have stop on error enabled till you stop on line 34", 
+        "Hover the class names in the Sate panel", 
+        "Verify that you get a tooltip for any kind of Element, Date, Error and Exception, Function and RegExp"
+    ], 
+    "label": "JS object inspection tooltip"
+}

@@ -1,0 +1,16 @@
+{
+    "url": "index.html", 
+    "desc": [
+        "Go to the test page.", 
+        "On line 16 hover 'foo', 'foo.bar', 'foo.bar[4].hallo'.", 
+        "Verify that for an object the class of the object followed by a list of the properties is displayed.", 
+        "Verify that for a primitive value the primitive value is displayed.", 
+        "On line 16 hover the open and the closing bracket in 'foo.bar[4]'.", 
+        "Verify that in both cases the whole identifier 'foo.bar[4]' is selsected and the according object is displayed in the tooltip.", 
+        "On line 18 hover the tokens 'foo.bi' between the two brackets.", 
+        "Verify that only the identifier between the brackets is selected and the according value is displayed.", 
+        "On line 7 hover the '{bar' tokens.", 
+        "Verify that nothing is selected and nothing displayed."
+    ], 
+    "label": "Tooltip features in JS source"
+}

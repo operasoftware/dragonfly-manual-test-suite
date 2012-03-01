@@ -1,0 +1,13 @@
+{
+    "url": "./index.html", 
+    "desc": [
+        "Open the testcase and inspect \"test\"", 
+        "Click the color swatch of the color declaration to open the color picker", 
+        "Edit the value of one of the inputs", 
+        "Verify that the other inputs are updated accordingly", 
+        "Verify that the color examples in the top right corner changes accordingly", 
+        "Verify that the color in the host document changes accordingly", 
+        "Verify the above for each of the inputs"
+    ], 
+    "label": "Edit color with inputs"
+}

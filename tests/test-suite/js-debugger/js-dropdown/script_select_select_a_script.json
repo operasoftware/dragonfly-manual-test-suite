@@ -1,0 +1,13 @@
+{
+    "url": "./index.html", 
+    "desc": [
+        "Go to the test page.", 
+        "Use up and down arrows.", 
+        "Verify that the selection moves up and down.", 
+        "Verify that the selection option gets scrolled into view if it moves out side the current view.", 
+        "Press enter.", 
+        "Verify that the drop-down gets closed and the according script displayed.", 
+        "Verify that the interaction works in the same way with the mouse."
+    ], 
+    "label": "Script select select a script"
+}

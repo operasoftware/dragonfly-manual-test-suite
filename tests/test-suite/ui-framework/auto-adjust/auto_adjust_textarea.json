@@ -1,0 +1,12 @@
+{
+    "url": "./index.html", 
+    "desc": [
+        "Go to the test case.", 
+        "Open the \"Styles\" panel in the DOM view and expand the \"New Style\" section.", 
+        "Copy and paste the text of the host document in the new style input.", 
+        "Verify that the input area expands without scroll bars.", 
+        "Delete the whole content.", 
+        "Verify that the input are collapse to one line."
+    ], 
+    "label": "Auto adjust textarea"
+}

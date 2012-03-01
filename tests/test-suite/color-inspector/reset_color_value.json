@@ -1,0 +1,10 @@
+{
+    "url": "", 
+    "desc": [
+        "Open the testcase and inspect \"test\"", 
+        "Click the color swatch of the color declaration to open the color picker", 
+        "Change the current color", 
+        "Verify that the color can be reset to the initial value by clicking the left part of the color example in the top right corner"
+    ], 
+    "label": "Reset color value"
+}

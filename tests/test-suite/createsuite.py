@@ -23,7 +23,6 @@ class CTX(object):
         self.target_path_parts = target.split(os.path.sep)
         self.dir_list = []
         self.dir_map = {}
-        self.components = None
 
 class Folder(object):
     def __init__(self, path):
@@ -31,9 +30,6 @@ class Folder(object):
         self.dirs = []
         self.labels = []
         self.files = []
-
-    def __repr__(self):
-        return str(self.labels) + ", " + str(self.dirs)
 
 """
 class C(object):
@@ -167,7 +163,7 @@ def parse_readme(path):
     return entries
 
 def get_tests(ctx, blacklist=[]):
-    readme_dirs = set()
+
     for dirpath, dirs, files in os.walk(ctx.src):
         bl = [d for d in dirs if d in blacklist]
         while bl:
@@ -188,23 +184,17 @@ def get_tests(ctx, blacklist=[]):
                 ctx.dir_list.append(web_path)
                 ctx.dir_map[web_path] = Folder(path)
             cur_dir = ctx.dir_map[web_path]
-        if ctx.abs_src == os.path.abspath(dirpath):
-            ctx.components = dirs
         if not cur_dir:
             raise ReadmeContextError(dirpath)
         if README in files:
-            readme_dirs | set(dirs)
             files.pop(files.index(README))
             entries = parse_readme(os.path.join(dirpath, README))
-            if entries:
-                readme_dirs |= set(["/".join(path[0:i + 1]) for i in range(len(path))])
             for e in entries:
                 cur_dir.labels.append(e)
                 if not e.label.strip():
                     print "empty entry"
         cur_dir.dirs = dirs
         cur_dir.files = files
-    ctx.readme_dirs = list(readme_dirs)
 
 
 ENTRY_JSON = """{
@@ -215,8 +205,8 @@ ENTRY_JSON = """{
 
 if __name__ == "__main__":
     argv = sys.argv
-    src = "tests"
-    target = "suite"
+    src = "."
+    target = "test-suite"
     if len(argv) > 1:
         src = argv[1]
     if len(argv) > 2:
@@ -224,7 +214,6 @@ if __name__ == "__main__":
     ctx = CTX(src, target)
     if os.path.exists(target):
         shutil.rmtree(target)
-    shutil.copytree(os.path.join("app", "."), os.path.join(target))
     get_tests(ctx, BLACKLIST)
     for d in ctx.dir_map:
         dir_ = ctx.dir_map[d]
@@ -246,35 +235,3 @@ if __name__ == "__main__":
                 os.mkdir(d_path)
         for f in dir_.files:
             shutil.copyfile(os.path.join(src_path, f), os.path.join(target_path, f))
-    with open(os.path.join(target, "components.json"), "wb") as f:
-        try:
-            dirs = []
-            for d in ctx.components:
-                path = "./folders/%s.json" % d
-                dirs.append({"label": d, "path": path})
-            f.write(json.dumps(dirs, indent=4))
-        except:
-            print repr(ctx.components)
-    target_path = os.path.join(target, "folders")
-    if not os.path.exists(target_path):
-        os.makedirs(target_path)
-    for p in ctx.readme_dirs:
-        name = "%s.json" % p.replace("/", ".")
-        folder = ctx.dir_map[p]
-        with open(os.path.join(target_path, name), "wb") as f:
-            try:
-                folder_path = "./%s/%%s.json"% "/".join(folder.path)
-                labels = []
-                for e in folder.labels:
-                    path = folder_path % e.label.lower().replace(" ", "_")
-                    labels.append({"label":e.label, "path": path})
-                dirs = []
-                folder_path = "./folders/%s.%%s.json" % ".".join(folder.path)
-                for d in folder.dirs:
-                    path = folder_path % d
-                    dirs.append({"label": d, "path": path})
-                f_dict = {"tests": labels, "path": p, "dirs": dirs}
-                f.write(json.dumps(f_dict, indent=4))
-            except Exception, msg:
-                print msg
-                # print repr(folder)
