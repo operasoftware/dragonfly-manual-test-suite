@@ -16,7 +16,7 @@ Element.prototype.append_tmpl = function(tmpl)
       {
         for (var prop in attrs)
         {
-          if (typeof attrs[prop]== "string")
+          if (typeof attrs[prop] == "string")
             ele.setAttribute(prop, attrs[prop]);
         }
       }
