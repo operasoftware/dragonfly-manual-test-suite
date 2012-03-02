@@ -1,3 +1,5 @@
+"use strict";
+
 Element.prototype.append_tmpl = function(tmpl)
 {
   var ELE_NAME = 0;
@@ -32,3 +34,17 @@ Element.prototype.append_tmpl = function(tmpl)
   if (ele)
     this.appendChild(ele);
 };
+
+if (!document.createElement("div").dataset)
+{
+  Element.prototype.__defineGetter__("dataset", function()
+  {
+    return Array.prototype.reduce.call(this.attributes, function(dict, attr)
+    {
+      if (attr.name.indexOf("data-") == 0)
+        dict[attr.name.slice(5)] = attr.value;
+
+      return dict;
+    }, {});
+  });
+}

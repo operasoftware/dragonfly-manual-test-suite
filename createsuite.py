@@ -229,6 +229,7 @@ if __name__ == "__main__":
     for d in ctx.dir_map:
         dir_ = ctx.dir_map[d]
         target_path = os.path.join(target, *dir_.path)
+        web_path = "./%s/%%s" % "/".join(dir_.path)
         src_path = os.path.join(src, *dir_.path)
         if not os.path.exists(target_path):
             os.makedirs(target_path)
@@ -236,7 +237,9 @@ if __name__ == "__main__":
             name = "%s.json" % e.label.lower().replace(" ", "_")
             with open(os.path.join(target_path, name), "wb") as f:
                 try:
-                    e_dict = {"label": e.label, "url": e.url, "desc": e.desc}
+                    e_dict = {"label": e.label,
+                              "url": web_path % e.url, 
+                              "desc": e.desc}
                     f.write(json.dumps(e_dict, indent=4))
                 except:
                     print repr(e.desc)
@@ -246,18 +249,19 @@ if __name__ == "__main__":
                 os.mkdir(d_path)
         for f in dir_.files:
             shutil.copyfile(os.path.join(src_path, f), os.path.join(target_path, f))
-    with open(os.path.join(target, "components.json"), "wb") as f:
+
+    target_path = os.path.join(target, "folders")
+    if not os.path.exists(target_path):
+        os.makedirs(target_path)
+    with open(os.path.join(target_path, "root.json"), "wb") as f:
         try:
             dirs = []
             for d in ctx.components:
                 path = "./folders/%s.json" % d
                 dirs.append({"label": d, "path": path})
-            f.write(json.dumps(dirs, indent=4))
+            f.write(json.dumps({"files": [], "dirs": dirs, "path": ""}, indent=4))
         except:
             print repr(ctx.components)
-    target_path = os.path.join(target, "folders")
-    if not os.path.exists(target_path):
-        os.makedirs(target_path)
     for p in ctx.readme_dirs:
         name = "%s.json" % p.replace("/", ".")
         folder = ctx.dir_map[p]
@@ -273,7 +277,7 @@ if __name__ == "__main__":
                 for d in folder.dirs:
                     path = folder_path % d
                     dirs.append({"label": d, "path": path})
-                f_dict = {"tests": labels, "path": p, "dirs": dirs}
+                f_dict = {"files": labels, "path": p, "dirs": dirs}
                 f.write(json.dumps(f_dict, indent=4))
             except Exception, msg:
                 print msg
