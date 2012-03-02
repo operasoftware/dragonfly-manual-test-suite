@@ -1,3 +1,5 @@
+"use strict";
+
 window.templates || (window.templates = {});
 
 templates.main = function()
@@ -9,12 +11,46 @@ templates.main = function()
   ]);
 };
 
-templates.components = function(data)
+templates.folder_expanded = function(data)
 {
-  return ["ul", data.map(templates.folders)];
+  return (
+  ["ul",
+    data.dirs.map(this.folder),
+    data.files.map(this.tests)]);
 };
 
-templates.folders = function(folder)
+templates.folder = function(folder)
 {
-  return ["li", {"class": "folder", "data-folder": folder.path}, folder.label]
-}
+  return (
+  ["li", 
+    {"class": "folder"},
+    ["h3", 
+      ["input", {"type": "button",
+                 "data-handler": "expand-collapse",
+                 "data-path": folder.path,
+                 "class": "folder-button"}],
+      folder.label]]);
+};
+
+templates.tests = function(test)
+{
+  return (
+  ["li", {"class": "test",
+          "data-handler": "show-test",
+          "data-path": test.path},
+    ["h3", test.label]]);
+};
+
+templates.test_description = function(data, path)
+{
+  return (
+  ["div",
+    ["h2", data.label],
+    ["ol", data.desc.map(this.test_step)],
+    ["p", ["a", {"href": data.url}, "test case"]]]);
+};
+
+templates.test_step = function(step)
+{
+  return ["li", step]
+};
