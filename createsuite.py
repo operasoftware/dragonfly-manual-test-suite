@@ -229,7 +229,6 @@ if __name__ == "__main__":
     for d in ctx.dir_map:
         dir_ = ctx.dir_map[d]
         target_path = os.path.join(target, *dir_.path)
-        web_path = "./%s/%%s" % "/".join(dir_.path)
         src_path = os.path.join(src, *dir_.path)
         if not os.path.exists(target_path):
             os.makedirs(target_path)
@@ -237,8 +236,18 @@ if __name__ == "__main__":
             name = "%s.json" % e.label.lower().replace(" ", "_")
             with open(os.path.join(target_path, name), "wb") as f:
                 try:
+                    web_path = ["."] + dir_.path[:]
+                    local_path = e.url.split("/")
+                    for p in local_path:
+                        if p == ".":
+                            continue
+                        if p == "..":
+                            if web_path:
+                                web_path.pop()
+                        else:
+                            web_path.append(p)
                     e_dict = {"label": e.label,
-                              "url": web_path % e.url, 
+                              "url": "/".join(web_path), 
                               "desc": e.desc}
                     f.write(json.dumps(e_dict, indent=4))
                 except:
@@ -275,8 +284,9 @@ if __name__ == "__main__":
                 dirs = []
                 folder_path = "./folders/%s.%%s.json" % ".".join(folder.path)
                 for d in folder.dirs:
-                    path = folder_path % d
-                    dirs.append({"label": d, "path": path})
+                    if "%s/%s" %(p, d) in ctx.readme_dirs:
+                        path = folder_path % d
+                        dirs.append({"label": d, "path": path})
                 f_dict = {"files": labels, "path": p, "dirs": dirs}
                 f.write(json.dumps(f_dict, indent=4))
             except Exception, msg:

@@ -8,7 +8,10 @@
     var li = target.parentNode;
     var ul = li.querySelector("ul");
     if (ul)
+    {
       li.removeChild(ul);
+      li.classList.remove("open");
+    }
     else
       expand_folder(li, target.dataset.path)
   };
@@ -28,7 +31,8 @@
   {
     XMLHttpRequest.get_json(path, function(data)
     {
-      container.append_tmpl(templates.folder_expanded(data))
+      container.append_tmpl(templates.folder_expanded(data));
+      container.classList.add("open");
     });
   };
 
@@ -38,7 +42,8 @@
     EventHandler.register("click", "show-test", show_test);
     document.body.append_tmpl(templates.main());
     var root = document.querySelector(".sidepanel");
-    expand_folder(root, "./folders/root.json");
+    try { expand_folder(root, "./folders/root.json"); }
+    catch(e) { document.body.append_tmpl(templates.no_xhr()); };
   };
 
   window.onload = setup;

@@ -25,14 +25,14 @@ url: ./index.html
 desc:
   - Go to the test page.
   - Start to type something.
-  - Verify that only the scripts with a match in there path are displayed.
+  - Verify that only the scripts with a match in the path are displayed.
   - Verify that the whole path is displayed if the match is in a previously hidden part.
   - Verify that the script content in the small snippets of e.g. Inline scripts is never matched.
   - Select some scripts of a filtered option list.
   - Open the option list again.
   - Verify that you can navigate in your previous filter views with shift arrow up and down.
 
-label: Script select filter script
+label: Script select clear button
 url: ./index.html
 desc:
   - Go to the test page.

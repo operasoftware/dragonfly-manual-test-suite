@@ -1,17 +1,102 @@
+body
+{
+  font-family: Arial, sans-serif;
+  font-size: .9em;
+}
+
 .sidepanel
 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 270px;
+  width: 350px;
+}
+.sidepanel ul
+{
+  list-style: none;
+  padding-left: 36px;
 }
 .sidepanel h3
 {
   margin: 0;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 1em;
+}
+
+.folder-button
+{
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin: 0 3px;
+  background-image: -o-linear-gradient(0deg,
+                                       hsl(0, 0%, 20%) 0px,
+                                       hsl(0, 0%, 20%) 1px),
+                    -o-linear-gradient(-90deg,
+                                       hsl(0, 0%, 20%) 0px,
+                                       hsl(0, 0%, 20%) 1px),
+                    -o-linear-gradient(0deg,
+                                       hsl(0, 0%, 70%) 0px,
+                                       hsl(0, 0%, 70%) 1px,
+                                       hsl(0, 0%, 100%) 1px,
+                                       hsl(0, 0%, 100%) 10px,
+                                       hsl(0, 0%, 70%) 10px,
+                                       hsl(0, 0%, 70%) 11px),
+                    -o-linear-gradient(-90deg,
+                                       hsl(0, 0%, 70%) 0px,
+                                       hsl(0, 0%, 70%) 1px,
+                                       hsl(0, 0%, 100%) 1px,
+                                       hsl(0, 0%, 100%) 10px,
+                                       hsl(0, 0%, 70%) 10px,
+                                       hsl(0, 0%, 70%) 11px);
+  background-position: 4px 1px, 1px 4px, -1px 0px, -1px -1px;
+  background-size: 1px 7px, 7px 1px, 11px 9px, 11px 11px;
+  background-repeat: no-repeat;
+}
+
+.open > h3 .folder-button
+{
+  background-image: -o-linear-gradient(-90deg,
+                                       hsl(0, 0%, 20%) 0px,
+                                       hsl(0, 0%, 20%) 1px),
+                    -o-linear-gradient(0deg,
+                                       hsl(0, 0%, 70%) 0px,
+                                       hsl(0, 0%, 70%) 1px,
+                                       hsl(0, 0%, 100%) 1px,
+                                       hsl(0, 0%, 100%) 10px,
+                                       hsl(0, 0%, 70%) 10px,
+                                       hsl(0, 0%, 70%) 11px),
+                    -o-linear-gradient(-90deg,
+                                       hsl(0, 0%, 70%) 0px,
+                                       hsl(0, 0%, 70%) 1px,
+                                       hsl(0, 0%, 100%) 1px,
+                                       hsl(0, 0%, 100%) 10px,
+                                       hsl(0, 0%, 70%) 10px,
+                                       hsl(0, 0%, 70%) 11px);
+  background-position: 1px 4px, -1px 0px, -1px -1px;
+  background-size: 7px 1px, 11px 9px, 11px 11px;
+}
+
+.test
+{
+  padding-left: 22px;
+}
+.test h3:before
+{
+
+  content: "T";
+  font-weight: bold;
+  font-style: italic;
+  color: hsl(0, 0%, 70%);
+  display: inline-block;
+  margin-left: -17px;
+  width: 17px;
+
 }
 .test-description
 {
-  margin-left: 270px;
+  margin-left: 350px;
 }
