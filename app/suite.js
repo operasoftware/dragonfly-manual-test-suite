@@ -5,6 +5,9 @@
 
   var expand_collapse = function(event, target)
   {
+    if (event.target.type == "checkbox")
+      return;
+
     var li = target.parentNode;
     var ul = li.querySelector("ul");
     if (ul)
@@ -13,7 +16,7 @@
       li.classList.remove("open");
     }
     else
-      expand_folder(li, target.dataset.path)
+      expand_folder(li, "./FOLDERS/" + target.dataset.path)
   };
 
   var show_test = function(event, target)

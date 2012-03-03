@@ -8,6 +8,9 @@ from urllib import quote, unquote
 BLACKLIST = [".hg"]
 README = "README"
 PATHKEYS = "PATHKEYS"
+FOLDERS = "FOLDERS"
+TESTS = "TESTS"
+TESTLISTS = "TESTLISTS"
 CHARS = string.ascii_letters + string.digits
 
 
@@ -170,7 +173,7 @@ def parse_readme(path):
             entries.append(entry)
     return entries
 
-def get_tests(ctx, blacklist=[]):
+def get_tests(ctx, pathkeys, blacklist=[]):
     readme_dirs = set()
     for dirpath, dirs, files in os.walk(ctx.src):
         bl = [d for d in dirs if d in blacklist]
@@ -203,6 +206,10 @@ def get_tests(ctx, blacklist=[]):
             if entries:
                 readme_dirs |= set(["/".join(path[0:i + 1]) for i in range(len(path))])
             for e in entries:
+                test_path = cur_dir.path + [e.label.lower().replace(" ", "_")]
+                e.short_id = get_short_key(pathkeys, test_path)
+                e.file_name = "%s.json" % e.short_id
+                e.file_path = "./%s/%s" % (TESTS, e.file_name)
                 cur_dir.labels.append(e)
                 if not e.label.strip():
                     print "empty entry"
@@ -249,13 +256,13 @@ if __name__ == "__main__":
     if os.path.exists(target):
         shutil.rmtree(target)
     shutil.copytree(os.path.join("app", "."), os.path.join(target))
-    get_tests(ctx, BLACKLIST)
     pathkeys = {}
     with open(PATHKEYS, "rb") as f:
         pathkeys = json.loads(f.read())
+    get_tests(ctx, pathkeys, BLACKLIST)
     for d in ctx.dir_map:
         dir_ = ctx.dir_map[d]
-        tests_path = os.path.join(target, "tests")
+        tests_path = os.path.join(target, TESTS)
         if not os.path.exists(tests_path):
             os.makedirs(tests_path)
         target_path = os.path.join(target, *dir_.path)
@@ -264,11 +271,7 @@ if __name__ == "__main__":
             os.makedirs(target_path)
         # test files
         for e in dir_.labels:
-            test_path = dir_.path + [e.label.lower().replace(" ", "_")]
-            e.short_id = get_short_key(pathkeys, test_path)
-            name = "%s.json" % e.short_id
-            e.file_path = "./tests/%s" % name
-            with open(os.path.join(tests_path, name), "wb") as f:
+            with open(os.path.join(tests_path, e.file_name), "wb") as f:
                 try:
                     web_path = ["."] + dir_.path[:]
                     local_path = e.url.split("/")
@@ -292,18 +295,19 @@ if __name__ == "__main__":
             if not os.path.exists(d_path):
                 os.mkdir(d_path)
         for f in dir_.files:
-            shutil.copyfile(os.path.join(src_path, f), os.path.join(target_path, f))
+            shutil.copyfile(os.path.join(src_path, f),
+                            os.path.join(target_path, f))
 
     with open(PATHKEYS, "wb") as f:
         f.write(json.dumps(pathkeys, indent=4))
-    target_path = os.path.join(target, "folders")
+    target_path = os.path.join(target, FOLDERS)
     if not os.path.exists(target_path):
         os.makedirs(target_path)
     with open(os.path.join(target_path, "root.json"), "wb") as f:
         try:
             dirs = []
             for d in ctx.components:
-                path = "./folders/%s.json" % d
+                path = "%s.json" % d
                 dirs.append({"label": d, "path": path})
             f.write(json.dumps({"files": [], "dirs": dirs, "path": ""}, indent=4))
         except:
@@ -321,7 +325,7 @@ if __name__ == "__main__":
                                    "path": e.file_path,
                                    "id": e.short_id})
                 dirs = []
-                folder_path = "./folders/%s.%%s.json" % ".".join(folder.path)
+                folder_path = "%s.%%s.json" % ".".join(folder.path)
                 for d in folder.dirs:
                     if "%s/%s" %(p, d) in ctx.readme_dirs:
                         path = folder_path % d
@@ -330,4 +334,17 @@ if __name__ == "__main__":
                 f.write(json.dumps(f_dict, indent=4))
             except Exception, msg:
                 print msg
-                # print repr(folder)
+    target_path = os.path.join(target, TESTLISTS)
+    if not os.path.exists(target_path):
+        os.makedirs(target_path)
+    for p in ctx.readme_dirs:
+        ids = [e.short_id for e in ctx.dir_map[p].labels]
+        for p2 in ctx.readme_dirs:
+            if not p == p2 and p2.startswith(p):
+                ids.extend([e.short_id for e in ctx.dir_map[p2].labels])
+        name = "%s.json" % p.replace("/", ".")
+        with open(os.path.join(target_path, name), "wb") as f:
+            f.write(json.dumps(ids, indent=4))
+
+
+

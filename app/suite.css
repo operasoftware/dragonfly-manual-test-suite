@@ -6,6 +6,25 @@ body
   padding: 0;
 }
 
+h1
+{
+  margin: 0;
+  margin-left: 350px;
+  padding: 7px 0;
+  text-align: center;
+  font-family: serif;
+  font-weight: normal;
+  color: hsl(0, 0%, 50%);
+  font-size: 2em;
+  background-color: hsl(0, 0%, 95%);
+  border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+
+h2
+{
+  font-weight: normal;
+}
+
 .sidepanel
 {
   position: absolute;
@@ -37,6 +56,8 @@ body
   height: 13px;
   padding: 0;
   margin: 0 3px;
+  border: 0px solid transparent;
+  background-color: transparent;
   background-image: -o-linear-gradient(0deg,
                                        hsl(0, 0%, 20%) 0px,
                                        hsl(0, 0%, 20%) 1px),
@@ -57,7 +78,27 @@ body
                                        hsl(0, 0%, 100%) 10px,
                                        hsl(0, 0%, 70%) 10px,
                                        hsl(0, 0%, 70%) 11px);
-  background-position: 4px 1px, 1px 4px, -1px 0px, -1px -1px;
+  background-image: -webkit-linear-gradient(0deg,
+                                            hsl(0, 0%, 20%) 0px,
+                                            hsl(0, 0%, 20%) 1px),
+                    -webkit-linear-gradient(-90deg,
+                                            hsl(0, 0%, 20%) 0px,
+                                            hsl(0, 0%, 20%) 1px),
+                    -webkit-linear-gradient(0deg,
+                                            hsl(0, 0%, 70%) 0px,
+                                            hsl(0, 0%, 70%) 1px,
+                                            hsl(0, 0%, 100%) 1px,
+                                            hsl(0, 0%, 100%) 10px,
+                                            hsl(0, 0%, 70%) 10px,
+                                            hsl(0, 0%, 70%) 11px),
+                    -webkit-linear-gradient(-90deg,
+                                            hsl(0, 0%, 70%) 0px,
+                                            hsl(0, 0%, 70%) 1px,
+                                            hsl(0, 0%, 100%) 1px,
+                                            hsl(0, 0%, 100%) 10px,
+                                            hsl(0, 0%, 70%) 10px,
+                                            hsl(0, 0%, 70%) 11px);
+  background-position: 6px 3px, 3px 6px, 1px 2px, 1px 1px;
   background-size: 1px 7px, 7px 1px, 11px 9px, 11px 11px;
   background-repeat: no-repeat;
 }
@@ -81,8 +122,30 @@ body
                                        hsl(0, 0%, 100%) 10px,
                                        hsl(0, 0%, 70%) 10px,
                                        hsl(0, 0%, 70%) 11px);
-  background-position: 1px 4px, -1px 0px, -1px -1px;
+  background-image: -webkit-linear-gradient(-90deg,
+                                            hsl(0, 0%, 20%) 0px,
+                                            hsl(0, 0%, 20%) 1px),
+                    -webkit-linear-gradient(0deg,
+                                            hsl(0, 0%, 70%) 0px,
+                                            hsl(0, 0%, 70%) 1px,
+                                            hsl(0, 0%, 100%) 1px,
+                                            hsl(0, 0%, 100%) 10px,
+                                            hsl(0, 0%, 70%) 10px,
+                                            hsl(0, 0%, 70%) 11px),
+                    -webkit-linear-gradient(-90deg,
+                                            hsl(0, 0%, 70%) 0px,
+                                            hsl(0, 0%, 70%) 1px,
+                                            hsl(0, 0%, 100%) 1px,
+                                            hsl(0, 0%, 100%) 10px,
+                                            hsl(0, 0%, 70%) 10px,
+                                            hsl(0, 0%, 70%) 11px);
+  background-position: 3px 6px, 1px 2px, 1px 1px;
   background-size: 7px 1px, 11px 9px, 11px 11px;
+}
+
+input[type=checkbox]
+{
+  vertical-align: middle;
 }
 
 .test
@@ -111,6 +174,14 @@ body
                                        hsl(220, 100%, 70%) 0px,
                                        hsl(220, 100%, 70%) 5px,
                                        transparent 6px);
+  background-image: -webkit-linear-gradient(-60deg,
+                                            hsl(220, 100%, 70%) 0px,
+                                            hsl(220, 100%, 70%) 5px,
+                                            transparent 6px),
+                    -webkit-linear-gradient(60deg,
+                                            hsl(220, 100%, 70%) 0px,
+                                            hsl(220, 100%, 70%) 5px,
+                                            transparent 6px);
   background-position: 0px 8px, 0px -5px;
   background-size: 13px 13px;
   background-repeat: no-repeat;
