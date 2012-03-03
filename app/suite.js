@@ -5,7 +5,7 @@
 
   var expand_collapse = function(event, target)
   {
-    var li = target.parentNode.parentNode;
+    var li = target.parentNode;
     var ul = li.querySelector("ul");
     if (ul)
       li.removeChild(ul);

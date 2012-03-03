@@ -24,10 +24,9 @@ templates.folder = function(folder)
   return (
   ["li", 
     {"class": "folder"},
-    ["h3", 
+    ["h3", {"data-handler": "expand-collapse",
+            "data-path": folder.path},
       ["input", {"type": "button",
-                 "data-handler": "expand-collapse",
-                 "data-path": folder.path,
                  "class": "folder-button"}],
       folder.label]]);
 };
