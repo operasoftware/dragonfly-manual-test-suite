@@ -23,6 +23,11 @@
     {
       var container = document.querySelector(".test-description");
       container.innerHTML = "";
+      var selected = document.querySelector(".sidepanel .selected");
+      if (selected)
+        selected.classList.remove("selected");
+
+      target.classList.add("selected");
       container.append_tmpl(templates.test_description(data, path));
     });
   };

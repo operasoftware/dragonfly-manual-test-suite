@@ -2,10 +2,14 @@ import os
 import sys
 import json
 import shutil
+import string
 from urllib import quote, unquote
 
 BLACKLIST = [".hg"]
 README = "README"
+PATHKEYS = "PATHKEYS"
+CHARS = string.ascii_letters + string.digits
+
 
 class ReadmeContextError(Exception):
     def __init__(self, value):
@@ -207,11 +211,31 @@ def get_tests(ctx, blacklist=[]):
     ctx.readme_dirs = list(readme_dirs)
 
 
-ENTRY_JSON = """{
-    "label": "%s",
-    "url": "%s",
-    "desc": %s
-}"""
+def get_id(ids):
+    cursor = 0
+    id = [CHARS[cursor]]
+    pos = len(id) - 1
+    while "".join(id) in ids:
+        cursor += 1
+        if cursor >= len(CHARS):
+            cursor = 0
+            id.append("")
+            pos += 1
+        id[pos] = CHARS[cursor]
+    return "".join(id)
+
+def get_short_key(pathkeys, path):
+    short_path = []
+    cur = pathkeys
+    for p in path:
+        if not p in cur:
+            short = get_id([cur[k]["short"] for k in cur.keys()])
+            print short, cur.keys()
+            cur[p] = {"short": short,
+                      "dirs": {}}
+        short_path.append(cur[p]["short"])
+        cur = cur[p]["dirs"]
+    return ".".join(short_path)
 
 if __name__ == "__main__":
     argv = sys.argv
@@ -226,15 +250,25 @@ if __name__ == "__main__":
         shutil.rmtree(target)
     shutil.copytree(os.path.join("app", "."), os.path.join(target))
     get_tests(ctx, BLACKLIST)
+    pathkeys = {}
+    with open(PATHKEYS, "rb") as f:
+        pathkeys = json.loads(f.read())
     for d in ctx.dir_map:
         dir_ = ctx.dir_map[d]
+        tests_path = os.path.join(target, "tests")
+        if not os.path.exists(tests_path):
+            os.makedirs(tests_path)
         target_path = os.path.join(target, *dir_.path)
         src_path = os.path.join(src, *dir_.path)
         if not os.path.exists(target_path):
             os.makedirs(target_path)
+        # test files
         for e in dir_.labels:
-            name = "%s.json" % e.label.lower().replace(" ", "_")
-            with open(os.path.join(target_path, name), "wb") as f:
+            test_path = dir_.path + [e.label.lower().replace(" ", "_")]
+            e.short_id = get_short_key(pathkeys, test_path)
+            name = "%s.json" % e.short_id
+            e.file_path = "./tests/%s" % name
+            with open(os.path.join(tests_path, name), "wb") as f:
                 try:
                     web_path = ["."] + dir_.path[:]
                     local_path = e.url.split("/")
@@ -248,7 +282,8 @@ if __name__ == "__main__":
                             web_path.append(p)
                     e_dict = {"label": e.label,
                               "url": "/".join(web_path), 
-                              "desc": e.desc}
+                              "desc": e.desc,
+                              "id": e.short_id}
                     f.write(json.dumps(e_dict, indent=4))
                 except:
                     print repr(e.desc)
@@ -259,6 +294,8 @@ if __name__ == "__main__":
         for f in dir_.files:
             shutil.copyfile(os.path.join(src_path, f), os.path.join(target_path, f))
 
+    with open(PATHKEYS, "wb") as f:
+        f.write(json.dumps(pathkeys, indent=4))
     target_path = os.path.join(target, "folders")
     if not os.path.exists(target_path):
         os.makedirs(target_path)
@@ -279,8 +316,10 @@ if __name__ == "__main__":
                 folder_path = "./%s/%%s.json"% "/".join(folder.path)
                 labels = []
                 for e in folder.labels:
-                    path = folder_path % e.label.lower().replace(" ", "_")
-                    labels.append({"label":e.label, "path": path})
+                    # path = folder_path % e.label.lower().replace(" ", "_")
+                    labels.append({"label":e.label,
+                                   "path": e.file_path,
+                                   "id": e.short_id})
                 dirs = []
                 folder_path = "./folders/%s.%%s.json" % ".".join(folder.path)
                 for d in folder.dirs:

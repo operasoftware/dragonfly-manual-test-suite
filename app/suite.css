@@ -2,6 +2,8 @@ body
 {
   font-family: Arial, sans-serif;
   font-size: .9em;
+  margin: 0;
+  padding: 0;
 }
 
 .sidepanel
@@ -10,6 +12,9 @@ body
   top: 0;
   left: 0;
   width: 350px;
+  height: 100%;
+  overflow: auto;
+  box-shadow: 1px 0px 5px 0px hsl(0, 0%, 75%);
 }
 .sidepanel ul
 {
@@ -92,11 +97,26 @@ body
   font-style: italic;
   color: hsl(0, 0%, 70%);
   display: inline-block;
-  margin-left: -17px;
+  margin-left: -33px;
   width: 17px;
-
+  padding-left: 16px;
+}
+.test.selected h3:before
+{
+  background-image: -o-linear-gradient(-60deg,
+                                       hsl(220, 100%, 70%) 0px,
+                                       hsl(220, 100%, 70%) 5px,
+                                       transparent 6px),
+                    -o-linear-gradient(60deg,
+                                       hsl(220, 100%, 70%) 0px,
+                                       hsl(220, 100%, 70%) 5px,
+                                       transparent 6px);
+  background-position: 0px 8px, 0px -5px;
+  background-size: 13px 13px;
+  background-repeat: no-repeat;
 }
 .test-description
 {
   margin-left: 350px;
+  padding: 9px 15px;
 }

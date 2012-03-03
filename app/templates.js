@@ -16,7 +16,7 @@ templates.folder_expanded = function(data)
   return (
   ["ul",
     data.dirs.map(this.folder),
-    data.files.map(this.tests)]);
+    data.files.map(this.test)]);
 };
 
 templates.folder = function(folder)
@@ -33,12 +33,13 @@ templates.folder = function(folder)
       folder.label]]);
 };
 
-templates.tests = function(test)
+templates.test = function(test)
 {
   return (
   ["li", {"class": "test",
           "data-handler": "show-test",
-          "data-path": test.path},
+          "data-path": test.path,
+          "data-id": test.id},
     ["h3", test.label]]);
 };
 
