@@ -35,6 +35,19 @@ Element.prototype.append_tmpl = function(tmpl)
     this.appendChild(ele);
 };
 
+Element.prototype.get_ancestor = function(selector)
+{
+  var ele = this;
+  while (ele)
+  {
+    if (ele.matchesSelector(selector))
+      return ele;
+
+    ele = ele.parentElement;
+  }
+  return null;
+};
+
 if (!document.createElement("div").dataset)
 {
   Element.prototype.__defineGetter__("dataset", function()
@@ -48,3 +61,18 @@ if (!document.createElement("div").dataset)
     }, {});
   });
 }
+
+if (!Element.prototype.matchesSelector)
+{
+  Element.prototype.matchesSelector =
+    Element.prototype.oMatchesSelector ?
+    Element.prototype.oMatchesSelector :
+    function(selector)
+    {
+      var sel = this.parentNode.querySelectorAll(selector);
+      for (var i = 0; sel[i] && sel[i] != this; i++);
+      return Boolean(sel[i]);
+    }
+}
+
+

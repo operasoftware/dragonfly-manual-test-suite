@@ -1,3 +1,5 @@
+"use strict";
+
 var EventHandler = function(type, is_capturing, handler_key)
 {
   return this._init(type, is_capturing, handler_key);
@@ -16,7 +18,6 @@ EventHandler.prototype = new function()
      new EventHandler(type, is_capturing))[name] = handler;
   };
 
-  "use strict";
   
   EventHandler.unregister = function(type, name, handler, is_capturing)
   {
@@ -36,7 +37,7 @@ EventHandler.prototype = new function()
     var handler = function(event)
     {
       var ele = event.target;
-      while (ele)
+      while (ele && !event.cancelBubble)
       {
         var name = ele.getAttribute(KEY);
         if (name && handler_map[name])

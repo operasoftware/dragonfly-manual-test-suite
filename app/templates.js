@@ -27,7 +27,7 @@ templates.folder = function(folder)
     ["h3", {"data-handler": "expand-collapse",
             "data-path": folder.path},
       ["input", {"type": "checkbox",
-                 "class": ""}],
+                 "data-handler": "add-remove-tests"}],
       ["input", {"type": "button",
                  "class": "folder-button"}],
       folder.label]]);
@@ -38,7 +38,6 @@ templates.test = function(test)
   return (
   ["li", {"class": "test",
           "data-handler": "show-test",
-          "data-path": test.path,
           "data-id": test.id},
     ["h3", test.label]]);
 };
@@ -60,7 +59,7 @@ templates.test_step = function(step)
 templates.no_xhr = function()
 {
   return (
-  [["p", "Perhaps XMLHttpRequest  is disabled for local host?"],
+  [["p", "Perhaps XMLHttpRequest is disabled for local host?"],
    ["p", ['a', {"href": "opera:config#UserPrefs|AllowFileXMLHttpRequest"},
                 "opera:config#UserPrefs|AllowFileXMLHttpRequest"]]]);
 }

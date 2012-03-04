@@ -10,12 +10,11 @@ h1
 {
   margin: 0;
   margin-left: 350px;
-  padding: 7px 0;
+  padding: 5px 0;
   text-align: center;
-  font-family: serif;
   font-weight: normal;
   color: hsl(0, 0%, 50%);
-  font-size: 2em;
+  font-size: 1.6em;
   background-color: hsl(0, 0%, 95%);
   border-bottom: 1px solid hsl(0, 0%, 90%);
 }
@@ -23,6 +22,7 @@ h1
 h2
 {
   font-weight: normal;
+  font-size: 1.3em;
 }
 
 .sidepanel

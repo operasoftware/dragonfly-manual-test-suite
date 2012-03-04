@@ -216,8 +216,7 @@ def get_short_key(pathkeys, path):
         if not p in cur:
             short = get_id([cur[k]["short"] for k in cur.keys()])
             print short, cur.keys()
-            cur[p] = {"short": short,
-                      "dirs": {}}
+            cur[p] = {"short": short, "dirs": {}}
         short_path.append(cur[p]["short"])
         cur = cur[p]["dirs"]
     return ".".join(short_path)
@@ -264,21 +263,17 @@ def create_folders(src, target, ctx):
     with open(os.path.join(target_path, "root.json"), "wb") as f:
         dirs = []
         for d in ctx.components:
-            path = "%s.json" % d
-            dirs.append({"label": d, "path": path})
+            dirs.append({"label": d, "path": d})
         f.write(json.dumps({"files": [], "dirs": dirs, "path": ""}, indent=4))
     for p in ctx.readme_dirs:
         name = "%s.json" % p.replace("/", ".")
         folder = ctx.dir_map[p]
         with open(os.path.join(target_path, name), "wb") as f:
-            folder_path = "./%s/%%s.json"% "/".join(folder.path)
             labels = []
             for e in folder.labels:
-                labels.append({"label":e.label,
-                               "path": e.file_path,
-                               "id": e.short_id})
+                labels.append({"label":e.label, "id": e.short_id})
             dirs = []
-            folder_path = "%s.%%s.json" % ".".join(folder.path)
+            folder_path = "%s.%%s" % ".".join(folder.path)
             for d in folder.dirs:
                 if "%s/%s" %(p, d) in ctx.readme_dirs:
                     path = folder_path % d
@@ -308,8 +303,16 @@ if __name__ == "__main__":
     if len(argv) > 2:
         target = argv[2]
     ctx = CTX(src, target)
-    if os.path.exists(target):
-        shutil.rmtree(target)
+    count = 5
+    while (count):
+        try:
+            if os.path.exists(target):
+                shutil.rmtree(target)
+                break
+        except:
+            pass
+        count -= 1
+    print count
     shutil.copytree(os.path.join("app", "."), os.path.join(target))
     pathkeys = {}
     with open(PATHKEYS, "rb") as f:
