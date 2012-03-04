@@ -312,7 +312,6 @@ if __name__ == "__main__":
         except:
             pass
         count -= 1
-    print count
     shutil.copytree(os.path.join("app", "."), os.path.join(target))
     pathkeys = {}
     with open(PATHKEYS, "rb") as f:

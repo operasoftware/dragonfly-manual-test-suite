@@ -1,0 +1,120 @@
+{
+    "js-object-inspector": {
+        "dirs": {
+            "tooltip": {
+                "dirs": {
+                    "js_object_inspection_tooltip": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "a"
+            }
+        }, 
+        "short": "e"
+    }, 
+    "dom-inspector": {
+        "dirs": {
+            "edit": {
+                "dirs": {
+                    "edit_markup": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }, 
+                    "edit_attributes": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "a"
+            }
+        }, 
+        "short": "c"
+    }, 
+    "color-inspector": {
+        "dirs": {
+            "reset_color_value": {
+                "dirs": {}, 
+                "short": "e"
+            }, 
+            "show_and_hide_colorpicker": {
+                "dirs": {}, 
+                "short": "a"
+            }, 
+            "edit_color_with_visual_controls": {
+                "dirs": {}, 
+                "short": "b"
+            }, 
+            "edit_transparent_color": {
+                "dirs": {}, 
+                "short": "d"
+            }, 
+            "edit_color_with_inputs": {
+                "dirs": {}, 
+                "short": "c"
+            }
+        }, 
+        "short": "b"
+    }, 
+    "js-debugger": {
+        "dirs": {
+            "js-dropdown": {
+                "dirs": {
+                    "script_select": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }, 
+                    "script_select_clear_button": {
+                        "dirs": {}, 
+                        "short": "d"
+                    }, 
+                    "script_select_filter_script": {
+                        "dirs": {}, 
+                        "short": "c"
+                    }, 
+                    "script_select_select_a_script": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }
+                }, 
+                "short": "b"
+            }, 
+            "tooltip": {
+                "dirs": {
+                    "context_menu_in_tooltips": {
+                        "dirs": {}, 
+                        "short": "c"
+                    }, 
+                    "tooltips_in_tooltips": {
+                        "dirs": {}, 
+                        "short": "d"
+                    }, 
+                    "tooltip_features_in_js_source": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }, 
+                    "advanced_tooltip_features_in_js_source_view": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }
+                }, 
+                "short": "a"
+            }
+        }, 
+        "short": "a"
+    }, 
+    "ui-framework": {
+        "dirs": {
+            "auto-adjust": {
+                "dirs": {
+                    "auto_adjust_textarea": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "a"
+            }
+        }, 
+        "short": "d"
+    }
+}
