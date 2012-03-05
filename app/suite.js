@@ -186,7 +186,7 @@
     while (cur < parts.length)
     {
       var path = parts.slice(0, ++cur).join(".");
-      var h3 = sidepanel.querySelector("[data-path=" + path + "]");
+      var h3 = sidepanel.querySelector("[data-path=\"" + path + "\"]");
       var li = h3 && h3.parentNode;
       if (!li)
         return;
