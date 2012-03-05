@@ -5,8 +5,13 @@
 
   var FOLDER_PATH = "./FOLDERS/%s.json";
   var TEST_PATH = "./TESTS/%s.json";
+  var TESTLISTS_PATH = "./TESTLISTS/%s.json";
   var FOR_EACH = Array.prototype.forEach.call.bind(Array.prototype.forEach);
-  var test_list = [];
+  var _test_lists_map = Object.create(null);
+  var _test_list_keys = [];
+  var _test_list = [];
+  var _cursor = 0;
+  var _current_test = null;
 
   var expand_collapse = function(event, target)
   {
@@ -110,21 +115,56 @@
     }
 
     new_tests = normalize_paths(new_tests);
-    console.log(new_tests, removed_tests)
+    var return_dict = {};
+    new_tests.forEach(function (path)
+    {
+      var cb = handle_new_tests.bind(null, new_tests, removed_tests, return_dict, path);
+      XMLHttpRequest.get_json(TESTLISTS_PATH.replace("%s", path), cb);
+    });
+
+    // console.log(new_tests, removed_tests)
   };
 
-  var show_test = function(event, target)
+  var handle_new_tests = function(new_tests, removed_tests, return_dict, path, data)
   {
-    var path = TEST_PATH.replace("%s", target.dataset.id);
+    return_dict[path] = data;
+    var ret_keys = Object.keys(return_dict);
+    if (new_tests.every(function(path) { return ret_keys.contains(path); }))
+    {
+      new_tests.forEach(function(path)
+      {
+        _test_lists_map[path] = return_dict[path];
+      });
+      removed_tests.forEach(function(path)
+      {
+        delete _test_lists_map[path];
+      });
+      _test_list_keys = Object.keys(_test_lists_map).sort();
+      _test_list = _test_list_keys.reduce(function(list, path)
+      {
+        return list.extend(_test_lists_map[path]);
+      }, []);
+      _cursor = 0;
+      if (_test_list.length)
+        show_test(null, null, _test_list[_cursor]);
+    }
+
+  }
+
+  var show_test = function(event, target, path)
+  {
+    var path = TEST_PATH.replace("%s", path || target.dataset.id);
     XMLHttpRequest.get_json(path, function(data)
     {
+      _current_test = data;
       var container = document.querySelector(".test-description");
       container.innerHTML = "";
       var selected = document.querySelector(".sidepanel .selected");
       if (selected)
         selected.classList.remove("selected");
 
-      target.classList.add("selected");
+      if (target)
+        target.classList.add("selected");
       container.append_tmpl(templates.test_description(data, path));
     });
   };
@@ -133,7 +173,7 @@
   {
     XMLHttpRequest.get_json(path, function(data)
     {
-      container.append_tmpl(templates.folder_expanded(data));
+      container.append_tmpl(templates.folder_expanded(data, _test_list_keys));
       container.classList.add("open");
     });
   };

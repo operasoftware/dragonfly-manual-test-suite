@@ -184,11 +184,13 @@ def get_tests(ctx, pathkeys, blacklist=[]):
             if entries:
                 paths = ["/".join(path[0:i + 1]) for i in range(len(path))]
                 readme_dirs |= set(paths)
+            folder_path = ".".join(cur_dir.path)
             for e in entries:
                 test_path = cur_dir.path + [e.label.lower().replace(" ", "_")]
                 e.short_id = get_short_key(pathkeys, test_path)
                 e.file_name = "%s.json" % e.short_id
                 e.file_path = "./%s/%s" % (TESTS, e.file_name)
+                e.folder_path = folder_path
                 cur_dir.labels.append(e)
                 if not e.label.strip():
                     print "empty entry"
@@ -246,7 +248,8 @@ def create_tests(src, target, ctx):
                 e_dict = {"label": e.label,
                           "url": "/".join(web_path), 
                           "desc": e.desc,
-                          "id": e.short_id}
+                          "id": e.short_id,
+                          "folder_path": e.folder_path}
                 f.write(json.dumps(e_dict, indent=4))
         for d in dir_.dirs:
             d_path = os.path.join(target_path, d)

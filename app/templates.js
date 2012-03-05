@@ -11,23 +11,29 @@ templates.main = function()
   ]);
 };
 
-templates.folder_expanded = function(data)
+templates.folder_expanded = function(data, path_list)
 {
   return (
   ["ul",
-    data.dirs.map(this.folder),
+    data.dirs.map(this.folder.bind(this, path_list)),
     data.files.map(this.test)]);
 };
 
-templates.folder = function(folder)
+templates.folder = function(path_list, folder)
 {
+  for (var i = 0, ch_path; ch_path = path_list[i]; i++)
+  {
+    if (folder.path.startswith(ch_path + "."))
+      break;
+  }
   return (
   ["li", 
     {"class": "folder"},
     ["h3", {"data-handler": "expand-collapse",
             "data-path": folder.path},
       ["input", {"type": "checkbox",
-                 "data-handler": "add-remove-tests"}],
+                 "data-handler": "add-remove-tests",
+                 "checked": ch_path && "checked"}],
       ["input", {"type": "button",
                  "class": "folder-button"}],
       folder.label]]);
