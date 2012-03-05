@@ -146,12 +146,11 @@
       }, []);
       _cursor = 0;
       if (_test_list.length)
-        show_test(null, null, _test_list[_cursor]);
+        show_test(null, null, _test_list[_cursor], expand_current_test);
     }
-
   }
 
-  var show_test = function(event, target, path)
+  var show_test = function(event, target, path, cb)
   {
     var path = TEST_PATH.replace("%s", path || target.dataset.id);
     XMLHttpRequest.get_json(path, function(data)
@@ -159,22 +158,58 @@
       _current_test = data;
       var container = document.querySelector(".test-description");
       container.innerHTML = "";
-      var selected = document.querySelector(".sidepanel .selected");
-      if (selected)
-        selected.classList.remove("selected");
-
-      if (target)
-        target.classList.add("selected");
+      set_selected_test(target);
       container.append_tmpl(templates.test_description(data, path));
+      if (cb)
+        cb();
     });
   };
 
-  var expand_folder = function(container, path)
+  var set_selected_test = function(target)
+  {
+    var selected = document.querySelector(".sidepanel .selected");
+    if (selected)
+      selected.classList.remove("selected");
+
+    if (target)
+      target.classList.add("selected");
+  };
+
+  var expand_current_test = function()
+  {
+    if (!_current_test)
+      return
+    
+    var parts = _current_test.folder_path.split(".");
+    var sidepanel = document.querySelector(".sidepanel");
+    var cur = 0;
+    while (cur < parts.length)
+    {
+      var path = parts.slice(0, ++cur).join(".");
+      var h3 = sidepanel.querySelector("[data-path=" + path + "]");
+      var li = h3 && h3.parentNode;
+      if (!li)
+        return;
+
+      if (li.classList.contains("open"))
+        continue;
+
+      expand_folder(li, FOLDER_PATH.replace("%s", path), expand_current_test);
+      return;
+    }
+    var selector = "[data-id=\"" + _current_test.id + "\"]";
+    set_selected_test(sidepanel.querySelector(selector));
+
+  }
+
+  var expand_folder = function(container, path, cb)
   {
     XMLHttpRequest.get_json(path, function(data)
     {
       container.append_tmpl(templates.folder_expanded(data, _test_list_keys));
       container.classList.add("open");
+      if (cb)
+        cb();
     });
   };
 

@@ -3,6 +3,7 @@ import sys
 import json
 import shutil
 import string
+import time
 from urllib import quote, unquote
 
 BLACKLIST = [".hg"]
@@ -313,8 +314,9 @@ if __name__ == "__main__":
                 shutil.rmtree(target)
                 break
         except:
-            pass
+            time.sleep(0.2)
         count -= 1
+    time.sleep(0.2)
     shutil.copytree(os.path.join("app", "."), os.path.join(target))
     pathkeys = {}
     with open(PATHKEYS, "rb") as f:
