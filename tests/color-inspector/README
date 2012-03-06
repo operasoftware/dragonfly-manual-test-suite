@@ -48,6 +48,7 @@ desc:
   - Verify that the aplpha value can be changed in the same way with in the alpha input field
 
 label: Reset color value
+url: ./index.html
 desc:
   - Open the testcase and inspect "test"
   - Click the color swatch of the color declaration to open the color picker
