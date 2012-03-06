@@ -121,24 +121,22 @@
       var cb = handle_new_tests.bind(null, new_tests, removed_tests, return_dict, path);
       XMLHttpRequest.get_json(TESTLISTS_PATH.replace("%s", path), cb);
     });
-
-    // console.log(new_tests, removed_tests)
+    if (!new_tests.length)
+      handle_new_tests(new_tests, removed_tests, return_dict);
   };
 
   var handle_new_tests = function(new_tests, removed_tests, return_dict, path, data)
   {
     return_dict[path] = data;
     var ret_keys = Object.keys(return_dict);
-    if (new_tests.every(function(path) { return ret_keys.contains(path); }))
+    if (!new_tests.length || 
+        new_tests.every(function(path) { return ret_keys.contains(path); }))
     {
       new_tests.forEach(function(path)
       {
         _test_lists_map[path] = return_dict[path];
       });
-      removed_tests.forEach(function(path)
-      {
-        delete _test_lists_map[path];
-      });
+      removed_tests.forEach(function(path) { delete _test_lists_map[path]; });
       _test_list_keys = Object.keys(_test_lists_map).sort();
       _test_list = _test_list_keys.reduce(function(list, path)
       {
@@ -175,7 +173,7 @@
       target.classList.add("selected");
   };
 
-  var expand_current_test = function()
+  var expand_current_test = function(close_unrelated)
   {
     if (!_current_test)
       return
@@ -194,13 +192,19 @@
       if (li.classList.contains("open"))
         continue;
 
-      expand_folder(li, FOLDER_PATH.replace("%s", path), expand_current_test);
+      var cb = close_unrelated
+             ? expand_current_close_others
+             : expand_current_test;
+      expand_folder(li, FOLDER_PATH.replace("%s", path), cb);
       return;
     }
     var selector = "[data-id=\"" + _current_test.id + "\"]";
     set_selected_test(sidepanel.querySelector(selector));
+    if (close_unrelated)
+      close_unrelated_folders();
+  };
 
-  }
+  var expand_current_close_others = expand_current_test.bind(null, true);
 
   var expand_folder = function(container, path, cb)
   {
@@ -213,15 +217,65 @@
     });
   };
 
+  var close_unrelated_folders = function()
+  {
+    FOR_EACH(document.querySelectorAll(".sidepanel .folder-title"), function(h3)
+    {
+      if (!_current_test.folder_path.startswith(h3.dataset.path))
+      {
+        var li = h3.parentNode;
+        var ul = li.querySelector("ul");
+        if (ul)
+        {
+          li.removeChild(ul);
+          li.classList.remove("open");
+        }
+      }
+    });
+  };
+
+  var onshortcut = function(shortcut, event)
+  {
+    switch (shortcut)
+    {
+      case "up":
+        _cursor--;
+        if (_cursor < 0)
+          _cursor = _test_list.length 
+                  ? _test_list.length - 1
+                  : 0;
+        if (_test_list.length)
+          show_test(null, null, _test_list[_cursor], expand_current_close_others);
+        break;
+
+      case "down":
+        _cursor++;
+        if (_cursor > _test_list.length - 1)
+          _cursor = 0;
+        if (_test_list.length)
+          show_test(null, null, _test_list[_cursor], expand_current_close_others);
+        break;
+
+    }
+  };
+
+  var keyidentifier = null;
+
   var setup = function()
   {
     EventHandler.register("click", "expand-collapse", expand_collapse);
     EventHandler.register("click", "show-test", show_test);
     EventHandler.register("click", "add-remove-tests", add_remove_tests);
+    keyidentifier = new KeyIdentifier(onshortcut);
+    keyidentifier.set_shortcuts(["up", "down"]);
     document.body.append_tmpl(templates.main());
     var root = document.querySelector(".sidepanel");
     try { expand_folder(root, "./folders/root.json"); }
-    catch(e) { document.body.append_tmpl(templates.no_xhr()); };
+    catch(e) 
+    {
+      document.body.innerHTML = ""; 
+      document.body.append_tmpl(templates.no_xhr());
+    };
   };
 
   window.onload = setup;
