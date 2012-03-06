@@ -27,9 +27,9 @@ templates.main = function()
                                 "rows": "5"}]]]]]]);
 };
 
-templates.summary = function(passed, failed, skipped, untested)
+templates.summary = function(total, passed, failed, skipped)
 {
-  var total = passed + failed + skipped + untested;
+  var untested = total - (passed + failed + skipped);
   return (
   ["table", {"class": "summary"},
     ["tr", ["td", "Passed"], ["td", String(passed)]],

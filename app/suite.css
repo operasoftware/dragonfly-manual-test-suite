@@ -163,9 +163,29 @@ input[type=checkbox]
   margin-left: -33px;
   width: 17px;
   padding-left: 16px;
+  background-image: -o-linear-gradient(-60deg,
+                                       #fff 0px,
+                                       #fff 5px,
+                                       transparent 6px),
+                    -o-linear-gradient(60deg,
+                                       #fff 0px,
+                                       #fff 5px,
+                                       transparent 6px);
+  background-image: -webkit-linear-gradient(-60deg,
+                                            #fff 0px,
+                                            #fff 5px,
+                                            transparent 6px),
+                    -webkit-linear-gradient(60deg,
+                                            #fff 0px,
+                                            #fff 5px,
+                                            transparent 6px);
+  background-position: 0px 8px, 0px -5px;
+  background-size: 13px 13px;
+  background-repeat: no-repeat;
 }
 .test.selected h3:before
 {
+
   background-image: -o-linear-gradient(-60deg,
                                        hsl(220, 100%, 70%) 0px,
                                        hsl(220, 100%, 70%) 5px,
@@ -185,23 +205,31 @@ input[type=checkbox]
   background-position: 0px 8px, 0px -5px;
   background-size: 13px 13px;
   background-repeat: no-repeat;
+
 }
 
-.test-passed
+.test-passed h3:before
 {
-  background-color: hsl(120, 100%, 95%);
+  background-color: hsl(100, 100%, 45%);
+  color: #fff;
 }
 
-.test-failed
+.test-failed h3:before
 {
-  background-color: hsl(0, 100%, 95%);
+  background-color: hsl(5, 100%, 50%);
+  color: #fff;
 
 }
 
+.test-skipped h3:before
+{
+  background-color: hsl(0, 0%, 85%);
+  color: #fff;
+}
 .test-skipped
 {
-  background-color: hsl(0, 0%, 95%);
-  color: hsl(0, 0%, 70%);
+  color: hsl(0, 0%, 85%);
+
 }
 
 .test-description
@@ -216,6 +244,7 @@ input[type=checkbox]
   margin-left: 350px;
   background-color: hsl(0, 0%, 95%);
   border-top: 1px solid hsl(0, 0%, 90%);
+  padding-bottom: 7px;
 }
 
 .main-controls

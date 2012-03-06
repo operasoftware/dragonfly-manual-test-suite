@@ -35,6 +35,24 @@ Element.prototype.append_tmpl = function(tmpl)
     this.appendChild(ele);
 };
 
+Element.prototype.replace_with_tmpl = function(tmpl)
+{
+  var parent = this.parentNode, ret = [];
+  if (parent)
+  {
+    var div = document.createElement('div');
+    var doc_frag = document.createDocumentFragment();
+    div.append_tmpl(tmpl);
+    while (div.firstChild)
+    {
+      ret.push(doc_frag.appendChild(div.firstChild));
+    }
+    parent.replaceChild(doc_frag, this);
+    return ret;
+  }
+  return null;
+}
+
 Element.prototype.get_ancestor = function(selector)
 {
   var ele = this;

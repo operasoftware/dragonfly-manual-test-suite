@@ -22,8 +22,10 @@
 
   var _test_lists_map = Object.create(null);
   var _test_list_keys = [];
+
   var _test_list = [];
   var _tests_map = Object.create(null);
+
   var _cursor = 0;
   var _current_test = null;
 
@@ -218,6 +220,7 @@
       close_unrelated_folders();
 
     update_test_states();
+        update_sumary();
   };
 
   var update_test_states = function()
@@ -231,7 +234,25 @@
         li.classList.add(STATE_CLASSES[_tests_map[li.dataset.id]]);
       }
     });
-  }
+  };
+
+  var update_sumary = function()
+  {
+    var summary = document.querySelector(".summary");
+    if (summary)
+    {
+      var counts = [0, 0, 0, 0];
+      _test_list.forEach(function(id)
+      {
+        if (_tests_map[id])
+          counts[_tests_map[id][STATE]]++;
+      });
+      summary.replace_with_tmpl(templates.summary(_test_list.length,
+                                                  counts[PASSED],
+                                                  counts[FAILED],
+                                                  counts[SKIPPED]));
+    }
+  };
 
   var expand_current_close_others = expand_current_test.bind(null, true);
 
