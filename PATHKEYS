@@ -58,6 +58,27 @@
     }, 
     "js-debugger": {
         "dirs": {
+            "js-dropdown": {
+                "dirs": {
+                    "script_select": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }, 
+                    "script_select_clear_button": {
+                        "dirs": {}, 
+                        "short": "d"
+                    }, 
+                    "script_select_filter_script": {
+                        "dirs": {}, 
+                        "short": "c"
+                    }, 
+                    "script_select_select_a_script": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }
+                }, 
+                "short": "b"
+            }, 
             "tooltip": {
                 "dirs": {
                     "context_menu_in_tooltips": {
@@ -78,27 +99,6 @@
                     }
                 }, 
                 "short": "a"
-            }, 
-            "js-dropdown": {
-                "dirs": {
-                    "script_select": {
-                        "dirs": {}, 
-                        "short": "a"
-                    }, 
-                    "script_select_clear_button": {
-                        "dirs": {}, 
-                        "short": "d"
-                    }, 
-                    "script_select_select_a_script": {
-                        "dirs": {}, 
-                        "short": "b"
-                    }, 
-                    "script_select_filter_script": {
-                        "dirs": {}, 
-                        "short": "c"
-                    }
-                }, 
-                "short": "b"
             }
         }, 
         "short": "a"

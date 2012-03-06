@@ -7,9 +7,23 @@
   var TEST_PATH = "./TESTS/%s.json";
   var TESTLISTS_PATH = "./TESTLISTS/%s.json";
   var FOR_EACH = Array.prototype.forEach.call.bind(Array.prototype.forEach);
+  var PASSED = 1;
+  var FAILED = 2;
+  var SKIPPED = 3;
+  var STATE_CLASSES = [];
+  STATE_CLASSES[PASSED] = "test-passed";
+  STATE_CLASSES[FAILED] = "test-failed";
+  STATE_CLASSES[SKIPPED] = "test-skipped";
+  var STATE = 0;
+  var BTS_LIST = [];
+  var COMMENT = 2;
+  var UP = -1;
+  var DOWN = 1;
+
   var _test_lists_map = Object.create(null);
   var _test_list_keys = [];
   var _test_list = [];
+  var _tests_map = Object.create(null);
   var _cursor = 0;
   var _current_test = null;
 
@@ -202,7 +216,22 @@
     set_selected_test(sidepanel.querySelector(selector));
     if (close_unrelated)
       close_unrelated_folders();
+
+    update_test_states();
   };
+
+  var update_test_states = function()
+  {
+    FOR_EACH(document.querySelectorAll(".sidepanel .test"), function(li)
+    {
+      var id = li.dataset.id;
+      if (id in _tests_map)
+      {
+        STATE_CLASSES.forEach(function(cl) { li.classList.remove(cl); });
+        li.classList.add(STATE_CLASSES[_tests_map[li.dataset.id]]);
+      }
+    });
+  }
 
   var expand_current_close_others = expand_current_test.bind(null, true);
 
@@ -214,6 +243,7 @@
       container.classList.add("open");
       if (cb)
         cb();
+      update_test_states();
     });
   };
 
@@ -239,33 +269,62 @@
     switch (shortcut)
     {
       case "up":
-        _cursor--;
-        if (_cursor < 0)
-          _cursor = _test_list.length 
-                  ? _test_list.length - 1
-                  : 0;
-        if (_test_list.length)
-          show_test(null, null, _test_list[_cursor], expand_current_close_others);
+        select_next_test(UP);
+        event.preventDefault();
         break;
 
       case "down":
-        _cursor++;
-        if (_cursor > _test_list.length - 1)
-          _cursor = 0;
-        if (_test_list.length)
-          show_test(null, null, _test_list[_cursor], expand_current_close_others);
+        select_next_test(DOWN);
+        event.preventDefault();
         break;
 
     }
   };
 
+  var select_next_test = function(dir)
+  {
+    _cursor += dir;
+    if (dir == UP && _cursor < 0)
+      _cursor = _test_list.length ? _test_list.length - 1 : 0;
+
+    if (dir == DOWN && _cursor > _test_list.length - 1)
+      _cursor = 0;
+
+    if (_test_list.length)
+      show_test(null, null, _test_list[_cursor], expand_current_close_others);
+  };
+
+  var test_passed = function() { set_test_state(PASSED); };
+  var test_failed = function() { set_test_state(FAILED); };
+  var test_skipped = function() { set_test_state(SKIPPED); };
+  var set_test_state = function(state)
+  {
+    var test = _tests_map[_current_test.id] || (_tests_map[_current_test.id] = []);
+    test[STATE] = state;
+    var bts_list = document.getElementById("bts");
+    if (bts && bts.value)
+      test[BTS_LIST] = bts_list.value.split(/, */);
+
+    var comment = document.getElementById("comment");
+    if (comment && comment.value)
+      test[COMMENT] = comment.value;
+    // TODO store _test_map
+    select_next_test(DOWN);
+  };
+
+
   var keyidentifier = null;
+
+
 
   var setup = function()
   {
     EventHandler.register("click", "expand-collapse", expand_collapse);
     EventHandler.register("click", "show-test", show_test);
     EventHandler.register("click", "add-remove-tests", add_remove_tests);
+    EventHandler.register("click", "test-passed", test_passed);
+    EventHandler.register("click", "test-failed", test_failed);
+    EventHandler.register("click", "test-skipped", test_skipped);
     keyidentifier = new KeyIdentifier(onshortcut);
     keyidentifier.set_shortcuts(["up", "down"]);
     document.body.append_tmpl(templates.main());

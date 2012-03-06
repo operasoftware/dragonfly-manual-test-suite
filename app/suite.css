@@ -186,8 +186,78 @@ input[type=checkbox]
   background-size: 13px 13px;
   background-repeat: no-repeat;
 }
+
+.test-passed
+{
+  background-color: hsl(120, 100%, 95%);
+}
+
+.test-failed
+{
+  background-color: hsl(0, 100%, 95%);
+
+}
+
+.test-skipped
+{
+  background-color: hsl(0, 0%, 95%);
+  color: hsl(0, 0%, 70%);
+}
+
 .test-description
 {
   margin-left: 350px;
   padding: 9px 15px;
+  min-height: 320px;
+}
+
+.test-controls
+{
+  margin-left: 350px;
+  background-color: hsl(0, 0%, 95%);
+  border-top: 1px solid hsl(0, 0%, 90%);
+}
+
+.main-controls
+{
+  text-align: center;
+  padding: 7px 0;
+  border-bottom: 1px solid hsl(0, 0%, 85%);
+}
+
+.main-controls input
+{
+  margin: 0 20px;
+}
+
+.input-fields
+{
+  margin-right: 140px;
+  padding: 0 15px;
+  border-right: 1px solid hsl(0, 0%, 85%);
+}
+.input-fields p
+{
+  margin: 0;
+  padding:3px 0;
+}
+
+.input-fields textarea,
+.input-fields input
+{
+  display: block;
+  width: 100%;
+}
+
+.summary
+{
+  float: right;
+  width: 140px;
+  padding: 15px;
+  xbackground-color: hsl(0, 0%, 90%);
+}
+
+.summary td:nth-child(2)
+{
+  text-align: right;
 }

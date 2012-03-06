@@ -7,9 +7,37 @@ templates.main = function()
   return (
   [
     ["div", {"class": "sidepanel"}],
-    ["div", {"class": "test-description"}]
-  ]);
+    ["div", {"class": "test-description"}],
+    ["div", {"class": "test-controls"},
+      ["div", {"class": "main-controls"}, 
+        ["input", {"type": "button",
+                   "value": "Passed",
+                   "data-handler": "test-passed"}],
+        ["input", {"type": "button",
+                   "value": "Failed",
+                   "data-handler": "test-failed"}],
+        ["input", {"type": "button",
+                   "value": "Skip",
+                   "data-handler": "test-skipped"}]],
+        templates.summary(0, 0, 0, 0),
+        ["div", {"class": "input-fields"},
+          ["p", ["label", "BTS: ", ["input", {"id": "bts"}]]],
+          ["p", ["label", "Comment:", 
+                  ["textarea", {"id": "comment",
+                                "rows": "5"}]]]]]]);
 };
+
+templates.summary = function(passed, failed, skipped, untested)
+{
+  var total = passed + failed + skipped + untested;
+  return (
+  ["table", {"class": "summary"},
+    ["tr", ["td", "Passed"], ["td", String(passed)]],
+    ["tr", ["td", "Failed"], ["td", String(failed)]],
+    ["tr", ["td", "Skipped"], ["td", String(skipped)]],
+    ["tr", ["td", "Untested"], ["td", String(untested)]],
+    ["tr", ["td", "Total"], ["td", String(total)]]]);
+}
 
 templates.folder_expanded = function(data, path_list)
 {
