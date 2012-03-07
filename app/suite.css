@@ -158,10 +158,15 @@ input[type=checkbox]
   content: "T";
   font-weight: bold;
   font-style: italic;
+  font-size: 14px;
   color: hsl(0, 0%, 70%);
   display: inline-block;
   margin-left: -33px;
-  width: 17px;
+  margin-right: 2px;
+  width: 15px;
+  height: 14px;
+  line-height: 14px;
+  xvertical-align: middle;
   padding-left: 16px;
   background-image: -o-linear-gradient(-60deg,
                                        #fff 0px,
@@ -179,8 +184,8 @@ input[type=checkbox]
                                             #fff 0px,
                                             #fff 5px,
                                             transparent 6px);
-  background-position: 0px 8px, 0px -5px;
-  background-size: 13px 13px;
+  background-position: 0px 7px, 0px -6px;
+  background-size: 13px 13px, 13px 13px;
   background-repeat: no-repeat;
 }
 .test.selected h3:before
@@ -202,8 +207,8 @@ input[type=checkbox]
                                             hsl(220, 100%, 70%) 0px,
                                             hsl(220, 100%, 70%) 5px,
                                             transparent 6px);
-  background-position: 0px 8px, 0px -5px;
-  background-size: 13px 13px;
+  background-position: 0px 7px, 0px -6px;
+  background-size: 13px 13px, 13px 13px;
   background-repeat: no-repeat;
 
 }

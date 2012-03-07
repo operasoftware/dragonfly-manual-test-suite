@@ -346,7 +346,8 @@
     EventHandler.register("click", "test-passed", test_passed);
     EventHandler.register("click", "test-failed", test_failed);
     EventHandler.register("click", "test-skipped", test_skipped);
-    keyidentifier = new KeyIdentifier(onshortcut);
+    var browser = window.chrome ? "chrome" : window.opera ?"opera" : "firefox";
+    keyidentifier = new KeyIdentifier(onshortcut, browser);
     keyidentifier.set_shortcuts(["up", "down"]);
     document.body.append_tmpl(templates.main());
     var root = document.querySelector(".sidepanel");
