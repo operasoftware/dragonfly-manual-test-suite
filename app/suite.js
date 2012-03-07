@@ -20,14 +20,13 @@
   var UP = -1;
   var DOWN = 1;
 
-  var _test_lists_map = Object.create(null);
-  var _test_list_keys = [];
-
-  var _test_list = [];
-  var _tests_map = Object.create(null);
-
+  var _test_path_map = Object.create(null);
+  var _test_path_list = [];
+  var _test_id_list = [];
+  var _test_id_map = Object.create(null);
   var _cursor = 0;
   var _current_test = null;
+  var _keyidentifier = null;
 
   var expand_collapse = function(event, target)
   {
@@ -150,19 +149,24 @@
     {
       new_tests.forEach(function(path)
       {
-        _test_lists_map[path] = return_dict[path];
+        _test_path_map[path] = return_dict[path];
       });
-      removed_tests.forEach(function(path) { delete _test_lists_map[path]; });
-      _test_list_keys = Object.keys(_test_lists_map).sort();
-      _test_list = _test_list_keys.reduce(function(list, path)
-      {
-        return list.extend(_test_lists_map[path]);
-      }, []);
+      removed_tests.forEach(function(path) { delete _test_path_map[path]; });
+      update_test_list();
       _cursor = 0;
-      if (_test_list.length)
-        show_test(null, null, _test_list[_cursor], expand_current_test);
+      if (_test_id_list.length)
+        show_test(null, null, _test_id_list[_cursor], expand_current_test);
     }
-  }
+  };
+
+  var update_test_list = function()
+  {
+    _test_path_list = Object.keys(_test_path_map).sort();
+    _test_id_list = _test_path_list.reduce(function(list, path)
+    {
+      return list.extend(_test_path_map[path]);
+    }, []);
+  };
 
   var show_test = function(event, target, path, cb)
   {
@@ -174,6 +178,16 @@
       container.innerHTML = "";
       set_selected_test(target);
       container.append_tmpl(templates.test_description(data, path));
+      var cur_state = _test_id_map[_current_test.id];
+      var bts_list = document.getElementById("bts");
+      if (bts)
+        bts_list.value = cur_state && cur_state[BTS_LIST] || "";
+
+      var comment = document.getElementById("comment");
+      if (comment)
+        comment.value = cur_state && cur_state[COMMENT] || "";
+
+      window.open(data.url, "dflmts-window");
       if (cb)
         cb();
     });
@@ -228,10 +242,10 @@
     FOR_EACH(document.querySelectorAll(".sidepanel .test"), function(li)
     {
       var id = li.dataset.id;
-      if (id in _tests_map)
+      if (id in _test_id_map)
       {
         STATE_CLASSES.forEach(function(cl) { li.classList.remove(cl); });
-        li.classList.add(STATE_CLASSES[_tests_map[li.dataset.id]]);
+        li.classList.add(STATE_CLASSES[_test_id_map[li.dataset.id][STATE]]);
       }
     });
   };
@@ -241,16 +255,13 @@
     var summary = document.querySelector(".summary");
     if (summary)
     {
-      var counts = [0, 0, 0, 0];
-      _test_list.forEach(function(id)
+      var counts = [_test_id_list.length, 0, 0, 0];
+      _test_id_list.forEach(function(id)
       {
-        if (_tests_map[id])
-          counts[_tests_map[id][STATE]]++;
+        if (_test_id_map[id])
+          counts[_test_id_map[id][STATE]]++;
       });
-      summary.replace_with_tmpl(templates.summary(_test_list.length,
-                                                  counts[PASSED],
-                                                  counts[FAILED],
-                                                  counts[SKIPPED]));
+      summary.replace_with_tmpl(templates.summary.apply(null, counts));
     }
   };
 
@@ -260,7 +271,7 @@
   {
     XMLHttpRequest.get_json(path, function(data)
     {
-      container.append_tmpl(templates.folder_expanded(data, _test_list_keys));
+      container.append_tmpl(templates.folder_expanded(data, _test_path_list));
       container.classList.add("open");
       if (cb)
         cb();
@@ -306,13 +317,13 @@
   {
     _cursor += dir;
     if (dir == UP && _cursor < 0)
-      _cursor = _test_list.length ? _test_list.length - 1 : 0;
+      _cursor = _test_id_list.length ? _test_id_list.length - 1 : 0;
 
-    if (dir == DOWN && _cursor > _test_list.length - 1)
+    if (dir == DOWN && _cursor > _test_id_list.length - 1)
       _cursor = 0;
 
-    if (_test_list.length)
-      show_test(null, null, _test_list[_cursor], expand_current_close_others);
+    if (_test_id_list.length)
+      show_test(null, null, _test_id_list[_cursor], expand_current_close_others);
   };
 
   var test_passed = function() { set_test_state(PASSED); };
@@ -320,43 +331,96 @@
   var test_skipped = function() { set_test_state(SKIPPED); };
   var set_test_state = function(state)
   {
-    var test = _tests_map[_current_test.id] || (_tests_map[_current_test.id] = []);
+    var test = _test_id_map[_current_test.id] || (_test_id_map[_current_test.id] = []);
     test[STATE] = state;
     var bts_list = document.getElementById("bts");
     if (bts && bts.value)
+    {
       test[BTS_LIST] = bts_list.value.split(/, */);
+      bts_list.value = "";
+    }
 
     var comment = document.getElementById("comment");
     if (comment && comment.value)
+    {
       test[COMMENT] = comment.value;
-    // TODO store _test_map
+      comment.value = "";
+    }
+    
+    localStorage.setItem("dflmts.cursor", String(_cursor));
+    localStorage.setItem("dflmts.test_path_map", JSON.stringify(_test_path_map));
+    localStorage.setItem("dflmts.test_map", JSON.stringify(_test_id_map));
     select_next_test(DOWN);
   };
 
+  var export_state = function()
+  {
+    window.open("data:text/plain," + encodeURIComponent(JSON.stringify(_test_id_map)));
+  };
 
-  var keyidentifier = null;
+  var clear_state = function()
+  {
+    localStorage.removeItem("dflmts.cursor");
+    localStorage.removeItem("dflmts.test_path_map");
+    localStorage.removeItem("dflmts.test_map");
+    _test_path_map = Object.create(null);
+    _test_path_list = [];
+    _test_id_list = [];
+    _test_id_map = Object.create(null);
+    _cursor = 0;
+    _current_test = null;
+    show_initial_view();
+  };
 
-
+  var show_initial_view = function()
+  {
+    document.body.innerHTML = "";
+    document.body.append_tmpl(templates.main());
+    var root = document.querySelector(".sidepanel");
+    try
+    {
+      expand_folder(root, "./folders/root.json", function()
+      {
+        if (_test_id_list.length)
+          show_test(null, null, _test_id_list[_cursor], expand_current_test);
+      });
+    }
+    catch(e) 
+    {
+      document.body.innerHTML = ""; 
+      document.body.append_tmpl(templates.no_xhr());
+    };
+  };
 
   var setup = function()
   {
+    var cursor = localStorage.getItem("dflmts.cursor");
+    if (cursor)
+      _cursor = Number(cursor);
+
+    var path_map = JSON.parse(localStorage.getItem("dflmts.test_path_map"));
+    if (path_map)
+    {
+      _test_path_map = path_map;
+      update_test_list();
+    }
+
+    var test_map = JSON.parse(localStorage.getItem("dflmts.test_map"));
+    if (test_map)
+      _test_id_map = test_map;
+
     EventHandler.register("click", "expand-collapse", expand_collapse);
     EventHandler.register("click", "show-test", show_test);
     EventHandler.register("click", "add-remove-tests", add_remove_tests);
     EventHandler.register("click", "test-passed", test_passed);
     EventHandler.register("click", "test-failed", test_failed);
     EventHandler.register("click", "test-skipped", test_skipped);
+    EventHandler.register("click", "export-state", export_state);
+    EventHandler.register("click", "clear-state", clear_state);
     var browser = window.chrome ? "chrome" : window.opera ?"opera" : "firefox";
-    keyidentifier = new KeyIdentifier(onshortcut, browser);
-    keyidentifier.set_shortcuts(["up", "down"]);
-    document.body.append_tmpl(templates.main());
-    var root = document.querySelector(".sidepanel");
-    try { expand_folder(root, "./folders/root.json"); }
-    catch(e) 
-    {
-      document.body.innerHTML = ""; 
-      document.body.append_tmpl(templates.no_xhr());
-    };
+    _keyidentifier = new KeyIdentifier(onshortcut, browser);
+    _keyidentifier.set_shortcuts(["up", "down"]);
+    show_initial_view();
   };
 
   window.onload = setup;

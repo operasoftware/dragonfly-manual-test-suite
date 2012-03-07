@@ -8,7 +8,7 @@ var EventHandler = function(type, is_capturing, handler_key)
 EventHandler.prototype = new function()
 {
   var KEY = "data-handler";
-  var _handlers = {"true": {}, "false": {}};
+  var _handlers = {"true": Object.create(null), "false": Object.create(null)};
 
   // static methods
   EventHandler.register = function(type, name, handler, is_capturing)
@@ -33,7 +33,7 @@ EventHandler.prototype = new function()
     if (_handlers[is_capturing][type])
       return _handlers[is_capturing][type];
 
-    var handler_map = _handlers[is_capturing][type] = {};
+    var handler_map = _handlers[is_capturing][type] = Object.create(null);
     var handler = function(event)
     {
       var ele = event.target;

@@ -6,6 +6,7 @@ templates.main = function()
 {
   return (
   [
+    ["h1", "Opera Dragonfly manual test suite"],
     ["div", {"class": "test-description"}],
     ["div", {"class": "test-controls"},
       ["div", {"class": "main-controls"}, 
@@ -20,11 +21,18 @@ templates.main = function()
                    "data-handler": "test-skipped"}]],
         templates.summary(0, 0, 0, 0),
         ["div", {"class": "input-fields"},
-          ["p", ["label", "BTS: ", ["input", {"id": "bts"}]]],
+          ["p", ["label", "BTS: ", ["input", {"id": "bts", "type": "text"}]]],
           ["p", ["label", "Comment:", 
                   ["textarea", {"id": "comment",
-                                "rows": "5"}]]]]],
-    ["div", {"class": "sidepanel"}]])
+                                "rows": "3"}]]]],
+      ["div", {"class": "global-controls"}, 
+        ["input", {"type": "button",
+                   "data-handler": "export-state",
+                   "value": "Export"}],
+        ["input", {"type": "button",
+                   "data-handler": "clear-state",
+                   "value": "Clear state"}]]],
+    ["div", {"class": "sidepanel"}]]);
 };
 
 templates.summary = function(total, passed, failed, skipped)
@@ -51,7 +59,7 @@ templates.folder = function(path_list, folder)
 {
   for (var i = 0, ch_path; ch_path = path_list[i]; i++)
   {
-    if (folder.path.startswith(ch_path + "."))
+    if (folder.path == ch_path || folder.path.startswith(ch_path + "."))
       break;
   }
   return (
@@ -83,7 +91,7 @@ templates.test_description = function(data, path)
   ["div",
     ["h2", data.label],
     ["ol", data.desc.map(this.test_step)],
-    ["p", ["a", {"href": data.url}, data.url]]]);
+    ["p", ["a", {"href": data.url, "target": "dflmts-window"}, data.url]]]);
 };
 
 templates.test_step = function(step)

@@ -245,9 +245,7 @@ input[type=checkbox]
   left: 350px;
   right: 0;
   overflow: auto;
-  xmargin-left: 350px;
   padding: 9px 15px;
-  xmin-height: 320px;
 }
 
 .test-controls
@@ -256,10 +254,8 @@ input[type=checkbox]
   bottom: 0;
   left: 350px;
   right: 0;
-  xmargin-left: 350px;
   background-color: hsl(0, 0%, 95%);
   border-top: 1px solid hsl(0, 0%, 90%);
-  padding-bottom: 7px;
 }
 
 .main-controls
@@ -274,10 +270,21 @@ input[type=checkbox]
   margin: 0 20px;
 }
 
+.global-controls
+{
+  padding: 7px 0;
+  border-top: 1px solid hsl(0, 0%, 85%);
+}
+
+.global-controls input
+{
+  margin: 0 15px;
+}
+
 .input-fields
 {
   margin-right: 140px;
-  padding: 0 15px;
+  padding: 0 15px 7px 15px;
   border-right: 1px solid hsl(0, 0%, 85%);
 }
 .input-fields p
@@ -287,7 +294,7 @@ input[type=checkbox]
 }
 
 .input-fields textarea,
-.input-fields input
+.input-fields input[type=text]
 {
   display: block;
   width: 100%;
@@ -305,3 +312,4 @@ input[type=checkbox]
 {
   text-align: right;
 }
+
