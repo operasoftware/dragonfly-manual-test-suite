@@ -239,14 +239,24 @@ input[type=checkbox]
 
 .test-description
 {
-  margin-left: 350px;
+  position: absolute;
+  top: 40px;
+  bottom: 200px;
+  left: 350px;
+  right: 0;
+  overflow: auto;
+  xmargin-left: 350px;
   padding: 9px 15px;
-  min-height: 320px;
+  xmin-height: 320px;
 }
 
 .test-controls
 {
-  margin-left: 350px;
+  position: absolute;
+  bottom: 0;
+  left: 350px;
+  right: 0;
+  xmargin-left: 350px;
   background-color: hsl(0, 0%, 95%);
   border-top: 1px solid hsl(0, 0%, 90%);
   padding-bottom: 7px;

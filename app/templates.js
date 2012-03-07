@@ -6,7 +6,6 @@ templates.main = function()
 {
   return (
   [
-    ["div", {"class": "sidepanel"}],
     ["div", {"class": "test-description"}],
     ["div", {"class": "test-controls"},
       ["div", {"class": "main-controls"}, 
@@ -24,7 +23,8 @@ templates.main = function()
           ["p", ["label", "BTS: ", ["input", {"id": "bts"}]]],
           ["p", ["label", "Comment:", 
                   ["textarea", {"id": "comment",
-                                "rows": "5"}]]]]]]);
+                                "rows": "5"}]]]]],
+    ["div", {"class": "sidepanel"}]])
 };
 
 templates.summary = function(total, passed, failed, skipped)
