@@ -1,0 +1,315 @@
+body
+{
+  font-family: Arial, sans-serif;
+  font-size: .9em;
+  margin: 0;
+  padding: 0;
+}
+
+h1
+{
+  margin: 0;
+  margin-left: 350px;
+  padding: 5px 0;
+  text-align: center;
+  font-weight: normal;
+  color: hsl(0, 0%, 50%);
+  font-size: 1.6em;
+  background-color: hsl(0, 0%, 95%);
+  border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+
+h2
+{
+  font-weight: normal;
+  font-size: 1.3em;
+}
+
+.sidepanel
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 100%;
+  overflow: auto;
+  box-shadow: 1px 0px 5px 0px hsl(0, 0%, 75%);
+}
+.sidepanel ul
+{
+  list-style: none;
+  padding-left: 36px;
+}
+.sidepanel h3
+{
+  margin: 0;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.folder-button
+{
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin: 0 3px;
+  border: 0px solid transparent;
+  background-color: transparent;
+  background-image: -o-linear-gradient(0deg,
+                                       hsl(0, 0%, 20%) 0px,
+                                       hsl(0, 0%, 20%) 1px),
+                    -o-linear-gradient(-90deg,
+                                       hsl(0, 0%, 20%) 0px,
+                                       hsl(0, 0%, 20%) 1px),
+                    -o-linear-gradient(0deg,
+                                       hsl(0, 0%, 70%) 0px,
+                                       hsl(0, 0%, 70%) 1px,
+                                       hsl(0, 0%, 100%) 1px,
+                                       hsl(0, 0%, 100%) 10px,
+                                       hsl(0, 0%, 70%) 10px,
+                                       hsl(0, 0%, 70%) 11px),
+                    -o-linear-gradient(-90deg,
+                                       hsl(0, 0%, 70%) 0px,
+                                       hsl(0, 0%, 70%) 1px,
+                                       hsl(0, 0%, 100%) 1px,
+                                       hsl(0, 0%, 100%) 10px,
+                                       hsl(0, 0%, 70%) 10px,
+                                       hsl(0, 0%, 70%) 11px);
+  background-image: -webkit-linear-gradient(0deg,
+                                            hsl(0, 0%, 20%) 0px,
+                                            hsl(0, 0%, 20%) 1px),
+                    -webkit-linear-gradient(-90deg,
+                                            hsl(0, 0%, 20%) 0px,
+                                            hsl(0, 0%, 20%) 1px),
+                    -webkit-linear-gradient(0deg,
+                                            hsl(0, 0%, 70%) 0px,
+                                            hsl(0, 0%, 70%) 1px,
+                                            hsl(0, 0%, 100%) 1px,
+                                            hsl(0, 0%, 100%) 10px,
+                                            hsl(0, 0%, 70%) 10px,
+                                            hsl(0, 0%, 70%) 11px),
+                    -webkit-linear-gradient(-90deg,
+                                            hsl(0, 0%, 70%) 0px,
+                                            hsl(0, 0%, 70%) 1px,
+                                            hsl(0, 0%, 100%) 1px,
+                                            hsl(0, 0%, 100%) 10px,
+                                            hsl(0, 0%, 70%) 10px,
+                                            hsl(0, 0%, 70%) 11px);
+  background-position: 6px 3px, 3px 6px, 1px 2px, 1px 1px;
+  background-size: 1px 7px, 7px 1px, 11px 9px, 11px 11px;
+  background-repeat: no-repeat;
+}
+
+.open > h3 .folder-button
+{
+  background-image: -o-linear-gradient(-90deg,
+                                       hsl(0, 0%, 20%) 0px,
+                                       hsl(0, 0%, 20%) 1px),
+                    -o-linear-gradient(0deg,
+                                       hsl(0, 0%, 70%) 0px,
+                                       hsl(0, 0%, 70%) 1px,
+                                       hsl(0, 0%, 100%) 1px,
+                                       hsl(0, 0%, 100%) 10px,
+                                       hsl(0, 0%, 70%) 10px,
+                                       hsl(0, 0%, 70%) 11px),
+                    -o-linear-gradient(-90deg,
+                                       hsl(0, 0%, 70%) 0px,
+                                       hsl(0, 0%, 70%) 1px,
+                                       hsl(0, 0%, 100%) 1px,
+                                       hsl(0, 0%, 100%) 10px,
+                                       hsl(0, 0%, 70%) 10px,
+                                       hsl(0, 0%, 70%) 11px);
+  background-image: -webkit-linear-gradient(-90deg,
+                                            hsl(0, 0%, 20%) 0px,
+                                            hsl(0, 0%, 20%) 1px),
+                    -webkit-linear-gradient(0deg,
+                                            hsl(0, 0%, 70%) 0px,
+                                            hsl(0, 0%, 70%) 1px,
+                                            hsl(0, 0%, 100%) 1px,
+                                            hsl(0, 0%, 100%) 10px,
+                                            hsl(0, 0%, 70%) 10px,
+                                            hsl(0, 0%, 70%) 11px),
+                    -webkit-linear-gradient(-90deg,
+                                            hsl(0, 0%, 70%) 0px,
+                                            hsl(0, 0%, 70%) 1px,
+                                            hsl(0, 0%, 100%) 1px,
+                                            hsl(0, 0%, 100%) 10px,
+                                            hsl(0, 0%, 70%) 10px,
+                                            hsl(0, 0%, 70%) 11px);
+  background-position: 3px 6px, 1px 2px, 1px 1px;
+  background-size: 7px 1px, 11px 9px, 11px 11px;
+}
+
+input[type=checkbox]
+{
+  vertical-align: middle;
+}
+
+.test
+{
+  padding-left: 22px;
+}
+.test h3:before
+{
+
+  content: "T";
+  font-weight: bold;
+  font-style: italic;
+  font-size: 14px;
+  color: hsl(0, 0%, 70%);
+  display: inline-block;
+  margin-left: -33px;
+  margin-right: 2px;
+  width: 15px;
+  height: 14px;
+  line-height: 14px;
+  xvertical-align: middle;
+  padding-left: 16px;
+  background-image: -o-linear-gradient(-60deg,
+                                       #fff 0px,
+                                       #fff 5px,
+                                       transparent 6px),
+                    -o-linear-gradient(60deg,
+                                       #fff 0px,
+                                       #fff 5px,
+                                       transparent 6px);
+  background-image: -webkit-linear-gradient(-60deg,
+                                            #fff 0px,
+                                            #fff 5px,
+                                            transparent 6px),
+                    -webkit-linear-gradient(60deg,
+                                            #fff 0px,
+                                            #fff 5px,
+                                            transparent 6px);
+  background-position: 0px 7px, 0px -6px;
+  background-size: 13px 13px, 13px 13px;
+  background-repeat: no-repeat;
+}
+.test.selected h3:before
+{
+
+  background-image: -o-linear-gradient(-60deg,
+                                       hsl(220, 100%, 70%) 0px,
+                                       hsl(220, 100%, 70%) 5px,
+                                       transparent 6px),
+                    -o-linear-gradient(60deg,
+                                       hsl(220, 100%, 70%) 0px,
+                                       hsl(220, 100%, 70%) 5px,
+                                       transparent 6px);
+  background-image: -webkit-linear-gradient(-60deg,
+                                            hsl(220, 100%, 70%) 0px,
+                                            hsl(220, 100%, 70%) 5px,
+                                            transparent 6px),
+                    -webkit-linear-gradient(60deg,
+                                            hsl(220, 100%, 70%) 0px,
+                                            hsl(220, 100%, 70%) 5px,
+                                            transparent 6px);
+  background-position: 0px 7px, 0px -6px;
+  background-size: 13px 13px, 13px 13px;
+  background-repeat: no-repeat;
+
+}
+
+.test-passed h3:before
+{
+  background-color: hsl(100, 100%, 45%);
+  color: #fff;
+}
+
+.test-failed h3:before
+{
+  background-color: hsl(5, 100%, 50%);
+  color: #fff;
+
+}
+
+.test-skipped h3:before
+{
+  background-color: hsl(0, 0%, 85%);
+  color: #fff;
+}
+.test-skipped
+{
+  color: hsl(0, 0%, 85%);
+
+}
+
+.test-description
+{
+  position: absolute;
+  top: 40px;
+  bottom: 200px;
+  left: 350px;
+  right: 0;
+  overflow: auto;
+  padding: 9px 15px;
+}
+
+.test-controls
+{
+  position: absolute;
+  bottom: 0;
+  left: 350px;
+  right: 0;
+  background-color: hsl(0, 0%, 95%);
+  border-top: 1px solid hsl(0, 0%, 90%);
+}
+
+.main-controls
+{
+  text-align: center;
+  padding: 7px 0;
+  border-bottom: 1px solid hsl(0, 0%, 85%);
+}
+
+.main-controls input
+{
+  margin: 0 20px;
+}
+
+.global-controls
+{
+  padding: 7px 0;
+  border-top: 1px solid hsl(0, 0%, 85%);
+}
+
+.global-controls input
+{
+  margin: 0 15px;
+}
+
+.input-fields
+{
+  margin-right: 140px;
+  padding: 0 15px 7px 15px;
+  border-right: 1px solid hsl(0, 0%, 85%);
+}
+.input-fields p
+{
+  margin: 0;
+  padding:3px 0;
+}
+
+.input-fields textarea,
+.input-fields input[type=text]
+{
+  display: block;
+  width: 100%;
+}
+
+.summary
+{
+  float: right;
+  width: 140px;
+  padding: 15px;
+  xbackground-color: hsl(0, 0%, 90%);
+}
+
+.summary td:nth-child(2)
+{
+  text-align: right;
+}
+
