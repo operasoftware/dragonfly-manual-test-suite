@@ -13,6 +13,9 @@ FOLDERS = "FOLDERS"
 TESTS = "TESTS"
 TESTLISTS = "TESTLISTS"
 CHARS = string.ascii_letters + string.digits
+TARGET = "build"
+SRC = "src"
+TESTS = "tests"
 
 
 class ReadmeContextError(Exception):
@@ -300,13 +303,13 @@ def create_test_lists(src, target, ctx):
 
 if __name__ == "__main__":
     argv = sys.argv
-    src = "tests"
-    target = "suite"
+    tests = TESTS
+    target = TARGET
     if len(argv) > 1:
-        src = argv[1]
+        tests = argv[1]
     if len(argv) > 2:
         target = argv[2]
-    ctx = CTX(src, target)
+    ctx = CTX(tests, target)
     count = 5
     while (count):
         try:
@@ -317,13 +320,13 @@ if __name__ == "__main__":
             time.sleep(0.2)
         count -= 1
     time.sleep(0.2)
-    shutil.copytree(os.path.join("app", "."), os.path.join(target))
+    shutil.copytree(os.path.join(SRC, "."), os.path.join(target))
     pathkeys = {}
     with open(PATHKEYS, "rb") as f:
         pathkeys = json.loads(f.read())
     get_tests(ctx, pathkeys, BLACKLIST)
-    create_tests(src, target, ctx)
+    create_tests(tests, target, ctx)
     with open(PATHKEYS, "wb") as f:
         f.write(json.dumps(pathkeys, indent=4))
-    create_folders(src, target, ctx)
-    create_test_lists(src, target, ctx)
+    create_folders(tests, target, ctx)
+    create_test_lists(tests, target, ctx)
