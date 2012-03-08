@@ -146,7 +146,6 @@
 
   var handle_new_tests = function(new_tests, removed_tests, return_dict, path, data)
   {
-    console.log(new_tests, removed_tests)
     return_dict[path] = data;
     var ret_keys = Object.keys(return_dict);
     if (!new_tests.length || 
