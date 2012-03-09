@@ -49,4 +49,11 @@ desc:
   - Go to the test page.
   - Hover 'document' on line 64 and hover 'HTMLBodyElemen' in the tooltip.
   - Verify that you get a tooltip on top of the tooltip with '<body>' as content.
+
+label: DFL-2900
+url: ./DFL-2900.html
+desc:
+  - Open the testcase.
+  - Verify that in all three situations 'window', 'window.document' and 'window.document.body' shows a tooltip.
+
   
