@@ -54,3 +54,19 @@ desc:
   - Click the color swatch of the color declaration to open the color picker
   - Change the current color
   - Verify that the color can be reset to the initial value by clicking the left part of the color example in the top right corner
+
+label: Color swatch for 'currentColor'
+desc:
+  - Add 'color: currentColor' to any element
+  - Make sure that a color swatch is provided, styled as a white square with a diagonal gray line
+
+label: Color swatch for 'currentColor'
+desc:
+  - Add 'color: inherit' to any element
+  - Make sure that a color swatch is provided, styled as a white square with a diagonal gray line
+
+label: Color swatch for 'transparent'
+desc:
+  - Add 'color: transparent' to any element
+  - Make sure that a color swatch is provided, styled as a white square with gray checkers
+

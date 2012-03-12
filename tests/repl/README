@@ -1,0 +1,9 @@
+label: XPath result types
+desc:
+  - Go to any page
+  - Make sure all of these provide the correct type of results when submitted in the Console:
+    * $x("//*") should return an array of elements
+    * $x("count(//*)") should return a number
+    * $x("string(//body)") should return a string
+    * $x("//body/@foo = 'bar'") should return a boolean
+
