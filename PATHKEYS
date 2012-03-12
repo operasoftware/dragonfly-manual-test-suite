@@ -58,6 +58,15 @@
     }, 
     "js-debugger": {
         "dirs": {
+            "security": {
+                "dirs": {
+                    "dfl-2882,_script_syntax_error_load_dragonfly_in_dragonfly": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "c"
+            }, 
             "js-dropdown": {
                 "dirs": {
                     "script_select": {
