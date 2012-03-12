@@ -44,4 +44,13 @@ desc:
   - Type something and hit the clear button.
   - Verify that the filter gets cleared and the button disappears.
 
+label: Script select with many scripts 
+url: ./many-scripts/index.html
+desc:
+  - Go to the test page.
+  - Open the script drop down.
+  - Verify that all scripts are selected with Up and Down arrows without 
+    the dropdown jumping in unexpected ways.
+
+
  

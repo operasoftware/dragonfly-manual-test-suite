@@ -75,12 +75,20 @@
                     "script_select_select_a_script": {
                         "dirs": {}, 
                         "short": "b"
+                    }, 
+                    "script_select_with_many_scripts": {
+                        "dirs": {}, 
+                        "short": "e"
                     }
                 }, 
                 "short": "b"
             }, 
             "tooltip": {
                 "dirs": {
+                    "dfl-2900": {
+                        "dirs": {}, 
+                        "short": "e"
+                    }, 
                     "context_menu_in_tooltips": {
                         "dirs": {}, 
                         "short": "c"
