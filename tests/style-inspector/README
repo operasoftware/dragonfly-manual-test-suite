@@ -10,7 +10,7 @@ desc:
 label: Changing a property to another
 desc:
   - Pick an element
-  - Add the style 'background: red' and to a new rule and submit
+  - Add the style 'background: red' to a new rule and submit
   - Edit the declaration and change 'background' to 'background-color', and submit
   - Make sure that no other background-* properties are present
 
