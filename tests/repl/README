@@ -1,9 +1,9 @@
 label: XPath result types
+url: ./result-types.html
 desc:
-  - Go to any page
-  - Make sure all of these provide the correct type of results when submitted in the Console:
+  - Open the Console and make sure the values and types match when submitting the following:
     * $x("//*") should return an array of elements
-    * $x("count(//*)") should return a number
-    * $x("string(//body)") should return a string
-    * $x("//body/@foo = 'bar'") should return a boolean
+    * $x("count(//*)") should return a number (3)
+    * $x("string(//body/@class)") should return a string ("a")
+    * $x("//body/@class = 'a'") should return a boolean (true)
 

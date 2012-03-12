@@ -1,22 +1,22 @@
 label: Cycling through properties
+url: ./a.html
 desc:
-  - Pick an element
-  - Add a new declaration with the value 'color: red', but don't submit
-  - Place the cursor at the beginning of the textarea
+  - Inspect body
+  - Edit 'color' and place the cursor at the beginning of the textarea
   - Press the up button to cycle through all properties
   - When all properties has been cycled through, submit
-  - Make sure that no more than one property has been added since before step 1
+  - Make sure that no more than one property is applied
 
 label: Changing a property to another
+url: ./b.html
 desc:
-  - Pick an element
-  - Add the style 'background: red' to a new rule and submit
-  - Edit the declaration and change 'background' to 'background-color', and submit
+  - Inspect body
+  - Change 'background' to 'background-color', and submit
   - Make sure that no other background-* properties are present
 
 label: Shortening of large data URIs
+url: ./c.html
 desc:
-  - Pick an element
-  - Add 'background: url(data:iamge/png,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa)' and submit
-  - Make sure the URL is shortened
+  - Inspect bodyy
+  - Make sure the data URI is shortened for the background property
 

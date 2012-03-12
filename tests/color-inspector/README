@@ -56,17 +56,20 @@ desc:
   - Verify that the color can be reset to the initial value by clicking the left part of the color example in the top right corner
 
 label: Color swatch for 'currentColor'
+url: ./a.html
 desc:
-  - Add 'color: currentColor' to any element
-  - Make sure that a color swatch is provided, styled as a white square with a diagonal gray line
+  - Inspect the body element
+  - Make sure that a color one rules has 'color: currentColor' with a swatch that is styled as a white square with a diagonal gray line
 
-label: Color swatch for 'currentColor'
+label: Color swatch for 'inherit'
+url: ./a.html
 desc:
-  - Add 'color: inherit' to any element
-  - Make sure that a color swatch is provided, styled as a white square with a diagonal gray line
+  - Inspect the body element
+  - Make sure that a color one rules has 'color: inherit' with a swatch that is styled as a white square with a diagonal gray line
 
 label: Color swatch for 'transparent'
+url: ./a.html
 desc:
-  - Add 'color: transparent' to any element
-  - Make sure that a color swatch is provided, styled as a white square with gray checkers
+  - Inspect the body element
+  - Make sure that a color one rules has 'color: transparent' with a swatch that is styled as a white square with gray checkers
 
