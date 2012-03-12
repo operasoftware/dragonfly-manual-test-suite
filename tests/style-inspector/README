@@ -17,6 +17,6 @@ desc:
 label: Shortening of large data URIs
 url: ./c.html
 desc:
-  - Inspect bodyy
+  - Inspect body
   - Make sure the data URI is shortened for the background property
 
