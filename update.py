@@ -254,7 +254,7 @@ def create_tests(src, target, ctx):
                           "desc": e.desc,
                           "id": e.short_id,
                           "folder_path": e.folder_path}
-                f.write(json.dumps(e_dict, indent=4))
+                f.write(json.dumps(e_dict, indent=4, sort_keys=True))
         for d in dir_.dirs:
             d_path = os.path.join(target_path, d)
             if not os.path.exists(d_path):
@@ -271,7 +271,7 @@ def create_folders(src, target, ctx):
         dirs = []
         for d in ctx.components:
             dirs.append({"label": d, "path": d})
-        f.write(json.dumps({"files": [], "dirs": dirs, "path": ""}, indent=4))
+        f.write(json.dumps({"files": [], "dirs": dirs, "path": ""}, indent=4, sort_keys=True))
     for p in ctx.readme_dirs:
         name = "%s.json" % p.replace("/", ".")
         folder = ctx.dir_map[p]
@@ -286,7 +286,7 @@ def create_folders(src, target, ctx):
                     path = folder_path % d
                     dirs.append({"label": d, "path": path})
             f_dict = {"files": labels, "path": p, "dirs": dirs}
-            f.write(json.dumps(f_dict, indent=4))
+            f.write(json.dumps(f_dict, indent=4, sort_keys=True))
 
 def create_test_lists(src, target, ctx):
     target_path = os.path.join(target, TESTLISTS)
@@ -299,7 +299,7 @@ def create_test_lists(src, target, ctx):
                 ids.extend([e.short_id for e in ctx.dir_map[p2].labels])
         name = "%s.json" % p.replace("/", ".")
         with open(os.path.join(target_path, name), "wb") as f:
-            f.write(json.dumps(ids, indent=4))
+            f.write(json.dumps(ids, indent=4, sort_keys=True))
 
 if __name__ == "__main__":
     argv = sys.argv
@@ -327,6 +327,6 @@ if __name__ == "__main__":
     get_tests(ctx, pathkeys, BLACKLIST)
     create_tests(tests, target, ctx)
     with open(PATHKEYS, "wb") as f:
-        f.write(json.dumps(pathkeys, indent=4))
+        f.write(json.dumps(pathkeys, indent=4, sort_keys=True))
     create_folders(tests, target, ctx)
     create_test_lists(tests, target, ctx)
