@@ -1,45 +1,9 @@
 {
-    "js-object-inspector": {
-        "dirs": {
-            "tooltip": {
-                "dirs": {
-                    "js_object_inspection_tooltip": {
-                        "dirs": {}, 
-                        "short": "a"
-                    }
-                }, 
-                "short": "a"
-            }
-        }, 
-        "short": "e"
-    }, 
-    "dom-inspector": {
-        "dirs": {
-            "edit": {
-                "dirs": {
-                    "edit_markup": {
-                        "dirs": {}, 
-                        "short": "b"
-                    }, 
-                    "edit_attributes": {
-                        "dirs": {}, 
-                        "short": "a"
-                    }
-                }, 
-                "short": "a"
-            }
-        }, 
-        "short": "c"
-    }, 
     "color-inspector": {
         "dirs": {
-            "reset_color_value": {
+            "edit_color_with_inputs": {
                 "dirs": {}, 
-                "short": "e"
-            }, 
-            "show_and_hide_colorpicker": {
-                "dirs": {}, 
-                "short": "a"
+                "short": "c"
             }, 
             "edit_color_with_visual_controls": {
                 "dirs": {}, 
@@ -49,24 +13,41 @@
                 "dirs": {}, 
                 "short": "d"
             }, 
-            "edit_color_with_inputs": {
+            "reset_color_value": {
                 "dirs": {}, 
-                "short": "c"
+                "short": "e"
+            }, 
+            "show_and_hide_colorpicker": {
+                "dirs": {}, 
+                "short": "a"
             }
         }, 
         "short": "b"
     }, 
-    "js-debugger": {
+    "dom-inspector": {
         "dirs": {
-            "security": {
+            "edit": {
                 "dirs": {
-                    "dfl-2882,_script_syntax_error_load_dragonfly_in_dragonfly": {
+                    "edit_attributes": {
                         "dirs": {}, 
                         "short": "a"
+                    }, 
+                    "edit_markup": {
+                        "dirs": {}, 
+                        "short": "b"
                     }
                 }, 
-                "short": "c"
+                "short": "a"
             }, 
+            "tag_names_with_'<'_characters": {
+                "dirs": {}, 
+                "short": "b"
+            }
+        }, 
+        "short": "c"
+    }, 
+    "js-debugger": {
+        "dirs": {
             "js-dropdown": {
                 "dirs": {
                     "script_select": {
@@ -92,33 +73,60 @@
                 }, 
                 "short": "b"
             }, 
+            "security": {
+                "dirs": {
+                    "dfl-2882,_script_syntax_error_load_dragonfly_in_dragonfly": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "c"
+            }, 
             "tooltip": {
                 "dirs": {
-                    "dfl-2900": {
+                    "advanced_tooltip_features_in_js_source_view": {
                         "dirs": {}, 
-                        "short": "e"
+                        "short": "b"
                     }, 
                     "context_menu_in_tooltips": {
                         "dirs": {}, 
                         "short": "c"
                     }, 
-                    "tooltips_in_tooltips": {
+                    "dfl-2900": {
                         "dirs": {}, 
-                        "short": "d"
+                        "short": "e"
                     }, 
                     "tooltip_features_in_js_source": {
                         "dirs": {}, 
                         "short": "a"
                     }, 
-                    "advanced_tooltip_features_in_js_source_view": {
+                    "tooltips_in_tooltips": {
                         "dirs": {}, 
-                        "short": "b"
+                        "short": "d"
                     }
                 }, 
                 "short": "a"
             }
         }, 
         "short": "a"
+    }, 
+    "js-object-inspector": {
+        "dirs": {
+            "sorting_of_properties_in_object_inspection": {
+                "dirs": {}, 
+                "short": "b"
+            }, 
+            "tooltip": {
+                "dirs": {
+                    "js_object_inspection_tooltip": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "a"
+            }
+        }, 
+        "short": "e"
     }, 
     "ui-framework": {
         "dirs": {
