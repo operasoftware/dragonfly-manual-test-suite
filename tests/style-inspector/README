@@ -20,3 +20,82 @@ desc:
   - Inspect body
   - Make sure the data URI is shortened for the background property
 
+label: Matching style rules
+url: ./matching-style-declarations.html
+desc:
+  - unfold Computed Styles and Styles
+  - select some elements in the DOM
+  - Verify that the styles are updated
+
+label: Show initial values in computed style panel
+url: http://dev.opera.com
+desc:
+  - Select and unselect the 'Show initial values in computed style panel' switch
+  - Verify that the Computed Style section is updated accordingly
+
+label: Search
+desc:
+  - Expand both sections, Computed Styles and Styles
+  - Search for a property, e.g. margin
+  - Verify that both section collapse to only contain the matching properties
+
+label: Searching for a newly added property
+desc:
+  - Add a property
+  - Search for it and make sure it shows up
+
+label: Detaching
+desc:
+  - Add a property in attached mode
+  - Detach and make sure the property is still shown
+  - Do the same, but instead of adding a new property, delete one, and make sure it's still removed when switching back to attached mode
+
+label: Escaping
+desc:
+  - Add a new property without submitting it
+  - Press Escape
+  - Make sure the property is removed from the view, and that the old style is re-applied
+
+label: Switching view
+desc:
+  - Add a new property
+  - Switch to some other view and then back
+  - Make sure the newly added property is still visible
+  - Do the same, but instead of adding a new property, delete one, and make sure it's still removed when switching the view back
+
+label: Toggle property
+desc:
+  - Disable a property
+  - Make sure the property is in fact disabled and that this is somehow visible in the UI
+  - Enable the property
+  - Make sure the style is re-applied and that this is reflected in the UI
+
+label: Pseudo element setting
+url: ./test-cases/dom/pseudo-test.html
+desc:
+ - Expand the body element
+ - Go to Settings -> Documents
+ - Enable/disable "Show pseudo elements" and make sure they get visible/hidden
+
+label: Pseudo elements
+url: ./pseudo-test.html
+desc:
+ - Make sure after/before/first-letter and first-line pseudo elements show up in the DOM view only for elements that are descendants of the <html> element
+ - Select a pseudo element
+ - Make sure that the Style side panel is updated with the according styling, i.e. you see the normal styling for the element of which the pseudo element belongs to, and the psuedo element styling at the top
+ - Make sure that the style can be edited
+
+label: Pseudo elements context menu
+url: ./pseudo-test.html
+desc:
+ - Bring up the context menu for a pseudo element
+ - Make sure that it doesn't have additional items than the default context menu for the view
+
+label: Pseudo classes
+url: ./pseudo-test.html
+desc:
+ - Select the <a> element
+ - Make sure the :link pseudo class is visible
+ - From the dropdown, check all pseudo classes and make sure they all get visible
+ - Select another element and make sure the same pseudo classes still apply
+
