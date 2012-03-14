@@ -15,7 +15,7 @@ TESTLISTS = "TESTLISTS"
 CHARS = string.ascii_letters + string.digits
 TARGET = "build"
 SRC = "src"
-TESTS = "tests"
+TESTS_SRC = "tests"
 
 
 class ReadmeContextError(Exception):
@@ -250,7 +250,7 @@ def create_tests(src, target, ctx):
                     else:
                         web_path.append(p)
                 e_dict = {"label": e.label,
-                          "url": "/".join(web_path), 
+                          "url": "/".join(web_path),
                           "desc": e.desc,
                           "id": e.short_id,
                           "folder_path": e.folder_path}
@@ -303,7 +303,7 @@ def create_test_lists(src, target, ctx):
 
 if __name__ == "__main__":
     argv = sys.argv
-    tests = TESTS
+    tests = TESTS_SRC
     target = TARGET
     if len(argv) > 1:
         tests = argv[1]
