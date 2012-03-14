@@ -174,6 +174,9 @@
 
   var show_test = function(event, target, path, cb)
   {
+    if (target && _test_id_list.indexOf(target.dataset.id) > -1)
+      _cursor = _test_id_list.indexOf(target.dataset.id);
+
     var path = TEST_PATH.replace("%s", path || target.dataset.id);
     XMLHttpRequest.get_json(path, function(data)
     {
@@ -204,7 +207,17 @@
       selected.classList.remove("selected");
 
     if (target)
+    {
       target.classList.add("selected");
+      var sidepanel = document.querySelector(".sidepanel");
+      if (sidepanel)
+      {
+        var box_s = sidepanel.getBoundingClientRect();
+        var box_t = target.getBoundingClientRect();
+        if (box_t.bottom < box_s.top || box_t.top > box_s.bottom)
+          target.scrollIntoView();
+      } 
+    }
   };
 
   var expand_current_test = function(close_unrelated)

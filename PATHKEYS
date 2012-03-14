@@ -1,6 +1,18 @@
 {
     "color-inspector": {
         "dirs": {
+            "color_swatch_for_'currentcolor'": {
+                "dirs": {}, 
+                "short": "f"
+            }, 
+            "color_swatch_for_'inherit'": {
+                "dirs": {}, 
+                "short": "g"
+            }, 
+            "color_swatch_for_'transparent'": {
+                "dirs": {}, 
+                "short": "h"
+            }, 
             "edit_color_with_inputs": {
                 "dirs": {}, 
                 "short": "c"
@@ -38,6 +50,10 @@
                     }
                 }, 
                 "short": "a"
+            }, 
+            "pseudo_elements_context_menu": {
+                "dirs": {}, 
+                "short": "c"
             }, 
             "tag_names_with_'<'_characters": {
                 "dirs": {}, 
@@ -127,6 +143,76 @@
             }
         }, 
         "short": "e"
+    }, 
+    "repl": {
+        "dirs": {
+            "xpath_result_types": {
+                "dirs": {}, 
+                "short": "a"
+            }
+        }, 
+        "short": "f"
+    }, 
+    "style-inspector": {
+        "dirs": {
+            "changing_a_property_to_another": {
+                "dirs": {}, 
+                "short": "b"
+            }, 
+            "cycling_through_properties": {
+                "dirs": {}, 
+                "short": "a"
+            }, 
+            "detaching": {
+                "dirs": {}, 
+                "short": "h"
+            }, 
+            "escaping": {
+                "dirs": {}, 
+                "short": "i"
+            }, 
+            "matching_style_rules": {
+                "dirs": {}, 
+                "short": "d"
+            }, 
+            "pseudo_classes": {
+                "dirs": {}, 
+                "short": "n"
+            }, 
+            "pseudo_element_setting": {
+                "dirs": {}, 
+                "short": "l"
+            }, 
+            "pseudo_elements": {
+                "dirs": {}, 
+                "short": "m"
+            }, 
+            "search": {
+                "dirs": {}, 
+                "short": "f"
+            }, 
+            "searching_for_a_newly_added_property": {
+                "dirs": {}, 
+                "short": "g"
+            }, 
+            "shortening_of_large_data_uris": {
+                "dirs": {}, 
+                "short": "c"
+            }, 
+            "show_initial_values_in_computed_style_panel": {
+                "dirs": {}, 
+                "short": "e"
+            }, 
+            "switching_view": {
+                "dirs": {}, 
+                "short": "j"
+            }, 
+            "toggle_property": {
+                "dirs": {}, 
+                "short": "k"
+            }
+        }, 
+        "short": "g"
     }, 
     "ui-framework": {
         "dirs": {

@@ -201,6 +201,7 @@ def get_tests(ctx, pathkeys, blacklist=[]):
         cur_dir.dirs = dirs
         cur_dir.files = files
     ctx.readme_dirs = list(readme_dirs)
+    ctx.readme_dirs.sort()
 
 def get_id(ids):
     cursor = 0
@@ -221,7 +222,6 @@ def get_short_key(pathkeys, path):
     for p in path:
         if not p in cur:
             short = get_id([cur[k]["short"] for k in cur.keys()])
-            print short, cur.keys()
             cur[p] = {"short": short, "dirs": {}}
         short_path.append(cur[p]["short"])
         cur = cur[p]["dirs"]
@@ -239,18 +239,22 @@ def create_tests(src, target, ctx):
             os.makedirs(target_path)
         for e in dir_.labels:
             with open(os.path.join(tests_path, e.file_name), "wb") as f:
-                web_path = ["."] + dir_.path[:]
-                local_path = e.url.split("/")
-                for p in local_path:
-                    if p == ".":
-                        continue
-                    if p == "..":
-                        if web_path:
-                            web_path.pop()
-                    else:
-                        web_path.append(p)
+                if e.url.startswith("http"):
+                    web_path = e.url
+                else:
+                    web_path = ["."] + dir_.path[:]
+                    local_path = e.url.split("/")
+                    for p in local_path:
+                        if p == ".":
+                            continue
+                        if p == "..":
+                            if web_path:
+                                web_path.pop()
+                        else:
+                            web_path.append(p)
+                    web_path = "/".join(web_path)
                 e_dict = {"label": e.label,
-                          "url": "/".join(web_path),
+                          "url": web_path,
                           "desc": e.desc,
                           "id": e.short_id,
                           "folder_path": e.folder_path}
