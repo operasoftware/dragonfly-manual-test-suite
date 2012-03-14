@@ -71,7 +71,7 @@ desc:
   - Make sure the style is re-applied and that this is reflected in the UI
 
 label: Pseudo element setting
-url: ./test-cases/dom/pseudo-test.html
+url: ./pseudo-test.html
 desc:
  - Expand the body element
  - Go to Settings -> Documents
