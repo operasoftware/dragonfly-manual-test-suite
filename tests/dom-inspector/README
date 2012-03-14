@@ -3,3 +3,10 @@ url: ./a.html
 desc:
   - Open the test case and expand the whole DOM in Documents.
   - Verify that there is an element with the name 'div<style' and that no red color appears in Dragonfly.
+
+label: Pseudo elements context menu
+url: ./../style-inspector/pseudo-test.html
+desc:
+ - Bring up the context menu for a pseudo element
+ - Make sure that it doesn't have additional items than the default context menu for the view
+

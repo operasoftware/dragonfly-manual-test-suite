@@ -34,29 +34,34 @@ desc:
   - Verify that the Computed Style section is updated accordingly
 
 label: Search
+url: ./matching-style-declarations.html
 desc:
   - Expand both sections, Computed Styles and Styles
   - Search for a property, e.g. margin
   - Verify that both section collapse to only contain the matching properties
 
 label: Searching for a newly added property
+url: ./matching-style-declarations.html
 desc:
   - Add a property
   - Search for it and make sure it shows up
 
 label: Detaching
+url: ./matching-style-declarations.html
 desc:
   - Add a property in attached mode
   - Detach and make sure the property is still shown
   - Do the same, but instead of adding a new property, delete one, and make sure it's still removed when switching back to attached mode
 
 label: Escaping
+url: ./matching-style-declarations.html
 desc:
   - Add a new property without submitting it
   - Press Escape
   - Make sure the property is removed from the view, and that the old style is re-applied
 
 label: Switching view
+url: ./matching-style-declarations.html
 desc:
   - Add a new property
   - Switch to some other view and then back
@@ -64,6 +69,7 @@ desc:
   - Do the same, but instead of adding a new property, delete one, and make sure it's still removed when switching the view back
 
 label: Toggle property
+url: ./matching-style-declarations.html
 desc:
   - Disable a property
   - Make sure the property is in fact disabled and that this is somehow visible in the UI
@@ -84,12 +90,6 @@ desc:
  - Select a pseudo element
  - Make sure that the Style side panel is updated with the according styling, i.e. you see the normal styling for the element of which the pseudo element belongs to, and the psuedo element styling at the top
  - Make sure that the style can be edited
-
-label: Pseudo elements context menu
-url: ./pseudo-test.html
-desc:
- - Bring up the context menu for a pseudo element
- - Make sure that it doesn't have additional items than the default context menu for the view
 
 label: Pseudo classes
 url: ./pseudo-test.html
