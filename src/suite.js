@@ -383,7 +383,7 @@
     var root = document.querySelector(".sidepanel");
     try
     {
-      expand_folder(root, "./folders/root.json", function()
+      expand_folder(root, FOLDER_PATH.replace("%s", "root"), function()
       {
         if (_test_id_list.length)
           show_test(null, null, _test_id_list[_cursor], expand_current_test);
