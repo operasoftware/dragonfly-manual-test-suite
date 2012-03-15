@@ -195,9 +195,10 @@
         comment.value = cur_state && cur_state[COMMENT] || "";
 
       window.open(data.url, "dflmts-window");
-      location.hash = data.folder_path + "." + hash_label(data.label);
       if (cb)
         cb();
+
+      location.hash = data.folder_path + "." + hash_label(data.label);
     });
   };
 
@@ -443,11 +444,16 @@
 
   var onhashchange = function(event)
   {
-    var path = location.hash.slice(1).split(".");
-    if (path.length)
+    var hash = location.hash.slice(1);
+    var cur_path = _current_test.folder_path + "." + hash_label(_current_test.label);
+    if (hash != cur_path)
     {
-      var hashed_label = path.pop();
-      expand_test(path, hashed_label);
+      var path = hash.split(".");
+      if (path.length)
+      {
+        var hashed_label = path.pop();
+        expand_test(path, hashed_label);
+      }
     }
   };
 
