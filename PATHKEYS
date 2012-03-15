@@ -224,6 +224,15 @@
                     }
                 }, 
                 "short": "a"
+            }, 
+            "key-input": {
+                "dirs": {
+                    "shortcut_bindings": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "b"
             }
         }, 
         "short": "d"

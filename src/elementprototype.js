@@ -66,6 +66,21 @@ Element.prototype.get_ancestor = function(selector)
   return null;
 };
 
+Element.prototype.dispatchMouseEvent = function(type, ctrl_key, alt_key, shift_key)
+{
+  var event = document.createEvent('MouseEvents');
+  var box = this.getBoundingClientRect();
+  var client_x = box.left + box.width * .5;
+  var client_y = box.top + box.height * .5;
+  event.initMouseEvent(type, true, true, window, 1,
+                       window.screenLeft + client_x,
+                       window.screenTop + client_y,
+                       client_x, client_y,
+                       Boolean(ctrl_key), Boolean(alt_key), Boolean(shift_key), false,
+                       0, null);
+  this.dispatchEvent(event);
+};
+
 if (!document.createElement("div").dataset)
 {
   Element.prototype.__defineGetter__("dataset", function()

@@ -195,9 +195,15 @@
         comment.value = cur_state && cur_state[COMMENT] || "";
 
       window.open(data.url, "dflmts-window");
+      location.hash = data.folder_path + "." + hash_label(data.label);
       if (cb)
         cb();
     });
+  };
+
+  var hash_label = function(label)
+  {
+    return label.toLowerCase().replace(/[\s,.]+/g, "-");
   };
 
   var set_selected_test = function(target)
@@ -409,6 +415,42 @@
     };
   };
 
+  var expand_test = function(path_parts, hashed_label)
+  {
+    var sidepanel = document.querySelector(".sidepanel");
+    var cur = 0;
+    while (cur < path_parts.length)
+    {
+      var path = path_parts.slice(0, ++cur).join(".");
+      var h3 = sidepanel.querySelector("[data-path=\"" + path + "\"]");
+      var li = h3 && h3.parentNode;
+      if (!li)
+        return;
+
+      if (li.classList.contains("open"))
+        continue;
+
+      var cb = expand_test.bind(null, path_parts, hashed_label);
+      expand_folder(li, FOLDER_PATH.replace("%s", path), cb);
+      return;
+    }
+    FOR_EACH(li.querySelectorAll("h3"), function(h3)
+    {
+      if (hash_label(h3.textContent) == hashed_label)
+        h3.parentNode.dispatchMouseEvent("click");
+    });
+  };
+
+  var onhashchange = function(event)
+  {
+    var path = location.hash.slice(1).split(".");
+    if (path.length)
+    {
+      var hashed_label = path.pop();
+      expand_test(path, hashed_label);
+    }
+  };
+
   var setup = function()
   {
     var cursor = localStorage.getItem("dflmts.cursor");
@@ -437,6 +479,7 @@
     var browser = window.chrome ? "chrome" : window.opera ?"opera" : "firefox";
     _keyidentifier = new KeyIdentifier(onshortcut, browser);
     _keyidentifier.set_shortcuts(["up", "down"]);
+    window.onhashchange = onhashchange;
     show_initial_view();
   };
 
