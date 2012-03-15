@@ -445,7 +445,9 @@
   var onhashchange = function(event)
   {
     var hash = location.hash.slice(1);
-    var cur_path = _current_test.folder_path + "." + hash_label(_current_test.label);
+    var cur_path = _current_test
+                 ? _current_test.folder_path + "." + hash_label(_current_test.label)
+                 : "";
     if (hash != cur_path)
     {
       var path = hash.split(".");
