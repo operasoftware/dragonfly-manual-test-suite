@@ -62,6 +62,43 @@
         }, 
         "short": "c"
     }, 
+    "error-console": {
+        "dirs": {
+            "css_filter": {
+                "dirs": {}, 
+                "short": "e"
+            }, 
+            "error_count_batch": {
+                "dirs": {}, 
+                "short": "c"
+            }, 
+            "error_location": {
+                "dirs": {}, 
+                "short": "f"
+            }, 
+            "expand/collapse_errors": {
+                "dirs": {}, 
+                "short": "b"
+            }, 
+            "filter_errors": {
+                "dirs": {}, 
+                "short": "d"
+            }, 
+            "inspect_errors": {
+                "dirs": {}, 
+                "short": "a"
+            }, 
+            "limit_maximum_of_errors_that_are_shown": {
+                "dirs": {}, 
+                "short": "h"
+            }, 
+            "list_existing_messages": {
+                "dirs": {}, 
+                "short": "g"
+            }
+        }, 
+        "short": "h"
+    }, 
     "js-debugger": {
         "dirs": {
             "js-dropdown": {
