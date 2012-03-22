@@ -1,0 +1,66 @@
+label: Inspect errors
+url: ./error.html
+desc:
+  - Open the testcase
+  - Verify that there are 3 JS errors, 1 CSS, 1 Storage, and 1 SVG error, and each tab shows the error(s) of it's type
+
+label: Expand/collapse errors
+url: ./error.html
+desc:
+  - Open the testcase
+  - Verify that the JS and CSS entries can be expanded to see the details
+  - Collapse them again
+  - Press expand all and verify all Errors are expanded again
+
+label: Error count batch
+url: ./error.html
+desc:
+  - Open the testcase
+  - Verify that the error count on the top tab matches the number of errors shown, also when switching tabs
+  - Open the tab with CSS Errors
+  - Go to the Documents tab
+  - Open the console, submit "eval('"ibreak"+i+" r"++""') " and verify that the error count on the tab doesn't increase
+  - Now submit "document.body.style.color="boom";" and verify that the error count on the tab does increase
+
+label: Filter errors
+url: ./error.html
+desc:
+  - Open the testcase
+  - Type "foo" into the filter field
+  - Verify that 3 errors are shown and 4 matches are highlighted
+  - Verify that the first (JS) Error is expanded
+  - Verify that the error count on the top tab is now 3
+
+label: CSS Filter
+url: ./error.html
+desc:
+  - Open the testcase
+  - Go to Settings, Error Log
+  - Enable "Use CSS Filter"
+  - Verify that the error count went down to 3
+  - Remove "_line-height" from the field
+  - Verify that the error count is back at 4
+
+label: Error location
+url: ./error.html
+desc:
+  - Open the testcase
+  - Verify that all errors have a location that makes sense
+  - Verify that you can click each location to see the line highlighted in Resources
+
+label: List existing messages
+url: ./error.html
+desc:
+  - Open the testcase
+  - Open Dragonfly after that
+  - Verify that 6 Errors are shown
+
+label: Limit maximum of errors that are shown
+url: ./errors-max.html
+desc:
+  - Open the testcase, open Dragonfly
+  - Verify that the all tab shows a warning like "Displaying 1000 of 2703 errors" at the end
+  - Verify there's no such warning on the tab for CSS Errors
+  - Open the overlay console, submit for(var i = 0;i < 1; i++) setTimeout(function(i){return function(){eval('"BOOM"+i+" r"++""')}}(i), 10*i)
+  - Verify the according error is shown at the end off the All and JS error views
+
