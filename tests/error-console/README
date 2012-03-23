@@ -19,8 +19,21 @@ desc:
   - Verify that the error count on the top tab matches the number of errors shown, also when switching tabs
   - Open the tab with CSS Errors
   - Go to the Documents tab
-  - Open the console, submit "eval('"ibreak"+i+" r"++""') " and verify that the error count on the tab doesn't increase
-  - Now submit "document.body.style.color="boom";" and verify that the error count on the tab does increase
+  - Press the "Add JS Error" Button and verify that the error count on the tab doesn't increase
+  - Press the "Add CSS Error" Button and verify that the error count on the tab does increase
+
+label: Clear
+url: ./error.html
+desc:
+  - Open the testcase
+  - Go to the CSS tab in Errors
+  - Click the clear button ("Clear visible errors")
+  - Verify that the list of CSS errors is now empty
+  - Go to the All tab
+  - Verify that errors other than CSS errors are still shown
+  - Right-click and select "Clear all Errors"
+  - Reload the host
+  - Verify that you see only 6 Errors in total (those are new)
 
 label: Filter errors
 url: ./error.html
@@ -53,14 +66,13 @@ url: ./error.html
 desc:
   - Open the testcase
   - Open Dragonfly after that
-  - Verify that 6 Errors are shown
+  - Verify that 6 Errors (or more, from previous) are shown
 
 label: Limit maximum of errors that are shown
-url: ./errors-max.html
+url: ./error.html
 desc:
-  - Open the testcase, open Dragonfly
-  - Verify that the all tab shows a warning like "Displaying 1000 of 2703 errors" at the end
+  - Open the testcase
+  - Press the "Add 1500 JS Errors" Button
+  - Verify that the "All" tab shows a warning like "Displaying 1000 of 1026 errors" at the end
   - Verify there's no such warning on the tab for CSS Errors
-  - Open the overlay console, submit for(var i = 0;i < 1; i++) setTimeout(function(i){return function(){eval('"BOOM"+i+" r"++""')}}(i), 10*i)
-  - Verify the according error is shown at the end off the All and JS error views
-
+  - In the "All" tab, filter by "delay 100 ms" and verify you find at least one error
