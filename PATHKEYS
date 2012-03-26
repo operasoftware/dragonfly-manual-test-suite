@@ -64,6 +64,10 @@
     }, 
     "error-console": {
         "dirs": {
+            "clear": {
+                "dirs": {}, 
+                "short": "i"
+            }, 
             "css_filter": {
                 "dirs": {}, 
                 "short": "e"
