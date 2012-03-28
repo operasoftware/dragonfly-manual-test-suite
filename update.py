@@ -361,12 +361,12 @@ if __name__ == "__main__":
         f.write(json.dumps(pathkeys, indent=4, sort_keys=True))
     create_folders(tests, target, ctx)
     create_test_lists(tests, target, ctx)
-    hg_target = os.path.join(TARGET, DFL_REPO)
+    hg_target = os.path.join(target, DFL_REPO)
     print "cloning %s, this can take some minutes" % args.dfl_repo
     cmd_call("hg", "clone", args.dfl_repo, hg_target)
     print "updating the repo to %s" % args.revision
     cmd_call("hg", "up", args.revision)
     print "copying %s to %s" % (os.path.join(hg_target, "src"),
-                                os.path.join(TARGET, DFLSRC))
+                                os.path.join(target, DFLSRC))
     shutil.copytree(os.path.join(hg_target, "src"), os.path.join(target, DFLSRC))
     shutil.rmtree(hg_target)
