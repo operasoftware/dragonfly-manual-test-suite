@@ -4,6 +4,8 @@ import json
 import shutil
 import string
 import time
+import subprocess
+import argparse
 from urllib import quote, unquote
 
 BLACKLIST = [".hg"]
@@ -16,7 +18,15 @@ CHARS = string.ascii_letters + string.digits
 TARGET = "build"
 SRC = "src"
 TESTS_SRC = "tests"
+DFLSRC = "DFLSRC"
+DFL_REPO = "DFLHG"
+DFL_BB_REPO = "https://bitbucket.org/scope/dragonfly-stp-1"
 
+def cmd_call(*args):
+    return subprocess.Popen(args, 
+                            stdout=subprocess.PIPE,
+                            stdin=subprocess.PIPE,
+                            stderr=subprocess.PIPE).communicate()
 
 class ReadmeContextError(Exception):
     def __init__(self, value):
@@ -305,14 +315,31 @@ def create_test_lists(src, target, ctx):
         with open(os.path.join(target_path, name), "wb") as f:
             f.write(json.dumps(ids, indent=4, sort_keys=True))
 
+def _parse_args():
+    parser = argparse.ArgumentParser(description="""Script to create the manual 
+                                                    test suite for Opera Dragnfly""")
+    parser.add_argument("tests",
+                        nargs="?",
+                        default=TESTS_SRC, 
+                        help="the directory with the tests (default: %(default)s))")
+    parser.add_argument("target",
+                        nargs="?",
+                        default=TARGET, 
+                        help="target path for the test suite (default: %(default)s))")
+    parser.add_argument("--dfl-repo",
+                        default=DFL_BB_REPO,
+                        dest="dfl_repo",
+                        help="the Dragonfly repo (default: %(default)s))")
+    parser.add_argument("-r", "--revision",
+                        default="tip",
+                        help="""the target revision of the Dragonfly src 
+                                directory (default: %(default)s))""")
+    return parser.parse_args()
+
 if __name__ == "__main__":
-    argv = sys.argv
-    tests = TESTS_SRC
-    target = TARGET
-    if len(argv) > 1:
-        tests = argv[1]
-    if len(argv) > 2:
-        target = argv[2]
+    args = _parse_args()
+    tests = args.tests
+    target = args.target
     ctx = CTX(tests, target)
     count = 5
     while (count):
@@ -334,3 +361,12 @@ if __name__ == "__main__":
         f.write(json.dumps(pathkeys, indent=4, sort_keys=True))
     create_folders(tests, target, ctx)
     create_test_lists(tests, target, ctx)
+    hg_target = os.path.join(TARGET, DFL_REPO)
+    print "cloning %s, this can take some minutes" % args.dfl_repo
+    cmd_call("hg", "clone", args.dfl_repo, hg_target)
+    print "updating the repo to %s" % args.revision
+    cmd_call("hg", "up", args.revision)
+    print "copying %s to %s" % (os.path.join(hg_target, "src"),
+                                os.path.join(TARGET, DFLSRC))
+    shutil.copytree(os.path.join(hg_target, "src"), os.path.join(target, DFLSRC))
+    shutil.rmtree(hg_target)
