@@ -378,3 +378,6 @@ def update():
             path = os.path.join(hg_target, name)
             # if os.path.exists(path):
             shutil.rmtree(path) if os.path.isdir(path) else os.unlink(path)
+
+if __name__ == "__main__":
+    update()
