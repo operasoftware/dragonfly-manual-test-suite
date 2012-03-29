@@ -18,8 +18,7 @@ CHARS = string.ascii_letters + string.digits
 TARGET = "build"
 SRC = "src"
 TESTS_SRC = "tests"
-DFLSRC = "DFLSRC"
-DFL_REPO = "DFLHG"
+DFL_REPO = "DFL"
 DFL_BB_REPO = "https://bitbucket.org/scope/dragonfly-stp-1"
 
 def cmd_call(*args):
@@ -374,10 +373,8 @@ def update():
         print err
         return
     print out
-    print "copying %s to %s" % (os.path.join(hg_target, "src"),
-                                os.path.join(target, DFLSRC))
-    shutil.copytree(os.path.join(hg_target, "src"), os.path.join(target, DFLSRC))
-    shutil.rmtree(hg_target)
-
-if __name__ == "__main__":
-    update()
+    for name in os.listdir(hg_target):
+        if name.startswith(".hg"):
+            path = os.path.join(hg_target, name)
+            # if os.path.exists(path):
+            shutil.rmtree(path) if os.path.isdir(path) else os.unlink(path)
