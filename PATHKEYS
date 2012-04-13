@@ -218,7 +218,7 @@
             }, 
             "pseudo_classes": {
                 "dirs": {}, 
-                "short": "n"
+                "short": "o"
             }, 
             "pseudo_element_setting": {
                 "dirs": {}, 
@@ -227,6 +227,10 @@
             "pseudo_elements": {
                 "dirs": {}, 
                 "short": "m"
+            }, 
+            "pseudo_elements_context_menu": {
+                "dirs": {}, 
+                "short": "n"
             }, 
             "search": {
                 "dirs": {}, 
