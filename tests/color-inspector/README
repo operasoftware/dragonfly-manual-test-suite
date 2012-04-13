@@ -1,21 +1,20 @@
 label: Show and hide colorpicker
 url: ./b.html
 desc:
-  - Open the testcase and inspect "test"
+  - Inspect "test"
   - Verify that a small color swatch appears at the end of the color declaration for 'h1'
   - Click the color swatch
-  - Verify that an utility window to edit the color value opens
-  - Verify that no other property can be edited while the color picker is opened
-  - Verify that the window can be closed by clicking the close button
-  - Verify that the window gets closed on switching to an other mode
+  - Verify that a color picker is shown
+  - Verify that the color picker is closed on clicking "Cancel", "OK" or outside the popup
+  - Verify that the color picker is centered vertically in relation the the color swatch (if there is enough space) and that an arrow points to the color swatch
 
 label: Edit color with visual controls
 url: ./b.html
 desc:
-  - Open the testcase and inspect "test"
+  - Inspect "test"
   - Click the color swatch of the color declaration to open the color picker
   - Verify that you can move around the circle with the mouse
-  - Verify that the color examples in the top right corner changes accordingly
+  - Verify that the color example under the color space box is updated
   - Verify that the values in all inputs updated accordingly
   - Verify that the color value gets updated accordingly in the 'Styles' panel
   - Verify that the color in the host document changes accordingly
@@ -25,27 +24,22 @@ desc:
 label: Edit color with inputs
 url: ./b.html
 desc:
-  - Open the testcase and inspect "test"
+  - Inspect "test"
   - Click the color swatch of the color declaration to open the color picker
   - Edit the value of one of the inputs
   - Verify that the other inputs are updated accordingly
-  - Verify that the color examples in the top right corner changes accordingly
+  - Verify that the color example under the color space box changes accordingly
   - Verify that the color in the host document changes accordingly
   - Verify the above for each of the inputs
+  - Verify that alpha values can be changed
 
-label: Edit transparent color
+label: Color palette
 url: ./b.html
 desc:
-  - Open the testcase and inspect "test"
-  - Click the color swatch of the background-color declaration to open the color picker
-  - Verify that there are additional controls for the alpha value, a vertical slider and an input
-  - Verify that the color examples gets a splitted background with black and white
-  - Change the alpha value with the slider
-  - Verify that the color examples in the top right corner changes accordingly
-  - Verify that the values in the input updates accordingly
-  - Verify that the color value gets updated accordingly in the 'Styles' panel
-  - Verify that the color in the host document changes accordingly
-  - Verify that the aplpha value can be changed in the same way with in the alpha input field
+  - Inspect "test"
+  - Open the color palette in the bottom left corner
+  - Verify that a color is added to the palette when clicking the + sign
+  - Verify that a color is deleted from the palette when right-clicking a color swatch and choosing "Delete color"
 
 label: Color swatch for 'currentColor'
 url: ./a.html

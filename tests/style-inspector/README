@@ -88,7 +88,7 @@ url: ./pseudo-test.html
 desc:
  - Make sure after/before/first-letter and first-line pseudo elements show up in the DOM view only for elements that are descendants of the <html> element
  - Select a pseudo element
- - Make sure that the Style side panel is updated with the according styling, i.e. you see the normal styling for the element of which the pseudo element belongs to, and the psuedo element styling at the top
+ - Make sure that the Style side panel is is showing the style for the pseudo element only (i.e. not the styling for the element itself)
  - Make sure that the style can be edited
 
 label: Pseudo classes
@@ -98,4 +98,11 @@ desc:
  - Make sure the :link pseudo class is visible
  - From the dropdown, check all pseudo classes and make sure they all get visible
  - Select another element and make sure the same pseudo classes still apply
+
+label: Quick declaration insertion
+url: ./a.html
+desc:
+ - Hover beneath the last declaration in a rules
+ - Verify that a + sign and a line gets display
+ - Verify that clicking when the line is visible inserts an edit field, and that editing works like usual
 
