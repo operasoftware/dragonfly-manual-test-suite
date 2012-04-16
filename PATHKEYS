@@ -1,6 +1,10 @@
 {
     "color-inspector": {
         "dirs": {
+            "color_palette": {
+                "dirs": {}, 
+                "short": "i"
+            }, 
             "color_swatch_for_'currentcolor'": {
                 "dirs": {}, 
                 "short": "f"
@@ -231,6 +235,10 @@
             "pseudo_elements_context_menu": {
                 "dirs": {}, 
                 "short": "n"
+            }, 
+            "quick_declaration_insertion": {
+                "dirs": {}, 
+                "short": "p"
             }, 
             "search": {
                 "dirs": {}, 
