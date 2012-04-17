@@ -31,7 +31,10 @@ templates.main = function()
                    "value": "Export"}],
         ["input", {"type": "button",
                    "data-handler": "clear-state",
-                   "value": "Clear state"}]]],
+                   "value": "Clear state"}],
+        ["input", {"type": "button",
+                   "data-handler": "freeze-configuration",
+                   "value": "Freeze configuration"}]]],
     ["div", {"class": "sidepanel"}]]);
 };
 

@@ -333,6 +333,11 @@ def _parse_args():
                         default="tip",
                         help="""the target revision of the Dragonfly src 
                                 directory (default: %(default)s))""")
+    parser.add_argument("--skip-clone",
+                        action="store_true",
+                        default=False,
+                        dest="skip_clone",
+                        help="skip cloning the Dragonfly repo")
     return parser.parse_args()
 
 def update():
@@ -361,23 +366,24 @@ def update():
     create_folders(tests, target, ctx)
     create_test_lists(tests, target, ctx)
     hg_target = os.path.join(target, DFL_REPO)
-    print "cloning %s, this can take some minutes" % args.dfl_repo
-    out, err = cmd_call("hg", "clone", args.dfl_repo, hg_target)
-    if err:
-        print err
-        return
-    print out
-    print "updating the repo to %s" % args.revision
-    out, err = cmd_call("hg", "up", args.revision)
-    if err:
-        print err
-        return
-    print out
-    for name in os.listdir(hg_target):
-        if name.startswith(".hg"):
-            path = os.path.join(hg_target, name)
-            # if os.path.exists(path):
-            shutil.rmtree(path) if os.path.isdir(path) else os.unlink(path)
+    if not args.skip_clone:
+        print "cloning %s, this can take some minutes" % args.dfl_repo
+        out, err = cmd_call("hg", "clone", args.dfl_repo, hg_target)
+        if err:
+            print err
+            return
+        print out
+        print "updating the repo to %s" % args.revision
+        out, err = cmd_call("hg", "up", args.revision)
+        if err:
+            print err
+            return
+        print out
+        for name in os.listdir(hg_target):
+            if name.startswith(".hg"):
+                path = os.path.join(hg_target, name)
+                # if os.path.exists(path):
+                shutil.rmtree(path) if os.path.isdir(path) else os.unlink(path)
 
 if __name__ == "__main__":
     update()

@@ -27,6 +27,8 @@
   var _cursor = 0;
   var _current_test = null;
   var _keyidentifier = null;
+  var _options = {};
+  var _is_frozen = false;
 
   var expand_collapse = function(event, target)
   {
@@ -295,12 +297,32 @@
   {
     XMLHttpRequest.get_json(path, function(data)
     {
-      container.append_tmpl(templates.folder_expanded(data, _test_path_list));
-      container.classList.add("open");
-      if (cb)
-        cb();
-      update_test_states();
+      if (!container.classList.contains("open"))
+      {
+        container.append_tmpl(templates.folder_expanded(data, _test_path_list));
+        container.classList.add("open");
+        if (_is_frozen)
+          hide_components(container.querySelectorAll("h3"));
+
+        if (_options.test_run.length)
+          configure_test_run();
+
+        if (cb)
+          cb();
+
+        update_test_states();
+      }
     });
+  };
+
+  var hide_components = function(h3s)
+  {
+    FOR_EACH(h3s, function(h3)
+    {
+      var comp = h3.dataset.path;
+      if (comp && !_test_path_list.some(function(path) { return path.startswith(comp); }))
+        h3.parentNode.classList.add("hidden");
+    })    
   };
 
   var close_unrelated_folders = function()
@@ -396,6 +418,62 @@
     show_initial_view();
   };
 
+  var configure_test_run = function()
+  {
+    _options.test_run.forEach(function(component)
+    {
+      var parts = component.split(".");
+      var comp = "";
+      for (var i = 0, part; part = parts[i]; i++)
+      {
+        comp += (comp ? "." : "") + part;
+        var h3 = document.querySelector("[data-path=\"" + comp + "\"]");
+        if (h3)
+        {
+          if (i == parts.length - 1)
+          {
+            var checkbox = h3.querySelector("[data-handler=\"add-remove-tests\"]");
+            if (!checkbox.checked)
+              checkbox.dispatchMouseEvent("click");
+          }
+          else
+          {
+            if (!h3.parentNode.classList.contains("open"))
+              h3.dispatchMouseEvent("click");
+          }
+        }
+      };
+    });
+
+    _test_path_list.forEach(function(comp)
+    {
+      var i = _options.test_run.indexOf(comp);
+      if (i > -1)
+        _options.test_run.splice(i, 1);
+    });
+
+    if (!_options.test_run.length)
+      freeze_configuration();
+  };
+
+  var freeze_configuration = function()
+  {
+    var button = document.querySelector("[data-handler=\"freeze-configuration\"]");
+    if (_is_frozen)
+    {
+      _is_frozen = false;
+      button.value = "Freeze configuration";
+      document.body.classList.remove("frozen");
+    }
+    else
+    {
+      _is_frozen = true;
+      button.value = "Unfreeze configuration";
+      document.body.classList.add("frozen");
+      hide_components(document.querySelectorAll(".sidepanel h3"));
+    }
+  };
+
   var show_initial_view = function()
   {
     document.body.innerHTML = "";
@@ -405,7 +483,9 @@
     {
       expand_folder(root, FOLDER_PATH.replace("%s", "root"), function()
       {
-        if (_test_id_list.length)
+        if (_options.test_run.length)
+          configure_test_run();
+        else if (_test_id_list.length)
           show_test(null, null, _test_id_list[_cursor], expand_current_test);
       });
     }
@@ -459,8 +539,26 @@
     }
   };
 
+  var parse_query = function()
+  {
+    var options = {};
+    window.location.search.slice(1).split("&").forEach(function(item)
+    {
+      var pos = item.indexOf("=");
+      if (pos > -1)
+        options[item.slice(0, pos).replace(/-/g, "_").trim()] = item.slice(pos + 1).trim();  
+    });
+
+    if (options.test_run)
+      options.test_run = options.test_run.split(",").map(function(item) { return item.trim(); });
+
+    return options;
+
+  }
+
   var setup = function()
   {
+    _options = parse_query();
     var cursor = localStorage.getItem("dflmts.cursor");
     if (cursor)
       _cursor = Number(cursor);
@@ -484,6 +582,7 @@
     EventHandler.register("click", "test-skipped", test_skipped);
     EventHandler.register("click", "export-state", export_state);
     EventHandler.register("click", "clear-state", clear_state);
+    EventHandler.register("click", "freeze-configuration", freeze_configuration);
     var browser = window.chrome ? "chrome" : window.opera ?"opera" : "firefox";
     _keyidentifier = new KeyIdentifier(onshortcut, browser);
     _keyidentifier.set_shortcuts(["up", "down"]);
