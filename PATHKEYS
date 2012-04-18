@@ -289,5 +289,18 @@
             }
         }, 
         "short": "d"
+    }, 
+    "watches": {
+        "dirs": {
+            "add_a_watch": {
+                "dirs": {}, 
+                "short": "a"
+            }, 
+            "right_click_option_for_a_watch_entry": {
+                "dirs": {}, 
+                "short": "b"
+            }
+        }, 
+        "short": "i"
     }
 }
