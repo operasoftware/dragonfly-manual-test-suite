@@ -35,7 +35,9 @@ templates.main = function()
         ["input", {"type": "button",
                    "data-handler": "freeze-configuration",
                    "value": "Freeze configuration"}]]],
-    ["div", {"class": "sidepanel"}]]);
+    ["div", {"class": "sidepanel"}],
+    ["div", {"class": "sidepanel-resize",
+             "data-handler": "resize-panel"}]]);
 };
 
 templates.summary = function(total, passed, failed, skipped)

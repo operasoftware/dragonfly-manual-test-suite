@@ -35,11 +35,23 @@ h2
   overflow: auto;
   box-shadow: 1px 0px 5px 0px hsl(0, 0%, 75%);
 }
+
+.sidepanel-resize
+{
+  position: absolute;
+  left: 348px;
+  width: 5px;
+  top: 0;
+  height: 100%;
+  cursor: w-resize;
+}
+
 .sidepanel ul
 {
   list-style: none;
   padding-left: 36px;
 }
+
 .sidepanel h3
 {
   margin: 0;
