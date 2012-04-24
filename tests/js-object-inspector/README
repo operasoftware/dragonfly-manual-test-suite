@@ -5,3 +5,12 @@ desc:
   - Go to Properties and expand the 'style' property.
   - Verify that the number properties are displayed above the named properties.
   - Verify that the number and the named properties are sorted correctly.
+
+label: Getters
+url: ./getters.html
+desc:
+  - Open the console and verify that there is an entry 'Object'.
+  - Expand it and its first prototype.
+  - Click all getters and verify that you get the according values.
+  - Expand the 'a' member and its first prototype.
+  - Click all getters and verify that you get the according values.

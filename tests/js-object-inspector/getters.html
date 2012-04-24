@@ -1,0 +1,16 @@
+<!doctype html>
+<script>
+var T = function()
+{
+  this.__defineGetter__("foo", function() { return "bar" });
+};
+
+T.prototype = new function()
+{
+  this.__defineGetter__("foo_proto", function() { return "bar_proto" });
+};
+
+var t = new T();
+t.a = new T();
+console.log(t)
+</script>
