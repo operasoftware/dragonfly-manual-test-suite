@@ -8,6 +8,8 @@ var T = function()
 T.prototype = new function()
 {
   this.__defineGetter__("foo_proto", function() { return "bar_proto" });
+  this.__defineGetter__("foo\"bar", function() { return "foo\"bar" });
+  this.__defineGetter__("foo\\bar", function() { return "foo\\bar" });
 };
 
 var t = new T();
