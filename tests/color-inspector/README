@@ -5,7 +5,7 @@ desc:
   - Verify that a small color swatch appears at the end of the color declaration for 'h1'
   - Click the color swatch
   - Verify that a color picker is shown
-  - Verify that the color picker is closed on clicking "Cancel", "OK" or outside the popup
+  - Verify that the color picker is closed on clicking "Cancel", "OK", outside the popup or by pressing Esc
   - Verify that the color picker is centered vertically in relation the the color swatch (if there is enough space) and that an arrow points to the color swatch
 
 label: Edit color with visual controls
@@ -73,4 +73,20 @@ desc:
   - Verify that you can control the current position on the z axis with the mouse wheel.
   - Verify that the current position moves upwards on turning the wheel upwards independent on the mouse position.
 
+label: Canceling a colorpicker
+url: ./a.html
+desc:
+  - Inspect the body element
+  - Open the color picker and change the colorpicker
+  - Verify clicking "Cancel" closes the color picker and restores the color in the page and in the style inspector
+    (both the text and the color swatch).
+  - Verify that the same thing happens when pressing Esc
+
+label: Disabled palette and alpha input
+url: ./a.html
+desc:
+  - Go to Utilities > Color Palette, add a color if there is none
+  - Double click a row to open the color picker
+  - Verify that the color palette in the color picker is greyed out and that it doesn't open when hovering it
+  - Verify that the alpha input is disabled
 
