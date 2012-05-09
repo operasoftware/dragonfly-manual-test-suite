@@ -103,6 +103,19 @@ label: Quick declaration insertion
 url: ./a.html
 desc:
  - Hover beneath the last declaration in a rules
- - Verify that a + sign and a line gets display
- - Verify that clicking when the line is visible inserts an edit field, and that editing works like usual
+ - Verify that clicking the brace inserts an edit field, and that editing works like usual
+
+label: Changing color format
+url: ./a.html
+desc:
+ - Inspect body
+ - Go to Settings > Documents > Styles > Color format and change to all possible formats
+ - Verify that the color value is updated correctly
+ - Change format to Hex
+ - Change opacity to something else than 1
+ - Verify that the color is printed in RGBA
+ - Change format to HSL
+ - Verify that the color is printed in HSLA
+ - Submit an invalid color, e.g. `rgb(1,2,3,4)`
+ - Verify that the color is simply discarded without exceptions
 
