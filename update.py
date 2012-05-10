@@ -306,10 +306,11 @@ def create_test_lists(src, target, ctx):
     if not os.path.exists(target_path):
         os.makedirs(target_path)
     for p in ctx.readme_dirs:
-        ids = [e.short_id for e in ctx.dir_map[p].labels]
+        ids = []
         for p2 in ctx.readme_dirs:
             if not p == p2 and p2.startswith(p):
-                ids.extend([e.short_id for e in ctx.dir_map[p2].labels])
+                ids.extend(e.short_id for e in ctx.dir_map[p2].labels)
+        ids.extend(e.short_id for e in ctx.dir_map[p].labels)
         name = "%s.json" % p.replace("/", ".")
         with open(os.path.join(target_path, name), "wb") as f:
             f.write(json.dumps(ids, indent=4, sort_keys=True))

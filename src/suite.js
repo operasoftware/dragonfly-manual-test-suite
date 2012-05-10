@@ -329,7 +329,10 @@
     FOR_EACH(h3s, function(h3)
     {
       var comp = h3.dataset.path;
-      if (comp && !_test_path_list.some(function(path) { return path.startswith(comp); }))
+      if (comp && !_test_path_list.some(function(path)
+          {
+            return comp.startswith(path) || path.startswith(comp);
+          }))
         h3.parentNode.classList.add("hidden");
     })    
   };
