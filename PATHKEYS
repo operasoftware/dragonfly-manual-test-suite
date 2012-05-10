@@ -1,6 +1,18 @@
 {
     "color-inspector": {
         "dirs": {
+            "adjust_color_with_mousewheel_in_the_x_y_field": {
+                "dirs": {}, 
+                "short": "j"
+            }, 
+            "adjust_color_with_mousewheel_on_the_z_axis": {
+                "dirs": {}, 
+                "short": "k"
+            }, 
+            "canceling_a_colorpicker": {
+                "dirs": {}, 
+                "short": "l"
+            }, 
             "color_palette": {
                 "dirs": {}, 
                 "short": "i"
@@ -16,6 +28,10 @@
             "color_swatch_for_'transparent'": {
                 "dirs": {}, 
                 "short": "h"
+            }, 
+            "disabled_palette_and_alpha_input": {
+                "dirs": {}, 
+                "short": "m"
             }, 
             "edit_color_with_inputs": {
                 "dirs": {}, 
@@ -173,6 +189,10 @@
     }, 
     "js-object-inspector": {
         "dirs": {
+            "getters": {
+                "dirs": {}, 
+                "short": "c"
+            }, 
             "sorting_of_properties_in_object_inspection": {
                 "dirs": {}, 
                 "short": "b"
@@ -203,6 +223,10 @@
             "changing_a_property_to_another": {
                 "dirs": {}, 
                 "short": "b"
+            }, 
+            "changing_color_format": {
+                "dirs": {}, 
+                "short": "q"
             }, 
             "cycling_through_properties": {
                 "dirs": {}, 

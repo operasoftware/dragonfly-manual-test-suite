@@ -37,6 +37,7 @@ label: Color palette
 url: ./b.html
 desc:
   - Inspect "test"
+  - Open the color picker
   - Open the color palette in the bottom left corner
   - Verify that a color is added to the palette when clicking the + sign
   - Verify that a color is deleted from the palette when right-clicking a color swatch and choosing "Delete color"
@@ -45,19 +46,19 @@ label: Color swatch for 'currentColor'
 url: ./a.html
 desc:
   - Inspect the body element
-  - Make sure that a color one rules has 'color: currentColor' with a swatch that is styled as a white square with a diagonal gray line
+  - Make sure that one rule has 'color: currentColor' with a swatch that is styled as a white square with a diagonal gray line
 
 label: Color swatch for 'inherit'
 url: ./a.html
 desc:
   - Inspect the body element
-  - Make sure that a color one rules has 'color: inherit' with a swatch that is styled as a white square with a diagonal gray line
+  - Make sure that one rule has 'color: inherit' with a swatch that is styled as a white square with a diagonal gray line
 
 label: Color swatch for 'transparent'
 url: ./a.html
 desc:
   - Inspect the body element
-  - Make sure that a color one rules has 'color: transparent' with a swatch that is styled as a white square with gray checkers
+  - Make sure that one rule has 'color: transparent' with a swatch that is styled as a white square with gray checkers
 
 label: Adjust color with mousewheel in the x y field
 url: ./index.html
@@ -74,7 +75,7 @@ desc:
   - Verify that the current position moves upwards on turning the wheel upwards independent on the mouse position.
 
 label: Canceling a colorpicker
-url: ./a.html
+url: ./index.html
 desc:
   - Inspect the body element
   - Open the color picker and change the colorpicker
