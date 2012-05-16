@@ -209,6 +209,79 @@
         }, 
         "short": "e"
     }, 
+    "network-inspector": {
+        "dirs": {
+            "clear": {
+                "dirs": {}, 
+                "short": "o"
+            }, 
+            "details_and_filtering": {
+                "dirs": {}, 
+                "short": "j"
+            }, 
+            "error_displaying": {
+                "dirs": {}, 
+                "short": "l"
+            }, 
+            "incomplete_warning": {
+                "dirs": {}, 
+                "short": "p"
+            }, 
+            "network_summary": {
+                "dirs": {}, 
+                "short": "g"
+            }, 
+            "pause": {
+                "dirs": {}, 
+                "short": "b"
+            }, 
+            "request_details": {
+                "dirs": {}, 
+                "short": "d"
+            }, 
+            "request_details_-_forms": {
+                "dirs": {}, 
+                "short": "f"
+            }, 
+            "request_details_-_multipart": {
+                "dirs": {}, 
+                "short": "e"
+            }, 
+            "search": {
+                "dirs": {}, 
+                "short": "h"
+            }, 
+            "sequence_tooltips": {
+                "dirs": {}, 
+                "short": "q"
+            }, 
+            "smoke_test": {
+                "dirs": {}, 
+                "short": "a"
+            }, 
+            "switch_graph/data_view": {
+                "dirs": {}, 
+                "short": "c"
+            }, 
+            "type_filters": {
+                "dirs": {}, 
+                "short": "i"
+            }, 
+            "unload_event_display": {
+                "dirs": {}, 
+                "short": "n"
+            }, 
+            "url_param_display": {
+                "dirs": {}, 
+                "short": "m"
+            }, 
+            "xhr_filter": {
+                "dirs": {}, 
+                "short": "k"
+            }
+        }, 
+        "short": "j"
+    }, 
     "repl": {
         "dirs": {
             "xpath_result_types": {
