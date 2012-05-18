@@ -393,6 +393,14 @@
                     "defaults": {
                         "dirs": {}, 
                         "short": "b"
+                    }, 
+                    "resetting": {
+                        "dirs": {}, 
+                        "short": "d"
+                    }, 
+                    "store_/_restore": {
+                        "dirs": {}, 
+                        "short": "c"
                     }
                 }, 
                 "short": "c"
