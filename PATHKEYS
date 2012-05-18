@@ -183,6 +183,23 @@
                     }
                 }, 
                 "short": "a"
+            }, 
+            "watches": {
+                "dirs": {
+                    "add_a_watch": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }, 
+                    "add_invalid_watch": {
+                        "dirs": {}, 
+                        "short": "c"
+                    }, 
+                    "right_click_option_for_a_watch_entry": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }
+                }, 
+                "short": "d"
             }
         }, 
         "short": "a"

@@ -313,7 +313,7 @@
         if (_is_frozen)
           hide_components(container.querySelectorAll("h3"));
 
-        if (_options.test_run.length)
+        if (_options.test_run && _options.test_run.length)
           configure_test_run();
 
         if (cb)
@@ -498,7 +498,7 @@
     {
       expand_folder(root, FOLDER_PATH.replace("%s", "root"), function()
       {
-        if (_options.test_run.length)
+        if (_options.test_run && _options.test_run.length)
           configure_test_run();
         else if (_test_id_list.length)
           show_test(null, null, _test_id_list[_cursor], expand_current_test);
