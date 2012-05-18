@@ -6,6 +6,7 @@ import string
 import time
 import subprocess
 import argparse
+import tempfile
 from urllib import quote, unquote
 
 BLACKLIST = [".hg"]
@@ -346,6 +347,14 @@ def update():
     tests = args.tests
     target = args.target
     ctx = CTX(tests, target)
+    temp_dir_path = ""
+    dfl_repo_path = ""
+    if args.skip_clone:
+        dfl_repo_path = os.path.join(target, DFL_REPO)
+        if os.path.exists(dfl_repo_path):
+            temp_dir_path = tempfile.mkdtemp()
+            shutil.copytree(dfl_repo_path, os.path.join(temp_dir_path, DFL_REPO))
+            dfl_repo_path = os.path.join(temp_dir_path, DFL_REPO)
     count = 5
     while (count):
         try:
@@ -367,7 +376,11 @@ def update():
     create_folders(tests, target, ctx)
     create_test_lists(tests, target, ctx)
     hg_target = os.path.join(target, DFL_REPO)
-    if not args.skip_clone:
+    if args.skip_clone:
+        if dfl_repo_path:
+            shutil.copytree(dfl_repo_path, hg_target)
+            shutil.rmtree(temp_dir_path)
+    else:
         print "cloning %s, this can take some minutes" % args.dfl_repo
         out, err = cmd_call("hg", "clone", args.dfl_repo, hg_target)
         if err:
