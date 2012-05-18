@@ -6,7 +6,6 @@ import string
 import time
 import subprocess
 import argparse
-import tempfile
 from urllib import quote, unquote
 
 BLACKLIST = [".hg"]
@@ -349,23 +348,34 @@ def update():
     ctx = CTX(tests, target)
     temp_dir_path = ""
     dfl_repo_path = ""
-    if args.skip_clone:
-        dfl_repo_path = os.path.join(target, DFL_REPO)
-        if os.path.exists(dfl_repo_path):
-            temp_dir_path = tempfile.mkdtemp()
-            shutil.copytree(dfl_repo_path, os.path.join(temp_dir_path, DFL_REPO))
-            dfl_repo_path = os.path.join(temp_dir_path, DFL_REPO)
     count = 5
     while (count):
         try:
-            if os.path.exists(target):
+            if args.skip_clone:
+                for n in os.listdir(target):
+                    p = os.path.join(target, n)
+                    if os.path.isfile(p):
+                        os.unlink(p)
+                    elif os.path.isdir(p) and not n == DFL_REPO:
+                        shutil.rmtree(p)
+            else:
                 shutil.rmtree(target)
-                break
+            break
         except:
             time.sleep(0.2)
         count -= 1
     time.sleep(0.2)
-    shutil.copytree(os.path.join(SRC, "."), os.path.join(target))
+    if args.skip_clone:
+        if not os.path.exists(target):
+            os.mkdir(target)
+        for n in os.listdir(SRC):
+            p = os.path.join(SRC, n)
+            if os.path.isfile(p):
+                shutil.copy(p, os.path.join(target, n))
+            else:
+                shutil.copytree(p, os.path.join(target, n))
+    else:
+        shutil.copytree(SRC, target)
     pathkeys = {}
     with open(PATHKEYS, "rb") as f:
         pathkeys = json.loads(f.read())
@@ -376,11 +386,7 @@ def update():
     create_folders(tests, target, ctx)
     create_test_lists(tests, target, ctx)
     hg_target = os.path.join(target, DFL_REPO)
-    if args.skip_clone:
-        if dfl_repo_path:
-            shutil.copytree(dfl_repo_path, hg_target)
-            shutil.rmtree(temp_dir_path)
-    else:
+    if not args.skip_clone:
         print "cloning %s, this can take some minutes" % args.dfl_repo
         out, err = cmd_call("hg", "clone", args.dfl_repo, hg_target)
         if err:
