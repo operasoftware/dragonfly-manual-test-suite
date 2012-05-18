@@ -75,7 +75,9 @@ desc:
   - Click the various type filter buttons.
   - Verify that the view is filtered accordingly.
   - Ctrl+Click / Cmd+Click another button.
-  - Verify that requests of both types are shown.
+  - Verify that requests matching at least one of the criteria are shown.
+  - Verify that you can add and remove all of the filters
+  - Verify that you can't unselect the last filter you clicked
 
 label: Details and filtering
 url: https://homes.oslo.osa/dherzog/testcase/network/

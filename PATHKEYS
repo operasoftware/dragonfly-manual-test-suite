@@ -383,6 +383,19 @@
                     }
                 }, 
                 "short": "b"
+            }, 
+            "sortable-table": {
+                "dirs": {
+                    "basic_test": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }, 
+                    "defaults": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }
+                }, 
+                "short": "c"
             }
         }, 
         "short": "d"
