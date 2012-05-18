@@ -1,0 +1,30 @@
+<!doctype html>
+<title>GetFunctionPositions</title>
+<script>
+
+var onclick = function(event)
+{
+  alert(event.target.nodeName);
+};
+
+var FOR_EACH = Array.prototype.forEach.call.bind(Array.prototype.forEach);
+
+window.onload = function()
+{
+  FOR_EACH(document.querySelectorAll("body"), function(p)
+  {
+    p.addEventListener("click", onclick, false);
+  });
+
+  FOR_EACH(document.querySelectorAll("p"), function(p)
+  {
+    p.addEventListener("click", onclick, false);
+  });
+}
+
+</script>
+<div>
+  <p>text
+  <p>text
+  <p>text
+</div>
