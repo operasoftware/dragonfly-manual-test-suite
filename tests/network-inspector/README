@@ -130,7 +130,7 @@ desc:
   - Verify that the "Reload" and close button work. Also ensure that repeating this test after clicking "Do not show again" will not show the note anymore.
 
 label: Sequence tooltips
-url: ./graph-tooltips.xml
+url: ../DFL/test-scripts/network-view/graph-tooltips.xml
 desc:
   - Hover over the graphs in the waterfall.
   - Compare the tooltips with what's "Expected" in the test.

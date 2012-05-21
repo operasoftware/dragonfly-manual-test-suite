@@ -226,6 +226,15 @@
         }, 
         "short": "e"
     }, 
+    "libs": {
+        "dirs": {
+            "uri_class": {
+                "dirs": {}, 
+                "short": "a"
+            }
+        }, 
+        "short": "k"
+    }, 
     "network-inspector": {
         "dirs": {
             "clear": {
