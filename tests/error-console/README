@@ -40,9 +40,9 @@ url: ./error.html
 desc:
   - Open the testcase.
   - Type "foo" into the filter field.
-  - Verify that 3 errors are shown and 4 matches are highlighted.
+  - Verify that all errors that are shown, have a match that's highlighted.
   - Verify that the first (JS) Error is expanded.
-  - Verify that the error count on the top tab is now 3.
+  - Verify that the error count on the top tab reflects the number of bugs that you see.
 
 label: CSS Filter
 url: ./error.html
@@ -50,9 +50,9 @@ desc:
   - Open the testcase.
   - Go to Settings, Error Log.
   - Enable "Use CSS Filter".
-  - Verify that the error count went down to 3.
+  - Verify that the error count went down by one.
   - Remove "_line-height" from the field.
-  - Verify that the error count is back at 4.
+  - Verify that the error count is back up.
 
 label: Error location
 url: ./error.html

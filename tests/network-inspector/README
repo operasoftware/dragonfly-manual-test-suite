@@ -1,0 +1,136 @@
+label: Smoke test
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Load the page.
+  - Open Dragonfly.
+  - Verify that there are no network resources are listed, instead a button to reload the debugged page.
+  - Click the button.
+  - Verify that the page reloads and that the graph view with the requests is shown.
+
+label: Pause
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Click the pause button.
+  - Reload the debugged page.
+  - Verify that pause button is now off again.
+  - Click the pause button.
+  - Click one of the buttons in the test.
+  - Verify that you don't see an additional resource being added.
+  - Click the pause button to unpause.
+  - Verify that the additional request is shown additionally.
+
+label: Switch graph/data view
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Click the Data view button.
+  - Close and re-open Dragonfly.
+  - Verify that the Network view is still shown in data mode.
+  - Sort by Size by clicking the table header.
+  - Hover the rows and verify that the list in in the same order as the table.
+  - Click the Graph view button.
+  - Verify that the waterfall is displayed in the correct (original) order.
+
+label: Request details
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Click a request.
+  - Verify that the details view is shown.
+  - Verify that the up / down keys get you the next / previous request's details view.
+  - Verify that the escape key closes the details view.
+
+label: Request details - Multipart
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - In the test, click the "Post - multipart/form-data" button.
+  - Open the according detail view.
+  - Verify that "Request - multipart" is shown as a headline in the request body is divided visually.
+
+label: Request details - Forms
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - In the test, click the "Post - application/x-www-form-urlencoded" button.
+  - Open the according detail view.
+  - Verify that Name - Value pairs are shown as the request body.
+
+label: Network summary
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Verify that a correct summary of the requests is displayed at the bottom of the main view.
+  - Click the Images filter button.
+  - Verify that the summary says "1 Request" in singular, and that the size is less than in the unfiltered view.
+
+label: Search
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - In the test, click the Get via XHR button.
+  - Search for "search-for-me".
+  - Verify that the string is highlighted in the URL list.
+  - Open the details of that request.
+  - Verify that the string is highlighted twice in the details, but no longer in the URL list.
+  - Verify that pressing enter toggles the highlight between these two.
+
+label: Type Filters
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Click the various type filter buttons.
+  - Verify that the view is filtered accordingly.
+  - Ctrl+Click / Cmd+Click another button.
+  - Verify that requests matching at least one of the criteria are shown.
+  - Verify that you can add and remove all of the filters
+  - Verify that you can't unselect the last filter you clicked
+
+label: Details and filtering
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Open the details of some request.
+  - Press the filter button that matches it's type.
+  - Verify that the details view is still shown.
+  - Click a different filter button.
+  - Verify that the details and the entry itself is not shown anymore.
+
+label: XHR filter
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Click the XHR filter button
+  - Click the "Get via XHR" button in the test
+  - Verify that the "XHR" filter the according requests and that it has the extra XHR icon.
+  - Verify that no requests are shown that weren't retrieved via XHR.
+
+label: Error displaying
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - In the test, click the "Error response" button.
+  - Verify that the url in the URL list is styled red.
+  - Verify that the URL tooltip shows the URL prefixed with "404 (Not Found) – ".
+
+label: URL param display
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - In the test, click the "Get via XHR" button.
+  - Verify that the URL tooltip shows a name-value table of the get parameters in the URL.
+
+label: Unload event display
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - In the test, click the "Get via XHR" button.
+  - Verify that the URL tooltip shows the URL prefixed with "Unreferenced – ".
+
+label: Clear
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Click the "Clear" button.
+  - Verify that the "Reload to see Resources" view is shown.
+
+label: Incomplete warning
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Click the "Clear" button.
+  - In the test, click the "Get via XHR" button.
+  - Verify that, under the summary, a note is shown to explain that not all requests are shown.
+  - Verify that the "Reload" and close buttons work.
+
+label: Sequence tooltips
+url: ../DFL/test-scripts/network-view/graph-tooltips.xml
+desc:
+  - Hover over the graphs in the waterfall.
+  - Compare the tooltips with what's "Expected" in the test.
