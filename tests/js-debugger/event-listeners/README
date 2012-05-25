@@ -64,11 +64,36 @@ desc:
 label: Interaction with the source position in the tooltip with JS source files loaded
 url: ./single-runtime.html
 desc:
-desc:
   - Ensure that all scripts of the document are loaded.
   - Expand the whole body in Documents.
   - Hover some of the listener icons and hover some of the source positions.
   - Verify that this shows the whole path of the file where the listener is added in a tooltip.
   - Click the source position.
   - Verify that this switches to Scripts and highlights the line where the listener is added. 
-  
+
+label: Listener view in the side panel
+url: ./single-runtime.html
+desc:
+  - Load the TC and open the Listener view in the side panel.
+  - Verify that you see an update button and several event types with an expander icon.
+  - Expand and collapse some of the event types.
+  - Verify that all nodes with a listener are shown.
+  - Verify that expanding the 'click' also shows the 'document' node.
+  - Verify that expanding the 'load' shows the 'window' object.
+  - Verify that the listener icons show the same tooltip as in the DOM view.
+  - Verify that when you click an node it is selected and displayed in the DOM view.
+  - Verify that when you click the 'window' or the 'document' object it is displayed in the Inspection panel.
+
+label: Update listener view in the side panel
+url: ./single-runtime.html
+desc:
+  - Load the TC and open the Listener view in the side panel.
+  - Expand some of the event types.
+  - Press the update button and verify that all the extended types will stay expanded.
+
+label: Listener view in the side panel with multiple runtimes
+url: ./multiple-runtimes.html
+desc:
+  - Load the TC and open the Listener view in the side panel.
+  - Verify that each runtime has its section.
+  - Verify that a section behaves in the same way as the view with a single runtime.
