@@ -134,3 +134,8 @@ url: ../DFL/test-scripts/network-view/graph-tooltips.xml
 desc:
   - Hover over the graphs in the waterfall.
   - Compare the tooltips with what's "Expected" in the test.
+
+label: Data URI
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Verify that a data URI is in the list of requests. It's content should be "data:text/html,<p>Hello data-uri.</p>".
