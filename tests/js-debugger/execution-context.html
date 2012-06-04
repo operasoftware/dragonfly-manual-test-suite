@@ -1,0 +1,3 @@
+<doctype html>
+<title>Test execution context</title>
+<p><iframe src="data:text/html,<script>window.onload = function() %0A{%0A  try%0A  {%0A    a.a;%0A  }%0A  catch(e) {}%0A};%0A</script>"></iframe>
