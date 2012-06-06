@@ -1,5 +1,5 @@
 label: Basic test
-url: ./basic.html
+url: ../DFL/test-scripts/ui-framework/sortable-table/basic.html
 desc:
   - Click the radio buttons to change the grouping option.
   - Verify that the items in the table are now grouped accordingly.
@@ -7,14 +7,14 @@ desc:
   - Verify that clicking a columns again reverses the order.
 
 label: Defaults
-url: ./advanced.html
+url: ../DFL/test-scripts/ui-framework/sortable-table/advanced.html
 desc:
   - Verify that the table by default is grouped by Gender.
   - Verify that the last 5 columns are selected.
   - Verify that the table is reverse-sorted by Birth Date (oldest first) in each group.
 
 label: Store / Restore
-url: ./advanced.html
+url: ../DFL/test-scripts/ui-framework/sortable-table/advanced.html
 desc:
   - Change the grouping, select and additional column and change the sorting.
   - Verify that after reloading, grouping, columns and sorting were restored.
@@ -25,7 +25,7 @@ desc:
   - Verify that grouping, columns and sorting are back to default.
 
 label: Resetting
-url: ./advanced.html
+url: ../DFL/test-scripts/ui-framework/sortable-table/advanced.html
 desc:
   - Select all columns by clicking the checkboxes.
   - Click the "Reset columns" button.
