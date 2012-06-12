@@ -25,6 +25,7 @@ desc:
   - Click the Data view button.
   - Close and re-open Dragonfly.
   - Verify that the Network view is still shown in data mode.
+  - Reload the debugged window to fetch its resources.
   - Sort by Size by clicking the table header.
   - Hover the rows and verify that the list in in the same order as the table.
   - Click the Graph view button.
@@ -77,7 +78,7 @@ desc:
   - Ctrl+Click / Cmd+Click another button.
   - Verify that requests matching at least one of the criteria are shown.
   - Verify that you can add and remove all of the filters
-  - Verify that you can't unselect the last filter you clicked
+  - Verify that you can't have less than one filter
 
 label: Details and filtering
 url: https://homes.oslo.osa/dherzog/testcase/network/
