@@ -32,3 +32,23 @@ desc:
   - Verify the column selection is back to default.
   - Click the "Reset sort" button.
   - Verify the order has changed and the table appears unsorted now (no arrow on the header).
+
+label: Stable sorting
+url: ../DFL/test-scripts/ui-framework/sortable-table/sorting.html
+desc:
+  - Sort by Color.
+  - Sort by Brand.
+  - Verify that BMWs in azure are listed before BMWs in black.
+  - Click the "Reset sort" button.
+  - Sort by Brand.
+  - Verify that the BMWs are listed in order of Initial Pos now.
+
+label: Stable sorting reverse
+url: ../DFL/test-scripts/ui-framework/sortable-table/sorting.html
+desc:
+  - Click the Brand header.
+  - Click the Brand header again to reverse.
+  - Verify that the Porsches are in (unreversed) order of Initial Pos and after that are the BMWs.
+  - Click the Color header.
+  - Verify that black Porsches are listed before black BMWs.
+  - Verify that black cars are listed before azure cars.
