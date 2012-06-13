@@ -1,0 +1,35 @@
+<!doctype html>
+<title>Event listeners multiple runtimes</title>
+<script>
+
+var test_handler = function(event)
+{
+  console.log(event.target.nodeName);
+};
+
+var FOR_EACH = Array.prototype.forEach.call.bind(Array.prototype.forEach);
+
+window.onload = function()
+{
+  FOR_EACH(document.querySelectorAll("body, p"), function(p)
+  {
+    p.addEventListener("click", test_handler, false);
+    p.addEventListener("mouseover", test_handler, false);
+    p.addEventListener("mouseout", test_handler, false);
+  });
+
+  document.addEventListener("click", test_handler, false);
+
+  console.log("hello")
+  opera.postError("hello")
+}
+
+</script>
+<div>
+  <p>text
+  <p>text
+  <p>text
+</div>
+<p><iframe src="./single-runtime.html"></iframe>
+<p><iframe src="./single-runtime.html"></iframe>
+<p><iframe src="http://opera.com"></iframe>

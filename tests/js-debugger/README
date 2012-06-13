@@ -1,0 +1,7 @@
+label: Execution context
+url: ./execution-context.html
+desc:
+  - Ensure that "break on exception" is enabled.
+  - Load the test case, open Dragonfly and reload the document.
+  - Verify that it stops "a.a".
+  - Verify that submitting "window" in the console works.

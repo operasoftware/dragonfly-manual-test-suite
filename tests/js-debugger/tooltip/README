@@ -56,4 +56,10 @@ desc:
   - Open the testcase.
   - Verify that in all three situations 'window', 'window.document' and 'window.document.body' shows a tooltip.
 
+label: DFL-3141
+url: ./index.html
+desc:
+  - Open the testcase, enable "Break on exceptions" and load scripts.
+  - Verify that the 'document' is selected correctly after the error bubble.
+
   
