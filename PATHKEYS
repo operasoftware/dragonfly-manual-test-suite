@@ -125,6 +125,60 @@
     }, 
     "js-debugger": {
         "dirs": {
+            "event-listeners": {
+                "dirs": {
+                    "interaction_with_the_handlers_in_the_tooltip_with_js_source_files_loaded": {
+                        "dirs": {}, 
+                        "short": "f"
+                    }, 
+                    "interaction_with_the_handlers_in_the_tooltip_without_js_source_files": {
+                        "dirs": {}, 
+                        "short": "c"
+                    }, 
+                    "interaction_with_the_source_position_in_listener_tooltip_without_js_source_files": {
+                        "dirs": {}, 
+                        "short": "d"
+                    }, 
+                    "interaction_with_the_source_position_in_the_tooltip_with_js_source_files_loaded": {
+                        "dirs": {}, 
+                        "short": "g"
+                    }, 
+                    "listener_icons_in_the_dom_view": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }, 
+                    "listener_tooltip_with_js_source_files_loaded": {
+                        "dirs": {}, 
+                        "short": "e"
+                    }, 
+                    "listener_tooltip_without_js_source_files": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }, 
+                    "listener_view_in_the_side_panel": {
+                        "dirs": {}, 
+                        "short": "h"
+                    }, 
+                    "listener_view_in_the_side_panel_with_multiple_runtimes": {
+                        "dirs": {}, 
+                        "short": "j"
+                    }, 
+                    "update_listener_view_in_the_side_panel": {
+                        "dirs": {}, 
+                        "short": "i"
+                    }
+                }, 
+                "short": "e"
+            }, 
+            "execution-context": {
+                "dirs": {
+                    "execution_context": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "f"
+            }, 
             "js-dropdown": {
                 "dirs": {
                     "script_select": {
@@ -172,6 +226,10 @@
                     "dfl-2900": {
                         "dirs": {}, 
                         "short": "e"
+                    }, 
+                    "dfl-3141": {
+                        "dirs": {}, 
+                        "short": "f"
                     }, 
                     "tooltip_features_in_js_source": {
                         "dirs": {}, 
@@ -240,6 +298,10 @@
             "clear": {
                 "dirs": {}, 
                 "short": "o"
+            }, 
+            "data_uri": {
+                "dirs": {}, 
+                "short": "r"
             }, 
             "details_and_filtering": {
                 "dirs": {}, 
@@ -316,6 +378,20 @@
             }
         }, 
         "short": "f"
+    }, 
+    "resource-inspector": {
+        "dirs": {
+            "highlight-line": {
+                "dirs": {
+                    "line_highlighting_in_resources": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "a"
+            }
+        }, 
+        "short": "l"
     }, 
     "style-inspector": {
         "dirs": {
@@ -410,6 +486,10 @@
                 }, 
                 "short": "b"
             }, 
+            "resize_window_horizontally": {
+                "dirs": {}, 
+                "short": "d"
+            }, 
             "sortable-table": {
                 "dirs": {
                     "basic_test": {
@@ -423,6 +503,14 @@
                     "resetting": {
                         "dirs": {}, 
                         "short": "d"
+                    }, 
+                    "stable_sorting": {
+                        "dirs": {}, 
+                        "short": "e"
+                    }, 
+                    "stable_sorting_reverse": {
+                        "dirs": {}, 
+                        "short": "f"
                     }, 
                     "store_/_restore": {
                         "dirs": {}, 
