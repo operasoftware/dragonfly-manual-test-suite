@@ -88,6 +88,9 @@
     var ret = [];
     for (var i = 0, path; path = paths[i]; i++)
     {
+      if (_options.test_run && !_options.test_run.contains(path))
+        continue;
+
       if (ret.every(function(npath) { return !path.startswith(npath + '.'); }))
         ret.push(path);
     }
@@ -329,11 +332,24 @@
     FOR_EACH(h3s, function(h3)
     {
       var comp = h3.dataset.path;
-      if (comp && !_test_path_list.some(function(path)
-          {
-            return comp.startswith(path) || path.startswith(comp);
-          }))
-        h3.parentNode.classList.add("hidden");
+      if (comp)
+      {
+        var overlap = function(path)
+        {
+          return comp.startswith(path) || path.startswith(comp);
+        };
+
+        if (!_test_path_list.some(overlap))
+          h3.parentNode.classList.add("hidden");
+      }
+      else
+      {
+        var ul = h3.get_ancestor("ul");
+        var li = ul && ul.get_ancestor("li");
+        var input = li && li.querySelector("input[type=\"checkbox\"]");
+        if (input && !input.checked)
+          h3.parentNode.classList.add("hidden");
+      }
     })    
   };
 
@@ -446,11 +462,13 @@
           {
             var checkbox = h3.querySelector("[data-handler=\"add-remove-tests\"]");
             if (!checkbox.checked)
+              // add-remove-tests
               checkbox.dispatchMouseEvent("click");
           }
           else
           {
             if (!h3.parentNode.classList.contains("open"))
+              // expand-collapse
               h3.dispatchMouseEvent("click");
           }
         }
