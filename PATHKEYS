@@ -82,6 +82,19 @@
         }, 
         "short": "c"
     }, 
+    "dom-search": {
+        "dirs": {
+            "dfl-3071": {
+                "dirs": {}, 
+                "short": "b"
+            }, 
+            "execution_context": {
+                "dirs": {}, 
+                "short": "a"
+            }
+        }, 
+        "short": "m"
+    }, 
     "error-console": {
         "dirs": {
             "clear": {
@@ -173,6 +186,19 @@
             "execution_context": {
                 "dirs": {}, 
                 "short": "e"
+            }, 
+            "execution-context": {
+                "dirs": {
+                    "execution_context": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }, 
+                    "tooltip_evaluation_context": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }
+                }, 
+                "short": "f"
             }, 
             "js-dropdown": {
                 "dirs": {
@@ -374,6 +400,33 @@
         }, 
         "short": "f"
     }, 
+    "resource-inspector": {
+        "dirs": {
+            "edit": {
+                "dirs": {
+                    "edit_attributes": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }, 
+                    "edit_markup": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }
+                }, 
+                "short": "b"
+            }, 
+            "highlight-line": {
+                "dirs": {
+                    "line_highlighting_in_resources": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "a"
+            }
+        }, 
+        "short": "l"
+    }, 
     "style-inspector": {
         "dirs": {
             "changing_a_property_to_another": {
@@ -467,6 +520,10 @@
                 }, 
                 "short": "b"
             }, 
+            "resize_window_horizontally": {
+                "dirs": {}, 
+                "short": "d"
+            }, 
             "sortable-table": {
                 "dirs": {
                     "basic_test": {
@@ -505,9 +562,22 @@
                 "dirs": {}, 
                 "short": "a"
             }, 
+            "invalid-syntax": {
+                "dirs": {
+                    "watch_with_invalid_syntax": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "d"
+            }, 
             "right_click_option_for_a_watch_entry": {
                 "dirs": {}, 
                 "short": "b"
+            }, 
+            "watch_with_invalid_syntax": {
+                "dirs": {}, 
+                "short": "c"
             }
         }, 
         "short": "i"

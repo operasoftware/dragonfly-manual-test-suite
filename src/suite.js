@@ -208,7 +208,7 @@
       if (comment)
         comment.value = cur_state && cur_state[COMMENT] || "";
 
-      window.open(data.url, "dflmts-window");
+      try { window.open(data.url, "dflmts-window"); } catch(e) {};
       if (cb)
         cb();
 
@@ -481,7 +481,7 @@
       if (i > -1)
         _options.test_run.splice(i, 1);
     });
-
+    
     if (!_options.test_run.length)
     {
       freeze_configuration();

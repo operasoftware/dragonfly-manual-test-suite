@@ -26,3 +26,12 @@ desc:
   - Right click the watch and select 'Delete'
   - Verify that the watch is removed from the view
   - Right click the panel, select 'Add' and verify that you can some watch
+
+label: Watch with invalid syntax
+url: ./breakpoints.html
+desc:
+  - Go toe Scripts > State and expand Watches.
+  - Add a watch 'foo\"bar' (without the surrounding quotes).
+  - Verify that the according value is "Syntax error" in a red color.
+  - Right click the watch an select "Delete watch".
+  - Verify that the watch gets removed.
