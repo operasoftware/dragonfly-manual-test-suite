@@ -3,35 +3,35 @@
         "dirs": {
             "adjust_color_with_mousewheel_in_the_x_y_field": {
                 "dirs": {}, 
-                "short": "j"
+                "short": "h"
             }, 
             "adjust_color_with_mousewheel_on_the_z_axis": {
                 "dirs": {}, 
-                "short": "k"
+                "short": "i"
             }, 
             "canceling_a_colorpicker": {
                 "dirs": {}, 
-                "short": "l"
+                "short": "j"
             }, 
             "color_palette": {
                 "dirs": {}, 
-                "short": "i"
+                "short": "d"
             }, 
             "color_swatch_for_'currentcolor'": {
                 "dirs": {}, 
-                "short": "f"
+                "short": "e"
             }, 
             "color_swatch_for_'inherit'": {
                 "dirs": {}, 
-                "short": "g"
+                "short": "f"
             }, 
             "color_swatch_for_'transparent'": {
                 "dirs": {}, 
-                "short": "h"
+                "short": "g"
             }, 
             "disabled_palette_and_alpha_input": {
                 "dirs": {}, 
-                "short": "m"
+                "short": "k"
             }, 
             "edit_color_with_inputs": {
                 "dirs": {}, 
@@ -41,20 +41,12 @@
                 "dirs": {}, 
                 "short": "b"
             }, 
-            "edit_transparent_color": {
-                "dirs": {}, 
-                "short": "d"
-            }, 
-            "reset_color_value": {
-                "dirs": {}, 
-                "short": "e"
-            }, 
             "show_and_hide_colorpicker": {
                 "dirs": {}, 
                 "short": "a"
             }
         }, 
-        "short": "b"
+        "short": "a"
     }, 
     "dom-inspector": {
         "dirs": {
@@ -69,41 +61,37 @@
                         "short": "b"
                     }
                 }, 
-                "short": "a"
+                "short": "c"
             }, 
             "pseudo_elements_context_menu": {
                 "dirs": {}, 
-                "short": "c"
+                "short": "b"
             }, 
             "tag_names_with_'<'_characters": {
                 "dirs": {}, 
-                "short": "b"
+                "short": "a"
             }
         }, 
-        "short": "c"
+        "short": "b"
     }, 
     "dom-search": {
         "dirs": {
             "dfl-3071": {
                 "dirs": {}, 
-                "short": "b"
-            }, 
-            "execution_context": {
-                "dirs": {}, 
                 "short": "a"
             }
         }, 
-        "short": "m"
+        "short": "c"
     }, 
     "error-console": {
         "dirs": {
             "clear": {
                 "dirs": {}, 
-                "short": "i"
+                "short": "d"
             }, 
             "css_filter": {
                 "dirs": {}, 
-                "short": "e"
+                "short": "f"
             }, 
             "error_count_batch": {
                 "dirs": {}, 
@@ -111,7 +99,7 @@
             }, 
             "error_location": {
                 "dirs": {}, 
-                "short": "f"
+                "short": "g"
             }, 
             "expand/collapse_errors": {
                 "dirs": {}, 
@@ -119,7 +107,7 @@
             }, 
             "filter_errors": {
                 "dirs": {}, 
-                "short": "d"
+                "short": "e"
             }, 
             "inspect_errors": {
                 "dirs": {}, 
@@ -127,14 +115,14 @@
             }, 
             "limit_maximum_of_errors_that_are_shown": {
                 "dirs": {}, 
-                "short": "h"
+                "short": "i"
             }, 
             "list_existing_messages": {
                 "dirs": {}, 
-                "short": "g"
+                "short": "h"
             }
         }, 
-        "short": "h"
+        "short": "d"
     }, 
     "js-debugger": {
         "dirs": {
@@ -181,11 +169,7 @@
                         "short": "i"
                     }
                 }, 
-                "short": "f"
-            }, 
-            "execution_context": {
-                "dirs": {}, 
-                "short": "e"
+                "short": "a"
             }, 
             "execution-context": {
                 "dirs": {
@@ -198,7 +182,7 @@
                         "short": "b"
                     }
                 }, 
-                "short": "f"
+                "short": "b"
             }, 
             "js-dropdown": {
                 "dirs": {
@@ -223,7 +207,7 @@
                         "short": "e"
                     }
                 }, 
-                "short": "b"
+                "short": "c"
             }, 
             "security": {
                 "dirs": {
@@ -232,7 +216,7 @@
                         "short": "a"
                     }
                 }, 
-                "short": "c"
+                "short": "d"
             }, 
             "tooltip": {
                 "dirs": {
@@ -261,7 +245,7 @@
                         "short": "d"
                     }
                 }, 
-                "short": "a"
+                "short": "e"
             }, 
             "watches": {
                 "dirs": {
@@ -278,20 +262,20 @@
                         "short": "b"
                     }
                 }, 
-                "short": "d"
+                "short": "f"
             }
         }, 
-        "short": "a"
+        "short": "e"
     }, 
     "js-object-inspector": {
         "dirs": {
             "getters": {
                 "dirs": {}, 
-                "short": "c"
+                "short": "b"
             }, 
             "sorting_of_properties_in_object_inspection": {
                 "dirs": {}, 
-                "short": "b"
+                "short": "a"
             }, 
             "tooltip": {
                 "dirs": {
@@ -300,10 +284,10 @@
                         "short": "a"
                     }
                 }, 
-                "short": "a"
+                "short": "c"
             }
         }, 
-        "short": "e"
+        "short": "f"
     }, 
     "libs": {
         "dirs": {
@@ -312,7 +296,7 @@
                 "short": "a"
             }
         }, 
-        "short": "k"
+        "short": "g"
     }, 
     "network-inspector": {
         "dirs": {
@@ -389,7 +373,7 @@
                 "short": "k"
             }
         }, 
-        "short": "j"
+        "short": "h"
     }, 
     "repl": {
         "dirs": {
@@ -398,23 +382,10 @@
                 "short": "a"
             }
         }, 
-        "short": "f"
+        "short": "i"
     }, 
     "resource-inspector": {
         "dirs": {
-            "edit": {
-                "dirs": {
-                    "edit_attributes": {
-                        "dirs": {}, 
-                        "short": "a"
-                    }, 
-                    "edit_markup": {
-                        "dirs": {}, 
-                        "short": "b"
-                    }
-                }, 
-                "short": "b"
-            }, 
             "highlight-line": {
                 "dirs": {
                     "line_highlighting_in_resources": {
@@ -425,7 +396,7 @@
                 "short": "a"
             }
         }, 
-        "short": "l"
+        "short": "j"
     }, 
     "style-inspector": {
         "dirs": {
@@ -435,7 +406,7 @@
             }, 
             "changing_color_format": {
                 "dirs": {}, 
-                "short": "q"
+                "short": "p"
             }, 
             "cycling_through_properties": {
                 "dirs": {}, 
@@ -455,7 +426,7 @@
             }, 
             "pseudo_classes": {
                 "dirs": {}, 
-                "short": "o"
+                "short": "n"
             }, 
             "pseudo_element_setting": {
                 "dirs": {}, 
@@ -465,13 +436,9 @@
                 "dirs": {}, 
                 "short": "m"
             }, 
-            "pseudo_elements_context_menu": {
-                "dirs": {}, 
-                "short": "n"
-            }, 
             "quick_declaration_insertion": {
                 "dirs": {}, 
-                "short": "p"
+                "short": "o"
             }, 
             "search": {
                 "dirs": {}, 
@@ -498,7 +465,7 @@
                 "short": "k"
             }
         }, 
-        "short": "g"
+        "short": "k"
     }, 
     "ui-framework": {
         "dirs": {
@@ -509,7 +476,7 @@
                         "short": "a"
                     }
                 }, 
-                "short": "a"
+                "short": "b"
             }, 
             "key-input": {
                 "dirs": {
@@ -518,11 +485,11 @@
                         "short": "a"
                     }
                 }, 
-                "short": "b"
+                "short": "c"
             }, 
             "resize_window_horizontally": {
                 "dirs": {}, 
-                "short": "d"
+                "short": "a"
             }, 
             "sortable-table": {
                 "dirs": {
@@ -551,25 +518,16 @@
                         "short": "c"
                     }
                 }, 
-                "short": "c"
+                "short": "d"
             }
         }, 
-        "short": "d"
+        "short": "l"
     }, 
     "watches": {
         "dirs": {
             "add_a_watch": {
                 "dirs": {}, 
                 "short": "a"
-            }, 
-            "invalid-syntax": {
-                "dirs": {
-                    "watch_with_invalid_syntax": {
-                        "dirs": {}, 
-                        "short": "a"
-                    }
-                }, 
-                "short": "d"
             }, 
             "right_click_option_for_a_watch_entry": {
                 "dirs": {}, 
@@ -580,6 +538,6 @@
                 "short": "c"
             }
         }, 
-        "short": "i"
+        "short": "m"
     }
 }
