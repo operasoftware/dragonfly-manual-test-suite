@@ -1,0 +1,75 @@
+label: Timeline events
+url: ./profiler-test.html
+desc:
+  - Start the profiler
+  - Reload the document
+  - Stop after circa one second
+  - Verify that there are events for every event type
+  - Check the source of the the testcase and verify that the data in the timeline makes sense
+
+label: Event tooltips
+url: ./profiler-test.html
+desc:
+  - Start the profiler
+  - Reload the document
+  - Stop after circa one second
+  - Verify that hovering events brings up a tooltip with more information
+
+label: URL tooltips
+url: ./profiler-test.html
+desc:
+  - Start the profiler
+  - Reload the document
+  - Stop after circa one second
+  - Hover the CSS parsing event
+  - Verify that the URL in the tooltip has a tooltip
+
+label: Paint events overlays
+url: ./profiler-test.html
+desc:
+  - (The following steps are only valid if the Core Integration is at least 343)
+  - Start the profiler
+  - Reload the document
+  - Stop after circa one second
+  - Hover the last paint event
+  - Verify that a red overlay appears in the host, where the paint happened
+  - Verify that the overlay is covering the right area when the document is scrolled
+
+label: Single event details
+url: ./profiler-test.html
+desc:
+  - Start the profiler
+  - Reload the document
+  - Stop after circa one second
+  - Click a Style recalculation event
+  - Verify that a table appears with one selector match and that it has one hit
+  - Verify that there is a total self time for the events at the bottom
+
+label: Aggregated event details
+url: ./profiler-test.html
+desc:
+  - Start the profiler
+  - Reload the document
+  - Stop after circa one second
+  - Click the Style recalculation legend label
+  - Verify that a table appears with two selectors
+  - Verify that clicking any other legend label clears the table and shows "No details"
+
+label: Changing start time
+url: ./profiler-test.html
+desc:
+  - Start the profiler
+  - Reload the document
+  - Stop after circa one second
+  - Click the "Change start time to first event" button next to the record button
+  - Verify that the start of the timeline is set to the start time of the first event, i.e. there is no empty space at the start of the timeline
+
+label: No recorded data
+url: ./profiler-test.html
+desc:
+  - Start the profiler
+  - Reload the document
+  - Stop after circa one second
+  - Stop the profiler immediately
+  - Verify that a message says "No data"
+
