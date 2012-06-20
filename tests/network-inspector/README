@@ -27,7 +27,7 @@ desc:
   - Verify that the Network view is still shown in data mode.
   - Reload the debugged window to fetch its resources.
   - Sort by Size by clicking the table header.
-  - Hover the rows and verify that the list in in the same order as the table.
+  - Hover the rows and verify that the list on the left is in the same order as the table.
   - Click the Graph view button.
   - Verify that the waterfall is displayed in the correct (original) order.
 
@@ -140,3 +140,11 @@ label: Data URI
 url: https://homes.oslo.osa/dherzog/testcase/network/
 desc:
   - Verify that a data URI is in the list of requests. It's content should be "data:text/html,<p>Hello data-uri.</p>".
+
+label: Cached Requests
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - When the test is loaded, reload it.
+  - Open the details of a requests that appears "Cached" (different styling in the list, shows "Cached" in the URL tooltip).
+  - Verify that there is no "Request" or "Response" headlines.
+  - Verify that you see the content of the file.

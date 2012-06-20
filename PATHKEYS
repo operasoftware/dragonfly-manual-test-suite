@@ -300,6 +300,10 @@
     }, 
     "network-inspector": {
         "dirs": {
+            "cached_requests": {
+                "dirs": {}, 
+                "short": "s"
+            }, 
             "clear": {
                 "dirs": {}, 
                 "short": "o"
@@ -374,6 +378,43 @@
             }
         }, 
         "short": "h"
+    }, 
+    "profiler": {
+        "dirs": {
+            "aggregated_event_details": {
+                "dirs": {}, 
+                "short": "f"
+            }, 
+            "changing_start_time": {
+                "dirs": {}, 
+                "short": "g"
+            }, 
+            "event_tooltips": {
+                "dirs": {}, 
+                "short": "b"
+            }, 
+            "no_recorded_data": {
+                "dirs": {}, 
+                "short": "h"
+            }, 
+            "paint_events_overlays": {
+                "dirs": {}, 
+                "short": "d"
+            }, 
+            "single_event_details": {
+                "dirs": {}, 
+                "short": "e"
+            }, 
+            "timeline_events": {
+                "dirs": {}, 
+                "short": "a"
+            }, 
+            "url_tooltips": {
+                "dirs": {}, 
+                "short": "c"
+            }
+        }, 
+        "short": "n"
     }, 
     "repl": {
         "dirs": {
