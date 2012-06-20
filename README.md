@@ -20,10 +20,10 @@ An example test entry:
     label: Reset color value
     url: ./index.html
     desc:
-     \- Open the testcase and inspect "test".
-     \- Click the color swatch of the color declaration to open the color picker.
-     \- Change the current color.
-     \- Verify that the color can be reset to the initial value by clicking the
-        left part of the color example in the top right corner.
+     - Open the testcase and inspect "test".
+     - Click the color swatch of the color declaration to open the color picker.
+     - Change the current color.
+     - Verify that the color can be reset to the initial value by clicking the
+       left part of the color example in the top right corner.
 
 'url:' can be relative to the README file or absolute.
