@@ -1,3 +1,15 @@
+label: Enabling the profiler
+url: ./profiler-test.html
+desc:
+  - (If you have used the profiler before, switch back to normal debug mode.)
+  - Go to the Profiler tab.
+  - Enable the profiler.
+  - Record and verify that the profiler is working.
+  - Go to the Documents tab.
+  - Verify that there is a message saying that you have to enable the default debugger features.
+  - Enable them.
+  - Verify that you can use the Documents view and other views.
+
 label: Timeline events
 url: ./profiler-test.html
 desc:
