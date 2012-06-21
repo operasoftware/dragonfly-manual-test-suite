@@ -324,6 +324,14 @@
                 "dirs": {}, 
                 "short": "p"
             }, 
+            "network_profiling": {
+                "dirs": {}, 
+                "short": "t"
+            }, 
+            "network_profiling_disable": {
+                "dirs": {}, 
+                "short": "u"
+            }, 
             "network_summary": {
                 "dirs": {}, 
                 "short": "g"
