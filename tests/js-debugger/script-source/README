@@ -90,7 +90,7 @@ desc:
   - The same as the previous test, but use the F11 and Shift-F11 key (F7 and Shift-F7 on Mac) instead the mouse. 
 
 label: Stop at new script
-url: ./test-cases/scripts-source/scripts.html
+url: ./scripts.html
 desc:
   - Open Dragonfly
   - Turn the 'Stop at new script' switch on.
@@ -99,7 +99,7 @@ desc:
   - Verify that the setting can be turned off.
 
 label: Parse error
-url: ./test-cases/scripts-source/parse-error.html
+url: ./parse-error.html
 desc:
   - Open Dragonfly
   - Turn the 'Show where a JavaScript error occurs' switch on.
