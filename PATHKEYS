@@ -209,6 +209,63 @@
                 }, 
                 "short": "c"
             }, 
+            "script-source": {
+                "dirs": {
+                    "breakpoint,_continue": {
+                        "dirs": {}, 
+                        "short": "d"
+                    }, 
+                    "breakpoint,_continue_with_keyboard": {
+                        "dirs": {}, 
+                        "short": "e"
+                    }, 
+                    "breakpoint,_step_into": {
+                        "dirs": {}, 
+                        "short": "f"
+                    }, 
+                    "breakpoint,_step_into_with_keyboard": {
+                        "dirs": {}, 
+                        "short": "g"
+                    }, 
+                    "breakpoint,_step_out": {
+                        "dirs": {}, 
+                        "short": "j"
+                    }, 
+                    "breakpoint,_step_out_with_keyboard": {
+                        "dirs": {}, 
+                        "short": "k"
+                    }, 
+                    "breakpoint,_step_over": {
+                        "dirs": {}, 
+                        "short": "h"
+                    }, 
+                    "breakpoint,_step_over_with_keyboard": {
+                        "dirs": {}, 
+                        "short": "i"
+                    }, 
+                    "parse_error": {
+                        "dirs": {}, 
+                        "short": "m"
+                    }, 
+                    "reload_button": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }, 
+                    "remove_breakpoint": {
+                        "dirs": {}, 
+                        "short": "c"
+                    }, 
+                    "set_breakpoint": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }, 
+                    "stop_at_new_script": {
+                        "dirs": {}, 
+                        "short": "l"
+                    }
+                }, 
+                "short": "g"
+            }, 
             "security": {
                 "dirs": {
                     "dfl-2882,_script_syntax_error_load_dragonfly_in_dragonfly": {
@@ -324,6 +381,19 @@
                 "dirs": {}, 
                 "short": "p"
             }, 
+            "network-profiling": {
+                "dirs": {
+                    "network_profiling": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }, 
+                    "network_profiling_disable": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }
+                }, 
+                "short": "v"
+            }, 
             "network_profiling": {
                 "dirs": {}, 
                 "short": "t"
@@ -397,6 +467,10 @@
                 "dirs": {}, 
                 "short": "g"
             }, 
+            "enabling_the_profiler": {
+                "dirs": {}, 
+                "short": "i"
+            }, 
             "event_tooltips": {
                 "dirs": {}, 
                 "short": "b"
@@ -408,6 +482,10 @@
             "paint_events_overlays": {
                 "dirs": {}, 
                 "short": "d"
+            }, 
+            "remembering_the_last_tab": {
+                "dirs": {}, 
+                "short": "j"
             }, 
             "single_event_details": {
                 "dirs": {}, 
