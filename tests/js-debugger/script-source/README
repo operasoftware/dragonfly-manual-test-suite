@@ -60,7 +60,6 @@ url: ./callstack.html
 desc:
   - The same as the previous test, but use the F11 key (F7 on Mac) instead the mouse.
 
-id: 00800
 label: Breakpoint, Step Over
 url: ./callstack.html
 desc:
