@@ -27,7 +27,7 @@ desc:
   - Verify that the Network view is still shown in data mode.
   - Reload the debugged window to fetch its resources.
   - Sort by Size by clicking the table header.
-  - Hover the rows and verify that the list in in the same order as the table.
+  - Hover the rows and verify that the list on the left is in the same order as the table.
   - Click the Graph view button.
   - Verify that the waterfall is displayed in the correct (original) order.
 
@@ -140,3 +140,42 @@ label: Data URI
 url: https://homes.oslo.osa/dherzog/testcase/network/
 desc:
   - Verify that a data URI is in the list of requests. It's content should be "data:text/html,<p>Hello data-uri.</p>".
+
+label: Cached Requests
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - When the test is loaded, reload it.
+  - Open the details of a requests that appears "Cached" (different styling in the list, shows "Cached" in the URL tooltip).
+  - Verify that there is no "Request" or "Response" headlines.
+  - Verify that you see the content of the file.
+
+label: Network Profiling
+url:   
+  https://homes.oslo.osa/dherzog/dragonfly-quicktest/
+desc:
+  - Load the test and check the network graph.
+  - Press the "Switch to Network-Profiler mode" button in the toolbar.
+  - Confirm the dialog.
+  - Verify that the view still looks as before, only with the Network-Profiler icon being active.
+  - There may be some gaps in the waterfall, where nothing seems to have happened. This may not be obvious when debugging locally.
+  - Reload the page.
+  - Verify that the requests are listed normally, potentially the overall time should be shorter though.
+  - Verify that there are no obvious gaps in the waterfall.
+
+label: Network Profiling disable
+url:   
+  https://homes.oslo.osa/dherzog/dragonfly-quicktest/
+desc:
+  - Press the "Switch to Network-Profiler mode" button in the toolbar.
+  - Confirm the dialog.
+  - Switch to the Documents view.
+  - Verify that the view is disabled.
+  - Enable the Documents view.
+  - Verify that Documents now works fine again.
+  - Switch back to the Network view.
+  - Verify that the Network-Profiler icon is now turned off.
+  - Press the button again to re-enable.
+  - Confirm the dialog.
+  - Press the button again to disable.
+  - Switch to the Documents view.
+  - Verify that Documents now works fine again.

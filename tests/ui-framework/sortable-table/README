@@ -11,15 +11,17 @@ url: ../../../DFL/test-scripts/ui-framework/sortable-table/advanced.html
 desc:
   - Verify that the table by default is grouped by Gender.
   - Verify that the last 5 columns are selected.
-  - Verify that the table is reverse-sorted by Birth Date (oldest first) in each group.
+  - Verify that the table is reverse-sorted by Birth Date (youngest first) in each group.
 
 label: Store / Restore
 url: ../../../DFL/test-scripts/ui-framework/sortable-table/advanced.html
 desc:
-  - Change the grouping, select and additional column and change the sorting.
-  - Verify that after reloading, grouping, columns and sorting were restored.
+  - Change the grouping, select an additional column and change the sorting.
+  - Reload the test.
+  - Verify that grouping, columns and sorting were restored.
   - Click the column header of the current sort column.
-  - Verify that after reloading, the sort-order is still reversed.
+  - Reload the test.
+  - Verify that the sort-order is still reversed.
   - Press the "Reset localStorage[table-*]" button.
   - Reload the test-page.
   - Verify that grouping, columns and sorting are back to default.
