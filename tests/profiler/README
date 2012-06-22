@@ -36,6 +36,7 @@ desc:
   - Verify that hovering events brings up a tooltip with more information.
   - Hover the CSS parsing event.
   - Verify that the URL in the tooltip has a tooltip.
+  - (The next steps only apply to ci-343 and above).
   - Hover the last paint event.
   - Verify that a red overlay appears in the host, where the paint happened.
   - Verify that the overlay is covering the right area when the document is scrolled.
