@@ -46,13 +46,6 @@ desc:
   - Add a property
   - Search for it and make sure it shows up
 
-label: Detaching
-url: ./matching-style-declarations.html
-desc:
-  - Add a property in attached mode
-  - Detach and make sure the property is still shown
-  - Do the same, but instead of adding a new property, delete one, and make sure it's still removed when switching back to attached mode
-
 label: Escaping
 url: ./matching-style-declarations.html
 desc:
