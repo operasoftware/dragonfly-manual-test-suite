@@ -1,0 +1,4 @@
+label: Qunite repl propertyfinder
+url: ../../DFL/tests/propertyfinder.qunit.html
+desc:
+  - Run the test and verify that there are 0 failed.
