@@ -1,0 +1,25 @@
+label: Stop at new script
+url: ../script-source/scripts.html
+desc:
+  - Enable 'Stop at new script' and load the TC.
+  - Verify that the engine stops for each new script (use the continue button), e.g. three times - (TODO +browser.js, right?)
+  - Verify that the setting can be turned off.
+
+label: Parse error
+url: ../script-source/parse-error.html
+desc:
+  - Enable 'Show parse errors and break on exceptions' and load the TC.
+  - Verify that the Script Source pane opens,
+    the first non parse-able token is highlighted,
+    e.g. the dot in 'var aa.a = 1;',
+    any following code is grayed out and
+    an info box with a hint for the cause of the error is displayed.
+  - Verify that the setting can be turned off.
+
+label: Break on exceptions
+url: ./exception.html
+desc:
+  - Enable 'Show parse errors and break on exceptions' and load the TC.
+  - Verify that the engines stops on the exception with an according ifo bubble.
+  - Verify that the engines stops each time you press the 'CLICK' button.
+  - Verify that the setting can be turned off.

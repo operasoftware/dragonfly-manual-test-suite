@@ -126,6 +126,23 @@
     }, 
     "js-debugger": {
         "dirs": {
+            "configuration": {
+                "dirs": {
+                    "break_on_exceptions": {
+                        "dirs": {}, 
+                        "short": "c"
+                    }, 
+                    "parse_error": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }, 
+                    "stop_at_new_script": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "h"
+            }, 
             "event-listeners": {
                 "dirs": {
                     "interaction_with_the_handlers_in_the_tooltip_with_js_source_files_loaded": {
@@ -504,6 +521,15 @@
     }, 
     "repl": {
         "dirs": {
+            "propertyfinder": {
+                "dirs": {
+                    "qunit_repl_propertyfinder": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "b"
+            }, 
             "xpath_result_types": {
                 "dirs": {}, 
                 "short": "a"
