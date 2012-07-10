@@ -2,7 +2,8 @@ label: Stop at new script
 url: ../script-source/scripts.html
 desc:
   - Enable 'Stop at new script' and load the TC.
-  - Verify that the engine stops for each new script (use the continue button), e.g. three times - (TODO +browser.js, right?)
+  - Verify that the engine stops for each new script (use the continue button),
+    e.g. three times - (TODO +browser.js, right?)
   - Verify that the setting can be turned off.
 
 label: Parse error
