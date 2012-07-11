@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<title>Test exception</title>
+<script>
+function exc()
+{
+  window.printme();
+}
+</script>
+<h1>JS runtime error</h1>
+<p>This will call a non existed method - exception should be thrown.</p>
+<script>
+window.printme();
+</script>
+<p><button type="button" onclick="exc()">CLICK</button>
