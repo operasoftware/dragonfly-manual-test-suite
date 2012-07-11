@@ -631,6 +631,15 @@
                 }, 
                 "short": "b"
             }, 
+            "enabling-disabling-services": {
+                "dirs": {
+                    "dfl-3282,_can't_inspect_when_being_stopped_after_re-enabling_services": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "e"
+            }, 
             "key-input": {
                 "dirs": {
                     "shortcut_bindings": {
