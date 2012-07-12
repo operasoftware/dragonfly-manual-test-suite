@@ -398,6 +398,31 @@
                 "dirs": {}, 
                 "short": "p"
             }, 
+            "multiple-top-runtimes": {
+                "dirs": {
+                    "add_window_to_debug_context": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }, 
+                    "incomplete_warning_-_multiple_windows": {
+                        "dirs": {}, 
+                        "short": "e"
+                    }, 
+                    "incomplete_warning_-_simple": {
+                        "dirs": {}, 
+                        "short": "d"
+                    }, 
+                    "reload_same_window_id": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }, 
+                    "switch_content_of_additional_windows_in_debug_context": {
+                        "dirs": {}, 
+                        "short": "c"
+                    }
+                }, 
+                "short": "w"
+            }, 
             "network-profiling": {
                 "dirs": {
                     "network_profiling": {

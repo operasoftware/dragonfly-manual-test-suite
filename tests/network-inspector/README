@@ -122,14 +122,6 @@ desc:
   - Click the "Clear" button.
   - Verify that the "Reload to see Resources" view is shown.
 
-label: Incomplete warning
-url: https://homes.oslo.osa/dherzog/testcase/network/
-desc:
-  - Click the "Clear" button.
-  - In the test, click the "Get via XHR" button.
-  - Verify that, under the summary, a note is shown to explain that not all requests are shown.
-  - Verify that the "Reload" and close buttons work.
-
 label: Sequence tooltips
 url: ../DFL/test-scripts/network-view/graph-tooltips.xml
 desc:

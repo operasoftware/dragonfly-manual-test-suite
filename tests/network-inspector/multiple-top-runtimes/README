@@ -1,0 +1,48 @@
+label: Reload same window id
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Click the "Clear" button.
+  - Reload the testcase.
+  - Reload the testcase once more.
+  - Verify that you the context is reset and you don't see resources twice.
+
+label: Add window to debug context
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Reload the testcase.
+  - In the test, click "Open elg.no in tab 1".
+  - Verify that the index document is of https://homes.oslo.osa/dherzog/testcase/network/ is still shown.
+  - Verify that the resources from elg.no are added to the list.
+  - Leave the tab with elg.no open, but switch back to the testcase.
+  - Reload.
+  - Verify that the resources from elg.no are now on top, and the reloaded resources from the testcase are shown after that.
+
+label: Switch content of additional windows in debug context
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Click the "Clear" button.
+  - In the test, click "Open elg.no in tab 1".
+  - Click "Get via XHR".
+  - Click "Open ulv.no in tab 1".
+  - Verify that you now see receive.php first in the waterfall view, followed by resources from ulv.no.
+  - Verify that no Resources from elg.no are shown anymore.
+
+label: Incomplete warning - simple
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Click the "Clear" button.
+  - In the test, click the "Get via XHR" button.
+  - Verify that, under the summary, a note is shown to explain that not all requests are shown.
+  - Verify that the "Reload" and close buttons work.
+
+label: Incomplete warning - multiple windows
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Click the "Clear" button.
+  - In the test, click the "Get via XHR" button.
+  - Verify that the summary does not include the title of the testcase.
+  - In the test, click "Open elg.no in tab 1".
+  - Verify that the summary now includes the title of the testcase.
+  - Press the reload button in the warning.
+  - Verify that the receive.php entry disappears, and instead the testcase is reloaded.
+  - Verify that all resources belonging to the testcase are shown after those of elg.no.
