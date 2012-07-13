@@ -367,7 +367,7 @@ def download_snapshot(src, target):
         url = res.getheader("location", "") if res else src
         proto, domain, path = proto_domain_path(url)
         if not proto:
-            print "abort, no a valid download URL"
+            print "abort, not a valid download URL"
             return
         con = HTTPSConnection(domain) if proto =="https" else HTTPConnection(domain)
         con.request("GET", path)
