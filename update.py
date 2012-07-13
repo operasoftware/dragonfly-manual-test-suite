@@ -6,7 +6,13 @@ import string
 import time
 import subprocess
 import argparse
+import re
+import httplib
+import tempfile
+import zipfile
+import shutil
 from urllib import quote, unquote
+from httplib import HTTPSConnection, HTTPConnection
 
 BLACKLIST = [".hg"]
 README = "README"
@@ -20,9 +26,13 @@ SRC = "src"
 TESTS_SRC = "tests"
 DFL_REPO = "DFL"
 DFL_BB_REPO = "https://bitbucket.org/scope/dragonfly-stp-1"
+DFL_GITHUB_REPO = "https://github.com/operasoftware/dragonfly/zipball/%s"
+PROTOCOl = 1
+DOMAIN = 2
+_re_protcol_domain = re.compile(r"^([^:]*)://([^/]*)")
 
 def cmd_call(*args):
-    return subprocess.Popen(args, 
+    return subprocess.Popen(args,
                             stdout=subprocess.PIPE,
                             stdin=subprocess.PIPE,
                             stderr=subprocess.PIPE).communicate()
@@ -316,23 +326,27 @@ def create_test_lists(src, target, ctx):
             f.write(json.dumps(ids, indent=4, sort_keys=True))
 
 def _parse_args():
-    parser = argparse.ArgumentParser(description="""Script to create the manual 
+    parser = argparse.ArgumentParser(description="""Script to create the manual
                                                     test suite for Opera Dragnfly""")
     parser.add_argument("tests",
                         nargs="?",
-                        default=TESTS_SRC, 
+                        default=TESTS_SRC,
                         help="the directory with the tests (default: %(default)s))")
     parser.add_argument("target",
                         nargs="?",
-                        default=TARGET, 
+                        default=TARGET,
                         help="target path for the test suite (default: %(default)s))")
     parser.add_argument("--dfl-repo",
-                        default=DFL_BB_REPO,
+                        default=DFL_GITHUB_REPO,
                         dest="dfl_repo",
                         help="the Dragonfly repo (default: %(default)s))")
+    parser.add_argument("--branch",
+                        default="cutting-edge",
+                        dest="dfl_branch",
+                        help="the branch for the Dragonfly snapshot (default: %(default)s))")
     parser.add_argument("-r", "--revision",
                         default="tip",
-                        help="""the target revision of the Dragonfly src 
+                        help="""the target revision of the Dragonfly src
                                 directory (default: %(default)s))""")
     parser.add_argument("--skip-clone",
                         action="store_true",
@@ -340,6 +354,40 @@ def _parse_args():
                         dest="skip_clone",
                         help="skip cloning the Dragonfly repo")
     return parser.parse_args()
+
+def proto_domain_path(url):
+    m = _re_protcol_domain.match(url)
+    return (m.group(PROTOCOl), m.group(DOMAIN), url[len(m.group(0)):]) if m else (None, None, None)
+
+def download_snapshot(src, target):
+    print "get a Dragonfly snapshot from %s" % src
+    res = None
+    count = 3
+    while count and (not res or res.status == 302):
+        count = count - 1
+        url = res.getheader("location", "") if res else src
+        proto, domain, path = proto_domain_path(url)
+        if not proto:
+            print "abort, not a valid download URL"
+            return
+        con = HTTPSConnection(domain) if proto =="https" else HTTPConnection(domain)
+        con.request("GET", path)
+        res = con.getresponse()
+    if res.status == 200:
+        temp = tempfile.TemporaryFile()
+        temp.write(res.read())
+        print "unziping snapshot to %s" % target
+        zipfile.ZipFile(temp).extractall(target)
+        listdir = os.listdir(target)
+        if not len(listdir) == 1:
+            print "abort, something went wrong while unzipping"
+            return
+        snapshot = listdir[0]
+        for item in os.listdir(os.path.join(target, snapshot)):
+            shutil.move(os.path.join(target, snapshot, item), os.path.join(target, item))
+        os.rmdir(os.path.join(target, snapshot))
+    else:
+        print "not able to get a snapshot"
 
 def update():
     args = _parse_args()
@@ -385,25 +433,9 @@ def update():
         f.write(json.dumps(pathkeys, indent=4, sort_keys=True))
     create_folders(tests, target, ctx)
     create_test_lists(tests, target, ctx)
-    hg_target = os.path.join(target, DFL_REPO)
+    dfl_snapshot_target = os.path.join(target, DFL_REPO)
     if not args.skip_clone:
-        print "cloning %s, this can take some minutes" % args.dfl_repo
-        out, err = cmd_call("hg", "clone", args.dfl_repo, hg_target)
-        if err:
-            print err
-            return
-        print out
-        print "updating the repo to %s" % args.revision
-        out, err = cmd_call("hg", "up", args.revision)
-        if err:
-            print err
-            return
-        print out
-        for name in os.listdir(hg_target):
-            if name.startswith(".hg"):
-                path = os.path.join(hg_target, name)
-                # if os.path.exists(path):
-                shutil.rmtree(path) if os.path.isdir(path) else os.unlink(path)
+        download_snapshot(args.dfl_repo % args.dfl_branch, dfl_snapshot_target)
 
 if __name__ == "__main__":
     update()
