@@ -53,3 +53,6 @@ desc:
   - Click the "Clear" button.
   - In the test, click "Add data uri"
   - Verify that the incomplete warning shows up.
+  - Click the close button.
+  - In the test, click "Add data uri" again.
+  - Verify that the incomplete warning does not show up again.
