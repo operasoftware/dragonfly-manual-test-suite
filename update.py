@@ -364,6 +364,7 @@ def download_snapshot(src, target):
     res = None
     count = 3
     while count and (not res or res.status == 302):
+        count = count - 1
         url = res.getheader("location", "") if res else src
         proto, domain, path = proto_domain_path(url)
         if not proto:
