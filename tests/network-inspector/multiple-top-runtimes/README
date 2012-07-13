@@ -46,3 +46,10 @@ desc:
   - Press the reload button in the warning.
   - Verify that the receive.php entry disappears, and instead the testcase is reloaded.
   - Verify that all resources belonging to the testcase are shown after those of elg.no.
+
+label: Incomplete warning - documents with parent documents
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Click the "Clear" button.
+  - In the test, click "Add data uri"
+  - Verify that the incomplete warning shows up.

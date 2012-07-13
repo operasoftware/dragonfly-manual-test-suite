@@ -128,10 +128,12 @@ desc:
   - Hover over the graphs in the waterfall.
   - Compare the tooltips with what's "Expected" in the test.
 
-label: Data URI
+label: Data URIs
 url: https://homes.oslo.osa/dherzog/testcase/network/
 desc:
-  - Verify that a data URI is in the list of requests. It's content should be "data:text/html,<p>Hello data-uri.</p>".
+  - Click "Add data uri"
+  - Verify that a data URI shows up the list of requests.
+  - Verify you can read the markup if you click it.
 
 label: Cached Requests
 url: https://homes.oslo.osa/dherzog/testcase/network/
