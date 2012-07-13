@@ -1,0 +1,11 @@
+label: Adding new Style
+url: data:text/html,<p>test
+desc:
+  - Inspect "test"
+  - In New Style, add `p { color: red }` and press Update
+  - Verify that "test" is now red
+  - Verify that Styles is updated with the new rule
+  - Delete the rule and press Update
+  - Verify that "test" is now black
+  - Verify that the rule is removed in Styles
+
