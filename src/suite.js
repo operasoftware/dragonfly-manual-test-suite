@@ -208,9 +208,9 @@
     if (!_test_path_map[componenet].contains(test_id))
       _test_path_map[componenet].push(test_id);
 
-    var pos = _options.test_run.indexOf(file_path);
-    if (pos > -1)
-      _options.test_run.splice(pos, 1);
+    if (_options.test_run.contains(file_path))
+      _options.test_run.splice(_options.test_run.indexOf(file_path), 1);
+
     update_test_list();
   };
 
