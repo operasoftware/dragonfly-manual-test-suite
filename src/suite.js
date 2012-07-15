@@ -22,7 +22,7 @@
 
   /**
     * Maps the componet paths to a test-id list.
-    * See files in build/TESTLISTS. 
+    * See files in build/TESTLISTS.
     */
   var _test_path_map = Object.create(null);
   /**
@@ -74,7 +74,7 @@
   var get_checkbox_children_of_parent = function(checkbox)
   {
     var ret = [];
-    var ul = checkbox.get_ancestor("ul");  
+    var ul = checkbox.get_ancestor("ul");
     var boxes = ul && ul.querySelectorAll("input[type=checkbox]");
     if (boxes)
     {
@@ -129,7 +129,7 @@
       new_tests.push(target.parentNode.dataset.path);
       if (boxes)
         FOR_EACH(boxes, function(box) { box.checked = true; });
-      
+
       if (parent_children_boxes.every(function(box) { return box.checked; }))
       {
         var box = get_parent_checkbox(target);
@@ -137,7 +137,7 @@
         {
           box.checked = true;
           new_tests.push(box.parentNode.dataset.path);
-          removed_tests.extend(parent_children_boxes.map(function(box) 
+          removed_tests.extend(parent_children_boxes.map(function(box)
           {
             return box.parentNode.dataset.path;
           }));
@@ -149,7 +149,7 @@
       removed_tests.push(target.parentNode.dataset.path);
       if (boxes)
         FOR_EACH(boxes, function(box) { box.checked = false; });
-      
+
       var box = get_parent_checkbox(target);
       if (box && box.checked)
       {
@@ -178,7 +178,7 @@
   {
     return_dict[path] = data;
     var ret_keys = Object.keys(return_dict);
-    if (!new_tests.length || 
+    if (!new_tests.length ||
         new_tests.every(function(path) { return ret_keys.contains(path); }))
     {
       new_tests.forEach(function(path)
@@ -187,10 +187,31 @@
       });
       removed_tests.forEach(function(path) { delete _test_path_map[path]; });
       update_test_list();
+      configure_test_run();
       _cursor = 0;
       if (_test_id_list.length)
         show_test(null, null, _test_id_list[_cursor], expand_current_test);
     }
+  };
+
+  var add_single_test = function(ele)
+  {
+    // The TESTLIST folder contains for each componenet a list of tests for that
+    // componenet. To add single tests to a test run the according list is
+    // created here dynamically.
+    var file_path = ele.dataset.filePath;
+    var test_id = ele.dataset.id;
+    var componenet = file_path.slice(0, file_path.lastIndexOf("."));
+    if (!_test_path_map[componenet])
+      _test_path_map[componenet] = [];
+
+    if (!_test_path_map[componenet].contains(test_id))
+      _test_path_map[componenet].push(test_id);
+
+    var pos = _options.test_run.indexOf(file_path);
+    if (pos > -1)
+      _options.test_run.splice(pos, 1);
+    update_test_list();
   };
 
   var update_test_list = function()
@@ -254,7 +275,7 @@
         var box_t = target.getBoundingClientRect();
         if (box_t.bottom < box_s.top || box_t.top > box_s.bottom)
           target.scrollIntoView();
-      } 
+      }
     }
   };
 
@@ -262,7 +283,7 @@
   {
     if (!_current_test)
       return
-    
+
     var parts = _current_test.folder_path.split(".");
     var sidepanel = document.querySelector(".sidepanel");
     var cur = 0;
@@ -331,14 +352,16 @@
         container.append_tmpl(templates.folder_expanded(data, _test_path_list));
         container.classList.add("open");
         if (_is_frozen)
-          hide_components(container.querySelectorAll("h3"));
+        {
+          hide_components(container.querySelectorAll(".folder-title"));
+          hide_tests(container.querySelectorAll(".test"));
+        }
 
         if (_options.test_run && _options.test_run.length)
           configure_test_run();
 
         if (cb)
           cb();
-
         update_test_states();
       }
     });
@@ -349,25 +372,18 @@
     FOR_EACH(h3s, function(h3)
     {
       var comp = h3.dataset.path;
-      if (comp)
-      {
-        var overlap = function(path)
-        {
-          return comp.startswith(path) || path.startswith(comp);
-        };
+      if (comp && !_test_path_list.some(function(path) { return path.startswith(comp); }))
+        h3.parentNode.classList.add("hidden");
+    })
+  };
 
-        if (!_test_path_list.some(overlap))
-          h3.parentNode.classList.add("hidden");
-      }
-      else
-      {
-        var ul = h3.get_ancestor("ul");
-        var li = ul && ul.get_ancestor("li");
-        var input = li && li.querySelector("input[type=\"checkbox\"]");
-        if (input && !input.checked)
-          h3.parentNode.classList.add("hidden");
-      }
-    })    
+  var hide_tests = function(lis)
+  {
+    FOR_EACH(lis, function(li)
+    {
+      if (!_test_id_list.contains(li.dataset.id))
+        li.classList.add("hidden");
+    });
   };
 
   var close_unrelated_folders = function()
@@ -437,7 +453,7 @@
       test[COMMENT] = comment.value;
       comment.value = "";
     }
-    
+
     localStorage.setItem("dflmts.cursor", String(_cursor));
     localStorage.setItem("dflmts.test_path_map", JSON.stringify(_test_path_map));
     localStorage.setItem("dflmts.test_map", JSON.stringify(_test_id_map));
@@ -489,11 +505,9 @@
               h3.dispatchMouseEvent("click");
           }
         }
-
-        // TODO handle single tests
-        // data-file-path="js-debugger.configuration.parse-error"
-        // create a test-list dynamically
-        // if the according component is not jet in the _test_path_map
+        var h3 = document.querySelector("[data-file-path=\"" + comp + "\"]");
+        if (h3)
+          add_single_test(h3);
       };
     });
 
@@ -503,7 +517,7 @@
       if (i > -1)
         _options.test_run.splice(i, 1);
     });
-    
+
     if (!_options.test_run.length)
     {
       freeze_configuration();
@@ -526,6 +540,7 @@
       button.value = "Unfreeze configuration";
       document.body.classList.add("frozen");
       hide_components(document.querySelectorAll(".sidepanel h3"));
+      hide_tests(document.querySelectorAll(".sidepanel .test"));
     }
   };
 
@@ -544,9 +559,9 @@
           show_test(null, null, _test_id_list[_cursor], expand_current_test);
       });
     }
-    catch(e) 
+    catch(e)
     {
-      document.body.innerHTML = ""; 
+      document.body.innerHTML = "";
       document.body.append_tmpl(templates.no_xhr());
     };
   };
@@ -601,7 +616,7 @@
     {
       var pos = item.indexOf("=");
       if (pos > -1)
-        options[item.slice(0, pos).replace(/-/g, "_").trim()] = item.slice(pos + 1).trim();  
+        options[item.slice(0, pos).replace(/-/g, "_").trim()] = item.slice(pos + 1).trim();
     });
 
     if (options.test_run)
@@ -623,11 +638,11 @@
   {
     if (!_styles.sidepanle)
     {
-      _styles.sidepanle = document.styleSheets.get_declaration(".sidepanel"); 
-      _styles.test_description = document.styleSheets.get_declaration(".test-description"); 
-      _styles.test_controls = document.styleSheets.get_declaration(".test-controls"); 
-      _styles.sidepanel_resize = document.styleSheets.get_declaration(".sidepanel-resize"); 
-      _styles.h1 = document.styleSheets.get_declaration("h1"); 
+      _styles.sidepanle = document.styleSheets.get_declaration(".sidepanel");
+      _styles.test_description = document.styleSheets.get_declaration(".test-description");
+      _styles.test_controls = document.styleSheets.get_declaration(".test-controls");
+      _styles.sidepanel_resize = document.styleSheets.get_declaration(".sidepanel-resize");
+      _styles.h1 = document.styleSheets.get_declaration("h1");
     }
     _styles.sidepanle.width = width + "px";
     _styles.test_description.left = width + "px";
