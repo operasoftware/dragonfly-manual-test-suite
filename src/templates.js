@@ -86,14 +86,16 @@ templates.test = function(test)
   return (
   ["li", {"class": "test",
           "data-handler": "show-test",
+          "data-file-path": test.file_path,
           "data-id": test.id},
     ["h3", test.label]]);
 };
 
-templates.test_description = function(data, path)
+templates.test_description = function(data, path, id_long)
 {
   return (
   ["div",
+    ["h4", id_long],
     ["h2", data.label],
     ["ol", data.desc.map(this.test_step)],
     ["p", ["a", {"href": data.url, "target": "dflmts-window"}, data.url]]]);
