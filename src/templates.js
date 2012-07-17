@@ -9,7 +9,7 @@ templates.main = function()
     ["h1", "Opera Dragonfly manual test suite"],
     ["div", {"class": "test-description"}],
     ["div", {"class": "test-controls"},
-      ["div", {"class": "main-controls"}, 
+      ["div", {"class": "main-controls"},
         ["input", {"type": "button",
                    "value": "Passed",
                    "data-handler": "test-passed"}],
@@ -22,10 +22,10 @@ templates.main = function()
         templates.summary(0, 0, 0, 0),
         ["div", {"class": "input-fields"},
           ["p", ["label", "BTS: ", ["input", {"id": "bts", "type": "text"}]]],
-          ["p", ["label", "Comment:", 
+          ["p", ["label", "Comment:",
                   ["textarea", {"id": "comment",
                                 "rows": "3"}]]]],
-      ["div", {"class": "global-controls"}, 
+      ["div", {"class": "global-controls"},
         ["input", {"type": "button",
                    "data-handler": "export-state",
                    "value": "Export"}],
@@ -34,10 +34,33 @@ templates.main = function()
                    "value": "Clear state"}],
         ["input", {"type": "button",
                    "data-handler": "freeze-configuration",
-                   "value": "Freeze configuration"}]]],
+                   "value": "Freeze configuration"}],
+        ["input", {"type": "button",
+                   "data-handler": "show-configuration",
+                   "value": "Configuration"}]]],
     ["div", {"class": "sidepanel"}],
     ["div", {"class": "sidepanel-resize",
              "data-handler": "resize-panel"}]]);
+};
+
+templates.configuration = function(last_test_run)
+{
+  return (
+  ["div", {"class": "configuration"},
+    ["h1", ["input", {"type": "button",
+                      "data-handler": "back-main-view",
+                      "value": "Back",
+                      "class": "back-button"}],
+           "Opera Dragonfly manual test suite configuration"],
+    ["div", {"class": "setup-test-run"},
+      ["p", "List of components and tests for the test run:"],
+      ["auto-height-textarea", {"id": "test-run",
+                                "rows": "1",
+                                "data-handler": "store-test-run"},
+                                last_test_run],
+      ["input", {"type": "button",
+                 "data-handler": "set-test-run",
+                 "value": "Set test run"}]]]);
 };
 
 templates.summary = function(total, passed, failed, skipped)
@@ -68,7 +91,7 @@ templates.folder = function(path_list, folder)
       break;
   }
   return (
-  ["li", 
+  ["li",
     {"class": "folder"},
     ["h3", {"data-handler": "expand-collapse",
             "data-path": folder.path,

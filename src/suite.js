@@ -388,19 +388,22 @@
 
   var close_unrelated_folders = function()
   {
-    FOR_EACH(document.querySelectorAll(".sidepanel .folder-title"), function(h3)
+    if (_current_test)
     {
-      if (!_current_test.folder_path.startswith(h3.dataset.path))
+      FOR_EACH(document.querySelectorAll(".sidepanel .folder-title"), function(h3)
       {
-        var li = h3.parentNode;
-        var ul = li.querySelector("ul");
-        if (ul)
+        if (!_current_test.folder_path.startswith(h3.dataset.path))
         {
-          li.removeChild(ul);
-          li.classList.remove("open");
+          var li = h3.parentNode;
+          var ul = li.querySelector("ul");
+          if (ul)
+          {
+            li.removeChild(ul);
+            li.classList.remove("open");
+          }
         }
-      }
-    });
+      });
+    }
   };
 
   var onshortcut = function(shortcut, event)
@@ -544,6 +547,21 @@
     }
   };
 
+  var show_configuration = function()
+  {
+    show_configuration_view();
+  };
+
+  var set_test_run = function(event, target)
+  {
+    var ele = document.querySelector("#test-run");
+    if (ele)
+    {
+      _options.test_run = ele.value.split(/\r?\n/).map(function(item) { return item.trim(); });
+      show_initial_view();
+    }
+  };
+
   var show_initial_view = function()
   {
     document.body.innerHTML = "";
@@ -663,6 +681,11 @@
     document.removeEventListener("mouseup", resize_panel_up, false);
   };
 
+  var store_test_run = function(event, target)
+  {
+    localStorage.setItem("dflmts.last_test_run", target.value);
+  };
+
   var setup = function()
   {
     _options = parse_query();
@@ -690,15 +713,31 @@
     EventHandler.register("click", "export-state", export_state);
     EventHandler.register("click", "clear-state", clear_state);
     EventHandler.register("click", "freeze-configuration", freeze_configuration);
+    EventHandler.register("click", "show-configuration", show_configuration_view);
+    EventHandler.register("click", "back-main-view", show_main_view);
+    EventHandler.register("click", "set-test-run", set_test_run);
     EventHandler.register("mousedown", "resize-panel", resize_panel);
+    EventHandler.register("input", "store-test-run", store_test_run);
     var browser = window.chrome ? "chrome" : window.opera ?"opera" : "firefox";
     _keyidentifier = new KeyIdentifier(onshortcut, browser);
     _keyidentifier.set_shortcuts(["up", "down"]);
     window.onhashchange = onhashchange;
+    show_main_view();
+  };
+
+  var show_main_view = function()
+  {
     show_initial_view();
     var panel_width = localStorage.getItem("dflmts.panel_width");
     if (panel_width)
       set_panel_width(JSON.parse(panel_width));
+  };
+
+  var show_configuration_view = function()
+  {
+    document.body.innerHTML = "";
+    var last_test_run = localStorage.getItem("dflmts.last_test_run") || "";
+    document.body.append_tmpl(templates.configuration(last_test_run));
   };
 
   window.onload = setup;

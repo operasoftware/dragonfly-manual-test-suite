@@ -320,3 +320,50 @@ input[type=checkbox]
   padding-left: 18px;
 }
 
+.configuration h1
+{
+  margin-left: 0;
+}
+
+.setup-test-run
+{
+  padding: 8px;
+}
+
+.setup-test-run textarea
+{
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.setup-test-run p
+{
+  margin-bottom: 3px;
+}
+
+.back-button
+{
+  float: left;
+  height: 20px;
+  width: 50px;
+  border: none;
+  padding: 0;
+  margin: 7px 12px;
+  background: transparent;
+  background-image: -o-linear-gradient(135deg,
+                                       #707070 0px,
+                                       #707070 5px,
+                                       transparent 5px),
+                    -o-linear-gradient(-135deg,
+                                       #707070 0px,
+                                       #707070 5px,
+                                       transparent 5px),
+                    -o-linear-gradient(0deg, #707070 0px, #707070 0px);
+  background-position: 0 0, 0 7px, 7px 4px;
+  background-repeat: no-repeat;
+  background-size: 7px 7px, 7px 7px, 10px 6px;
+  content: "";
+}
+

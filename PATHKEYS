@@ -506,6 +506,15 @@
         }, 
         "short": "h"
     }, 
+    "new-style": {
+        "dirs": {
+            "adding_new_style": {
+                "dirs": {}, 
+                "short": "a"
+            }
+        }, 
+        "short": "o"
+    }, 
     "profiler": {
         "dirs": {
             "aggregated_event_details": {
