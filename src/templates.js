@@ -114,11 +114,11 @@ templates.test = function(test)
     ["h3", test.label]]);
 };
 
-templates.test_description = function(data, path, id_long)
+templates.test_description = function(data, path)
 {
   return (
   ["div",
-    ["h4", id_long],
+    ["h4", data.file_path],
     ["h2", data.label],
     ["ol", data.desc.map(this.test_step)],
     ["p", ["a", {"href": data.url, "target": "dflmts-window"}, data.url]]]);

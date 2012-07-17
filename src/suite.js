@@ -232,11 +232,10 @@
     XMLHttpRequest.get_json(path, function(data)
     {
       _current_test = data;
-      var id_long = data.folder_path + "." + hash_label(data.label);
       var container = document.querySelector(".test-description");
       container.innerHTML = "";
       set_selected_test(target);
-      container.append_tmpl(templates.test_description(data, path, id_long));
+      container.append_tmpl(templates.test_description(data, path));
       var cur_state = _test_id_map[_current_test.id];
       var bts_list = document.getElementById("bts");
       if (bts)
@@ -250,13 +249,8 @@
       if (cb)
         cb();
 
-      location.hash = data.folder_path + "." + hash_label(data.label);
+      location.hash = data.file_path;
     });
-  };
-
-  var hash_label = function(label)
-  {
-    return label.toLowerCase().replace(/[\s,.]+/g, "-");
   };
 
   var set_selected_test = function(target)
@@ -584,7 +578,7 @@
     };
   };
 
-  var expand_test = function(path_parts, hashed_label)
+  var expand_test = function(path_parts, file_path)
   {
     var sidepanel = document.querySelector(".sidepanel");
     var cur = 0;
@@ -599,13 +593,14 @@
       if (li.classList.contains("open"))
         continue;
 
-      var cb = expand_test.bind(null, path_parts, hashed_label);
+      var cb = expand_test.bind(null, path_parts, file_path);
       expand_folder(li, FOLDER_PATH.replace("%s", path), cb);
       return;
     }
+    var file_path =
     FOR_EACH(li.querySelectorAll("h3"), function(h3)
     {
-      if (hash_label(h3.textContent) == hashed_label)
+      if (h3.parentNode.dataset.filePath == file_path)
         h3.parentNode.dispatchMouseEvent("click");
     });
   };
@@ -613,16 +608,14 @@
   var onhashchange = function(event)
   {
     var hash = location.hash.slice(1);
-    var cur_path = _current_test
-                 ? _current_test.folder_path + "." + hash_label(_current_test.label)
-                 : "";
+    var cur_path = _current_test ? _current_test.file_path : "";
     if (hash != cur_path)
     {
       var path = hash.split(".");
       if (path.length)
       {
-        var hashed_label = path.pop();
-        expand_test(path, hashed_label);
+        path.pop();
+        expand_test(path, hash);
       }
     }
   };

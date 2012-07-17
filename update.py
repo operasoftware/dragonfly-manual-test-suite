@@ -30,7 +30,7 @@ DFL_GITHUB_REPO = "https://github.com/operasoftware/dragonfly/zipball/%s"
 PROTOCOl = 1
 DOMAIN = 2
 _re_protcol_domain = re.compile(r"^([^:]*)://([^/]*)")
-_re_hash_label = re.compile(r"[\s,.]+")
+_re_hash_label = re.compile(r"[\s,.'\"/\-]+")
 
 def cmd_call(*args):
     return subprocess.Popen(args,
