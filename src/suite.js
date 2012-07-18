@@ -248,8 +248,6 @@
       try { window.open(data.url, "dflmts-window"); } catch(e) {};
       if (cb)
         cb();
-
-      location.hash = data.file_path;
     });
   };
 
@@ -552,6 +550,12 @@
     if (ele)
     {
       _options.test_run = ele.value.split(/\r?\n/).map(function(item) { return item.trim(); });
+      _test_path_map = Object.create(null);
+      _test_path_list = [];
+      _test_id_list = [];
+      _test_id_map = Object.create(null);
+      _cursor = 0;
+      _is_frozen = false;
       show_initial_view();
     }
   };
@@ -603,21 +607,6 @@
       if (h3.parentNode.dataset.filePath == file_path)
         h3.parentNode.dispatchMouseEvent("click");
     });
-  };
-
-  var onhashchange = function(event)
-  {
-    var hash = location.hash.slice(1);
-    var cur_path = _current_test ? _current_test.file_path : "";
-    if (hash != cur_path)
-    {
-      var path = hash.split(".");
-      if (path.length)
-      {
-        path.pop();
-        expand_test(path, hash);
-      }
-    }
   };
 
   var parse_query = function()
@@ -679,6 +668,17 @@
     localStorage.setItem("dflmts.last_test_run", target.value);
   };
 
+  var set_file_path = function(event, target)
+  {
+    var hash = target.value;
+    var path = hash.split(".");
+    if (path.length)
+    {
+      path.pop();
+      expand_test(path, hash);
+    }
+  };
+
   var setup = function()
   {
     _options = parse_query();
@@ -711,10 +711,10 @@
     EventHandler.register("click", "set-test-run", set_test_run);
     EventHandler.register("mousedown", "resize-panel", resize_panel);
     EventHandler.register("input", "store-test-run", store_test_run);
+    EventHandler.register("input", "set-file-path", set_file_path);
     var browser = window.chrome ? "chrome" : window.opera ?"opera" : "firefox";
     _keyidentifier = new KeyIdentifier(onshortcut, browser);
     _keyidentifier.set_shortcuts(["up", "down"]);
-    window.onhashchange = onhashchange;
     show_main_view();
   };
 

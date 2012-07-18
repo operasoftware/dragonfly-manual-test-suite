@@ -127,7 +127,8 @@ def URI_to_system_path(path):
     return path_join(*[unquote(part) for part in path.split("/")])
 
 def hash_label(label):
-    return _re_hash_label.sub("-", label.lower())
+    return _re_hash_label.sub(lambda m: "" if len(m.string) == m.end() else "-",
+                              label.lower())
 
 def parse_readme(path):
     entries = []

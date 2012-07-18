@@ -117,8 +117,9 @@ templates.test = function(test)
 templates.test_description = function(data, path)
 {
   return (
-  ["div",
-    ["h4", data.file_path],
+  ["div", {"data-test-id": data.id},
+    ["h4", ["input", {"value": data.file_path,
+                      "data-handler": "set-file-path"}]],
     ["h2", data.label],
     ["ol", data.desc.map(this.test_step)],
     ["p", ["a", {"href": data.url, "target": "dflmts-window"}, data.url]]]);
