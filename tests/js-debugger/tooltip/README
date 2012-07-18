@@ -71,3 +71,10 @@ desc:
     the outer brackets.
   - Verify that you get a tooltip when you haver one of the outer brackets
     while holding down shift.
+
+label: DFL-3328
+url: ./control-keywords.html
+desc:
+  - Open the testcase in Scripts and get the scripts.
+  - Verify that you get a tooltip for each 'if', 'while', 'switch' expression
+    when you hold down the shift key.
