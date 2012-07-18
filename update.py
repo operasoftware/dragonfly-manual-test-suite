@@ -264,7 +264,7 @@ def create_tests(src, target, ctx):
             os.makedirs(target_path)
         for e in dir_.labels:
             with open(os.path.join(tests_path, e.file_name), "wb") as f:
-                if e.url.startswith("http"):
+                if e.url.startswith(("http", "data")):
                     web_path = e.url
                 else:
                     web_path = ["."] + dir_.path[:]
