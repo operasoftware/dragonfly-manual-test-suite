@@ -3,18 +3,18 @@ url: index.html
 desc:
   - Go to the test page.
   - On line 16 hover 'foo', 'foo.bar', 'foo.bar[4].hallo'.
-  - Verify that for an object the class of the object followed by a list of 
+  - Verify that for an object the class of the object followed by a list of
     the properties is displayed.
   - Verify that for a primitive value the primitive value is displayed.
   - On line 16 hover the open and the closing bracket in 'foo.bar[4]'.
-  - Verify that in both cases the whole identifier 'foo.bar[4]' is selsected and the 
+  - Verify that in both cases the whole identifier 'foo.bar[4]' is selsected and the
     according object is displayed in the tooltip.
   - On line 18 hover the tokens 'foo.bi' between the two brackets.
-  - Verify that only the identifier between the brackets is selected and the 
+  - Verify that only the identifier between the brackets is selected and the
     according value is displayed.
   - On line 7 hover the '{bar' tokens.
   - Verify that nothing is selected and nothing displayed.
-  
+
 label: Advanced tooltip features in JS source view
 url: index.html
 desc:
@@ -24,7 +24,7 @@ desc:
   - Hover one of the brackets of '[0]' on line 39
   - Verify that '[0]' gets selected and the according array is displayed in the tooltip.
   - Hold down shift while still hovering the same bracket.
-  - Verify that 'ele.getElementsByTagName('ul')[0]' gets selected and the 
+  - Verify that 'ele.getElementsByTagName('ul')[0]' gets selected and the
     according element is displayed in the tooltip.
   - Hover different parentheses on line 23.
   - Verify that nothing happens.
@@ -62,4 +62,12 @@ desc:
   - Open the testcase, enable "Break on exceptions" and load scripts.
   - Verify that the 'document' is selected correctly after the error bubble.
 
-  
+label: DFL-3333
+url: data:text/html,<script>var x = ["div", ["foo"]];</script>
+desc:
+  - Open the testcase in Scripts and get the scripts.
+  - Verify that you get a tooltip if you hover one of the inner brackets.
+  - Verify that you don't get a tooltip nor an error when you hover one of
+    the outer brackets.
+  - Verify that you get a tooltip when you haver one of the outer brackets
+    while holding down shift.
