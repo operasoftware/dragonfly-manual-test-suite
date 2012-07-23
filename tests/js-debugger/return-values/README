@@ -4,8 +4,8 @@ desc:
   - Go to Scripts and reload.
   - Verify that the Return Values section says "No return values".
   - When stopping in the first debugger statement, press "Step into" until you
-    reach the last bracket of the "a" function, and then press into one more time.
-  - Verify that that the Return Values section displays the return values of the function.
+    reach the last bracket of the "a" function, and then press "Step into" one more time.
+  - Verify that the Return Values section displays the return values of the function.
   - Verify that the "Function" after the function shows a tooltip with the function source
     when hovered.
   - Verify that the arrows show a tooltip when hovered with information about which file
@@ -18,10 +18,10 @@ desc:
   - Go to Scripts and reload.
   - When stopping in the first debugger statement, press "Step over" until the last debugger
     statement is reached.
-  - Verify that that the Return Values section displays the return values of all the functions
+  - Verify that the Return Values section displays the return values of all the functions
     that returned in the last step.
   - Verify that return values that are objects can be expanded.
-  - Press "Continue" and verify that the the section is updated with "No return values".
+  - Press "Continue" and verify that the section is updated with "No return values".
 
 label: Filtering
 url: ./return-values.html
