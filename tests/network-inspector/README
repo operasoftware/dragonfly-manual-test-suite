@@ -142,3 +142,25 @@ desc:
   - Open the details of a requests that appears "Cached" (different styling in the list, shows "Cached" in the URL tooltip).
   - Verify that there is no "Request" or "Response" headlines.
   - Verify that you see the content of the file.
+
+label: Empty response bodies
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - Load the test.
+  - In the test, click "Post - multipart/form-data, 5 redirects on server".
+  - Open the detail views of the "receive.php" entries.
+  - Verify that only the "receive.php" with the 200 OK response has a response body, and
+    that there are no messages about a missing response body for the other requests.
+
+label: Multiple requests and responses
+url: https://homes.oslo.osa/dherzog/testcase/network/
+desc:
+  - If you have used https://homes.oslo.osa with this instance of Opera before,
+    go to Tools > Delete Private Data, check "Delete password protected pages and data"
+    and hit "Delete".
+  - Go to https://homes.oslo.osa/dherzog/testcase/network/ while Dragonfly is on.
+  - Hit "Approve" on the SSL warning.
+  - Put in no or wrong credentials in the auth dialog and hit "Submit".
+  - Put in correct credentials and hit "Submit".
+  - Open the network details of the first entry.
+  - Verify that only the last response with "200 OK" has a response body.
