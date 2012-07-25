@@ -382,13 +382,42 @@
                 "dirs": {}, 
                 "short": "o"
             }, 
+            "content-tracking": {
+                "dirs": {
+                    "empty_response_bodies_with_content-tracking_off": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }, 
+                    "multiple_responses_with_content-tracking_off": {
+                        "dirs": {}, 
+                        "short": "c"
+                    }, 
+                    "network_details_with_content-tracking_off": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }, 
+                    "turning_content-tracking_back_on": {
+                        "dirs": {}, 
+                        "short": "d"
+                    }
+                }, 
+                "short": "A"
+            }, 
             "data_uri": {
                 "dirs": {}, 
                 "short": "r"
             }, 
+            "data_uris": {
+                "dirs": {}, 
+                "short": "x"
+            }, 
             "details_and_filtering": {
                 "dirs": {}, 
                 "short": "j"
+            }, 
+            "empty_response_bodies": {
+                "dirs": {}, 
+                "short": "y"
             }, 
             "error_displaying": {
                 "dirs": {}, 
@@ -403,6 +432,10 @@
                     "add_window_to_debug_context": {
                         "dirs": {}, 
                         "short": "b"
+                    }, 
+                    "incomplete_warning_-_documents_with_parent_documents": {
+                        "dirs": {}, 
+                        "short": "f"
                     }, 
                     "incomplete_warning_-_multiple_windows": {
                         "dirs": {}, 
@@ -422,6 +455,10 @@
                     }
                 }, 
                 "short": "w"
+            }, 
+            "multiple_requests_and_responses": {
+                "dirs": {}, 
+                "short": "z"
             }, 
             "network-profiling": {
                 "dirs": {

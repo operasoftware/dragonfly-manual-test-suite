@@ -37,6 +37,14 @@ desc:
   - Click a request.
   - Verify that the details view is shown.
   - Verify that the up / down keys get you the next / previous request's details view.
+  - Verify that you see a summary of response code (if applicable) and URI as headline.
+  - Verify that each request/response headline contains the according method/response code.
+  - Switch on "Show raw requests and responses" mode.
+  - Verify that the layout changes, and that each request/response section now shows
+    only monospaced text.
+  - Verify that the firstline of each request/response is syntax highlighted.
+  - Verify that headers are syntax highlighted and that the header name has a context menu
+    entry that opens the according specification (if applicable).
   - Verify that the escape key closes the details view.
 
 label: Request details - Multipart
@@ -44,14 +52,22 @@ url: https://homes.oslo.osa/dherzog/testcase/network/
 desc:
   - In the test, click the "Post - multipart/form-data" button.
   - Open the according detail view.
-  - Verify that "Request - multipart" is shown as a headline in the request body is divided visually.
+  - In un-raw mode:
+  - Verify that "Request - multipart - POST" is shown as a headline.
+  - Verify that each part of the request is divided visually. Headers and body of each
+    part should be separated clearly.
+  - In raw mode:
+  - Verify that "Request" is shown as a headline.
+  - Verify that each part of the request is divided by the boundary. The last boundary
+    should have end with an extra "--".
 
 label: Request details - Forms
 url: https://homes.oslo.osa/dherzog/testcase/network/
 desc:
   - In the test, click the "Post - application/x-www-form-urlencoded" button.
   - Open the according detail view.
-  - Verify that Name - Value pairs are shown as the request body.
+  - Verify that in un-raw mode, separate Name - Value pairs are shown as the request body.
+  - Verify that in raw mode, the request body is shown as one encoded string.
 
 label: Network summary
 url: https://homes.oslo.osa/dherzog/testcase/network/
@@ -77,8 +93,8 @@ desc:
   - Verify that the view is filtered accordingly.
   - Ctrl+Click / Cmd+Click another button.
   - Verify that requests matching at least one of the criteria are shown.
-  - Verify that you can add and remove all of the filters
-  - Verify that you can't have less than one filter
+  - Verify that you can add and remove all of the filters.
+  - Verify that you can't have less than one filter.
 
 label: Details and filtering
 url: https://homes.oslo.osa/dherzog/testcase/network/
@@ -87,13 +103,13 @@ desc:
   - Press the filter button that matches it's type.
   - Verify that the details view is still shown.
   - Click a different filter button.
-  - Verify that the details and the entry itself is not shown anymore.
+  - Verify that the details and the entry itself are not shown anymore.
 
 label: XHR filter
 url: https://homes.oslo.osa/dherzog/testcase/network/
 desc:
-  - Click the XHR filter button
-  - Click the "Get via XHR" button in the test
+  - Click the XHR filter button.
+  - Click the "Get via XHR" button in the test.
   - Verify that the "XHR" filter the according requests and that it has the extra XHR icon.
   - Verify that no requests are shown that weren't retrieved via XHR.
 
@@ -131,7 +147,7 @@ desc:
 label: Data URIs
 url: https://homes.oslo.osa/dherzog/testcase/network/
 desc:
-  - Click "Add data uri"
+  - Click "Add data uri".
   - Verify that a data URI shows up the list of requests.
   - Verify you can read the markup if you click it.
 
