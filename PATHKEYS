@@ -50,6 +50,10 @@
     }, 
     "dom-inspector": {
         "dirs": {
+            "document_select": {
+                "dirs": {}, 
+                "short": "j"
+            }, 
             "edit": {
                 "dirs": {
                     "edit_attributes": {
@@ -63,6 +67,30 @@
                 }, 
                 "short": "c"
             }, 
+            "expand_all_nodes": {
+                "dirs": {}, 
+                "short": "e"
+            }, 
+            "export": {
+                "dirs": {}, 
+                "short": "f"
+            }, 
+            "find_with_click": {
+                "dirs": {}, 
+                "short": "g"
+            }, 
+            "highlight_elements": {
+                "dirs": {}, 
+                "short": "h"
+            }, 
+            "inspect_element_via_right-click": {
+                "dirs": {}, 
+                "short": "d"
+            }, 
+            "keyboard_navigation": {
+                "dirs": {}, 
+                "short": "k"
+            }, 
             "pseudo_elements_context_menu": {
                 "dirs": {}, 
                 "short": "b"
@@ -70,6 +98,10 @@
             "tag_names_with_'<'_characters": {
                 "dirs": {}, 
                 "short": "a"
+            }, 
+            "update_dom_on_node_remove": {
+                "dirs": {}, 
+                "short": "i"
             }
         }, 
         "short": "b"
@@ -310,6 +342,14 @@
                         "dirs": {}, 
                         "short": "f"
                     }, 
+                    "dfl-3328": {
+                        "dirs": {}, 
+                        "short": "h"
+                    }, 
+                    "dfl-3333": {
+                        "dirs": {}, 
+                        "short": "g"
+                    }, 
                     "tooltip_features_in_js_source": {
                         "dirs": {}, 
                         "short": "a"
@@ -474,6 +514,15 @@
         }, 
         "short": "h"
     }, 
+    "new-style": {
+        "dirs": {
+            "adding_new_style": {
+                "dirs": {}, 
+                "short": "a"
+            }
+        }, 
+        "short": "o"
+    }, 
     "profiler": {
         "dirs": {
             "aggregated_event_details": {
@@ -576,6 +625,15 @@
             "matching_style_rules": {
                 "dirs": {}, 
                 "short": "d"
+            }, 
+            "new-style": {
+                "dirs": {
+                    "adding_new_style": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "q"
             }, 
             "pseudo_classes": {
                 "dirs": {}, 

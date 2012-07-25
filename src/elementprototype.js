@@ -9,7 +9,9 @@ Element.prototype.append_tmpl = function(tmpl)
   if (typeof tmpl[ELE_NAME] == "string")
   {
     i++;
-    ele = document.createElement(tmpl[ELE_NAME]);
+    ele = tmpl[ELE_NAME] in CustomElements
+        ? CustomElements[tmpl[ELE_NAME]].create()
+        : document.createElement(tmpl[ELE_NAME]);
     if (Object.prototype.toString.call(tmpl[ATTRS]) == "[object Object]")
     {
       i++;
@@ -109,3 +111,110 @@ if (!Element.prototype.matchesSelector)
 }
 
 
+window.CustomElements = new function()
+{
+  this._init_queue = [];
+
+  this._init_listener = function(event)
+  {
+    var queue = CustomElements._init_queue;
+    var wait_list = [];
+    var target = event.target;
+
+    for (var i = 0, item; item = queue[i]; i++)
+    {
+      if (target.contains(item.ele))
+        CustomElements[item.type].init(item.ele);
+      else
+        wait_list.push(item);
+    }
+    CustomElements._init_queue = wait_list;
+    if (!wait_list.length)
+      document.removeEventListener('DOMNodeInserted', CustomElements._init_listener, false);
+  };
+
+  this.add = function(CustomElementClass)
+  {
+    CustomElementClass.prototype = this.Base;
+    var custom_element = new CustomElementClass();
+    if (custom_element.type)
+    {
+      for (var i = 1, feature; feature = arguments[i]; i++)
+      {
+        if (feature in this)
+          this[feature].apply(custom_element);
+      }
+      this[custom_element.type] = custom_element;
+    }
+  }
+};
+
+window.CustomElements.Base = new function()
+{
+  this.create = function()
+  {
+    var ele = document.createElement(this.html_name);
+    if (!CustomElements._init_queue.length)
+      document.addEventListener('DOMNodeInserted', CustomElements._init_listener, false);
+    CustomElements._init_queue.push({ele: ele, type: this.type});
+    return ele;
+  }
+
+  this.init = function(ele)
+  {
+    if (this._inits)
+    {
+      this._inits.forEach(function(init)
+      {
+        init.call(this, ele);
+      }, this);
+    }
+  }
+};
+
+window.CustomElements.AutoScrollHeightFeature = function()
+{
+  this._adjust_height = function(delta, event)
+  {
+    if (!this.value)
+    {
+      this.style.height = "auto";
+      this.rows = 1;
+    }
+    else
+    {
+      this.rows = 0;
+      this.style.height = "0";
+      this.style.height = this.scrollHeight + delta + "px";
+    }
+  };
+
+  this._get_delta = function(ele)
+  {
+    var style = window.getComputedStyle(ele, null);
+    var is_border_box = style.getPropertyValue("box-sizing") == "border-box";
+    var prop = is_border_box ? "border" : "padding";
+    var sign = is_border_box ? 1 : -1;
+
+    return (sign * parseInt(style.getPropertyValue(prop + "-bottom")) || 0) +
+           (sign * parseInt(style.getPropertyValue(prop + "-top")) || 0);
+  };
+
+  (this._inits || (this._inits = [])).push(function(ele)
+  {
+    var delta = this._get_delta(ele);
+    var adjust_height = this._adjust_height.bind(ele, delta);
+    adjust_height();
+    ele.addEventListener("input", adjust_height, false);
+    // Custom event to force adjust of height
+    ele.addEventListener("heightadjust", adjust_height, false);
+  });
+
+};
+
+CustomElements.add(function()
+                   {
+                     this.type = "auto-height-textarea";
+                     this.html_name = "textarea";
+                   },
+                   "AutoScrollHeightFeature");

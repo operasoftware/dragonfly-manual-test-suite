@@ -30,6 +30,7 @@ DFL_GITHUB_REPO = "https://github.com/operasoftware/dragonfly/zipball/%s"
 PROTOCOl = 1
 DOMAIN = 2
 _re_protcol_domain = re.compile(r"^([^:]*)://([^/]*)")
+_re_hash_label = re.compile(r"[\s,.'\"/\-]+")
 
 def cmd_call(*args):
     return subprocess.Popen(args,
@@ -125,6 +126,10 @@ class Entry(object):
 def URI_to_system_path(path):
     return path_join(*[unquote(part) for part in path.split("/")])
 
+def hash_label(label):
+    return _re_hash_label.sub(lambda m: "" if len(m.string) == m.end() else "-",
+                              label.lower())
+
 def parse_readme(path):
     entries = []
     entry = Entry()
@@ -214,6 +219,7 @@ def get_tests(ctx, pathkeys, blacklist=[]):
                 e.file_name = "%s.json" % e.short_id
                 e.file_path = "./%s/%s" % (TESTS, e.file_name)
                 e.folder_path = folder_path
+                e.file_path = "%s.%s" % (folder_path, hash_label(e.label))
                 cur_dir.labels.append(e)
                 if not e.label.strip():
                     print "empty entry"
@@ -258,7 +264,7 @@ def create_tests(src, target, ctx):
             os.makedirs(target_path)
         for e in dir_.labels:
             with open(os.path.join(tests_path, e.file_name), "wb") as f:
-                if e.url.startswith("http"):
+                if e.url.startswith(("http", "data")):
                     web_path = e.url
                 else:
                     web_path = ["."] + dir_.path[:]
@@ -276,7 +282,8 @@ def create_tests(src, target, ctx):
                           "url": web_path,
                           "desc": e.desc,
                           "id": e.short_id,
-                          "folder_path": e.folder_path}
+                          "folder_path": e.folder_path,
+                          "file_path": e.file_path}
                 f.write(json.dumps(e_dict, indent=4, sort_keys=True))
         for d in dir_.dirs:
             d_path = os.path.join(target_path, d)
@@ -301,7 +308,9 @@ def create_folders(src, target, ctx):
         with open(os.path.join(target_path, name), "wb") as f:
             labels = []
             for e in folder.labels:
-                labels.append({"label":e.label, "id": e.short_id})
+                labels.append({"label":e.label,
+                               "id": e.short_id,
+                               "file_path": e.file_path})
             dirs = []
             folder_path = "%s.%%s" % ".".join(folder.path)
             for d in folder.dirs:
