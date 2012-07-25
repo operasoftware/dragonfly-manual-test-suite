@@ -50,6 +50,10 @@
     }, 
     "dom-inspector": {
         "dirs": {
+            "dfl-1360": {
+                "dirs": {}, 
+                "short": "l"
+            }, 
             "document_select": {
                 "dirs": {}, 
                 "short": "j"
