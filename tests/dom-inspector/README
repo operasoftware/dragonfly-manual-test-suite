@@ -72,3 +72,9 @@ desc:
   - Verify that you can navigate with arrow keys and expand and close nodes with enter.
   - Click an element or attribute.
   - Verify that the click target is also the navigation target.
+
+label: DFL-1360
+url: http://www.aleto.ch
+  - Go to the test page and select some element.
+  - Reload the host an verify that the previous selected element gets
+    reselected in Documents.

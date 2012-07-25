@@ -25,6 +25,25 @@ h2
   font-size: 1.3em;
 }
 
+h4
+{
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-style: italic;
+}
+
+h4 input
+{
+  font: inherit;
+  border: 0px solid;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: right;
+  color: hsl(0, 0%, 40%);
+}
+
 .sidepanel
 {
   position: absolute;
@@ -226,7 +245,7 @@ input[type=checkbox]
 .test-description
 {
   position: absolute;
-  top: 40px;
+  top: 36px;
   bottom: 200px;
   left: 350px;
   right: 0;
@@ -308,5 +327,52 @@ input[type=checkbox]
 .frozen .sidepanel ul
 {
   padding-left: 18px;
+}
+
+.configuration h1
+{
+  margin-left: 0;
+}
+
+.setup-test-run
+{
+  padding: 8px;
+}
+
+.setup-test-run textarea
+{
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.setup-test-run p
+{
+  margin-bottom: 3px;
+}
+
+.back-button
+{
+  float: left;
+  height: 20px;
+  width: 50px;
+  border: none;
+  padding: 0;
+  margin: 7px 12px;
+  background: transparent;
+  background-image: -o-linear-gradient(135deg,
+                                       #707070 0px,
+                                       #707070 5px,
+                                       transparent 5px),
+                    -o-linear-gradient(-135deg,
+                                       #707070 0px,
+                                       #707070 5px,
+                                       transparent 5px),
+                    -o-linear-gradient(0deg, #707070 0px, #707070 0px);
+  background-position: 0 0, 0 7px, 7px 4px;
+  background-repeat: no-repeat;
+  background-size: 7px 7px, 7px 7px, 10px 6px;
+  content: "";
 }
 
