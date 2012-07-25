@@ -1,0 +1,36 @@
+label: Single return value
+url: ./return-values.html
+desc:
+  - Go to Scripts and reload.
+  - Verify that the Return Values section says "No return values".
+  - When stopping in the first debugger statement, press "Step into" until you
+    reach the last bracket of the "a" function, and then press "Step into" one more time.
+  - Verify that the Return Values section displays the return values of the function.
+  - Verify that the "Function" after the function shows a tooltip with the function source
+    when hovered.
+  - Verify that the arrows show a tooltip when hovered with information about which file
+    and line the function returned from/to.
+  - Verify that the arrows can be clicked and that the relevant line is highlighted.
+
+label: Multiple return value
+url: ./return-values.html
+desc:
+  - Go to Scripts and reload.
+  - When stopping in the first debugger statement, press "Step over" until the last debugger
+    statement is reached.
+  - Verify that the Return Values section displays the return values of all the functions
+    that returned in the last step.
+  - Verify that return values that are objects can be expanded.
+  - Press "Continue" and verify that the section is updated with "No return values".
+
+label: Filtering
+url: ./return-values.html
+desc:
+  - Go to Scripts and reload.
+  - When stopping in the first debugger statement, press "Step over" until the last debugger
+    statement is reached.
+  - Expand the second return value from the top (the object). Filter by "for".
+  - Verify that the "for_me" string is highlighted.
+  - Switch to another top tab and back, and make sure the filtered values are still the same.
+  - Remove the filter and verify that all return values are visible.
+

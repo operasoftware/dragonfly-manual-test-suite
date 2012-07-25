@@ -1,0 +1,24 @@
+<!doctype html>
+<script>
+function a(o) {
+  return o;
+}
+
+debugger;
+var a = [
+  a(undefined),
+  a(null),
+  a(true),
+  a(false),
+  a(Infinity),
+  a(-Infinity),
+  a(NaN),
+  a(1.1),
+  a("test"),
+  a("long'\" string here just testing'\""),
+  a({search: "for_me"}),
+  a(function a() {})
+];
+debugger;
+</script>
+
