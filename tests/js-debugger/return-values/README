@@ -1,11 +1,11 @@
 label: Single return value
-url: ./return-values.html
+url: ./return-values-single.html
 desc:
   - Go to Scripts and reload.
   - Verify that the Return Values section says "No return values".
-  - When stopping in the first debugger statement, press "Step into" until you
-    reach the last bracket of the "a" function, and then press "Step into" one more time.
-  - Verify that the Return Values section displays the return values of the function.
+  - When stopping in the first debugger statement, press "Step over" until the last debugger
+    statement is reached.
+  - Verify that the Return Values section displays the return value of the function.
   - Verify that the "Function" after the function shows a tooltip with the function source
     when hovered.
   - Verify that the arrows show a tooltip when hovered with information about which file
@@ -13,7 +13,7 @@ desc:
   - Verify that the arrows can be clicked and that the relevant line is highlighted.
 
 label: Multiple return value
-url: ./return-values.html
+url: ./return-values-multiple.html
 desc:
   - Go to Scripts and reload.
   - When stopping in the first debugger statement, press "Step over" until the last debugger
