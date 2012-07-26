@@ -1,5 +1,5 @@
 label: Smoke test
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Load the page.
   - Open Dragonfly.
@@ -8,7 +8,7 @@ desc:
   - Verify that the page reloads and that the graph view with the requests is shown.
 
 label: Pause
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Click the pause button.
   - Reload the debugged page.
@@ -20,7 +20,7 @@ desc:
   - Verify that the additional request is shown additionally.
 
 label: Switch graph/data view
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Click the Data view button.
   - Close and re-open Dragonfly.
@@ -32,7 +32,7 @@ desc:
   - Verify that the waterfall is displayed in the correct (original) order.
 
 label: Request details
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Click a request.
   - Verify that the details view is shown.
@@ -48,7 +48,7 @@ desc:
   - Verify that the escape key closes the details view.
 
 label: Request details - Multipart
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - In the test, click the "Post - multipart/form-data" button.
   - Open the according detail view.
@@ -62,7 +62,7 @@ desc:
     should have end with an extra "--".
 
 label: Request details - Forms
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - In the test, click the "Post - application/x-www-form-urlencoded" button.
   - Open the according detail view.
@@ -70,14 +70,14 @@ desc:
   - Verify that in raw mode, the request body is shown as one encoded string.
 
 label: Network summary
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Verify that a correct summary of the requests is displayed at the bottom of the main view.
   - Click the Images filter button.
   - Verify that the summary says "1 Request" in singular, and that the size is less than in the unfiltered view.
 
 label: Search
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - In the test, click the Get via XHR button.
   - Search for "search-for-me".
@@ -87,7 +87,7 @@ desc:
   - Verify that pressing enter toggles the highlight between these two.
 
 label: Type Filters
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Click the various type filter buttons.
   - Verify that the view is filtered accordingly.
@@ -97,7 +97,7 @@ desc:
   - Verify that you can't have less than one filter.
 
 label: Details and filtering
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Open the details of some request.
   - Press the filter button that matches it's type.
@@ -106,7 +106,7 @@ desc:
   - Verify that the details and the entry itself are not shown anymore.
 
 label: XHR filter
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Click the XHR filter button.
   - Click the "Get via XHR" button in the test.
@@ -114,26 +114,26 @@ desc:
   - Verify that no requests are shown that weren't retrieved via XHR.
 
 label: Error displaying
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - In the test, click the "Error response" button.
   - Verify that the url in the URL list is styled red.
   - Verify that the URL tooltip shows the URL prefixed with "404 (Not Found) – ".
 
 label: URL param display
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - In the test, click the "Get via XHR" button.
   - Verify that the URL tooltip shows a name-value table of the get parameters in the URL.
 
 label: Unload event display
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - In the test, click the "Get via XHR" button.
   - Verify that the URL tooltip shows the URL prefixed with "Unreferenced – ".
 
 label: Clear
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Click the "Clear" button.
   - Verify that the "Reload to see Resources" view is shown.
@@ -145,14 +145,14 @@ desc:
   - Compare the tooltips with what's "Expected" in the test.
 
 label: Data URIs
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Click "Add data uri".
   - Verify that a data URI shows up the list of requests.
   - Verify you can read the markup if you click it.
 
 label: Cached Requests
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - When the test is loaded, reload it.
   - Open the details of a requests that appears "Cached" (different styling in the list, shows "Cached" in the URL tooltip).
@@ -160,7 +160,7 @@ desc:
   - Verify that you see the content of the file.
 
 label: Empty response bodies
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Load the test.
   - In the test, click "Post - multipart/form-data, 5 redirects on server".
@@ -180,3 +180,8 @@ desc:
   - Put in correct credentials and hit "Submit".
   - Open the network details of the first entry.
   - Verify that only the last response with "200 OK" has a response body.
+
+label: Network header tokenizer
+url: ../DFL/test-scripts/network-view/header-tokenizer.html
+desc:
+  - Open the test and verify that it doesn't throw.
