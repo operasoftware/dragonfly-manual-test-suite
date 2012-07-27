@@ -132,24 +132,18 @@ desc:
   - In the test, click the "Get via XHR" button.
   - Verify that the URL tooltip shows the URL prefixed with "Unreferenced – ".
 
-label: Clear
-url: http://people.opera.com/dherzog/network/
-desc:
-  - Click the "Clear" button.
-  - Verify that the "Reload to see Resources" view is shown.
-
-label: Sequence tooltips
-url: ../DFL/test-scripts/network-view/graph-tooltips.xml
-desc:
-  - Hover over the graphs in the waterfall.
-  - Compare the tooltips with what's "Expected" in the test.
-
 label: Data URIs
 url: http://people.opera.com/dherzog/network/
 desc:
   - Click "Add data uri".
   - Verify that a data URI shows up the list of requests.
   - Verify you can read the markup if you click it.
+
+label: Clear
+url: http://people.opera.com/dherzog/network/
+desc:
+  - Click the "Clear" button.
+  - Verify that the "Reload to see Resources" view is shown.
 
 label: Cached Requests
 url: http://people.opera.com/dherzog/network/
@@ -180,6 +174,13 @@ desc:
   - Put in correct credentials and hit "Submit".
   - Open the network details of the first entry.
   - Verify that only the last response with "200 OK" has a response body.
+
+label: Sequence tooltips
+url: ../DFL/test-scripts/network-view/graph-tooltips.xml
+desc:
+  - Hover over the graphs in the waterfall.
+  - Compare the tooltips with what's "Expected" in the test.
+  - "Unexpected event sequence" warnings are expected.
 
 label: Network header tokenizer
 url: ../DFL/test-scripts/network-view/header-tokenizer.html

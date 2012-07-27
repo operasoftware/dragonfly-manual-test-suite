@@ -50,6 +50,10 @@
     }, 
     "dom-inspector": {
         "dirs": {
+            "document_select": {
+                "dirs": {}, 
+                "short": "j"
+            }, 
             "edit": {
                 "dirs": {
                     "edit_attributes": {
@@ -63,6 +67,30 @@
                 }, 
                 "short": "c"
             }, 
+            "expand_all_nodes": {
+                "dirs": {}, 
+                "short": "e"
+            }, 
+            "export": {
+                "dirs": {}, 
+                "short": "f"
+            }, 
+            "find_with_click": {
+                "dirs": {}, 
+                "short": "g"
+            }, 
+            "highlight_elements": {
+                "dirs": {}, 
+                "short": "h"
+            }, 
+            "inspect_element_via_right-click": {
+                "dirs": {}, 
+                "short": "d"
+            }, 
+            "keyboard_navigation": {
+                "dirs": {}, 
+                "short": "k"
+            }, 
             "pseudo_elements_context_menu": {
                 "dirs": {}, 
                 "short": "b"
@@ -70,6 +98,10 @@
             "tag_names_with_'<'_characters": {
                 "dirs": {}, 
                 "short": "a"
+            }, 
+            "update_dom_on_node_remove": {
+                "dirs": {}, 
+                "short": "i"
             }
         }, 
         "short": "b"
@@ -225,6 +257,23 @@
                     }
                 }, 
                 "short": "c"
+            }, 
+            "return-values": {
+                "dirs": {
+                    "filtering": {
+                        "dirs": {}, 
+                        "short": "c"
+                    }, 
+                    "multiple_return_value": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }, 
+                    "single_return_value": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "i"
             }, 
             "script-source": {
                 "dirs": {
@@ -473,6 +522,10 @@
                 }, 
                 "short": "v"
             }, 
+            "network_header_tokenizer": {
+                "dirs": {}, 
+                "short": "0"
+            }, 
             "network_profiling": {
                 "dirs": {}, 
                 "short": "t"
@@ -638,6 +691,15 @@
             "matching_style_rules": {
                 "dirs": {}, 
                 "short": "d"
+            }, 
+            "new-style": {
+                "dirs": {
+                    "adding_new_style": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "q"
             }, 
             "pseudo_classes": {
                 "dirs": {}, 
