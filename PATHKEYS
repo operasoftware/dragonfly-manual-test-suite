@@ -359,6 +359,14 @@
                         "dirs": {}, 
                         "short": "f"
                     }, 
+                    "dfl-3328": {
+                        "dirs": {}, 
+                        "short": "h"
+                    }, 
+                    "dfl-3333": {
+                        "dirs": {}, 
+                        "short": "g"
+                    }, 
                     "tooltip_features_in_js_source": {
                         "dirs": {}, 
                         "short": "a"
@@ -588,6 +596,15 @@
             }
         }, 
         "short": "h"
+    }, 
+    "new-style": {
+        "dirs": {
+            "adding_new_style": {
+                "dirs": {}, 
+                "short": "a"
+            }
+        }, 
+        "short": "o"
     }, 
     "profiler": {
         "dirs": {

@@ -4,7 +4,7 @@
 
 var test_handler = function(event)
 {
-  console.log(event.target.nodeName);
+  console.log(event ? event.target.nodeName : "content attribute");
   var a = 1;
   var b = 1;
   var c = 1;
@@ -37,19 +37,20 @@ var FOR_EACH = Array.prototype.forEach.call.bind(Array.prototype.forEach);
 
 window.onload = function()
 {
-  FOR_EACH(document.querySelectorAll("body, p"), function(p)
+  FOR_EACH(document.querySelectorAll("body, div p"), function(p)
   {
     p.addEventListener("click", test_handler, false);
-    p.addEventListener("mouseover", test_handler, false);
-    p.setAttribute("onmouseout", "console.log('hello')");
+    p.setAttribute("onmouseover", "console.log('hello')");
   });
 
   document.addEventListener("click", test_handler, false);
+  document.body.addEventListener("focus", test_handler, true);
 }
 
 </script>
+<p><input>
 <div>
-  <p>text
-  <p>text
-  <p>text
+  <p onmouseout=test_handler>text
+  <p onmouseout=test_handler>text
+  <p onmouseout=test_handler>text
 </div>

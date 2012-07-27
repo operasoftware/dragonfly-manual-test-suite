@@ -18,7 +18,7 @@ EventHandler.prototype = new function()
      new EventHandler(type, is_capturing))[name] = handler;
   };
 
-  
+
   EventHandler.unregister = function(type, name, handler, is_capturing)
   {
     is_capturing = Boolean(is_capturing);
