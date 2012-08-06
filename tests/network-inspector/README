@@ -42,7 +42,7 @@ desc:
   - Switch on "Show raw requests and responses" mode.
   - Verify that the layout changes, and that each request/response section now shows
     only monospaced text.
-  - Verify that the firstline of each request/response is syntax highlighted.
+  - Verify that the first line of each request/response is syntax highlighted.
   - Verify that headers are syntax highlighted and that the header name has a context menu
     entry that opens the according specification (if applicable).
   - Verify that the escape key closes the details view.
