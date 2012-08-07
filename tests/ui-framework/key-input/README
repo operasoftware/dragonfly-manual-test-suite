@@ -1,6 +1,6 @@
 label: Shortcut bindings
-url: ./keyidentifier.html
+url: ../../DFL/test-scripts/test-scripts/keyidentifier.html
 desc:
   - Open the test case.
   - Verify that all short cuts on the test case are recognized.
-  
+

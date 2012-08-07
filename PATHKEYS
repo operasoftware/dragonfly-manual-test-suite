@@ -50,6 +50,10 @@
     }, 
     "dom-inspector": {
         "dirs": {
+            "dfl-1360": {
+                "dirs": {}, 
+                "short": "l"
+            }, 
             "document_select": {
                 "dirs": {}, 
                 "short": "j"
@@ -257,6 +261,23 @@
                     }
                 }, 
                 "short": "c"
+            }, 
+            "return-values": {
+                "dirs": {
+                    "filtering": {
+                        "dirs": {}, 
+                        "short": "c"
+                    }, 
+                    "multiple_return_value": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }, 
+                    "single_return_value": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }
+                }, 
+                "short": "i"
             }, 
             "script-source": {
                 "dirs": {
