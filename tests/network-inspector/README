@@ -52,7 +52,7 @@ url: http://people.opera.com/dherzog/network/
 desc:
   - In the test, click the "Post - multipart/form-data" button.
   - Open the according detail view.
-  - In un-raw mode:
+  - In parsed mode:
   - Verify that "Request - multipart - POST" is shown as a headline.
   - Verify that each part of the request is divided visually. Headers and body of each
     part should be separated clearly.
@@ -66,7 +66,7 @@ url: http://people.opera.com/dherzog/network/
 desc:
   - In the test, click the "Post - application/x-www-form-urlencoded" button.
   - Open the according detail view.
-  - Verify that in un-raw mode, separate Name - Value pairs are shown as the request body.
+  - Verify that in parsed mode, separate Name - Value pairs are shown as the request body.
   - Verify that in raw mode, the request body is shown as one encoded string.
 
 label: Network summary

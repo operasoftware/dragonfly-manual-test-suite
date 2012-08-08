@@ -1,5 +1,5 @@
 label: Network details with content-tracking off
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Go to Settings.
   - Uncheck "Track content".
@@ -11,7 +11,7 @@ desc:
   - Verify that the detail view tells you that you need to turn on content-tracking.
 
 label: Empty response bodies with content-tracking off
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Go to Settings.
   - Uncheck "Track content".
@@ -21,7 +21,7 @@ desc:
   - Verify that only the "receive.php" with the 200 OK response has a response body.
 
 label: Multiple responses with content-tracking off
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Go to Settings.
   - Uncheck "Track content".
@@ -36,7 +36,7 @@ desc:
   - Verify that only the last response with "200 OK" has a response body.
 
 label: Turning content-tracking back on
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Go to Settings.
   - Uncheck "Track content".

@@ -1,24 +1,24 @@
 label: Reload same window id
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Click the "Clear" button.
   - Reload the testcase.
   - Reload the testcase once more.
-  - Verify that you the context is reset and you don't see resources twice.
+  - Verify that the context is reset and you don't see resources twice.
 
 label: Add window to debug context
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Reload the testcase.
   - In the test, click "Open elg.no in tab 1".
-  - Verify that the index document is of https://homes.oslo.osa/dherzog/testcase/network/ is still shown.
+  - Verify that the index document of http://people.opera.com/dherzog/network/ is still shown.
   - Verify that the resources from elg.no are added to the list.
   - Leave the tab with elg.no open, but switch back to the testcase.
   - Reload.
   - Verify that the resources from elg.no are now on top, and the reloaded resources from the testcase are shown after that.
 
 label: Switch content of additional windows in debug context
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Click the "Clear" button.
   - In the test, click "Open elg.no in tab 1".
@@ -28,7 +28,7 @@ desc:
   - Verify that no Resources from elg.no are shown anymore.
 
 label: Incomplete warning - simple
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Click the "Clear" button.
   - In the test, click the "Get via XHR" button.
@@ -36,7 +36,7 @@ desc:
   - Verify that the "Reload" and close buttons work.
 
 label: Incomplete warning - multiple windows
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Click the "Clear" button.
   - In the test, click the "Get via XHR" button.
@@ -48,7 +48,7 @@ desc:
   - Verify that all resources belonging to the testcase are shown after those of elg.no.
 
 label: Incomplete warning - documents with parent documents
-url: https://homes.oslo.osa/dherzog/testcase/network/
+url: http://people.opera.com/dherzog/network/
 desc:
   - Click the "Clear" button.
   - In the test, click "Add data uri"
