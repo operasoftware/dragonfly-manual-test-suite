@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import os
 import sys
 import json
@@ -20,7 +22,7 @@ PATHKEYS = "PATHKEYS"
 FOLDERS = "FOLDERS"
 TESTS = "TESTS"
 TESTLISTS = "TESTLISTS"
-CHARS = string.ascii_lowercase + string.digits
+CHARS = string.ascii_letters + string.digits
 TARGET = "build"
 SRC = "src"
 TESTS_SRC = "tests"
