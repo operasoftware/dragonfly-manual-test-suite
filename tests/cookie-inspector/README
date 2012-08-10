@@ -2,9 +2,9 @@ label: Inspect cookies
 url: http://people.opera.com/dherzog/cookies/
 desc:
   - In the test, click "Set cookies".
-  - In Storages > Cookies in Dragonfly:
+  - In Storage > Cookies in Dragonfly:
   - Verify that you see a cookie named "i-am-http-only" and that it has a checkmark in the HTTPOnly column.
-  - Verify that you see a cookie named "i-have-a-path" and that is has a value in the Path column that makes sense.
+  - Verify that you see a cookie named "i-have-a-path" and that it has a value in the Path column that makes sense.
   - Verify that you see cookies named "a" to "e".
   - Verify that all of the cookies above expire with the session.
   - In the test, click "Add https iframe".
