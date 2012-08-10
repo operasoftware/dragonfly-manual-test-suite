@@ -132,6 +132,18 @@
       };
     });
 
+    if (single_tests.length > 1)
+    {
+      var unsorted = single_tests.slice();
+      single_tests = [];
+      FOR_EACH(document.querySelectorAll("[data-file-path]"), function(h3)
+      {
+        var index = unsorted.indexOf(h3);
+        if (index > -1)
+          single_tests.push(unsorted.splice(index, 1)[0]);
+      });
+    }
+
     single_tests.forEach(add_single_test);
 
     _test_path_list.forEach(function(comp)
