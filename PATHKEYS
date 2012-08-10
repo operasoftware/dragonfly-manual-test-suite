@@ -371,6 +371,14 @@
                         "dirs": {}, 
                         "short": "g"
                     }, 
+                    "dfl-3336": {
+                        "dirs": {}, 
+                        "short": "i"
+                    }, 
+                    "manual_selection": {
+                        "dirs": {}, 
+                        "short": "j"
+                    }, 
                     "tooltip_features_in_js_source": {
                         "dirs": {}, 
                         "short": "a"

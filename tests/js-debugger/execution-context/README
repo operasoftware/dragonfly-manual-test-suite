@@ -14,16 +14,9 @@ desc:
   - Verify that 'window.top == window' returns 'true'.
 
 label: Tooltip evaluation context
-url: ./execution-context.html
+url: ./multiple-contexts.html
 desc:
-  - Ensure that "break on exception" is enabled.
   - Load the test case, open Dragonfly and reload the document.
-  - Verify that it stops "a.a".
-  - Hover the 'window' token.
-  - Verify that 'name' of the window is 'foo'.
-  - Press continue.
-  - Hover the window token again.
-  - Verify that 'name' is now the empty string.
-  - Switch the context in the console dropdown to the data uri.
-  - Hover the 'window' token and verify that 'name' is 'foo'.
+  - Select all the different scripts an verify that the tooltip always
+    shows the correct value for 'window.foo'.
 
