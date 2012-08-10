@@ -24,3 +24,14 @@ desc:
   - Verify that the engines stops on the exception with an according ifo bubble.
   - Verify that the engines stops each time you press the 'CLICK' button.
   - Verify that the setting can be turned off.
+
+label: Default settings.
+url: ./exception.html
+desc:
+  - Open the 'Developer Tools URL' path of opera:config, the URL of Dragonfly, in a normal tab,
+    e.g. https://dragonfly.opera.com/app/. This will show a page with an info box 'Waiting for a host connection on port 0'.
+  - Open Dragonfly on that page and delete all values in Storage > Local Storage.
+  - Close the tab and Dragonfly.
+  - Open the TC and open Dragonfly.
+  - Reload the TC.
+  - Verify that Dragonfly switches to Scripts and stops at the exception.

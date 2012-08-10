@@ -75,6 +75,7 @@ desc:
 
 label: DFL-1360
 url: http://www.aleto.ch
+desc:
   - Go to the test page and select some element.
   - Reload the host an verify that the previous selected element gets
     reselected in Documents.

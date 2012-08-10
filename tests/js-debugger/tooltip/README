@@ -78,3 +78,24 @@ desc:
   - Open the testcase in Scripts and get the scripts.
   - Verify that you get a tooltip for each 'if', 'while', 'switch' expression
     when you hold down the shift key.
+
+label: DFL-3336
+url: ./selection-first-attempt.html
+desc:
+  - Open testcase.
+  - Open Dragonfly after that.
+  - Go to Script.
+  - Reload.
+  - Be stopped.
+  - Inspect 'p' with tooltip.
+  - Mouseover HTMLParagraphElement.
+  - Click the <p> elem that's shown.
+  - Verify that it switches to DOM and that the 'p' element is highlighted on the first attempt.
+
+label: Manual selection
+url: ./manual-selection.html
+desc:
+  - Open testcase, go to Scripts and reload.
+  - Select '"a.b.c.d".split(".")[1]' manually.
+  - Press shift.
+  - Verify that you get a tooltip with "b".
