@@ -1,0 +1,89 @@
+label: Inspect cookies
+url: http://people.opera.com/dherzog/cookies/
+desc:
+  - In the test, click "Set cookies".
+  - In Storages > Cookies in Dragonfly:
+  - Verify that you see a cookie named "i-am-http-only" and that it has a checkmark in the HTTPOnly column.
+  - Verify that you see a cookie named "i-have-a-path" and that is has a value in the Path column that makes sense.
+  - Verify that you see cookies named "a" to "e".
+  - Verify that all of the cookies above expire with the session.
+  - In the test, click "Add https iframe".
+  - You may need to press "Continue" in that iframe, also login to homes/.
+  - Verify that a runtime is added.
+  - Verify that you see a cookie named "i-am-secure" and that it has a checkmark in the Secure column.
+
+label: Delete cookies
+url: http://people.opera.com/dherzog/cookies/
+desc:
+  - In the test, click "Set cookies".
+  - Delete cookie "a" via the context menu.
+  - Verify that the deleted cookie is gone.
+  - Select cookies "b" and "c" by holding ctrl / cmd.
+  - Open the context menu.
+  - Delete the cookies.
+  - Verify they were deleted.
+  - In the test, click "Add https iframe".
+  - You may need to press "Continue" in that iframe, also login to homes/.
+  - Verify that you can delete the "i-am-secure" cookie.
+
+label: Edit cookies
+url: http://people.opera.com/dherzog/cookies/
+desc:
+  - In the test, click "Set cookies".
+  - Double click some of the cookie values.
+  - Change the value and click outside.
+  - Verify that you see the changed value.
+  - Edit the expiry date cookie "d" to be in one hour (choose today in the date picker and adjust the time).
+  - Press enter to save.
+  - Verify that the expiry value fits and that the tooltip shows the correct date and time.
+  - Edit again, change a value and cancel by pressing escape.
+  - Verify that the value hasn't changed.
+  - Edit cookie "e", set the HTTPOnly checkmark.
+  - Save by switching to the "Documents" tab.
+  - Go back to Storage.
+  - Verify that the HTTPOnly checkmark is shown for "e".
+  - In the test, click "Show cookies".
+  - Verify that "e" is no longer shown in the test.
+
+label: Delete all cookies
+url: http://people.opera.com/dherzog/cookies/
+desc:
+  - In the test, click "Set cookies".
+  - Open the context menu and select "Remove cookie of domain/path".
+  - In the test, click "Show cookies".
+  - Verify that there are no cookies shown in the test and in the Dragonfly UI.
+
+label: Add new cookies
+url: http://people.opera.com/dherzog/cookies/
+desc:
+  - Press the Add Cookie button tree times.
+  - Enter "a1", "b1" and "c1" as Names.
+  - Give "a1" some Value, set the Secure checkmark on "b2".
+  - Press Enter.
+  - Verify that there is a new created cookie with the according key.
+  - Press the Add button 3 times.
+  - Verify that "a1" and "c1" were added with the given properties.
+  - Verify that "c1" does not show up (because the test is not on https).
+  - In the test, click "Show cookies".
+  - Verify that that list makes sense.
+
+label: Cookie expiry
+url: http://people.opera.com/dherzog/cookies/
+desc:
+  - In the test, click "Set expiry test cookies".
+  - Verify that expires matches what value says, within the first few seconds.
+  - Verify that you can watch "exp_test_b" expire within about 15 seconds.
+
+label: Updating
+url: http://people.opera.com/dherzog/cookies/
+desc:
+  - In the test, click "Increase value of cookie a".
+  - Open the context menu, select "Update".
+  - Verify that you get the updated value of "a".
+
+label: Multiple domains
+url: http://people.opera.com/dherzog/add-remove-runtime/?open=http://ulv.no/,http://elg.no/
+desc:
+  - Add a cookie to ulv.no/, with the name "ulv", press Enter to submit.
+  - Add a cookie to elg.no/, with the name "elg", press Enter to submit.
+  - Reload the test and verify the cookies are shown in the according runtimes.
