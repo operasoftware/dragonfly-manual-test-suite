@@ -34,4 +34,4 @@ desc:
   - Close the tab and Dragonfly.
   - Open the TC and open Dragonfly.
   - Reload the TC.
-  - Verify that Dragonfly switches to Scripts an stops at the exception.
+  - Verify that Dragonfly switches to Scripts and stops at the exception.
