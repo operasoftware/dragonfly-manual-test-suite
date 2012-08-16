@@ -35,3 +35,10 @@ desc:
   - Open the TC and open Dragonfly.
   - Reload the TC.
   - Verify that Dragonfly switches to Scripts and stops at the exception.
+
+label: Parse error on first line with error offset of 0 (DFL-3366)
+url: data:text/html,<script>if else;</script>
+desc:
+  - Enable stop on error.
+  - Open the TC.
+  - Verify that the script is displayed with an error info box.
