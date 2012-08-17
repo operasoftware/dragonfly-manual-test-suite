@@ -59,7 +59,7 @@ desc:
   - In raw mode:
   - Verify that "Request" is shown as a headline.
   - Verify that each part of the request is divided by the boundary. The last boundary
-    should have end with an extra "--".
+    should end with an extra "--".
 
 label: Request details - Forms
 url: http://people.opera.com/dherzog/network/
