@@ -48,15 +48,52 @@
         }, 
         "short": "a"
     }, 
+    "cookie-inspector": {
+        "dirs": {
+            "add_new_cookies": {
+                "dirs": {}, 
+                "short": "e"
+            }, 
+            "cookie_expiry": {
+                "dirs": {}, 
+                "short": "f"
+            }, 
+            "delete_all_cookies": {
+                "dirs": {}, 
+                "short": "d"
+            }, 
+            "delete_cookies": {
+                "dirs": {}, 
+                "short": "b"
+            }, 
+            "edit_cookies": {
+                "dirs": {}, 
+                "short": "c"
+            }, 
+            "inspect_cookies": {
+                "dirs": {}, 
+                "short": "a"
+            }, 
+            "multiple_domains": {
+                "dirs": {}, 
+                "short": "h"
+            }, 
+            "updating": {
+                "dirs": {}, 
+                "short": "g"
+            }
+        }, 
+        "short": "b"
+    }, 
     "dom-inspector": {
         "dirs": {
             "dfl-1360": {
                 "dirs": {}, 
-                "short": "l"
+                "short": "k"
             }, 
             "document_select": {
                 "dirs": {}, 
-                "short": "j"
+                "short": "i"
             }, 
             "edit": {
                 "dirs": {
@@ -69,46 +106,46 @@
                         "short": "b"
                     }
                 }, 
-                "short": "c"
+                "short": "l"
             }, 
             "expand_all_nodes": {
                 "dirs": {}, 
-                "short": "e"
+                "short": "d"
             }, 
             "export": {
                 "dirs": {}, 
-                "short": "f"
+                "short": "e"
             }, 
             "find_with_click": {
                 "dirs": {}, 
-                "short": "g"
+                "short": "f"
             }, 
             "highlight_elements": {
                 "dirs": {}, 
-                "short": "h"
+                "short": "g"
             }, 
             "inspect_element_via_right-click": {
                 "dirs": {}, 
-                "short": "d"
+                "short": "a"
             }, 
             "keyboard_navigation": {
                 "dirs": {}, 
-                "short": "k"
+                "short": "j"
             }, 
             "pseudo_elements_context_menu": {
                 "dirs": {}, 
-                "short": "b"
+                "short": "c"
             }, 
             "tag_names_with_'<'_characters": {
                 "dirs": {}, 
-                "short": "a"
+                "short": "b"
             }, 
             "update_dom_on_node_remove": {
                 "dirs": {}, 
-                "short": "i"
+                "short": "h"
             }
         }, 
-        "short": "b"
+        "short": "c"
     }, 
     "dom-search": {
         "dirs": {
@@ -117,7 +154,7 @@
                 "short": "a"
             }
         }, 
-        "short": "c"
+        "short": "d"
     }, 
     "error-console": {
         "dirs": {
@@ -158,7 +195,7 @@
                 "short": "h"
             }
         }, 
-        "short": "d"
+        "short": "e"
     }, 
     "js-debugger": {
         "dirs": {
@@ -167,6 +204,10 @@
                     "break_on_exceptions": {
                         "dirs": {}, 
                         "short": "c"
+                    }, 
+                    "default_settings.": {
+                        "dirs": {}, 
+                        "short": "d"
                     }, 
                     "parse_error": {
                         "dirs": {}, 
@@ -177,7 +218,7 @@
                         "short": "a"
                     }
                 }, 
-                "short": "h"
+                "short": "a"
             }, 
             "event-listeners": {
                 "dirs": {
@@ -222,7 +263,7 @@
                         "short": "i"
                     }
                 }, 
-                "short": "a"
+                "short": "b"
             }, 
             "execution-context": {
                 "dirs": {
@@ -235,7 +276,7 @@
                         "short": "b"
                     }
                 }, 
-                "short": "b"
+                "short": "c"
             }, 
             "js-dropdown": {
                 "dirs": {
@@ -260,7 +301,7 @@
                         "short": "e"
                     }
                 }, 
-                "short": "c"
+                "short": "d"
             }, 
             "return-values": {
                 "dirs": {
@@ -277,7 +318,7 @@
                         "short": "a"
                     }
                 }, 
-                "short": "i"
+                "short": "e"
             }, 
             "script-source": {
                 "dirs": {
@@ -313,10 +354,6 @@
                         "dirs": {}, 
                         "short": "i"
                     }, 
-                    "parse_error": {
-                        "dirs": {}, 
-                        "short": "m"
-                    }, 
                     "reload_button": {
                         "dirs": {}, 
                         "short": "a"
@@ -328,13 +365,9 @@
                     "set_breakpoint": {
                         "dirs": {}, 
                         "short": "b"
-                    }, 
-                    "stop_at_new_script": {
-                        "dirs": {}, 
-                        "short": "l"
                     }
                 }, 
-                "short": "g"
+                "short": "f"
             }, 
             "security": {
                 "dirs": {
@@ -343,7 +376,7 @@
                         "short": "a"
                     }
                 }, 
-                "short": "d"
+                "short": "g"
             }, 
             "tooltip": {
                 "dirs": {
@@ -371,6 +404,14 @@
                         "dirs": {}, 
                         "short": "g"
                     }, 
+                    "dfl-3336": {
+                        "dirs": {}, 
+                        "short": "i"
+                    }, 
+                    "manual_selection": {
+                        "dirs": {}, 
+                        "short": "j"
+                    }, 
                     "tooltip_features_in_js_source": {
                         "dirs": {}, 
                         "short": "a"
@@ -380,7 +421,7 @@
                         "short": "d"
                     }
                 }, 
-                "short": "e"
+                "short": "h"
             }, 
             "watches": {
                 "dirs": {
@@ -397,10 +438,10 @@
                         "short": "b"
                     }
                 }, 
-                "short": "f"
+                "short": "i"
             }
         }, 
-        "short": "e"
+        "short": "f"
     }, 
     "js-object-inspector": {
         "dirs": {
@@ -422,7 +463,7 @@
                 "short": "c"
             }
         }, 
-        "short": "f"
+        "short": "g"
     }, 
     "libs": {
         "dirs": {
@@ -431,7 +472,7 @@
                 "short": "a"
             }
         }, 
-        "short": "g"
+        "short": "h"
     }, 
     "network-inspector": {
         "dirs": {
@@ -443,42 +484,13 @@
                 "dirs": {}, 
                 "short": "o"
             }, 
-            "content-tracking": {
-                "dirs": {
-                    "empty_response_bodies_with_content-tracking_off": {
-                        "dirs": {}, 
-                        "short": "b"
-                    }, 
-                    "multiple_responses_with_content-tracking_off": {
-                        "dirs": {}, 
-                        "short": "c"
-                    }, 
-                    "network_details_with_content-tracking_off": {
-                        "dirs": {}, 
-                        "short": "a"
-                    }, 
-                    "turning_content-tracking_back_on": {
-                        "dirs": {}, 
-                        "short": "d"
-                    }
-                }, 
-                "short": "A"
-            }, 
             "data_uri": {
                 "dirs": {}, 
                 "short": "r"
             }, 
-            "data_uris": {
-                "dirs": {}, 
-                "short": "x"
-            }, 
             "details_and_filtering": {
                 "dirs": {}, 
                 "short": "j"
-            }, 
-            "empty_response_bodies": {
-                "dirs": {}, 
-                "short": "y"
             }, 
             "error_displaying": {
                 "dirs": {}, 
@@ -487,39 +499,6 @@
             "incomplete_warning": {
                 "dirs": {}, 
                 "short": "p"
-            }, 
-            "multiple-top-runtimes": {
-                "dirs": {
-                    "add_window_to_debug_context": {
-                        "dirs": {}, 
-                        "short": "b"
-                    }, 
-                    "incomplete_warning_-_documents_with_parent_documents": {
-                        "dirs": {}, 
-                        "short": "f"
-                    }, 
-                    "incomplete_warning_-_multiple_windows": {
-                        "dirs": {}, 
-                        "short": "e"
-                    }, 
-                    "incomplete_warning_-_simple": {
-                        "dirs": {}, 
-                        "short": "d"
-                    }, 
-                    "reload_same_window_id": {
-                        "dirs": {}, 
-                        "short": "a"
-                    }, 
-                    "switch_content_of_additional_windows_in_debug_context": {
-                        "dirs": {}, 
-                        "short": "c"
-                    }
-                }, 
-                "short": "w"
-            }, 
-            "multiple_requests_and_responses": {
-                "dirs": {}, 
-                "short": "z"
             }, 
             "network-profiling": {
                 "dirs": {
@@ -532,19 +511,7 @@
                         "short": "b"
                     }
                 }, 
-                "short": "v"
-            }, 
-            "network_header_tokenizer": {
-                "dirs": {}, 
-                "short": "0"
-            }, 
-            "network_profiling": {
-                "dirs": {}, 
                 "short": "t"
-            }, 
-            "network_profiling_disable": {
-                "dirs": {}, 
-                "short": "u"
             }, 
             "network_summary": {
                 "dirs": {}, 
@@ -599,16 +566,7 @@
                 "short": "k"
             }
         }, 
-        "short": "h"
-    }, 
-    "new-style": {
-        "dirs": {
-            "adding_new_style": {
-                "dirs": {}, 
-                "short": "a"
-            }
-        }, 
-        "short": "o"
+        "short": "i"
     }, 
     "profiler": {
         "dirs": {
@@ -622,23 +580,19 @@
             }, 
             "enabling_the_profiler": {
                 "dirs": {}, 
-                "short": "i"
+                "short": "a"
             }, 
             "event_tooltips": {
                 "dirs": {}, 
-                "short": "b"
+                "short": "d"
             }, 
             "no_recorded_data": {
                 "dirs": {}, 
                 "short": "h"
             }, 
-            "paint_events_overlays": {
-                "dirs": {}, 
-                "short": "d"
-            }, 
             "remembering_the_last_tab": {
                 "dirs": {}, 
-                "short": "j"
+                "short": "b"
             }, 
             "single_event_details": {
                 "dirs": {}, 
@@ -646,17 +600,17 @@
             }, 
             "timeline_events": {
                 "dirs": {}, 
-                "short": "a"
-            }, 
-            "url_tooltips": {
-                "dirs": {}, 
                 "short": "c"
             }
         }, 
-        "short": "n"
+        "short": "j"
     }, 
     "repl": {
         "dirs": {
+            "friendly_printer_results": {
+                "dirs": {}, 
+                "short": "b"
+            }, 
             "propertyfinder": {
                 "dirs": {
                     "qunit_repl_propertyfinder": {
@@ -664,14 +618,14 @@
                         "short": "a"
                     }
                 }, 
-                "short": "b"
+                "short": "c"
             }, 
             "xpath_result_types": {
                 "dirs": {}, 
                 "short": "a"
             }
         }, 
-        "short": "i"
+        "short": "k"
     }, 
     "resource-inspector": {
         "dirs": {
@@ -685,7 +639,7 @@
                 "short": "a"
             }
         }, 
-        "short": "j"
+        "short": "l"
     }, 
     "style-inspector": {
         "dirs": {
@@ -695,19 +649,15 @@
             }, 
             "changing_color_format": {
                 "dirs": {}, 
-                "short": "p"
+                "short": "o"
             }, 
             "cycling_through_properties": {
                 "dirs": {}, 
                 "short": "a"
             }, 
-            "detaching": {
-                "dirs": {}, 
-                "short": "h"
-            }, 
             "escaping": {
                 "dirs": {}, 
-                "short": "i"
+                "short": "h"
             }, 
             "matching_style_rules": {
                 "dirs": {}, 
@@ -720,23 +670,23 @@
                         "short": "a"
                     }
                 }, 
-                "short": "q"
+                "short": "p"
             }, 
             "pseudo_classes": {
                 "dirs": {}, 
-                "short": "n"
+                "short": "m"
             }, 
             "pseudo_element_setting": {
                 "dirs": {}, 
-                "short": "l"
+                "short": "k"
             }, 
             "pseudo_elements": {
                 "dirs": {}, 
-                "short": "m"
+                "short": "l"
             }, 
             "quick_declaration_insertion": {
                 "dirs": {}, 
-                "short": "o"
+                "short": "n"
             }, 
             "search": {
                 "dirs": {}, 
@@ -756,14 +706,14 @@
             }, 
             "switching_view": {
                 "dirs": {}, 
-                "short": "j"
+                "short": "i"
             }, 
             "toggle_property": {
                 "dirs": {}, 
-                "short": "k"
+                "short": "j"
             }
         }, 
-        "short": "k"
+        "short": "m"
     }, 
     "ui-framework": {
         "dirs": {
@@ -783,7 +733,7 @@
                         "short": "a"
                     }
                 }, 
-                "short": "e"
+                "short": "c"
             }, 
             "key-input": {
                 "dirs": {
@@ -792,7 +742,7 @@
                         "short": "a"
                     }
                 }, 
-                "short": "c"
+                "short": "d"
             }, 
             "resize_window_horizontally": {
                 "dirs": {}, 
@@ -825,10 +775,10 @@
                         "short": "c"
                     }
                 }, 
-                "short": "d"
+                "short": "e"
             }
         }, 
-        "short": "l"
+        "short": "n"
     }, 
     "watches": {
         "dirs": {
@@ -845,6 +795,6 @@
                 "short": "c"
             }
         }, 
-        "short": "m"
+        "short": "o"
     }
 }

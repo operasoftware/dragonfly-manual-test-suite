@@ -11,6 +11,8 @@ desc:
   - Verify that the arrows show a tooltip when hovered with information about which file
     and line the function returned from/to.
   - Verify that the arrows can be clicked and that the relevant line is highlighted.
+  - Make the panel small enough that the function name doesn't fit.
+  - Verify that the name doesn't jump down to the next line.
 
 label: Multiple return value
 url: ./return-values-multiple.html
@@ -24,7 +26,7 @@ desc:
   - Press "Continue" and verify that the section is updated with "No return values".
 
 label: Filtering
-url: ./return-values.html
+url: ./return-values-multiple.html
 desc:
   - Go to Scripts and reload.
   - When stopping in the first debugger statement, press "Step over" until the last debugger
