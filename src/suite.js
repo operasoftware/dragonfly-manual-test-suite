@@ -100,6 +100,9 @@
 
   var configure_test_run = function()
   {
+    if (!_options.test_run)
+      return;
+
     var single_tests = [];
     _options.test_run.forEach(function(component)
     {
@@ -337,6 +340,8 @@
     _test_id_map = Object.create(null);
     _cursor = 0;
     _current_test = null;
+    if (_is_frozen)
+      freeze_configuration();
     show_initial_view();
   };
 
@@ -356,6 +361,7 @@
       document.body.classList.add("frozen");
       hide_components(document.querySelectorAll(".sidepanel h3"));
       hide_tests(document.querySelectorAll(".sidepanel .test"));
+      show_test(null, null, _test_id_list[_cursor], expand_current_close_others);
     }
   };
 
@@ -575,7 +581,11 @@
     FOR_EACH(h3s, function(h3)
     {
       var comp = h3.dataset.path;
-      if (comp && !_test_path_list.some(function(path) { return path.startswith(comp); }))
+      var contains_path = function(path)
+      {
+        return path.startswith(comp) || comp.startswith(path);
+      };
+      if (comp && !_test_path_list.some(contains_path))
         h3.parentNode.classList.add("hidden");
     })
   };

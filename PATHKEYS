@@ -484,13 +484,42 @@
                 "dirs": {}, 
                 "short": "o"
             }, 
+            "content-tracking": {
+                "dirs": {
+                    "empty_response_bodies_with_content-tracking_off": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }, 
+                    "multiple_responses_with_content-tracking_off": {
+                        "dirs": {}, 
+                        "short": "c"
+                    }, 
+                    "network_details_with_content-tracking_off": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }, 
+                    "turning_content-tracking_back_on": {
+                        "dirs": {}, 
+                        "short": "d"
+                    }
+                }, 
+                "short": "y"
+            }, 
             "data_uri": {
                 "dirs": {}, 
                 "short": "r"
             }, 
+            "data_uris": {
+                "dirs": {}, 
+                "short": "u"
+            }, 
             "details_and_filtering": {
                 "dirs": {}, 
                 "short": "j"
+            }, 
+            "empty_response_bodies": {
+                "dirs": {}, 
+                "short": "v"
             }, 
             "error_displaying": {
                 "dirs": {}, 
@@ -499,6 +528,39 @@
             "incomplete_warning": {
                 "dirs": {}, 
                 "short": "p"
+            }, 
+            "multiple-top-runtimes": {
+                "dirs": {
+                    "add_window_to_debug_context": {
+                        "dirs": {}, 
+                        "short": "b"
+                    }, 
+                    "incomplete_warning_-_documents_with_parent_documents": {
+                        "dirs": {}, 
+                        "short": "f"
+                    }, 
+                    "incomplete_warning_-_multiple_windows": {
+                        "dirs": {}, 
+                        "short": "e"
+                    }, 
+                    "incomplete_warning_-_simple": {
+                        "dirs": {}, 
+                        "short": "d"
+                    }, 
+                    "reload_same_window_id": {
+                        "dirs": {}, 
+                        "short": "a"
+                    }, 
+                    "switch_content_of_additional_windows_in_debug_context": {
+                        "dirs": {}, 
+                        "short": "c"
+                    }
+                }, 
+                "short": "z"
+            }, 
+            "multiple_requests_and_responses": {
+                "dirs": {}, 
+                "short": "w"
             }, 
             "network-profiling": {
                 "dirs": {
@@ -512,6 +574,10 @@
                     }
                 }, 
                 "short": "t"
+            }, 
+            "network_header_tokenizer": {
+                "dirs": {}, 
+                "short": "x"
             }, 
             "network_summary": {
                 "dirs": {}, 
