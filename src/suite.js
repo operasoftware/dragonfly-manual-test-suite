@@ -231,6 +231,9 @@
 
   var show_test = function(event, target, test_id, cb)
   {
+    if (!(test_id || target))
+      return;
+
     if (target && _test_id_list.indexOf(target.dataset.id) > -1)
       _cursor = _test_id_list.indexOf(target.dataset.id);
 
