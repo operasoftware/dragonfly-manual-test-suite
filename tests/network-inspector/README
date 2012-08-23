@@ -183,6 +183,6 @@ desc:
   - "Unexpected event sequence" warnings are expected.
 
 label: Network header tokenizer
-url: ../DFL/test-scripts/network-view/header-tokenizer.html
+url: ../DFL/tests/header_tokenizer.qunit.html
 desc:
-  - Open the test and verify that it doesn't throw.
+  - Verify that all tests pass.
