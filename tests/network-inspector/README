@@ -17,7 +17,7 @@ desc:
   - Click one of the buttons in the test.
   - Verify that you don't see an additional resource being added.
   - Click the pause button to unpause.
-  - Verify that the additional request is shown additionally.
+  - Verify that the additional request is shown.
 
 label: Switch graph/data view
 url: http://people.opera.com/dherzog/network/
@@ -84,7 +84,6 @@ desc:
   - Verify that the string is highlighted in the URL list.
   - Open the details of that request.
   - Verify that the string is highlighted twice in the details, but no longer in the URL list.
-  - Verify that pressing enter toggles the highlight between these two.
 
 label: Type Filters
 url: http://people.opera.com/dherzog/network/
@@ -146,10 +145,11 @@ desc:
   - Verify that the "Reload to see Resources" view is shown.
 
 label: Cached Requests
-url: http://people.opera.com/dherzog/network/
+url: http://people.opera.com/dherzog/network
 desc:
-  - When the test is loaded, reload it.
-  - Open the details of a requests that appears "Cached" (different styling in the list, shows "Cached" in the URL tooltip).
+  - When the test is loaded, reload it until you see requests that appear "Cached" (different
+    styling in the list, shows "Cached" in the URL tooltip).
+  - Open the details of such a request.
   - Verify that there is no "Request" or "Response" headlines.
   - Verify that you see the content of the file.
 
@@ -183,6 +183,6 @@ desc:
   - "Unexpected event sequence" warnings are expected.
 
 label: Network header tokenizer
-url: ../DFL/test-scripts/network-view/header-tokenizer.html
+url: ../DFL/tests/header_tokenizer.qunit.html
 desc:
-  - Open the test and verify that it doesn't throw.
+  - Verify that all tests pass.
