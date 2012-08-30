@@ -83,7 +83,7 @@ desc:
   - Search for "search-for-me".
   - Verify that the string is highlighted in the URL list.
   - Open the details of that request.
-  - Verify that the string is highlighted twice in the details, but no longer in the URL list.
+  - Verify that the string is now highlighted in the details, but no longer in the URL list.
 
 label: Type Filters
 url: http://people.opera.com/dherzog/network/

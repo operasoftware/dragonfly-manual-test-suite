@@ -32,7 +32,7 @@ desc:
   - Hit "Approve" on the SSL warning.
   - Put in no or wrong credentials in the auth dialog and hit "Submit".
   - Put in correct credentials and hit "Submit".
-  - Open the network detains of the first entry.
+  - Open the network details of the first entry.
   - Verify that only the last response with "200 OK" has a response body.
 
 label: Turning content-tracking back on
