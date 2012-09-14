@@ -24,6 +24,7 @@ TESTS = "TESTS"
 TESTLISTS = "TESTLISTS"
 CHARS = string.ascii_letters + string.digits
 TARGET = "build"
+BUILT_INDEX = "/index.html"
 SRC = "src"
 TESTS_SRC = "tests"
 DFL_REPO = "DFL"
@@ -229,6 +230,7 @@ def get_tests(ctx, pathkeys, blacklist=[]):
         cur_dir.files = files
     ctx.readme_dirs = list(readme_dirs)
     ctx.readme_dirs.sort()
+    print "Updated " + ctx.abs_target + BUILT_INDEX
 
 def get_id(ids):
     cursor = 0
