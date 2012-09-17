@@ -24,7 +24,7 @@ TESTS = "TESTS"
 TESTLISTS = "TESTLISTS"
 CHARS = string.ascii_letters + string.digits
 TARGET = "build"
-BUILT_INDEX = "/index.html"
+BUILT_INDEX = "index.html"
 SRC = "src"
 TESTS_SRC = "tests"
 DFL_REPO = "DFL"
@@ -448,7 +448,7 @@ def update():
     dfl_snapshot_target = os.path.join(target, DFL_REPO)
     if not args.skip_clone:
         download_snapshot(args.dfl_repo % args.dfl_branch, dfl_snapshot_target)
-    print "Updated " + os.path.abspath(ctx.abs_target + BUILT_INDEX)
+    print "Updated " + os.path.join(ctx.abs_target, BUILT_INDEX)
 
 if __name__ == "__main__":
     update()
