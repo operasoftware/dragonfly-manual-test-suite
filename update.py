@@ -230,7 +230,6 @@ def get_tests(ctx, pathkeys, blacklist=[]):
         cur_dir.files = files
     ctx.readme_dirs = list(readme_dirs)
     ctx.readme_dirs.sort()
-    print "Updated " + ctx.abs_target + BUILT_INDEX
 
 def get_id(ids):
     cursor = 0
@@ -449,6 +448,7 @@ def update():
     dfl_snapshot_target = os.path.join(target, DFL_REPO)
     if not args.skip_clone:
         download_snapshot(args.dfl_repo % args.dfl_branch, dfl_snapshot_target)
+    print "Updated " + os.path.abspath(ctx.abs_target + BUILT_INDEX)
 
 if __name__ == "__main__":
     update()
