@@ -1,0 +1,19 @@
+{
+    "desc": [
+        "Turn the 'Select an element in the page to inspect it' switch on.", 
+        "Go the the url above.", 
+        "Select the paragraph 'some text' in the host.", 
+        "Double click the class value 'foo' in the client.", 
+        "Verify that the attribute value is displayed in an edit field.", 
+        "Change the value to 'bar' and verify that the background-color in the host changes instantly to green.", 
+        "Verify that escape reverts the background-color back to cyan.", 
+        "Verify that enter keeps the changes and exits edit mode.", 
+        "Verify that tab moves the edit field to the next attribute.", 
+        "Verify that at the end of a tag an empty field is shown to add a new attribute."
+    ], 
+    "file_path": "dom-inspector.edit.edit-attributes", 
+    "folder_path": "dom-inspector.edit", 
+    "id": "c.l.a", 
+    "label": "Edit attributes", 
+    "url": "./dom-inspector/edit/index.html"
+}

@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Set a breakpoint on line 4, 'var aa = 1;'.", 
+        "Press the 'e()' button.", 
+        "Verify that the 'Continue' button changes from disabled to enabled.", 
+        "Press the 'Continue' button.", 
+        "Verify that that the stopped pointer arrow disappears and that the button gets disabled.", 
+        "Repeat several times and verify that it always works as described above."
+    ], 
+    "file_path": "js-debugger.script-source.breakpoint-continue", 
+    "folder_path": "js-debugger.script-source", 
+    "id": "f.f.d", 
+    "label": "Breakpoint, Continue", 
+    "url": "./js-debugger/script-source/callstack.html"
+}

@@ -1,0 +1,16 @@
+{
+    "desc": [
+        "Ensure that you open Dragonfly after you have loaded the TC.", 
+        "Expand the whole body in Documents.", 
+        "Click some of the hints about missing JS source files.", 
+        "Verify that you get a dialog asking if you would like to reload the page.", 
+        "Click cancel and verify that nothing happens.", 
+        "Repeat and click OK.", 
+        "Verify that the document gets reloaded."
+    ], 
+    "file_path": "js-debugger.event-listeners.interaction-with-the-source-position-in-listener-tooltip-without-js-source-files", 
+    "folder_path": "js-debugger.event-listeners", 
+    "id": "f.b.d", 
+    "label": "Interaction with the source position in listener tooltip without JS source files", 
+    "url": "./js-debugger/event-listeners/single-runtime.html"
+}

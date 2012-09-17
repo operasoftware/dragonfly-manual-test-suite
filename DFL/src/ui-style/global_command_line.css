@@ -1,0 +1,183 @@
+﻿/* TODO: some of this should be merged into syntax-highlight.css */
+
+container.console
+{
+  background: #262626;
+}
+
+.console textarea
+{
+  background: transparent;
+  color: #fff;
+  vertical-align: text-top;
+}
+
+.console key,
+.console text,
+.console selector,
+.console .js-source,
+.console .element-name,
+.console .repl-input,
+.console .repl-output,
+.console #examine-objects .object,
+.console examine-objects .object,
+.console .datetime
+{
+  color: #fff;
+}
+
+.console value
+{
+  white-space: normal;
+}
+
+.console::selection
+{
+  color: #fff;
+  background-color: #006ad4;
+}
+
+
+/* DOM */
+
+.console .dom-tree node
+{
+  color: #9999ff;
+}
+
+.console .dom-tree key
+{
+  color: #bfc5ff;
+}
+
+.console .dom-tree value
+{
+  color: #e68d7c;
+}
+
+.console .dom-tree text
+{
+  color: #fff;
+}
+
+.console .prototype-chain-object
+{
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.console #target-element,
+.console .dom-tree .spotlight-node:hover
+{
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.20);
+}
+
+
+/* JavaScript */
+
+.console .js_keywords
+{
+  color: #66c;
+}
+
+.console .repl-pobj,
+.console .js_builtins
+{
+  color: #bfc5ff;
+}
+
+.console .null,
+.console .undefined
+{
+  color: #f25941;
+  font-weight: bold;
+}
+
+.console .boolean
+{
+  color: #ff8b26;
+}
+
+.console .error
+{
+  color: #ff6224;
+  font-style: italic;
+}
+
+.console .number
+{
+  color: #ff4d40;
+}
+
+.console .string
+{
+  color: #d46d59;
+}
+
+.console .object
+{
+  color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+.console .punctuator
+{
+  color: #fff;
+}
+
+.console .reg_exp
+{
+  color: #62d962;
+}
+
+.console .js_builtins
+{
+  color: #bfc5ff;
+}
+
+.console .js_keywords
+{
+  color: #9999ff;
+  font-weight: bold;
+}
+
+.console .inspect-object-link:hover
+{
+  text-decoration: none;
+}
+
+.console .inspect-node-link:hover
+{
+  text-decoration: none;
+  background: #000;
+}
+
+.console .inspect-object-link:hover
+{
+  background: #000;
+}
+
+.console .dom-tree input
+{
+  background-image: url('../ui-images/expand-collapse-inverted.png');
+}
+
+.console .folder-key
+{
+  background-image: url('../ui-images/expand-collapse-inverted.gif');
+}
+
+.console examine-objects examine-objects
+{
+  background-image: url('../ui-images/dom-tree-style-inverted.png');
+}
+
+.console .tree-style > div
+{ 
+  background-color: transparent;
+}
+
+.old-command-line
+{
+  background-color: #fff;
+}

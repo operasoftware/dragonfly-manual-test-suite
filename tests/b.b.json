@@ -1,0 +1,19 @@
+{
+    "desc": [
+        "In the test, click \"Set cookies\".", 
+        "Delete cookie \"a\" via the context menu.", 
+        "Verify that the deleted cookie is gone.", 
+        "Select cookies \"b\" and \"c\" by holding ctrl / cmd.", 
+        "Open the context menu.", 
+        "Delete the cookies.", 
+        "Verify they were deleted.", 
+        "In the test, click \"Add https iframe\".", 
+        "You may need to press \"Continue\" in that iframe, also login to homes/.", 
+        "Verify that you can delete the \"i-am-secure\" cookie."
+    ], 
+    "file_path": "cookie-inspector.delete-cookies", 
+    "folder_path": "cookie-inspector", 
+    "id": "b.b", 
+    "label": "Delete cookies", 
+    "url": "http://people.opera.com/dherzog/cookies/"
+}

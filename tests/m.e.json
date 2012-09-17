@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Select and unselect the 'Show initial values in computed style panel' switch", 
+        "Verify that the Computed Style section is updated accordingly"
+    ], 
+    "file_path": "style-inspector.show-initial-values-in-computed-style-panel", 
+    "folder_path": "style-inspector", 
+    "id": "m.e", 
+    "label": "Show initial values in computed style panel", 
+    "url": "http://dev.opera.com"
+}

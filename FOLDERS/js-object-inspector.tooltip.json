@@ -1,0 +1,11 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "js-object-inspector.tooltip.js-object-inspection-tooltip", 
+            "id": "g.c.a", 
+            "label": "JS object inspection tooltip"
+        }
+    ], 
+    "path": "js-object-inspector/tooltip"
+}

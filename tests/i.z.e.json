@@ -1,0 +1,17 @@
+{
+    "desc": [
+        "Click the \"Clear\" button.", 
+        "In the test, click the \"Get via XHR\" button.", 
+        "Verify that a reload dialog is shown under the list entry.", 
+        "In the test, click \"Open elg.no in tab 1\".", 
+        "Verify that the incomplete-warning now includes the title of the testcase.", 
+        "Press the reload button in the warning.", 
+        "Verify that the receive.php entry disappears, and instead the testcase is reloaded.", 
+        "Verify that all resources belonging to the testcase are shown after those of elg.no."
+    ], 
+    "file_path": "network-inspector.multiple-top-runtimes.incomplete-warning-multiple-windows", 
+    "folder_path": "network-inspector.multiple-top-runtimes", 
+    "id": "i.z.e", 
+    "label": "Incomplete warning - multiple windows", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

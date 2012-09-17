@@ -1,0 +1,10 @@
+{
+    "desc": [
+        "The same as the previous test, but use the F11 key (F7 on Mac) instead the mouse."
+    ], 
+    "file_path": "js-debugger.script-source.breakpoint-step-into-with-keyboard", 
+    "folder_path": "js-debugger.script-source", 
+    "id": "f.f.g", 
+    "label": "Breakpoint, Step into with keyboard", 
+    "url": "./js-debugger/script-source/callstack.html"
+}

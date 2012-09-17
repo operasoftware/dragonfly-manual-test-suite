@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Open the testcase.", 
+        "Type \"foo\" into the filter field.", 
+        "Verify that all errors that are shown, have a match that's highlighted.", 
+        "Verify that the first (JS) Error is expanded.", 
+        "Verify that the error count on the top tab reflects the number of bugs that you see."
+    ], 
+    "file_path": "error-console.filter-errors", 
+    "folder_path": "error-console", 
+    "id": "e.e", 
+    "label": "Filter errors", 
+    "url": "./error-console/error.html"
+}

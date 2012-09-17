@@ -1,0 +1,31 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "js-debugger.js-dropdown.script-select", 
+            "id": "f.d.a", 
+            "label": "Script select"
+        }, 
+        {
+            "file_path": "js-debugger.js-dropdown.script-select-select-a-script", 
+            "id": "f.d.b", 
+            "label": "Script select select a script"
+        }, 
+        {
+            "file_path": "js-debugger.js-dropdown.script-select-filter-script", 
+            "id": "f.d.c", 
+            "label": "Script select filter script"
+        }, 
+        {
+            "file_path": "js-debugger.js-dropdown.script-select-clear-button", 
+            "id": "f.d.d", 
+            "label": "Script select clear button"
+        }, 
+        {
+            "file_path": "js-debugger.js-dropdown.script-select-with-many-scripts", 
+            "id": "f.d.e", 
+            "label": "Script select with many scripts"
+        }
+    ], 
+    "path": "js-debugger/js-dropdown"
+}

@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Start the profiler.", 
+        "Stop the profiler immediately.", 
+        "Verify that a message says \"No data\"."
+    ], 
+    "file_path": "profiler.no-recorded-data", 
+    "folder_path": "profiler", 
+    "id": "j.h", 
+    "label": "No recorded data", 
+    "url": "./profiler/profiler-test.html"
+}

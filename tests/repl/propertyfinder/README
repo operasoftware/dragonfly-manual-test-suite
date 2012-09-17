@@ -1,4 +1,0 @@
-label: QUnit repl propertyfinder
-url: ../../DFL/tests/propertyfinder.qunit.html
-desc:
-  - Run the test and verify that 0 failed.

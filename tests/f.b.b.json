@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Ensure that you open Dragonfly after you have loaded the TC.", 
+        "Expand the whole body in Documents.", 
+        "Hover some of the listener icons and verify that you get a tooltip.", 
+        "Verify that the tooltip shows a list for all attached listeners.", 
+        "Verify that for each listener the event type, the listening phase, the event handler and a hint that JS source files are missing are shown.", 
+        "Verify that listeners added as attributes are named 'attribute handlers' and the others 'event target handler'."
+    ], 
+    "file_path": "js-debugger.event-listeners.listener-tooltip-without-js-source-files", 
+    "folder_path": "js-debugger.event-listeners", 
+    "id": "f.b.b", 
+    "label": "Listener tooltip without JS source files", 
+    "url": "./js-debugger/event-listeners/single-runtime.html"
+}

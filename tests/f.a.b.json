@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Enable 'Show parse errors and break on exceptions' and load the TC.", 
+        "Verify that the Script Source pane opens, the first non parse-able token is highlighted, e.g. the dot in 'var aa.a = 1;', any following code is grayed out and an info box with a hint for the cause of the error is displayed.", 
+        "Verify that the setting can be turned off."
+    ], 
+    "file_path": "js-debugger.configuration.parse-error", 
+    "folder_path": "js-debugger.configuration", 
+    "id": "f.a.b", 
+    "label": "Parse error", 
+    "url": "./js-debugger/script-source/parse-error.html"
+}

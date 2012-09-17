@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Enable 'Show parse errors and break on exceptions'.", 
+        "Go to the test page, open the Script tab and reload the document.", 
+        "Verify that an error box is displayed containing the text \"q='<iframe src=?'++'>';\"."
+    ], 
+    "file_path": "js-debugger.security.dfl-2882-script-syntax-error-load-dragonfly-in-dragonfly", 
+    "folder_path": "js-debugger.security", 
+    "id": "f.g.a", 
+    "label": "DFL-2882, script syntax error load dragonfly in dragonfly", 
+    "url": "./js-debugger/security/index.html"
+}

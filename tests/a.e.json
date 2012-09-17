@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Inspect the body element", 
+        "Make sure that one rule has 'color: currentColor' with a swatch that is styled as a white square with a diagonal gray line"
+    ], 
+    "file_path": "color-inspector.color-swatch-for-currentcolor", 
+    "folder_path": "color-inspector", 
+    "id": "a.e", 
+    "label": "Color swatch for 'currentColor'", 
+    "url": "./color-inspector/a.html"
+}

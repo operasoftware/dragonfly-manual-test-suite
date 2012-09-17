@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Open the testcase.", 
+        "Verify that all errors have a location that makes sense.", 
+        "Verify that you can click each location to see the line highlighted in Resources."
+    ], 
+    "file_path": "error-console.error-location", 
+    "folder_path": "error-console", 
+    "id": "e.g", 
+    "label": "Error location", 
+    "url": "./error-console/error.html"
+}

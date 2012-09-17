@@ -1,0 +1,19 @@
+{
+    "desc": [
+        "Press the Add Cookie button tree times.", 
+        "Enter \"a1\", \"b1\" and \"c1\" as Names.", 
+        "Give \"a1\" some Value, set the Secure checkmark on \"b2\".", 
+        "Press Enter.", 
+        "Verify that there is a new created cookie with the according key.", 
+        "Press the Add button 3 times.", 
+        "Verify that \"a1\" and \"c1\" were added with the given properties.", 
+        "Verify that \"c1\" does not show up (because the test is not on https).", 
+        "In the test, click \"Show cookies\".", 
+        "Verify that that list makes sense."
+    ], 
+    "file_path": "cookie-inspector.add-new-cookies", 
+    "folder_path": "cookie-inspector", 
+    "id": "b.e", 
+    "label": "Add new cookies", 
+    "url": "http://people.opera.com/dherzog/cookies/"
+}

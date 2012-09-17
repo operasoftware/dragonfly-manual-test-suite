@@ -1,0 +1,11 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "resource-inspector.highlight-line.line-highlighting-in-resources", 
+            "id": "l.a.a", 
+            "label": "Line highlighting in Resources"
+        }
+    ], 
+    "path": "resource-inspector/highlight-line"
+}

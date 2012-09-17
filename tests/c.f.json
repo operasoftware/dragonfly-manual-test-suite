@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Turn the 'Find element' switch on.", 
+        "Click some elements in the host.", 
+        "Verify that the DOM view is updated with the clicked element as target.", 
+        "Verify that the feature can be turned off."
+    ], 
+    "file_path": "dom-inspector.find-with-click", 
+    "folder_path": "dom-inspector", 
+    "id": "c.f", 
+    "label": "Find with click", 
+    "url": "http://dev.opera.com"
+}

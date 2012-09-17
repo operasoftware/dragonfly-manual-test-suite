@@ -1,0 +1,24 @@
+{
+    "desc": [
+        "In the test, click \"Set cookies\".", 
+        "Double click some of the cookie values.", 
+        "Change the value and click outside.", 
+        "Verify that you see the changed value.", 
+        "Edit the expiry date cookie \"d\" to be in one hour (choose today in the date picker and adjust the time).", 
+        "Press enter to save.", 
+        "Verify that the expiry value fits and that the tooltip shows the correct date and time.", 
+        "Edit again, change a value and cancel by pressing escape.", 
+        "Verify that the value hasn't changed.", 
+        "Edit cookie \"e\", set the HTTPOnly checkmark.", 
+        "Save by switching to the \"Documents\" tab.", 
+        "Go back to Storage.", 
+        "Verify that the HTTPOnly checkmark is shown for \"e\".", 
+        "In the test, click \"Show cookies\".", 
+        "Verify that \"e\" is no longer shown in the test."
+    ], 
+    "file_path": "cookie-inspector.edit-cookies", 
+    "folder_path": "cookie-inspector", 
+    "id": "b.c", 
+    "label": "Edit cookies", 
+    "url": "http://people.opera.com/dherzog/cookies/"
+}

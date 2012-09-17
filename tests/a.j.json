@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Inspect the body element", 
+        "Open the color picker and change the colorpicker", 
+        "Verify clicking \"Cancel\" closes the color picker and restores the color in the page and in the style inspector (both the text and the color swatch).", 
+        "Verify that the same thing happens when pressing Esc"
+    ], 
+    "file_path": "color-inspector.canceling-a-colorpicker", 
+    "folder_path": "color-inspector", 
+    "id": "a.j", 
+    "label": "Canceling a colorpicker", 
+    "url": "./color-inspector/index.html"
+}

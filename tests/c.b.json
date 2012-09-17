@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Open the test case and expand the whole DOM in Documents.", 
+        "Verify that there is an element with the name 'div<style' and that no red color appears in Dragonfly."
+    ], 
+    "file_path": "dom-inspector.tag-names-with-<-characters", 
+    "folder_path": "dom-inspector", 
+    "id": "c.b", 
+    "label": "Tag names with '<' characters", 
+    "url": "./dom-inspector/a.html"
+}

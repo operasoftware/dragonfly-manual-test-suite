@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Go to the test page.", 
+        "Hover over 'foo.bar[4]' on line 16 and hover over the tooltip.", 
+        "Verify that the tooltip does not disappear.", 
+        "Expand the 'Array' prototype and right click e.g. 'filter'.", 
+        "Verify that the contextmenu is displayed and that you can interact with it normally."
+    ], 
+    "file_path": "js-debugger.tooltip.context-menu-in-tooltips", 
+    "folder_path": "js-debugger.tooltip", 
+    "id": "f.h.c", 
+    "label": "Context menu in tooltips", 
+    "url": "./js-debugger/tooltip/index.html"
+}

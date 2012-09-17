@@ -1,0 +1,61 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "js-debugger.script-source.reload-button", 
+            "id": "f.f.a", 
+            "label": "Reload button"
+        }, 
+        {
+            "file_path": "js-debugger.script-source.set-breakpoint", 
+            "id": "f.f.b", 
+            "label": "Set breakpoint"
+        }, 
+        {
+            "file_path": "js-debugger.script-source.remove-breakpoint", 
+            "id": "f.f.c", 
+            "label": "Remove breakpoint"
+        }, 
+        {
+            "file_path": "js-debugger.script-source.breakpoint-continue", 
+            "id": "f.f.d", 
+            "label": "Breakpoint, Continue"
+        }, 
+        {
+            "file_path": "js-debugger.script-source.breakpoint-continue-with-keyboard", 
+            "id": "f.f.e", 
+            "label": "Breakpoint, Continue with keyboard"
+        }, 
+        {
+            "file_path": "js-debugger.script-source.breakpoint-step-into", 
+            "id": "f.f.f", 
+            "label": "Breakpoint, Step into"
+        }, 
+        {
+            "file_path": "js-debugger.script-source.breakpoint-step-into-with-keyboard", 
+            "id": "f.f.g", 
+            "label": "Breakpoint, Step into with keyboard"
+        }, 
+        {
+            "file_path": "js-debugger.script-source.breakpoint-step-over", 
+            "id": "f.f.h", 
+            "label": "Breakpoint, Step Over"
+        }, 
+        {
+            "file_path": "js-debugger.script-source.breakpoint-step-over-with-keyboard", 
+            "id": "f.f.i", 
+            "label": "Breakpoint, Step Over with keyboard"
+        }, 
+        {
+            "file_path": "js-debugger.script-source.breakpoint-step-out", 
+            "id": "f.f.j", 
+            "label": "Breakpoint, Step Out"
+        }, 
+        {
+            "file_path": "js-debugger.script-source.breakpoint-step-out-with-keyboard", 
+            "id": "f.f.k", 
+            "label": "Breakpoint, Step Out with keyboard"
+        }
+    ], 
+    "path": "js-debugger/script-source"
+}

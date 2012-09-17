@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Open the Console and make sure the values and types match when submitting the following:", 
+        "$x(\"//*\") should return an array of elements", 
+        "$x(\"count(//*)\") should return a number (3)", 
+        "$x(\"string(//body/@class)\") should return a string (\"a\")", 
+        "$x(\"//body/@class = 'a'\") should return a boolean (true)"
+    ], 
+    "file_path": "repl.xpath-result-types", 
+    "folder_path": "repl", 
+    "id": "k.a", 
+    "label": "XPath result types", 
+    "url": "./repl/result-types.html"
+}

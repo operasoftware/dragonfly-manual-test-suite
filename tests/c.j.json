@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Click somewhere in the DOM view to focus the pane.", 
+        "Verify that you can navigate with arrow keys and expand and close nodes with enter.", 
+        "Click an element or attribute.", 
+        "Verify that the click target is also the navigation target."
+    ], 
+    "file_path": "dom-inspector.keyboard-navigation", 
+    "folder_path": "dom-inspector", 
+    "id": "c.j", 
+    "label": "Keyboard navigation", 
+    "url": "http://dev.opera.com"
+}

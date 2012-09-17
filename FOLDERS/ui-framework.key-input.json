@@ -1,0 +1,11 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "ui-framework.key-input.shortcut-bindings", 
+            "id": "n.d.a", 
+            "label": "Shortcut bindings"
+        }
+    ], 
+    "path": "ui-framework/key-input"
+}

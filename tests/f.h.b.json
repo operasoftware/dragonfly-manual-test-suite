@@ -1,0 +1,23 @@
+{
+    "desc": [
+        "Go to the test page.", 
+        "Set a breakpoint on line 39, hit the \"test\" button and verify that the engine stops.", 
+        "Click into the window to ensure that the window has focus.", 
+        "Hover one of the brackets of '[0]' on line 39", 
+        "Verify that '[0]' gets selected and the according array is displayed in the tooltip.", 
+        "Hold down shift while still hovering the same bracket.", 
+        "Verify that 'ele.getElementsByTagName('ul')[0]' gets selected and the according element is displayed in the tooltip.", 
+        "Hover different parentheses on line 23.", 
+        "Verify that nothing happens.", 
+        "Hold down shift and hover the parentheses again.", 
+        "Verify that the correct open/closing pairs are selected and the according values displayed.", 
+        "Select some expression with the mouse, e.g. '8 + 7' on the same line.", 
+        "Hold down shift.", 
+        "Verify that the selected expression gets selected and evaled in the tooltip."
+    ], 
+    "file_path": "js-debugger.tooltip.advanced-tooltip-features-in-js-source-view", 
+    "folder_path": "js-debugger.tooltip", 
+    "id": "f.h.b", 
+    "label": "Advanced tooltip features in JS source view", 
+    "url": "./js-debugger/tooltip/index.html"
+}

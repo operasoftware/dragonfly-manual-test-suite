@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Load the test.", 
+        "In the test, click \"Post - multipart/form-data, 5 redirects on server\".", 
+        "Open the detail views of the \"receive.php\" entries.", 
+        "Verify that only the \"receive.php\" with the 200 OK response has a response body, and that there are no messages about a missing response body for the other requests."
+    ], 
+    "file_path": "network-inspector.empty-response-bodies", 
+    "folder_path": "network-inspector", 
+    "id": "i.v", 
+    "label": "Empty response bodies", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

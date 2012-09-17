@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Open the testcase.", 
+        "Press the \"Add 1500 JS Errors\" Button.", 
+        "Verify that the \"All\" tab shows a warning like \"Displaying 1000 of 1026 errors\" at the end.", 
+        "Verify there's no such warning on the tab for CSS Errors.", 
+        "In the \"All\" tab, filter by \"delay 100 ms\" and verify you find at least one error."
+    ], 
+    "file_path": "error-console.limit-maximum-of-errors-that-are-shown", 
+    "folder_path": "error-console", 
+    "id": "e.i", 
+    "label": "Limit maximum of errors that are shown", 
+    "url": "./error-console/error.html"
+}

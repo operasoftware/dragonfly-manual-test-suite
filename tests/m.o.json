@@ -1,0 +1,19 @@
+{
+    "desc": [
+        "Inspect body", 
+        "Go to Settings > Documents > Styles > Color format and change to all possible formats", 
+        "Verify that the color value is updated correctly", 
+        "Change format to Hex", 
+        "Change opacity to something else than 1", 
+        "Verify that the color is printed in RGBA", 
+        "Change format to HSL", 
+        "Verify that the color is printed in HSLA", 
+        "Submit an invalid color, e.g. `rgb(1,2,3,4)`", 
+        "Verify that the color is simply discarded without exceptions"
+    ], 
+    "file_path": "style-inspector.changing-color-format", 
+    "folder_path": "style-inspector", 
+    "id": "m.o", 
+    "label": "Changing color format", 
+    "url": "./style-inspector/a.html"
+}

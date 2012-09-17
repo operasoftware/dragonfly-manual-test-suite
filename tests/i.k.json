@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Click the XHR filter button.", 
+        "Click the \"Get via XHR\" button in the test.", 
+        "Verify that the \"XHR\" filter the according requests and that it has the extra XHR icon.", 
+        "Verify that no requests are shown that weren't retrieved via XHR."
+    ], 
+    "file_path": "network-inspector.xhr-filter", 
+    "folder_path": "network-inspector", 
+    "id": "i.k", 
+    "label": "XHR filter", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

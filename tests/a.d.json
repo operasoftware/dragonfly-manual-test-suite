@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Inspect \"test\"", 
+        "Open the color picker", 
+        "Open the color palette in the bottom left corner", 
+        "Verify that a color is added to the palette when clicking the + sign", 
+        "Verify that a color is deleted from the palette when right-clicking a color swatch and choosing \"Delete color\""
+    ], 
+    "file_path": "color-inspector.color-palette", 
+    "folder_path": "color-inspector", 
+    "id": "a.d", 
+    "label": "Color palette", 
+    "url": "./color-inspector/b.html"
+}

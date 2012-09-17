@@ -1,0 +1,9 @@
+<!doctype html>
+<title>Multiple contexts</title>
+<script>document.onclick = function(ev) { console.log(ev.nodeName) }</script>
+<div>
+<iframe src="data:text/html,
+<!doctype html>
+<title>Child contexts 1</title>
+<script>document.onclick = function(ev) { console.log(ev.nodeName) }</script>
+"></iframe>

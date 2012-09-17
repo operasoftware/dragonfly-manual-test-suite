@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Hover beneath the last declaration in a rules", 
+        "Verify that clicking the brace inserts an edit field, and that editing works like usual"
+    ], 
+    "file_path": "style-inspector.quick-declaration-insertion", 
+    "folder_path": "style-inspector", 
+    "id": "m.n", 
+    "label": "Quick declaration insertion", 
+    "url": "./style-inspector/a.html"
+}

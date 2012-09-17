@@ -1,0 +1,17 @@
+{
+    "desc": [
+        "Go to Settings.", 
+        "Uncheck \"Track content\".", 
+        "Load the test.", 
+        "Reload the test.", 
+        "In the test, click \"Add data uri\".", 
+        "Verify that you can open the details of all requests, and that you can see the response body.", 
+        "In the test, click \"Get via XHR\".", 
+        "Verify that the detail view tells you that you need to turn on content-tracking."
+    ], 
+    "file_path": "network-inspector.content-tracking.network-details-with-content-tracking-off", 
+    "folder_path": "network-inspector.content-tracking", 
+    "id": "i.y.a", 
+    "label": "Network details with content-tracking off", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

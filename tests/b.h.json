@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Add a cookie to ulv.no/, with the name \"ulv\", press Enter to submit.", 
+        "Add a cookie to elg.no/, with the name \"elg\", press Enter to submit.", 
+        "Reload the test and verify the cookies are shown in the according runtimes."
+    ], 
+    "file_path": "cookie-inspector.multiple-domains", 
+    "folder_path": "cookie-inspector", 
+    "id": "b.h", 
+    "label": "Multiple domains", 
+    "url": "http://people.opera.com/dherzog/add-remove-runtime/?open=http://ulv.no/,http://elg.no/"
+}

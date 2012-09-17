@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Hover over the graphs in the waterfall.", 
+        "Compare the tooltips with what's \"Expected\" in the test.", 
+        "\"Unexpected event sequence\" warnings are expected."
+    ], 
+    "file_path": "network-inspector.sequence-tooltips", 
+    "folder_path": "network-inspector", 
+    "id": "i.q", 
+    "label": "Sequence tooltips", 
+    "url": "./DFL/test-scripts/network-view/graph-tooltips.xml"
+}

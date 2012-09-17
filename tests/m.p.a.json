@@ -1,0 +1,16 @@
+{
+    "desc": [
+        "Inspect \"test\".", 
+        "In New Style, add `p { color: red }` and press Update.", 
+        "Verify that \"test\" is now red.", 
+        "Verify that Styles is updated with the new rule.", 
+        "Delete the rule and press Update.", 
+        "Verify that \"test\" is now black.", 
+        "Verify that the rule is removed in Styles."
+    ], 
+    "file_path": "style-inspector.new-style.adding-new-style", 
+    "folder_path": "style-inspector.new-style", 
+    "id": "m.p.a", 
+    "label": "Adding new Style", 
+    "url": "data:text/html,<p>test"
+}

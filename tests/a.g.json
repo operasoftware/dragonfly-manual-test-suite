@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Inspect the body element", 
+        "Make sure that one rule has 'color: transparent' with a swatch that is styled as a white square with gray checkers"
+    ], 
+    "file_path": "color-inspector.color-swatch-for-transparent", 
+    "folder_path": "color-inspector", 
+    "id": "a.g", 
+    "label": "Color swatch for 'transparent'", 
+    "url": "./color-inspector/a.html"
+}

@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Go to the above url.", 
+        "Open or connect the debugger after that.", 
+        "Switch to Scripts.", 
+        "Press the reload button in the info box \"Click the reload button above to fetch the scripts for the selected window\".", 
+        "Verify that you get 3 scripts in the dropdown and that you can select each of them."
+    ], 
+    "file_path": "js-debugger.script-source.reload-button", 
+    "folder_path": "js-debugger.script-source", 
+    "id": "f.f.a", 
+    "label": "Reload button", 
+    "url": "./js-debugger/script-source/scripts.html"
+}

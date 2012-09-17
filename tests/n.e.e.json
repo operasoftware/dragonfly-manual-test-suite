@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Sort by Color.", 
+        "Sort by Brand.", 
+        "Verify that BMWs in azure are listed before BMWs in black.", 
+        "Click the \"Reset sort\" button.", 
+        "Sort by Brand.", 
+        "Verify that the BMWs are listed in order of Initial Pos now."
+    ], 
+    "file_path": "ui-framework.sortable-table.stable-sorting", 
+    "folder_path": "ui-framework.sortable-table", 
+    "id": "n.e.e", 
+    "label": "Stable sorting", 
+    "url": "DFL/test-scripts/ui-framework/sortable-table/sorting.html"
+}

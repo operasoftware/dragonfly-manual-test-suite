@@ -1,0 +1,28 @@
+{
+    "dirs": [
+        {
+            "label": "auto-adjust", 
+            "path": "ui-framework.auto-adjust"
+        }, 
+        {
+            "label": "enabling-disabling-services", 
+            "path": "ui-framework.enabling-disabling-services"
+        }, 
+        {
+            "label": "key-input", 
+            "path": "ui-framework.key-input"
+        }, 
+        {
+            "label": "sortable-table", 
+            "path": "ui-framework.sortable-table"
+        }
+    ], 
+    "files": [
+        {
+            "file_path": "ui-framework.resize-window-horizontally", 
+            "id": "n.a", 
+            "label": "Resize window horizontally"
+        }
+    ], 
+    "path": "ui-framework"
+}

@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Disable a property", 
+        "Make sure the property is in fact disabled and that this is somehow visible in the UI", 
+        "Enable the property", 
+        "Make sure the style is re-applied and that this is reflected in the UI"
+    ], 
+    "file_path": "style-inspector.toggle-property", 
+    "folder_path": "style-inspector", 
+    "id": "m.j", 
+    "label": "Toggle property", 
+    "url": "./style-inspector/matching-style-declarations.html"
+}

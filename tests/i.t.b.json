@@ -1,0 +1,22 @@
+{
+    "desc": [
+        "Press the \"Switch to Network-Profiler mode\" button in the toolbar.", 
+        "Confirm the dialog.", 
+        "Switch to the Documents view.", 
+        "Verify that the view is disabled.", 
+        "Enable the Documents view.", 
+        "Verify that Documents now works fine again.", 
+        "Switch back to the Network view.", 
+        "Verify that the Network-Profiler icon is now turned off.", 
+        "Press the button again to re-enable.", 
+        "Confirm the dialog.", 
+        "Press the button again to disable.", 
+        "Switch to the Documents view.", 
+        "Verify that Documents now works fine again."
+    ], 
+    "file_path": "network-inspector.network-profiling.network-profiling-disable", 
+    "folder_path": "network-inspector.network-profiling", 
+    "id": "i.t.b", 
+    "label": "Network Profiling disable", 
+    "url": "https://homes.oslo.osa/dherzog/dragonfly-quicktest/"
+}

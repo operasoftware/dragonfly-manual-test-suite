@@ -1,0 +1,66 @@
+{
+    "dirs": [
+        {
+            "label": "edit", 
+            "path": "dom-inspector.edit"
+        }
+    ], 
+    "files": [
+        {
+            "file_path": "dom-inspector.inspect-element-via-right-click", 
+            "id": "c.a", 
+            "label": "Inspect element via right-click"
+        }, 
+        {
+            "file_path": "dom-inspector.tag-names-with-<-characters", 
+            "id": "c.b", 
+            "label": "Tag names with '<' characters"
+        }, 
+        {
+            "file_path": "dom-inspector.pseudo-elements-context-menu", 
+            "id": "c.c", 
+            "label": "Pseudo elements context menu"
+        }, 
+        {
+            "file_path": "dom-inspector.expand-all-nodes", 
+            "id": "c.d", 
+            "label": "Expand all nodes"
+        }, 
+        {
+            "file_path": "dom-inspector.export", 
+            "id": "c.e", 
+            "label": "Export"
+        }, 
+        {
+            "file_path": "dom-inspector.find-with-click", 
+            "id": "c.f", 
+            "label": "Find with click"
+        }, 
+        {
+            "file_path": "dom-inspector.highlight-elements", 
+            "id": "c.g", 
+            "label": "Highlight elements"
+        }, 
+        {
+            "file_path": "dom-inspector.update-dom-on-node-remove", 
+            "id": "c.h", 
+            "label": "Update DOM on node remove"
+        }, 
+        {
+            "file_path": "dom-inspector.document-select", 
+            "id": "c.i", 
+            "label": "Document select"
+        }, 
+        {
+            "file_path": "dom-inspector.keyboard-navigation", 
+            "id": "c.j", 
+            "label": "Keyboard navigation"
+        }, 
+        {
+            "file_path": "dom-inspector.dfl-1360", 
+            "id": "c.k", 
+            "label": "DFL-1360"
+        }
+    ], 
+    "path": "dom-inspector"
+}

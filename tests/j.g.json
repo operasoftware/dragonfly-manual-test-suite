@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Start the profiler.", 
+        "Reload the document.", 
+        "Stop after circa one second.", 
+        "Click the \"Change start time to first event\" button next to the record button.", 
+        "Verify that the start of the timeline is set to the start time of the first event, i.e. there is no empty space at the start of the timeline."
+    ], 
+    "file_path": "profiler.changing-start-time", 
+    "folder_path": "profiler", 
+    "id": "j.g", 
+    "label": "Changing start time", 
+    "url": "./profiler/profiler-test.html"
+}

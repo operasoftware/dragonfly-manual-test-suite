@@ -1,0 +1,11 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "ui-framework.enabling-disabling-services.dfl-3282-can-t-inspect-when-being-stopped-after-re-enabling-services", 
+            "id": "n.c.a", 
+            "label": "DFL-3282, Can't inspect when being stopped after re-enabling services"
+        }
+    ], 
+    "path": "ui-framework/enabling-disabling-services"
+}

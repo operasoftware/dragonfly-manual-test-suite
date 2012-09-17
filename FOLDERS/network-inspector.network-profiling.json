@@ -1,0 +1,16 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "network-inspector.network-profiling.network-profiling", 
+            "id": "i.t.a", 
+            "label": "Network Profiling"
+        }, 
+        {
+            "file_path": "network-inspector.network-profiling.network-profiling-disable", 
+            "id": "i.t.b", 
+            "label": "Network Profiling disable"
+        }
+    ], 
+    "path": "network-inspector/network-profiling"
+}

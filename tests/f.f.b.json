@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Set a breakpoint on line 4, 'var aa = 1;'.", 
+        "Verify that a breakpoint is displayed on the clicked line.", 
+        "Press the 'e()' button.", 
+        "Verify that the engine stops on line 4, e.g. that the script is displayed and that an arrow points to the breakpoint.", 
+        "Continue and reload the document.", 
+        "Verify that the engine stops again on the breakpoint."
+    ], 
+    "file_path": "js-debugger.script-source.set-breakpoint", 
+    "folder_path": "js-debugger.script-source", 
+    "id": "f.f.b", 
+    "label": "Set breakpoint", 
+    "url": "./js-debugger/script-source/callstack.html"
+}

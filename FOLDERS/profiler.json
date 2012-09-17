@@ -1,0 +1,46 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "profiler.enabling-the-profiler", 
+            "id": "j.a", 
+            "label": "Enabling the profiler"
+        }, 
+        {
+            "file_path": "profiler.remembering-the-last-tab", 
+            "id": "j.b", 
+            "label": "Remembering the last tab"
+        }, 
+        {
+            "file_path": "profiler.timeline-events", 
+            "id": "j.c", 
+            "label": "Timeline events"
+        }, 
+        {
+            "file_path": "profiler.event-tooltips", 
+            "id": "j.d", 
+            "label": "Event tooltips"
+        }, 
+        {
+            "file_path": "profiler.single-event-details", 
+            "id": "j.e", 
+            "label": "Single event details"
+        }, 
+        {
+            "file_path": "profiler.aggregated-event-details", 
+            "id": "j.f", 
+            "label": "Aggregated event details"
+        }, 
+        {
+            "file_path": "profiler.changing-start-time", 
+            "id": "j.g", 
+            "label": "Changing start time"
+        }, 
+        {
+            "file_path": "profiler.no-recorded-data", 
+            "id": "j.h", 
+            "label": "No recorded data"
+        }
+    ], 
+    "path": "profiler"
+}

@@ -1,0 +1,1842 @@
+﻿/* Font stack defaults */
+viewport,
+.info-box,
+.ui-button {
+  font-family: sans-serif;
+  font: menu;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: normal;
+  color: #444;
+}
+
+.mono
+{
+  font-family: "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Consolas", "Monaco", "Lucida Console", monospace;
+  font-size: 11px;
+  line-height: 15px;
+  color: #111;
+}
+
+textarea,
+input,
+code,
+pre
+{
+  font: inherit;
+}
+
+/* UI Style */
+viewport
+{
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  cursor: default;
+}
+
+main-view {
+  width: 100%;
+  display: block;
+}
+
+windows-container,
+toolbar,
+modebar,
+searchbar,
+tabs,
+container,
+top-tabs,
+top-container {
+  position: absolute;
+}
+
+panel-container {
+  width: 100%;
+  display: block;
+  /* not sure if this is needed
+     so far any container was positioned absolute */
+  position: relative;
+}
+
+container,
+top-tabs,
+tabs,
+modebar,
+searchbar,
+toolbar,
+panel-toolbar,
+window-toolbar,
+.js-dd-filter-bar
+{
+  border: 0 solid #999;
+}
+
+top-tabs,
+tabs
+{
+  border-bottom-width: 1px;
+}
+
+modebar
+{
+  border-top-width: 1px;
+}
+
+top-container
+{
+  background-color: #e6e6e6;
+}
+
+container
+{
+  border-width: 0 1px;
+  background-color: #fefefe;
+  overflow: hidden;
+}
+
+window-statusbar
+{
+  display: block;
+  background: #e6e6e6 url('../ui-images/window-dragger.png') no-repeat 100% 100%;
+  line-height: 20px;
+  height: 20px;
+}
+
+window-toolbar
+{
+  display: block;
+}
+
+toolbar,
+panel-toolbar,
+window-toolbar,
+.js-dd-filter-bar,
+.disabled-toolbar-overlay
+{
+  border-width: 0 1px 1px;
+  padding: 3px 2px;
+  height: 21px; /* 21 + 3 + 3 (padding) = 27 */
+  background-color: #e9e9e9;
+  background-image: -o-linear-gradient(-90deg,
+                                       rgba(255, 255, 255, 0.85) 0,
+                                       rgba(255, 255, 255, 0.25) 100%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.85) 0,
+                                    rgba(255, 255, 255, 0.25) 100%);
+}
+
+.disabled-toolbar-overlay
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  padding: 0;
+}
+
+panel-toolbar
+{
+  display: block;
+  border-width: 0 0 1px 0;
+  background-color: #e9e9e9;
+  background-image: -o-linear-gradient(-90deg,
+                                       rgba(255, 255, 255, 0.55) 0,
+                                       rgba(255, 255, 255, 0.25) 100%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.55) 0,
+                                    rgba(255, 255, 255, 0.25) 100%);
+  border-color: #bfbfbf;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35),
+              inset 0 1px 1px 0 rgba(255, 255, 255,0.9);
+}
+
+toolbar-buttons
+{
+  display: block;
+  float: left;
+  height: 100%;
+  padding: 0 4px;
+}
+
+/* Pop-ups */
+cst-select-option-list,
+#contextmenu,
+.tooltip-container,
+.error-description
+{
+  background-color: #ededed;
+  background-image: -o-linear-gradient(-90deg,
+                                       rgba(255, 255, 255, 0.25) 0,
+                                       transparent 25px);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.25) 0,
+                                    transparent 25px);
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.9),
+              0 1px 6px 0 rgba(0, 0, 0, 0.45),
+              0 0 1px 1px rgba(0, 0, 0, 0.3);
+  color: #333;
+}
+
+.reload-window::before
+{
+  background-image: url("../ui-images/icons/icon_reload.png");
+}
+
+
+/* Window control buttons */
+
+#toggle-console::before
+{
+  background-image: url("../ui-images/icons/icon_console.png");
+}
+
+#toggle-settings-overlay::before
+{
+  background-image: url("../ui-images/icons/icon_settings.png");
+}
+
+#toggle-remote-debug-overlay::before
+{
+  background-image: url("../ui-images/icons/icon_remote.png");
+}
+
+#toggle-remote-debug-overlay.remote-active::before
+{
+  background-image: url("../ui-images/icons/icon_remote_active.png");
+}
+
+#toggle-remote-debug-overlay.alert::before
+{
+  background-image: url("../ui-images/icons/icon_remote_alert.png");
+}
+
+#top-window-toggle-attach::before
+{
+  background-image: url("../ui-images/icons/icon_attach.png");
+}
+
+#top-window-toggle-attach.attached::before
+{
+  background-image: url("../ui-images/icons/icon_detach.png");
+}
+
+#top-window-close::before
+{
+  background-image: url("../ui-images/icons/icon_close.png");
+}
+
+/* View buttons */
+.search::before
+{
+  background-image: url("../ui-images/icons/icon_search.png");
+}
+
+.dom-inspection-snapshot::before
+{
+  background-image: url("../ui-images/icons/icon_expand.png");
+}
+
+.dom-inspection-export::before
+{
+  background-image: url("../ui-images/icons/icon_export.png");
+}
+
+.dom\.find-with-click::before
+{
+  background-image: url("../ui-images/icons/icon_click.png");
+}
+
+.dom\.highlight-on-hover::before
+{
+  background-image: url("../ui-images/icons/icon_hover.png");
+}
+
+.dom\.update-on-dom-node-inserted::before
+{
+  background-image: url("../ui-images/icons/icon_update_on_delete.png");
+}
+
+.dom\.lock-selected-elements::before
+{
+  background-image: url("../ui-images/icons/icon_border.png");
+}
+
+.stylesheets.shortcuts::before
+{
+  background-image: url("../ui-images/icons/icon_shorthand.png");
+}
+
+.css-comp-style\.show-initial-values::before
+{
+  background-image: url("../ui-images/icons/icon_hidedefaults.png");
+}
+
+.css-inspector.hide-shorthands::before
+{
+  background-image: url("../ui-images/icons/icon_shorthand.png");
+}
+
+.dom_attrs.hide-null-values::before
+{
+  background-image: url("../ui-images/icons/icon_empty.png");
+}
+
+#continue-run::before
+{
+  background-image: url("../ui-images/icons/icon_play.png");
+}
+
+#continue-step-into-call::before
+{
+  background-image: url("../ui-images/icons/icon_stepinto.png");
+}
+
+#continue-step-next-line::before
+{
+  background-image: url("../ui-images/icons/icon_stepover.png");
+}
+
+#continue-step-out-of-call::before
+{
+  background-image: url("../ui-images/icons/icon_stepout.png");
+}
+
+.js_source\.script::before
+{
+  background-image: url("../ui-images/icons/icon_haltonscript.png");
+}
+
+.js_source\.error::before
+{
+  background-image: url("../ui-images/icons/icon_haltonerror.png");
+}
+
+.js_source\.reformat_javascript::before
+{
+  background-image: url("../ui-images/icons/icon_reformat.png");
+}
+
+.threads\.log-threads::before
+{
+  background-image: url("../ui-images/icons/icon_threads.png");
+}
+
+.inspection\.show-prototypes::before
+{
+  background-image: url("../ui-images/icons/icon_prototype.png");
+}
+
+.inspection\.show-non-enumerables::before
+{
+  background-image: url("../ui-images/icons/icon_hidedefaults.png"); /* temporarily using this icon */
+}
+
+.inspection\.show-default-nulls-and-empty-strings::before
+{
+  background-image: url("../ui-images/icons/icon_empty.png");
+}
+
+.threads-clear-log::before
+{
+  background-image: url("../ui-images/icons/icon_clear.png");
+}
+
+.threads-export-log::before
+{
+  background-image: url("../ui-images/icons/icon_export.png");
+}
+
+.clear-request-list::before
+{
+  background-image: url("../ui-images/icons/icon_clear.png");
+}
+
+.clear-log-network-view::before
+{
+  background-image: url("../ui-images/icons/icon_clear.png");
+}
+
+.network-view-toggle-graphs:before
+{
+  background-image: url("../ui-images/icons/icon_graph.png");
+}
+
+.network-view-toggle-data:before
+{
+  background-image: url("../ui-images/icons/icon_table.png");
+}
+
+
+.request_list\.clear-log-on-runtime-switch::before
+{
+  background-image: url("../ui-images/icons/icon_clearonreload.png");
+}
+
+.request_list\.auto-scroll-request-list::before
+{
+  background-image: url("../ui-images/icons/icon_autoscroll.png");
+}
+
+.update-ev-listeners::before
+{
+  background-image: url("../ui-images/icons/icon_refetch_listeners.png");
+}
+
+.storage-delete
+{
+  background-image: url("../ui-images/icons/icon_clear.png");
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+}
+
+.clear-log::before
+{
+  background-image: url("../ui-images/icons/icon_clear.png");
+}
+
+.console\.expand-all-entries::before
+{
+  background-image: url("../ui-images/icons/icon_expand.png");
+}
+
+.disable-all-breakpoints::before,
+.ev-brp-remove-all-breakpoints::before
+{
+  background-image: url("../ui-images/icons/icon_disable.png");
+}
+
+.delete-all-breakpoints::before
+{
+  background-image: url("../ui-images/icons/icon_clear.png");
+}
+
+.ev-brp-expand-all-sections::before
+{
+  background-image: url("../ui-images/icons/icon_expand.png");
+}
+
+.network_logger\.pause::before
+{
+  background-image: url("../ui-images/icons/icon_pause.png");
+}
+
+.network_logger\.network-profiler-mode::before
+{
+  background-image: url("../ui-images/icons/icon_network_profiler.png");
+}
+
+.network_logger\.view-raw::before
+{
+  background-image: url("../ui-images/icons/icon_raw_headers.png");
+}
+
+.profiler-start-stop::before
+{
+  background-image: url("../ui-images/icons/icon_record.png");
+}
+
+.profiler_all\.zero-at-first-event::before
+{
+  background-image: url("../ui-images/icons/icon_zero_at_first_event.png");
+}
+
+.pseudo-items cst-icon
+{
+  background-image: url("../ui-images/icons/icon_hidedefaults.png");
+}
+
+cst-icon[class="debugger-menu"]
+{
+  background-image: url("../ui-images/icons/icon_tabs.png");
+}
+
+
+/* Buttons */
+
+.ui-control,
+.ui-button
+{
+  background: #e6e6e6 repeat-x -o-linear-gradient(-90deg,
+                                                  rgba(255, 255, 255, 0.75) 0,
+                                                  rgba(255, 255, 255, 0.25) 100%);
+  background: #e6e6e6 repeat-x linear-gradient(rgba(255, 255, 255, 0.75) 0,
+                                               rgba(255, 255, 255, 0.25) 100%);
+  border-radius: 3px;
+  line-height: 19px;
+  margin: 0 3px;
+  padding: 1px 11px;
+  box-sizing: content-box;
+  display: inline-block;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.45),
+              inset 0 0 0 2px rgba(255, 255, 255, 0.55);
+  vertical-align: middle;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.ui-control[disabled],
+.ui-button[disabled]
+{ /* :disabled seems to be buggy */
+  opacity: 0.45;
+}
+
+.ui-control:not([disabled]):active,
+.ui-button:not([disabled]):active,
+toolbar-buttons .is-active
+{
+  background-color: #c6c6c6;
+  background-image: -o-linear-gradient(-90deg,
+                                       rgba(255, 255, 255, 0.45) 0,
+                                       rgba(255, 255, 255, 0.25) 100%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.45) 0,
+                                    rgba(255, 255, 255, 0.25) 100%);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3),
+              inset 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Buttons with icons */
+
+.ui-button:empty::before
+{
+  content: "";
+  display: block;
+  height: 19px;
+  width: 19px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+
+/* Toolbar buttons */
+
+toolbar .ui-button,
+toolbar .ui-control,
+panel-toolbar .ui-button,
+panel-toolbar .ui-control,
+window-controls .ui-button,
+window-controls .ui-control
+{
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.35),
+              inset 0 2px 0 0 rgba(255, 255, 255, 0.55),
+              0 1px rgba(255, 255, 255, 0.6);
+}
+
+toolbar .ui-button:not([disabled]):active,
+toolbar .ui-control:not([disabled]):active,
+panel-toolbar .ui-button:not([disabled]):active,
+panel-toolbar .ui-control:not([disabled]):active,
+window-controls .ui-button:not([disabled]):active,
+window-controls .ui-control:not([disabled]):active,
+toolbar-buttons .is-active,
+window-controls .is-active
+{
+  box-shadow: 0 1px rgba(255, 255, 255, 0.6),
+              inset 0 0 0 1px rgba(0, 0, 0, 0.15),
+              inset 0 0 2px rgba(0, 0, 0, 0.25),
+              inset 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+toolbar .ui-button:empty,
+panel-toolbar .ui-button:empty,
+.advanced-search .ui-button,
+window-controls .ui-button,
+.ui-control /* cst-select needs to be tweaked before changing this */
+{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+/* Grouping the toolbar buttons */
+
+/* All Buttons in a group*/
+toolbar-buttons .ui-button,
+#toggle-settings-overlay,
+#toggle-remote-debug-overlay,
+#top-window-toggle-attach.attached,
+#top-window-close,
+.advanced-search .ui-button
+{
+  border-radius: 0;
+  margin: 0 -1px 0 0;
+}
+
+/* Leftmost Button*/
+toolbar-buttons .ui-button:first-of-type,
+#toggle-settings-overlay,
+#top-window-toggle-attach.attached
+{
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+#toggle-settings-overlay,
+#top-window-toggle-attach.attached
+{
+  margin-left: 3px;
+}
+
+/* Rightmost Button*/
+toolbar-buttons .ui-button:last-of-type,
+#toggle-remote-debug-overlay,
+#top-window-close,
+.advanced-search .search-move-highlight-down
+{
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+#toggle-remote-debug-overlay,
+#top-window-close
+{
+  margin-right: 3px;
+}
+
+/* Show the button topmost when the overlay is visible */
+#toggle-settings-overlay.is-active,
+#toggle-remote-debug-overlay.is-active
+{
+  position: relative;
+  z-index: 301;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5),
+              inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Alert state */
+.ui-control.alert
+{
+  background-color: #ff8040;
+  border-color: #bf3000;
+  color: #993d1f;
+  box-shadow: inset 0 0 1px #fff,
+              inset 0 0 10px #ff4433,
+              0 1px rgba(255, 255, 255, 0.5),
+              0 0 2px #ff0000;
+}
+
+.ui-control.alert:not([disabled]):active
+{
+  background-color: #ff8040;
+  border-color: #bf3000;
+  box-shadow: inset 0 1px 2px #bf1000,
+              inset 0 0 10px #ff4433,
+              0 1px rgba(255, 255, 255, 0.5),
+              0 0 2px #ff0000;
+}
+
+.ui-control.alert.is-active
+{
+  background-color: #e54c2e;
+  border-color: #bf3000;
+  box-shadow: inset 0 1px 2px #bf1000,
+              inset 0 0 10px #ff4433,
+              0 1px rgba(255, 255, 255, 0.5),
+              0 0 2px #ff0000;
+}
+
+.ui-control.alert.is-active:active
+{
+  background-color: #bf381d;
+}
+
+#toggle-settings-overlay.alert.is-active,
+#toggle-remote-debug-overlay.alert.is-active,
+#toggle-settings-overlay.alert.is-active:active,
+#toggle-remote-debug-overlay.alert.is-active:active
+{
+  border-color: #721;
+  box-shadow: inset 0 1px 2px #bf1000,
+              inset 0 0 10px #ff4433,
+              0 1px rgba(255, 255, 255, 0.2),
+              0 0 4px #ff0000;
+}
+
+.ui-control.dropdown,
+cst-select[cst-id="debugger-menu"]
+{
+  width: 28px;
+}
+
+cst-icon
+{
+  vertical-align: middle;
+  display: inline-block;
+  height: 100%;
+  width: 17px;
+  height: 17px;
+}
+
+toolbar-filters,
+toolbar-search
+{
+  display: block;
+  float: right;
+}
+
+filter,
+.advanced-search,
+.js-dd-filter-container,
+.color-picker-number,
+.color-picker-text
+{
+  margin: 0 2px;
+  padding-left: 20px;
+  height: 19px;
+  line-height: 19px;
+  border: 1px solid #8e8e8e;
+  border-radius: 3px;
+  box-shadow: 0 1px #fff,
+              inset 0 1px 1px #d5d5d5;
+}
+
+filter,
+.advanced-search,
+.js-dd-filter-container
+{
+  background: #fff url("../ui-images/icon_search.png") 2px 50% no-repeat;
+}
+
+
+filter
+{
+  display: inline-block;
+}
+
+filter.filter,
+.js-dd-filter-container
+{
+  background-image: url("../ui-images/filter.png");
+  background-position: 5px 50%;
+}
+
+filter input
+{
+  width: 138px;
+  height: 19px;
+  background: none;
+  border: none;
+  padding: 0;
+  padding-right: 2px;
+  color: #666;
+}
+
+toolbar-filters filter.focus input
+{
+  color: #000;
+}
+
+modebar
+{
+  height: 21px;
+  line-height: 21px;
+  background: #d7d7d7;
+}
+
+modebar.hidden
+{
+  display: none;
+}
+
+searchbar
+{
+  border-top: none;
+  border-width: 0 1px 1px;
+  padding: 3px;
+  height: 21px; /* 21 + 3 + 2 (padding) = 26 */
+  line-height: 21px;
+  background: #eee;
+}
+
+.advanced-searchbar
+{
+  height: 43px;
+}
+
+window-select
+{
+  position: relative;
+  padding: 2px 0;
+}
+
+window-select select
+{
+  width: 100%;
+  max-width: 400px;
+  margin:0;
+  height: 22px;
+}
+
+window-select select option[value="-1"]
+{
+  color: #999;
+}
+
+window-controls
+{
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 3px 3px 4px;
+  height: 22px;
+}
+
+window-controls:not(.no-tabbar)
+{
+  background-color: #f3f3f3;
+  background-image: -o-linear-gradient(-90deg,
+                                       rgba(255, 255, 255, 0.75) 0,
+                                       rgba(255, 255, 255, 0.25) 100%),
+                    -o-linear-gradient(-90deg,
+                                       rgba(0, 0, 0, 0.05) 0,
+                                       rgba(0, 0, 0, 0.3) 70%),
+                    -o-linear-gradient(-90deg,
+                                       rgba(255, 255, 255, 0.1) 0,
+                                       rgba(255, 255, 255, 0.6) 70%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.75) 0,
+                                    rgba(255, 255, 255, 0.25) 100%),
+                    linear-gradient(rgba(0, 0, 0, 0.05) 0,
+                                    rgba(0, 0, 0, 0.3) 70%),
+                    linear-gradient(rgba(255, 255, 255, 0.1) 0,
+                                    rgba(255, 255, 255, 0.6) 70%);
+  background-size: 100% 100%, 1px 100%, 1px 100%;
+  background-repeat: repeat, repeat-y, repeat-y;
+  background-position: left top, left top, 1px top;
+}
+
+window-controls.no-tabbar
+{
+  z-index: 2;
+}
+
+.default-container
+{
+  padding: 7px;
+}
+
+settings-container,
+settings,
+settings-header,
+checkboxes,
+checkbox,
+setting-composite
+{
+  display: block;
+}
+
+settings-container label
+{
+  display: block;
+}
+
+settings-container input {
+  margin-left: 0;
+  margin-right: 5px;
+}
+
+settings
+{
+  margin: 12px 0;
+  padding: 3px 0;
+}
+
+settings-header
+{
+  font-size: 1.2em;
+  clear: both;
+}
+
+setting-composite select
+{
+  padding: 0;
+  margin: 0;
+  height: 2em;
+  vertical-align: middle;
+}
+
+setting-buttons {
+  text-align: right;
+  padding-right: 26px;
+}
+
+settings-container { /**/
+  padding: 0 8px 8px;
+}
+
+settings hr
+{
+  border: 1px dotted #333;
+  margin: 9px 26px;
+}
+
+.change-ui-lang-info
+{
+  padding: 7px 0;
+}
+
+.change-ui-lang-info a
+{
+  color: inherit;
+}
+
+.change-ui-lang-info ul
+{
+  margin-top: 5px;
+}
+
+view-slider
+{
+  display: block;
+  position: absolute;
+}
+
+view-slider.vertical
+{
+  cursor: col-resize;
+}
+
+view-slider.horizontal
+{
+  cursor: row-resize;
+  border-top: 1px solid #b3b3b3;
+}
+
+ui-menu
+{
+  display: block;
+  width: 180px;
+  position: absolute;
+  right:30px;
+  top: 0;
+  z-index:10;
+  right: 200px;
+}
+
+ui-menu > h2
+{
+  padding-left: 10px;
+  font-weight: normal;
+  font-size: 11px;
+  background: #fff;
+  width: 170px;
+	height: 18px;
+  line-height: 14px;
+  border: 1px solid #000;
+  border-top-width: 0;
+}
+
+ui-menu ul
+{ /* The list needs a bottom shadow when opened */
+  position: absolute;
+  right: 9px;
+  top: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #000;
+  border-top-width: 0;
+}
+
+ui-menu li
+{
+  padding: 0;
+  margin-right: 6px;
+  padding-left: 10px;
+  width: 155px;
+}
+
+ui-menu li h2 {
+  padding: 0;
+  margin: 0;
+  width: 165px;
+  height: 22px;
+  line-height: 22px;
+  font-weight: normal;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+ui-menu ul li:hover
+{
+  background: #eee;
+}
+
+window-control {
+  display: block;
+  position: absolute;
+  cursor: default;
+}
+
+window-header
+{
+  display: block;
+  font-weight: bold;
+  text-shadow: 0 1px 1px #000;
+  height: 21px;
+  line-height: 21px;
+  padding-left: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px 3px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+windows-container .window-move
+{
+  cursor: move;
+}
+
+windows-container .window-close
+{
+  float: right;
+  width: 17px;
+  height: 17px;
+  position: relative;
+  top: 4px;
+  right: 1px;
+  background: transparent url('../ui-images/icons/hud_close.png') scroll no-repeat 0 0;
+  z-index: 11;
+}
+
+windows-container .window-close:active
+{
+  background-position: 0 1px;
+}
+
+windows-container .window-scale-top-left
+{
+  left: -5px;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  cursor: nw-resize;
+}
+
+windows-container .window-scale-top
+{
+  left: 5px;
+  right: 5px;
+  top: -5px;
+  height: 10px;
+  cursor: n-resize;
+}
+
+windows-container .window-scale-top-right
+{
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  top: -5px;
+  cursor: ne-resize;
+}
+
+windows-container .window-scale-right
+{
+  right: -5px;
+  width: 10px;
+  top: 5px;
+  bottom: 5px;
+  cursor: e-resize;
+}
+
+windows-container .window-scale-left
+{
+  left: -5px;
+  width: 10px;
+  top: 5px;
+  bottom: 5px;
+  cursor: w-resize;
+}
+
+windows-container .window-scale-bottom
+{
+  left: 0;
+  bottom: -5px;
+  height: 10px;
+  right: 5px;
+  cursor: s-resize;
+}
+
+windows-container .window-scale-bottom-right
+{
+  bottom: -5px;
+  height: 10px;
+  width: 10px;
+  right: -5px;
+  cursor: se-resize;
+}
+
+windows-container .window-scale-bottom-left
+{
+  bottom: -5px;
+  height: 10px;
+  width: 10px;
+  left: -5px;
+  cursor: sw-resize;
+}
+
+windows-container
+{
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+window
+{
+  display: block;
+  position: absolute;
+  height: 300px;
+  left: 20px;
+  color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: rgba(50, 50, 50, 0.9);
+  background-size: auto 100%;
+}
+
+/* clear painting artefacts on moving the window */
+window:after
+{
+  content: "";
+  display: block;
+  top: 100%;
+  left: 0;
+  height: 10px;
+  width: 100%;
+}
+
+window-container
+{
+ /* border: 1px solid #000; <-- TODO: Do we need this */
+  border-width: 0 1px 1px;
+  display: block;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+
+window.hud
+{
+  border-width: 0;
+  border-top-width: 2px;
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+window.hud window-container
+{
+  border-radius: 0;
+  border: 0;
+}
+
+.hud window-toolbar,
+.hud .disabled-toolbar-overlay
+{
+  background-color: #000;
+  background-image: -o-linear-gradient(-90deg,
+                                       rgba(255, 255, 255, 0.25) 0,
+                                       rgba(255, 255, 255, 0.15) 100%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.25) 0,
+                                    rgba(255, 255, 255, 0.15) 100%);
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.65);
+  padding-bottom: 3px;
+}
+
+.hud window-toolbar
+{
+  position: relative;
+}
+
+.hud .disabled-toolbar-overlay
+{
+  padding: 3px 2px;
+  margin: -3px -2px;
+}
+
+.hud cst-select cst-value
+{
+  text-shadow: none;
+}
+
+.hud .window-scale-top
+{
+  cursor: row-resize;
+}
+
+/* editing */
+textarea
+{
+   resize: none;
+}
+
+textarea-container
+{
+  display: block;
+  padding: 1px;
+  margin: -2px -4px -2px -2px;
+  position:relative;
+  z-index: 10;
+  background: #fff;
+  border: 1px solid #808080;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+textarea-container,
+textarea-container-inline,
+textarea
+{
+  border-radius: 3px;
+}
+
+textarea-container textarea
+{
+  display: block;
+  width: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  vertical-align: text-top;
+  overflow: hidden;
+}
+
+textarea-container-inline
+{
+  display: inline-block;
+  padding: 1px;
+  margin: -2px -3px -5px;
+  position:relative;
+  z-index: 10;
+  background: #fff;
+  border: 1px solid #808080;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  box-decoration-break: clone;
+}
+
+textarea-container-inline textarea
+{
+  border: none;
+  margin: 0;
+  padding: 0 1px;
+  vertical-align: text-top;
+  overflow: hidden;
+  height: 0;
+}
+
+cst-select-toolbar-setting
+{
+  float: left;
+}
+
+cst-value
+{
+  display: inline-block;
+  overflow: hidden;
+  padding: 0 4px;
+  height: 19px;
+  line-height: 19px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: top;
+  width: 95%; /* TODO: this is ugly, might push down the dropdown */
+  box-sizing: border-box;
+}
+
+cst-drop-down
+{
+  display: block;
+  width: 7px;
+  height: 19px;
+  background: transparent url("../ui-images/dropdown.png") 50% 50% no-repeat;
+  float: right;
+  position: relative;
+}
+
+.hud cst-drop-down
+{
+    background: transparent url("../ui-images/dropdown_white.png") 50% 50% no-repeat;
+}
+
+cst-select cst-value
+{
+  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+
+cst-select[disabled]
+{
+  background-color: #ccc !important;
+}
+
+cst-select-option-list-container
+{
+  /* don't add here any border, padding or margin */
+  display: block;
+  position:absolute;
+  z-index: 150;
+  border: 1px solid transparent;
+}
+
+.cmd-line-runtimes
+{
+  z-index: 302;
+}
+
+cst-select[disabled] cst-drop-down
+{
+  opacity: 0.3;
+}
+
+cst-select-option-list
+{
+  display: block;
+  background-color: #fcfcfc;
+  max-height: 200px;
+  overflow: auto;
+  width: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.35),
+              0 0 1px 1px rgba(90, 90, 90, 0.35);
+}
+
+cst-option,
+cst-title
+{
+  display: block;
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+cst-select-option-list hr
+{
+  margin: 4px 0;
+  padding: 0;
+  height: 1px;
+  border: none;
+  background-color: #ccc;
+}
+
+cst-option:hover
+{
+  background-color: #bbcef1;
+  color: #000;
+}
+
+cst-option.selected,
+cst-option:active
+{
+  background-color: #598bec;
+  color: #fff;
+}
+
+cst-option.selected span,
+cst-option.selected code,
+cst-option:active span,
+cst-option:active code
+{
+  color: #fff;
+}
+
+cst-select-option-list code
+{
+  font-family: monospace;
+  color: rgba(0, 0, 0, 0.44);
+}
+
+.debugger-menu cst-option,
+.debugger-menu cst-title
+{
+  padding-left: 28px;
+}
+
+.debugger-menu cst-option.selected
+{
+  background-image: url('../ui-images/dragonfly-favicon.png');
+  background-repeat: no-repeat;
+  background-position: 6px 50%;
+}
+
+cst-select.color
+{
+  background: none;
+  width: 22px;
+  margin: 0 0.2em;
+}
+
+cst-select.color cst-value
+{
+  border: 1px solid #999;
+  width: 4px;
+  margin: 0;
+}
+
+cst-select.color[disabled] cst-value
+{
+  background-color: #ccc !important;
+}
+
+cst-select-option-list-container.color cst-select-option-list
+{
+  padding: 2px 11px 8px 8px;
+  overflow: visible;
+  border: none;
+  background: none;
+  max-height: none;
+}
+
+cst-option-list-background
+{
+  display:block;
+  position: relative;
+  width: 160px;
+  padding: 10px 15px 15px 10px;
+  margin: -1px -11px -8px -8px;
+}
+
+cst-option-list-background > div
+{
+  width: 160px;
+}
+
+cst-select-option-list-container.color cst-option
+{
+  float: left;
+  width: 32px;
+  height: 24px;
+  padding: 0;
+  margin: 3px;
+  border: 1px solid #999;
+  position: relative;
+  background-color: transparent;
+}
+
+cst-select-option-list-container.color cst-option cst-color
+{
+  display: inline-block;
+  width: 32px;
+  height: 24px;
+  vertical-align: text-top;
+}
+
+cst-select-option-list-container.color cst-selected-border
+{
+  float: left;
+  width: 32px;
+  height: 24px;
+  padding: 2px;
+  margin: 0 0 0 -40px;
+  border: 2px solid #999;
+}
+
+cst-option-list-background > div > div
+{
+  clear: both;
+  padding-top: 5px;
+}
+
+cst-select-option-list-container.color label
+{
+  display: block;
+  margin: 2px 3px;
+  line-height: 1.4em;
+  clear: both;
+}
+
+cst-select-option-list-container.color label input
+{
+  float: right;
+  vertical-align: middle;
+  height: 1.1em;
+  padding: 0;
+  width: 4.2em;
+}
+
+cst-select-option-list-container.color .text,
+cst-select-option-list-container.color .text input
+{
+  text-align: right;
+}
+
+cst-select-option-list-container.color .text input
+{
+  margin-left: 0.2em;
+}
+
+cst-select-option-list-container.color .ok-cancel
+{
+  margin: 5px 3px;
+}
+
+cst-select-option-list-container.color .ok-cancel input + input
+{
+  float: right;
+}
+
+.info-box
+{
+  margin: 30px 50px 0 50px;
+  text-align: center;
+  padding: 1em;
+  border: 1px dashed #b3b3b3;
+  border-radius: 4px;
+  background: #f3f3f3;
+}
+
+.info-box p
+{
+  margin: 5px 0 0;
+  padding: 0;
+}
+
+.placeholder
+{
+  color: #999;
+  font-style: italic;
+}
+
+horizontal-navigation
+{
+  height: 21px;
+  line-height: 21px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+nav {
+  position: absolute;
+  border: 0 solid #b3b3b3;
+  color: #444;
+  width: 15px;
+  text-align: center;
+  z-index: 1;
+  display: none;
+  background: #d9d9d9 50% 7px no-repeat;
+  content: "\00A0";
+  overflow: hidden;
+}
+
+nav:active
+{
+  color: #000;
+}
+
+nav::selection
+{
+  background: inherit;
+}
+
+.navs nav
+{
+  display: inline;
+}
+
+nav[dir="back"]
+{
+  background-image: url("../ui-images/nav_back.png");
+  border-right-width: 1px;
+}
+
+nav[dir="forward"]
+{
+  background-image: url("../ui-images/nav_forward.png");
+  right: 0;
+  border-left-width: 1px;
+}
+
+nav[dir="back"].disabled
+{
+  background-image: url("../ui-images/nav_back_disabled.png");
+}
+
+nav[dir="forward"].disabled
+{
+  background-image: url("../ui-images/nav_forward_disabled.png");
+}
+
+nav:not(.disabled):hover
+{
+  background-color: #cecece;
+}
+
+nav.disabled
+{
+  cursor: default;
+}
+
+breadcrumbs
+{
+  box-sizing: border-box;
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  left: 0;
+  right: 0;
+  background: #d7d7d7 url("../ui-images/shadow_0.png");
+}
+
+.navs breadcrumbs
+{
+  left: 16px;
+  right: 15px; /* minus one pixel to hide the right border of the last breadcrumb */
+}
+
+breadcrumbs breadcrumb
+{
+  height: 21px;
+  line-height: 21px;
+  display: inline-block;
+  position: relative;
+  padding: 0 0 0 15px;
+  background: transparent url("../ui-images/crumb_middle.png");
+}
+
+breadcrumbs breadcrumbs::selection
+{
+  background: transparent;
+}
+
+breadcrumbs .drag breadcrumb
+{
+  cursor: move;
+}
+
+
+/* Styling of arrows */
+
+breadcrumbs breadcrumb:not(:first-of-type)::before,
+breadcrumbs breadcrumb:last-of-type::after
+{
+  content: "";
+  height: 21px;
+  width: 11px;
+  position: absolute;
+  left: 0;
+  background-image: url("../ui-images/crumb_arrow.png");
+}
+
+breadcrumbs breadcrumb:last-of-type::after
+{
+  left: auto;
+  right: -11px;
+}
+
+.navs breadcrumbs breadcrumb:last-of-type
+{
+  padding-right: 4px;
+}
+
+.navs breadcrumbs breadcrumb:last-of-type::after
+{
+  display: none;
+}
+
+breadcrumbs breadcrumb:first-of-type {
+  padding-left: 4px;
+}
+
+breadcrumb:hover,
+breadcrumb:hover + breadcrumb::before,
+breadcrumb:hover:last-of-type::after
+{
+  background-position: 0 -21px;
+}
+
+breadcrumb.active,
+breadcrumb.active:last-of-type::after
+{
+  background-position: 0 -42px;
+}
+
+breadcrumb.active + breadcrumb::before
+{
+  background-position: 0 -105px;
+}
+
+breadcrumb:hover::before
+{
+  background-position: 0 -126px;
+}
+
+breadcrumb.active + breadcrumb:hover::before
+{
+  background-position: 0 -168px;
+}
+
+breadcrumb.active::before
+{
+  background-position: 0 -189px;
+}
+
+.window-select-gadgets,
+cst-title
+{
+  background-color: hsl(0, 0%, 40%);
+  color: #fff;
+  font-style: normal;
+}
+
+cst-group
+{
+  display: block;
+}
+
+/* Temporary fix for flickering */
+tabs,
+toolbar
+{
+  top: -1000px;
+}
+
+/* TODO: this is just a temp workaround. */
+#waiting-for-connection
+{
+    position: relative;
+    z-index: 2;
+}
+
+.close-tab-button
+{
+  display: inline-block;
+  background: transparent url("../ui-images/icons/icon_close_tab_small.png") no-repeat 50% 50%;
+  border: none;
+  width: 11px;
+  height: 11px;
+  margin: -1px -4px 0 4px;
+  opacity: 0.4;
+}
+
+tab.active .close-tab-button
+{
+  opacity: 0.6;
+}
+
+.close-tab-button:active
+{
+  background-position: 50% 100%;
+}
+
+.first-temp-tab
+{
+  margin-left: 20px;
+}
+
+.context-window
+{
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: #fff;
+  color: #000;
+}
+
+.search-window-content
+{
+  background-color: #fff;
+  height: 100%;
+}
+
+.context-window,
+.context-window window-toolbar,
+.context-window window-header,
+.context-window window-container
+{
+  border: none;
+}
+
+.context-window window-header
+{
+  color: #000;
+  background-color: #eee;
+  text-shadow: 0 1px 1px #fff;
+}
+
+.context-window window-toolbar
+{
+  border-bottom: 1px solid #999;
+  background: #eee;
+}
+
+.context-window window-container
+{
+  background: transparent;
+}
+
+.context-window .window-close
+{
+  background-image: url('../ui-images/icons/context_window_close.png');
+}
+
+.context-window
+{
+  background-color: #fff;
+  color: #000;
+}
+
+info {
+  padding: 0 7px;
+}
+
+.scroll {
+  overflow: auto;
+}
+
+.badge.paused
+{
+    content: url("../ui-images/pause.png");
+    background-color: transparent;
+    top: -2px;
+    left: 21px;
+}
+
+.inspect-node-link
+{
+    cursor: pointer;
+}
+
+.inspect-node-link:hover
+{
+    text-decoration: underline;
+}
+
+.internal-link
+{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.internal-link:hover
+{
+    text-decoration: none;
+}
+
+.inline-block
+{
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.block-content
+{
+  display: block;
+  line-height: 1.1;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

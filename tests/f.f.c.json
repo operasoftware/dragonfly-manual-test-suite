@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Stop at the breakpoint.", 
+        "Remove the previous set breakpoint on line 4, 'var aa = 1;'.", 
+        "Verify that a breakpoint disappears on the clicked line.", 
+        "Press the 'Continue' button in the debugger.", 
+        "Press the 'e()' button.", 
+        "Verify that the engine does not stops on line 4 and that no arrow is displayed on that line."
+    ], 
+    "file_path": "js-debugger.script-source.remove-breakpoint", 
+    "folder_path": "js-debugger.script-source", 
+    "id": "f.f.c", 
+    "label": "Remove breakpoint", 
+    "url": "./js-debugger/script-source/callstack.html"
+}

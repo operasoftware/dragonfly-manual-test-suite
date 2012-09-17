@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Load the page.", 
+        "Open Dragonfly.", 
+        "Verify that there are no network resources are listed, instead a button to reload the debugged page.", 
+        "Click the button.", 
+        "Verify that the page reloads and that the graph view with the requests is shown."
+    ], 
+    "file_path": "network-inspector.smoke-test", 
+    "folder_path": "network-inspector", 
+    "id": "i.a", 
+    "label": "Smoke test", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

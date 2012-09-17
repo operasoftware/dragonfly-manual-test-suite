@@ -1,0 +1,18 @@
+{
+    "desc": [
+        "Open the testcase.", 
+        "Go to the CSS tab in Errors.", 
+        "Click the clear button (\"Clear visible errors\").", 
+        "Verify that the list of CSS errors is now empty.", 
+        "Go to the All tab.", 
+        "Verify that errors other than CSS errors are still shown.", 
+        "Right-click and select \"Clear all Errors\".", 
+        "Reload the host.", 
+        "Verify that you see only 6 Errors in total (those are new)."
+    ], 
+    "file_path": "error-console.clear", 
+    "folder_path": "error-console", 
+    "id": "e.d", 
+    "label": "Clear", 
+    "url": "./error-console/error.html"
+}

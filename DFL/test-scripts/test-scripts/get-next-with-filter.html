@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+<title> </title>
+<style>
+body
+{
+  font-size: .7em;
+  font-family: monospace;
+}
+div
+{
+  border: 1px solid #ccc;
+  margin-left: 20px;
+}
+p
+{
+  border: 1px solid #09f;
+  margin: 0;
+  margin-left: 20px;
+}
+
+::selection
+{
+  background-color: #0f0;
+}
+
+</style>
+<script src="../../src/scripts/dom.js"></script>
+<script>
+
+window.onload = function()
+{
+  window.selection = getSelection();
+  window.range = document.createRange();
+  selectEle(window.active_ele = document.body.firstElementChild);
+}
+
+var selectEle = function(ele)
+{
+  if (!selection.isCollapsed)
+    selection.removeAllRanges();
+  range.selectNodeContents(ele.firstChild);
+  selection.addRange(range);
+  active_ele = ele;
+}
+
+var filter = function(ele){ return true }; // "div" == ele.nodeName.toLowerCase();
+
+document.addEventListener('keypress', function(event)
+{
+  switch(event.keyCode)
+  {
+    case 40:
+    {
+      event.preventDefault();
+      var next = active_ele.getNextWithFilter(document.body, filter);
+      if(next) 
+      {
+        selectEle(next);
+      }
+      break;
+    }
+    case 38:
+    {
+      event.preventDefault();
+      var next = active_ele.getPreviousWithFilter(document.body, filter);
+      if(next) selectEle(next);
+      break;
+    }
+  }
+}, false);
+
+</script>
+
+</head>
+<body>
+<div>
+  div
+  <div>
+    div
+    <div>
+      div
+      <div>
+        div
+        <span>span</span>
+        <p>p</p>
+      </div>
+      <div>
+        div
+        <span>span</span>
+        <p>p</p>
+      </div>
+      <span>span</span>
+      <p>p</p>
+    </div>
+    <div>
+      div
+      <span>span</span>
+      <p>p</p>
+    </div>
+    <span>span</span>
+    <p>p</p>
+  </div>
+      <div>
+        div
+        <span>span</span>
+        <p>p</p>
+      </div>
+      <div>
+        div
+        <span>span</span>
+        <p>p</p>
+      </div>
+  <div>
+    div
+    <span>span</span>
+    <p>p</p>
+  </div>
+  <div>
+    div
+    <span>span</span>
+    <p>p</p>
+  </div>
+  <span>span</span>
+  <p>p</p>
+        <div>
+        div
+        <span>span</span>
+        <p>p</p>
+      </div>
+      <div>
+        div
+        <div>
+          div
+          <div>
+            div
+            <span>span</span>
+            <p>p</p>
+          </div>
+          <p>p</p>
+        </div>
+        <p>p</p>
+      </div>
+</div>
+<div>
+  div
+  <div>
+    div
+    <div>
+      div
+      <div>
+        div
+        <span>span</span>
+        <p>p</p>
+      </div>
+      <span>span</span>
+      <p>p</p>
+    </div>
+    <span>span</span>
+    <p>p</p>
+  </div>
+  <div>
+    div
+    <span>span</span>
+    <p>p</p>
+  </div>
+  <span>span</span>
+  <p>p</p>
+      </div>
+</div>
+
+</body>
+
+</html>

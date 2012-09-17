@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Enable 'Stop at new script' and load the TC.", 
+        "Verify that the engine stops for each new script (use the continue button), e.g. three times - (TODO +browser.js, right?)", 
+        "Verify that the setting can be turned off."
+    ], 
+    "file_path": "js-debugger.configuration.stop-at-new-script", 
+    "folder_path": "js-debugger.configuration", 
+    "id": "f.a.a", 
+    "label": "Stop at new script", 
+    "url": "./js-debugger/script-source/scripts.html"
+}

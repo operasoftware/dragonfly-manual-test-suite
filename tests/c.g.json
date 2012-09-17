@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Turn the 'Highlight selected element' switch on.", 
+        "Hover over some elements in the host.", 
+        "Verify that the element is highlighted.", 
+        "Hover some elements in the DOM view.", 
+        "Verify that the according element is highlighted in the host.", 
+        "Verify that the feature can be turned off."
+    ], 
+    "file_path": "dom-inspector.highlight-elements", 
+    "folder_path": "dom-inspector", 
+    "id": "c.g", 
+    "label": "Highlight elements", 
+    "url": "http://dev.opera.com"
+}

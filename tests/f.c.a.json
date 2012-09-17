@@ -1,0 +1,20 @@
+{
+    "desc": [
+        "Ensure that \"break on exception\" is enabled.", 
+        "Load the test case, open Dragonfly and reload the document.", 
+        "Verify that it stops \"a.a\".", 
+        "Verify that submitting \"window\" in the console works.", 
+        "Verify that 'window.top == window' returns 'false'.", 
+        "Press continue.", 
+        "Verify that 'window.top == window' returns 'true'.", 
+        "Switch the runtime in the dropdown to the data uri.", 
+        "Verify that 'window.top == window' returns 'false'.", 
+        "Switch back to 'Test execution context'..", 
+        "Verify that 'window.top == window' returns 'true'."
+    ], 
+    "file_path": "js-debugger.execution-context.execution-context", 
+    "folder_path": "js-debugger.execution-context", 
+    "id": "f.c.a", 
+    "label": "Execution context", 
+    "url": "./js-debugger/execution-context/execution-context.html"
+}

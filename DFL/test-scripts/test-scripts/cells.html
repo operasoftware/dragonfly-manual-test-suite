@@ -1,0 +1,110 @@
+﻿<!doctype html>
+<html>
+<head>
+<title> </title>
+<style>
+
+html, body {
+  margin:0;
+  padding:0;
+  }
+
+layout {
+  display:block;
+  }
+
+#layout_test {
+  background-color:#f0f0f0;
+  }
+
+view {
+  display:block;
+  position:absolute;
+  border:0px solid #069;
+  }
+
+view-slider {
+  display:block;
+  position:absolute;
+  background-color:#6cf;
+  }
+
+view-slider.vertical {
+  cursor: w-resize;
+  }
+
+view-slider.horizontal {
+  cursor: s-resize;
+  }
+
+</style>
+<script src = "ViewNode.js"></script>
+<script src = "../../scripts/layout.js"></script>
+<script src = "../../scripts/cell-layout.js"></script>
+<script>
+
+
+var rough_layout =
+{
+  dir: 'v', width: 700, height: 700,
+  children: 
+  [
+    { height: 100, id: 'view_1' },
+    { height: 300,
+      children: 
+      [
+        { width: 100, id: 'view_2' },
+        { width: 100, 
+          children:
+          [
+            { height: 100, id: 'view_3' },
+            { height: 100,
+              children:
+              [
+                { width: 100, id: 'view_7' },
+                { width: 700, id: 'view_8' },
+                { width: 100, id: 'view_9' },
+                { width: 100, id: 'view_10' }
+              ]
+            },
+            { height: 100, id: 'view_5' },
+            { height: 100, 
+              children:
+              [
+                { width: 300, id: 'view_11' },
+                { width: 100,
+                  children:
+                  [
+                    { height: 50, id: 'view_14' },
+                    { height: 50, id: 'view_15' }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+var layout = null;
+
+onload = function()
+{
+  //var time = new Date().getTime();
+  layout = new Layout('layout_test', rough_layout);
+  document.body.innerHTML += "<layout id='layout_test'></layout>";
+  //layout.display();
+  //alert(new Date().getTime() - time);
+}
+
+
+</script>
+</head>
+
+<body>
+<div><h2>some content</h2></div>
+
+</body>
+</html>

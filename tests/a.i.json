@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Select the H1 and open the color picker.", 
+        "Verify that you can control the current position on the z axis with the mouse wheel.", 
+        "Verify that the current position moves upwards on turning the wheel upwards independent on the mouse position."
+    ], 
+    "file_path": "color-inspector.adjust-color-with-mousewheel-on-the-z-axis", 
+    "folder_path": "color-inspector", 
+    "id": "a.i", 
+    "label": "Adjust color with mousewheel on the z axis", 
+    "url": "./color-inspector/index.html"
+}

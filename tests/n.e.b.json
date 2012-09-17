@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Verify that the table by default is grouped by Gender.", 
+        "Verify that the last 5 columns are selected.", 
+        "Verify that the table is reverse-sorted by Birth Date (youngest first) in each group."
+    ], 
+    "file_path": "ui-framework.sortable-table.defaults", 
+    "folder_path": "ui-framework.sortable-table", 
+    "id": "n.e.b", 
+    "label": "Defaults", 
+    "url": "DFL/test-scripts/ui-framework/sortable-table/advanced.html"
+}

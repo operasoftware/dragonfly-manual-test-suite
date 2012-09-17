@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Open Dragonfly and go to the Scripts tab, then close Dragonfly.", 
+        "Right click on any element in the document and choose \"Inspect Element\".", 
+        "Verify that Dragonfly opens, and that the DOM view opens with the inspected element selected.", 
+        "Inspect another element the same way.", 
+        "Verify that the inspected element is selected in the DOM view."
+    ], 
+    "file_path": "dom-inspector.inspect-element-via-right-click", 
+    "folder_path": "dom-inspector", 
+    "id": "c.a", 
+    "label": "Inspect element via right-click", 
+    "url": "http://dev.opera.com"
+}

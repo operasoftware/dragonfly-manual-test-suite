@@ -1,0 +1,10 @@
+{
+    "dirs": [
+        {
+            "label": "highlight-line", 
+            "path": "resource-inspector.highlight-line"
+        }
+    ], 
+    "files": [], 
+    "path": "resource-inspector"
+}

@@ -1,0 +1,56 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "js-debugger.event-listeners.listener-icons-in-the-dom-view", 
+            "id": "f.b.a", 
+            "label": "Listener icons in the DOM view"
+        }, 
+        {
+            "file_path": "js-debugger.event-listeners.listener-tooltip-without-js-source-files", 
+            "id": "f.b.b", 
+            "label": "Listener tooltip without JS source files"
+        }, 
+        {
+            "file_path": "js-debugger.event-listeners.interaction-with-the-handlers-in-the-tooltip-without-js-source-files", 
+            "id": "f.b.c", 
+            "label": "Interaction with the handlers in the tooltip without JS source files"
+        }, 
+        {
+            "file_path": "js-debugger.event-listeners.interaction-with-the-source-position-in-listener-tooltip-without-js-source-files", 
+            "id": "f.b.d", 
+            "label": "Interaction with the source position in listener tooltip without JS source files"
+        }, 
+        {
+            "file_path": "js-debugger.event-listeners.listener-tooltip-with-js-source-files-loaded", 
+            "id": "f.b.e", 
+            "label": "Listener tooltip with JS source files loaded"
+        }, 
+        {
+            "file_path": "js-debugger.event-listeners.interaction-with-the-handlers-in-the-tooltip-with-js-source-files-loaded", 
+            "id": "f.b.f", 
+            "label": "Interaction with the handlers in the tooltip with JS source files loaded"
+        }, 
+        {
+            "file_path": "js-debugger.event-listeners.interaction-with-the-source-position-in-the-tooltip-with-js-source-files-loaded", 
+            "id": "f.b.g", 
+            "label": "Interaction with the source position in the tooltip with JS source files loaded"
+        }, 
+        {
+            "file_path": "js-debugger.event-listeners.listener-view-in-the-side-panel", 
+            "id": "f.b.h", 
+            "label": "Listener view in the side panel"
+        }, 
+        {
+            "file_path": "js-debugger.event-listeners.update-listener-view-in-the-side-panel", 
+            "id": "f.b.i", 
+            "label": "Update listener view in the side panel"
+        }, 
+        {
+            "file_path": "js-debugger.event-listeners.listener-view-in-the-side-panel-with-multiple-runtimes", 
+            "id": "f.b.j", 
+            "label": "Listener view in the side panel with multiple runtimes"
+        }
+    ], 
+    "path": "js-debugger/event-listeners"
+}

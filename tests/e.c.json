@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Open the testcase.", 
+        "Verify that the error count on the top tab matches the number of errors shown, also when switching tabs.", 
+        "Open the tab with CSS Errors.", 
+        "Go to the Documents tab.", 
+        "Press the \"Add JS Error\" Button and verify that the error count on the tab doesn't increase.", 
+        "Press the \"Add CSS Error\" Button and verify that the error count on the tab does increase."
+    ], 
+    "file_path": "error-console.error-count-batch", 
+    "folder_path": "error-console", 
+    "id": "e.c", 
+    "label": "Error count batch", 
+    "url": "./error-console/error.html"
+}

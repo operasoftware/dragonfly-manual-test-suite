@@ -1,0 +1,36 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "ui-framework.sortable-table.basic-test", 
+            "id": "n.e.a", 
+            "label": "Basic test"
+        }, 
+        {
+            "file_path": "ui-framework.sortable-table.defaults", 
+            "id": "n.e.b", 
+            "label": "Defaults"
+        }, 
+        {
+            "file_path": "ui-framework.sortable-table.store-restore", 
+            "id": "n.e.c", 
+            "label": "Store / Restore"
+        }, 
+        {
+            "file_path": "ui-framework.sortable-table.resetting", 
+            "id": "n.e.d", 
+            "label": "Resetting"
+        }, 
+        {
+            "file_path": "ui-framework.sortable-table.stable-sorting", 
+            "id": "n.e.e", 
+            "label": "Stable sorting"
+        }, 
+        {
+            "file_path": "ui-framework.sortable-table.stable-sorting-reverse", 
+            "id": "n.e.f", 
+            "label": "Stable sorting reverse"
+        }
+    ], 
+    "path": "ui-framework/sortable-table"
+}

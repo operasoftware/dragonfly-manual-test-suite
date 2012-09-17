@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Go to the Profiler tab.", 
+        "Enable the profiler.", 
+        "Open and close Dragonfly and make sure that Dragonfly is still in profiler mode and that the Profiler tab is selected."
+    ], 
+    "file_path": "profiler.remembering-the-last-tab", 
+    "folder_path": "profiler", 
+    "id": "j.b", 
+    "label": "Remembering the last tab", 
+    "url": "./profiler/profiler-test.html"
+}

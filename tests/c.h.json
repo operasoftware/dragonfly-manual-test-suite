@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Turn the 'Update DOM when a node is removed' switch on.", 
+        "Press the 'Remove' button.", 
+        "Verify that the DOM view is updated and that only the root element exists.", 
+        "Disable the switch.", 
+        "Reload the original URL.", 
+        "Verify that the DOM view is not changed."
+    ], 
+    "file_path": "dom-inspector.update-dom-on-node-remove", 
+    "folder_path": "dom-inspector", 
+    "id": "c.h", 
+    "label": "Update DOM on node remove", 
+    "url": "./dom-inspector/b.html"
+}

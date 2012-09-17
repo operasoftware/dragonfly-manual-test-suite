@@ -1,0 +1,18 @@
+{
+    "desc": [
+        "Open testcase.", 
+        "Open Dragonfly after that.", 
+        "Go to Script.", 
+        "Reload.", 
+        "Be stopped.", 
+        "Inspect 'p' with tooltip.", 
+        "Mouseover HTMLParagraphElement.", 
+        "Click the <p> elem that's shown.", 
+        "Verify that it switches to DOM and that the 'p' element is highlighted on the first attempt."
+    ], 
+    "file_path": "js-debugger.tooltip.dfl-3336", 
+    "folder_path": "js-debugger.tooltip", 
+    "id": "f.h.i", 
+    "label": "DFL-3336", 
+    "url": "./js-debugger/tooltip/selection-first-attempt.html"
+}

@@ -1,0 +1,5 @@
+*.pyc
+build/*
+Thumbs.db
+.DS_Store
+

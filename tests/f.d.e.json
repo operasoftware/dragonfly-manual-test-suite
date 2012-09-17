@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Go to the test page.", 
+        "Open the script drop down.", 
+        "Verify that all scripts are selected with Up and Down arrows without the dropdown jumping in unexpected ways."
+    ], 
+    "file_path": "js-debugger.js-dropdown.script-select-with-many-scripts", 
+    "folder_path": "js-debugger.js-dropdown", 
+    "id": "f.d.e", 
+    "label": "Script select with many scripts", 
+    "url": "./js-debugger/js-dropdown/many-scripts/index.html"
+}

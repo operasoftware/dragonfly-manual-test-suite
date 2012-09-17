@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Ensure that all scripts of the document are loaded.", 
+        "Expand the whole body in Documents.", 
+        "Hover some of the listener icons and hover some of the source positions.", 
+        "Verify that this shows the whole path of the file where the listener is added in a tooltip.", 
+        "Click the source position.", 
+        "Verify that this switches to Scripts and highlights the line where the listener is added."
+    ], 
+    "file_path": "js-debugger.event-listeners.interaction-with-the-source-position-in-the-tooltip-with-js-source-files-loaded", 
+    "folder_path": "js-debugger.event-listeners", 
+    "id": "f.b.g", 
+    "label": "Interaction with the source position in the tooltip with JS source files loaded", 
+    "url": "./js-debugger/event-listeners/single-runtime.html"
+}

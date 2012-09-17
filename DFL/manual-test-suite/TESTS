@@ -1,0 +1,3040 @@
+#
+# This list gets parsed to a list of entries.
+# An entry can be a title, an url or a test.
+# Entries are separated by blank lines.
+# A line starting with '#' is a comment and will be disregarded.
+#
+# Titles are underlined with '*', the syntax is <Main Tab>.<Sub Tab>, e.g.
+#
+#   DOM.Layout
+#   **********
+#
+# An url starts with 'url:' followed by the url, on a new or on the same line, e.g.
+#
+#   url: http://opera.com
+#
+# A test entry must have a label and a description, it can have an optional url.
+# The label starts with 'label:' followed by the label, on the same or on a new line.
+# The description must describe the condition to define if a given test fails or passes.
+# It starts with 'desc:' followed by a list of steps to iterate through the test.
+# Each step can start with a '-' or a '*'.
+# Ids are added automatically and shall never be changed manually.
+# Adding a new test looks e.g.:
+#
+#   label: A new Test
+#   desc:
+#     - Step 1.
+#     - Step 2.
+#     - Step 3.
+#
+
+
+DOM.DOM
+*******
+
+url:
+  http://dev.opera.com
+
+id: 00100
+label: Expand all nodes
+desc:
+  - Press the Expand button.
+  - Verify that the whole document tree is displayed.
+
+id: 00200
+label: Export
+desc:
+  - Press the Export button.
+  - Verify that the current view is displayed in a new tab.
+
+id: 00300
+label: Find with click
+desc:
+  - Turn the 'Find element' switch on.
+  - Click some elements in the host.
+  - Verify that the DOM view is updated with the clicked element as target.
+  - Verify that the feature can be turned off.
+
+id: 00400
+label: Highlight elements
+desc:
+  - Turn the 'Highlight 'switch on.
+  - Hover over some elements in the host.
+  - Verify that the element is highlighted.
+  - Hover some elements in the DOM view.
+  - Verify that the according element is highlighted in the host.
+  - Verify that the feature can be turned off.
+
+id: 00500
+label: Update DOM on node remove
+desc:
+  - Turn the 'Update DOM when a node is removed' switch on.
+  - Enter URL: javascript:(function(){document.body.innerHTML=""})()
+  - Verify that the DOM view is updated and body is empty.
+  - Disable the switch.
+  - Reload the original URL
+  - Expand the DOM to see it.
+  - Enter URL again: javascript:(function(){document.body.innerHTML=""})()
+  - Verify that the DOM view is not changed and body contents are still visible.
+
+id: 00600
+label: Select multiple elements
+deprecated: true
+desc:
+  - Turn the 'Draw border on selected elements' switch on.
+  - Click some elements in the host.
+  - Verify that all clicked elements keep a border.
+  - Verify that the feature can be turned off.
+
+id: 00700
+label: Dropdown settings, comment nodes
+deprecated: true
+desc:
+  - Select and unselect 'Show comment nodes'.
+  - Verify that the DOM view is updated accordingly.
+
+id: 00800
+label: Dropdown settings, white space nodes
+deprecated: true
+desc:
+  - Select 'Show DOM tree view'
+  - Select and unselect 'Show white space nodes'.
+  - Verify that the DOM view is updated accordingly
+  (pure white space nodes are escaped, e.g. a space is displayed as \u0020).
+
+id: 00900
+label: Dropdown settings, tree view
+deprecated: true
+desc:
+  - Select and unselect 'Show DOM tree view'.
+  - Verify that the view displays the DOM accordingly.
+
+url: http://nzz.ch
+
+id: 01000
+label: Document select
+desc:
+  - Select a document with (i)frames
+  - Verify that you can select each document in the dropdown.
+
+url: http://dev.opera.com
+
+id: 01100
+label: Search document
+desc:
+  - Search for a term in the search box
+  - Verify that the count of all hits is displayed in the status bar.
+  - Verify that the view navigates to the next hit on enter.
+
+url: ./test-cases/dom/edit-attribute.html
+
+id: 01200
+label: Edit attributes
+desc:
+  - Turn the 'Find element' switch on.
+  - Go the the url above
+  - Select the paragraph 'some text' in the host
+  - Double click the class value 'foo' in the client
+  - Verify that the attribute value is displayed in a edit field.
+  - Change the value to 'bar' and verify that the background-color in the host changes instantly to green.
+  - Verify that escape reverts the background-color back to cyan.
+  - Verify that enter does keep the changes an leaves the edit mode.
+  - Verify that tab moves to the edit field to the next attribute
+  - Verify that at the end of a tag an empty field is shown to add a new attribute.
+
+id: 01300
+label: Edit markup
+desc:
+  - Double click a tag name
+  - Change the content
+  - Verify that the changes apply instantly in the host.
+  - Verify that you can remove and edit also the body and html element.
+
+id: 01400
+label: Keyboard navigation
+desc:
+  - Click somewhere in the DOM view to focus the pane.
+  - Verify that you can navigate with arrow keys and expand and close nodes with enter.
+  - Click an element or attribute.
+  - Verify that the click target is also the navigation target.
+
+DOM.Styles
+**********
+
+url: ./test-cases/dom/matching-style-declarations.html
+
+id: 00100
+label: Matching style rules
+desc:
+  - unfold Computed Styles and Styles
+  - select some elements in the DOM
+  - Verify that the styles are updated
+
+url: http://dev.opera.com
+
+id: 00200
+label: Show initial values in computed style panel
+desc:
+  - Select and unselect the 'Show initial values in computed style panel' switch
+  - Verify that the Computed Style section is updated accordingly
+
+id: 00300
+label: Hide shorthands
+deprecated: true
+desc:
+  - Select and unselect the 'Hide shorthands' switch
+  - Verify that the Computed Style section is updated accordingly,
+    e.g. if the switch is unchecked there must be an additional
+    border, border-left, border-top, border-right and border-bottom rule.
+
+id: 00400
+label: Search
+desc:
+  - Expand both sections, Computed Styles and Styles
+  - Search for a property, e.g. margin
+  - Verify that both section collapse to only contain the matching properties
+
+id: 00500
+label: Searching for a newly added property
+desc:
+  - Add a property
+  - Search for it and make sure it shows up
+
+id: 00600
+label: Detaching
+desc:
+  - Add a property in attached mode
+  - Detach and make sure the property is still shown
+  - Do the same, but instead of adding a new property, delete one, and make sure it's still removed when switching back to attached mode
+
+id: 00700
+label: Escaping
+desc:
+  - Add a new property without submitting it
+  - Press Escape
+  - Make sure the property is removed from the view, and that the old style is re-applied
+
+id: 00800
+label: Switching view
+desc:
+  - Add a new property
+  - Switch to some other view and then back
+  - Make sure the newly added property is still visible
+  - Do the same, but instead of adding a new property, delete one, and make sure it's still removed when switching the view back
+
+id: 00900
+label: Toggle property
+desc:
+  - Disable a property
+  - Make sure the property is in fact disabled and that this is somehow visible in the UI
+  - Enable the property
+  - Make sure the style is re-applied and that this is reflected in the UI
+
+url: ./test-cases/dom/pseudo-test.html
+
+id: 01000
+label: Pseudo element setting
+desc:
+ - Expand the body element
+ - Go to Settings -> Documents
+ - Enable/disable "Show pseudo elements" and make sure they get visible/hidden
+
+id: 01100
+label: Pseudo elements
+desc:
+ - Make sure after/before/first-letter and first-line pseudo elements show up in the DOM view only for elements that are descendants of the <html> element
+ - Select a pseudo element
+ - Make sure that the Style side panel is updated with the according styling, i.e. you see the normal styling for the element of which the pseudo element belongs to, and the psuedo element styling at the top
+ - Make sure that the style can be edited
+
+id: 01200
+label: Pseudo elements context menu
+desc:
+ - Bring up the context menu for a pseudo element
+ - Make sure that it doesn't have additional items than the default context menu for the view
+
+id: 01300
+label: Pseudo classes
+desc:
+ - Select the <a> element
+ - Make sure the :link pseudo class is visible
+ - From the dropdown, check all pseudo classes and make sure they all get visible
+ - Select another element and make sure the same pseudo classes still apply
+
+DOM.Colorpicker
+***************
+
+url: ./test-cases/dom/colorpicker/index.html
+id: 00100
+label: Show and hide colorpicker
+desc:
+  - Open the testcase and inspect "test"
+  - Verify that a small color swatch appears at the end of the color declaration for 'h1'
+  - Click the color swatch
+  - Verify that an utility window to edit the color value opens
+  - Verify that no other property can be edited while the color picker is opened
+  - Verify that the window can be closed by clicking the close button
+  - Verify that the window gets closed on switching to an other mode
+
+id: 00200
+label: Edit color with visual controls
+desc:
+  - Open the testcase and inspect "test"
+  - Click the color swatch of the color declaration to open the color picker
+  - Verify that you can move around the circle with the mouse
+  - Verify that the color examples in the top right corner changes accordingly
+  - Verify that the values in all inputs updated accordingly
+  - Verify that the color value gets updated accordingly in the 'Styles' panel
+  - Verify that the color in the host document changes accordingly
+  - Verify that you can change the color in the same way with the vertical slider
+  - Select all other views of the color model with the radio select and verify the above for each color model
+
+id: 00300
+label: Edit color with inputs
+desc:
+  - Open the testcase and inspect "test"
+  - Click the color swatch of the color declaration to open the color picker
+  - Edit the value of one of the inputs
+  - Verify that the other inputs are updated accordingly
+  - Verify that the color examples in the top right corner changes accordingly
+  - Verify that the color in the host document changes accordingly
+  - Verify the above for each of the inputs
+
+id: 00400
+label: Edit transparent color
+desc:
+  - Open the testcase and inspect "test"
+  - Click the color swatch of the background-color declaration to open the color picker
+  - Verify that there are additional controls for the alpha value, a vertical slider and an input
+  - Verify that the color examples gets a splitted background with black and white
+  - Change the alpha value with the slider
+  - Verify that the color examples in the top right corner changes accordingly
+  - Verify that the values in the input updates accordingly
+  - Verify that the color value gets updated accordingly in the 'Styles' panel
+  - Verify that the color in the host document changes accordingly
+  - Verify that the aplpha value can be changed in the same way with in the alpha input field
+
+id: 00500
+label: Reset color value
+desc:
+  - Open the testcase and inspect "test"
+  - Click the color swatch of the color declaration to open the color picker
+  - Change the current color
+  - Verify that the color can be reset to the initial value by clicking the left part of the color example in the top right corner
+
+
+DOM.Properties
+**************
+
+url: ./test-cases/dom/matching-style-declarations.html
+
+id: 00100
+label: Update view
+desc:
+  - Go to the url above
+  - Unfold the whole DOM tree
+  - Select the line '<p id="bar" class="foo">paragraph 1 </p>' in the DOM pane
+  - Verify that 'id' has the value "bar" in the Properties pane
+  - Select the line '<p class="foo">paragraph 2 </p>' in the DOM pane
+  - Verify that 'id' has an empty string and 'class' a "foo" value in the Properties pane
+  - Select the line '<p>paragraph 3</p>' in the DOM pane
+  - Verify that both 'id' and 'class' have empty string values in the Properties pane
+
+id: 00200
+label: Unfold properties
+desc:
+  - Go to the url above
+  - Unfold the whole DOM tree
+  - Select the line '<p id="bar" class="foo">paragraph 1 </p>' in the DOM pane
+  - Unfold the 'attributes' property in the Properties pane
+  - Verify that property '0' and '1' are unfolded and that 'length' has a value of '2'
+  - Collapse the 'attributes' property
+  - Verify that all 'attributes' properties are removed
+  - Repeat unfold and collapse several times
+  - Verify that the properties are show and removed accordingly
+
+id: 00300
+label: Show default null and empty strings values
+desc:
+  - Select and unselect the 'Show default null and empty strings values' switch
+  - Verify that the view is updated accordingly, e.g. that values which are empty strings, 0 or null are displayed or hidden.
+
+id: 00400
+label: Search
+desc:
+  - Use the filter with some term
+  - Verify that the matches are highlighted
+  - Verify that on enter the next match is scrolled into view.
+
+DOM.Layout
+**********
+
+url: ./test-cases/dom/highlight-element.html
+
+id: 00100
+label: Highlight boxes
+desc:
+  - Go to the url above
+  - Unfold the whole DOM tree
+  - Select the line '<div>div</div>' in the DOM pane
+  - Hover the dimension box in the center of the Metrics view in the Layout pane
+  - Verify that the only the center with 'div' is highlighted in the host
+  - Hover the 'padding', 'border' and 'margin' boxes in the Metrics view in the Layout pane
+  - Verify that the boxes with the according labels are highlighted on the element in the host
+
+id: 00200
+label: Parent Offsets
+desc:
+  - Select some elements in the DOM
+  - Verify the the parent offset chain is updated accordingly.
+    Each parent offset must stand out in the parent node chain.
+  - Verify that also the offset values are updated accordingly
+
+id: 00300
+label: Parent Offsets hover
+desc:
+  - Select some elements in the DOM
+  - Hover over the different nodes in the parent node chain.
+  - Verify that the according elements are highlighted in the host
+
+DOM.Settings
+************
+
+url: ./test-cases/dom/edit-attribute.html
+
+id: 00100
+label: Use lower case tag names
+desc:
+  - Open Settings/Document
+  - Verify that "Use lower case tag names for text/html" is checked (default setting)
+  - Uncheck it.
+  - Verify that tag names are displayed in uppercase.
+  - Check it again.
+  - Verify that tag names are displayed in lowercase.
+
+url: ./test-cases/dom/nodes.html
+
+# TODO: unsure of what this is supposed to test, headline doesn't match desc
+#
+# id: 00200
+# label: Represent the DOM as a node tree
+# desc:
+#   - Verify that comment is shown in document (1 comment node).
+#   - Open Settings/Document.
+#   - Verify that "Show comment nodes" is checked.
+#   - Uncheck it.
+#   - Verify that comment node is not shown.
+#   - Check it again.
+#   - Verify that comment node is shown again.
+
+# TODO: unsure of what this is supposed to test, headline doesn't match desc
+# id: 00300
+# label: Show attributes
+# desc:
+#   - Verify that comment is shown in document (1 comment node).
+#   - Open Settings/Document.
+#   - Verify that "Show comment nodes" is checked.
+#   - Uncheck it.
+#   - Verify that comment node is not shown.
+#   - Check it again.
+#   - Verify that comment node is shown again.
+
+
+DOM.Searchbar
+*************
+
+url: ./test-cases/dom/searchbar/basic-search.html
+
+id: 00100
+label: Show and hide the search-bar with search button
+deprecated: true
+desc:
+  - Select the 'Document' tab
+  - Press the search button at the end of the toolbar
+  - Verify that the search button keeps the pressed state
+  - Verify that the search-bar appears and the search field gets focused
+  - Press the search button again
+  - Verify that the search button gets and keeps the unpressed state
+  - Verify that the search-bar disappears
+  - Repeat several times and verify that the search-bar appears and disappears accordingly
+  - Press the search button to make the bar appear and switch to an other tab, e.g. Scripts
+  - Switch back to 'Document'
+  - Verify that the search-bar is still displayed
+  - Switch forth and back several times between tabs and verify that the search-bar is always displayed
+
+id: 00200
+label: Show and hide the search-bar with shortcuts
+deprecated: true
+desc:
+  - Select the 'Document' tab
+  - Click the DOM pane to ensure that the DOM view has focus
+  - Hit 'ctrl f'
+  - Verify that the search-bar gets displayed
+  - Hit escape
+  - Verify that the search-bar disappears
+  - Display the search-bar again
+  - Focus some other element in the DOM view, e.g. expand a node to blur the search field
+  - Verify that if you hit 'escape' now the command line gets displayed instead
+
+id: 00300
+label: Perform a search
+deprecated: true
+desc:
+ - Open the test case, select the 'Document' tab and expand the whole DOM tree
+ - Open the search-bar by hitting the search button
+ - Search for 'cla'
+ - Verify the 'Matches for "cla": Match 1 out of 7' is displayed in the bar
+ - Verify that the matching tokens are highlighted in the document
+ - Verify that the first match is highlighted differently
+ - Continue to type 'class' and verify that all matches are instantly updated accordingly
+ - Continue to type 'classe' and verify that all matches disappear and the string 'No match for "classe"' is displayed in the bar
+
+url: ./test-cases/dom/searchbar/long-document.html
+id: 00400
+label: Move the search highlight
+deprecated: true
+desc:
+ - Open the test case, select the 'Document' tab and expand the whole DOM tree
+ - Open the search-bar by hitting the search button
+ - Search for 'class' and verify that you get 7 hits
+ - Hit 'enter'
+ - Verify that the match highlight moves to the next match
+ - Repeat and verify that the according match is scrolled into view
+ - Hit 'Shift enter' and verify that the match highlight now moves in the other direction
+ - Verify that you can move the search highlight in the same way with 'F3' and 'Shift F3'
+ - Verify that you can move the search highlight in the same way with the two buttons close to the search filed
+
+DOM.Searchtab
+*************
+
+url: ./test-cases/dom/searchtab/search.html
+id: 00100
+label: Focus the search tab in DOM view
+desc:
+ - Open the testcase in DOM view.
+ - Click search tab on the right.
+ - Verify that tab changed and search field got focused.
+ - Focus another tab.
+ - Press search shortcut on keyboard (Ctrl-F).
+ - Verify that search tab is selected and search field got focus.
+ - Verify that ignore case is turned on by default.
+
+id: 00200
+label: Execute simple text search on document with ignore case
+desc:
+ - Make sure that ignore case checkbox is ENABLED.
+ - Search for "CLASS" in text mode.
+ - Verify that you get 7 nodes as hits (sum: 1 comment, 3 text nodes and 3 elements nodes p, div, span) with grey highlight on matching strings.
+ - Verify that you get 12 hits in total.
+ - Verify that the first hit is highlighted in yellow.
+ - Verify that search field says 1/12 on the right side.
+
+id: 00300
+label: Walking through results in DOM search tab
+desc:
+ - Press Enter in search field.
+ - Verify that highlight moves to the next match.
+ - Verify that you can iterate through each highlight by pressing Enter.
+ - Verify the you can iterate through them backwards by Shift-Enter.
+ - Verify that turnaround works when you reach the ends of the list.
+ - Verify that hit counter in the right side of the search field is updated properly.
+
+id: 00400
+label: Focusing results in DOM search tab
+desc:
+ - Walk through results by using Enter and focus them using Ctrl-Enter.
+ - Verify that all individual highlighted string hits can be focused.
+ - Verify that all focused hits bring up the relevant node in DOM view.
+ - Verify that matching string is highlighted in DOM view.
+ - Click all highlighted hits one by one.
+ - Verify that all focused hits bring up the relevant node in DOM view.
+ - Verify that matching string is highlighted in DOM view.
+
+id: 00500
+label: Tree view in DOM search table
+desc:
+ - Right-click the DOM view area and select tree view for DOM.
+ - Verify that hits in search tab are also updated.
+ - Verify that any new search result still has the tree view.
+ - Verify that turning option off changes search tab back, too.
+ - Verify that any new search results are presented in markup view again.
+
+id: 00600
+label: Execute simple case-dependent text search on document
+desc:
+ - Click on ignore case checkbox to set it DISABLED.
+ - Verify that search is executed immediately.
+ - Verify that you get 2 nodes as hits (sum: 1 text node and 1 span) with grey highlight on matching strings.
+ - Verify that you get 2 hits in total.
+ - Verify that the first hit is highlighted in yellow.
+ - Verify that search field says 1/2 on the right side.
+ - Click ignore case checkbox.
+ - Verify that search is executed immediately and you got 12 hits (case-insensitive).
+
+id: 00700
+label: Execute search in another runtime
+desc:
+ - Search for "test" in normal case-insensitive mode.
+ - Verify that you get hits from the DOM.
+ - Change runtime of DOM view to the iframe content.
+ - Focus search field.
+ - Press Enter.
+ - Verify that you get hits from the relevant DOM.
+
+id: 00800
+label: Click search result from another runtime
+desc:
+ - Search for "test" in normal case-insensitive mode.
+ - Verify that you get hits from the DOM.
+ - Change runtime of DOM view to the iframe content.
+ - Click one of the hits in the search tab.
+ - Verify that the hit is properly shown in the DOM view in its proper runtime.
+
+id: 00900
+label: Click search result from outdated runtime
+desc:
+ - Search for "test" in normal case-insensitive mode.
+ - Verify that you get hits from the DOM.
+ - Change URL to /test-cases/dom/searchtab/iframe.html
+ - Click one of the hits in the search tab.
+ - Verify that warning dialog is presented about expired content and re-running search.
+ - Click cancel.
+ - Verify that nothing has changed.
+ - Click the hit again.
+ - Click OK this time.
+ - Verify that search has been executed on the new runtime.
+
+id: 01000
+label: Execute simple case-independent regexp search on document
+desc:
+ - Make sure that ignore case checkbox to set it ENABLED.
+ - Switch to regexp mode.
+ - Search for "test.*well"[;\n]{1,2}".
+ - Verify that you get one hit with proper highlight.
+ - Click on the hit.
+ - Verify the highlight in DOM view, too (\n is not highlighted).
+
+id: 01100
+label: Execute simple case-dependent regexp search on document
+desc:
+ - Make sure that ignore case checkbox to set it DISABLED.
+ - Switch to regexp mode.
+ - Search for "test.*well"[;\n]{1,2}".
+ - Verify that you get no hits.
+ - Change runtime of DOM view to the iframe content.
+ - Focus search field.
+ - Press Enter to repeat the search.
+ - Verify that you get one hit now.
+ - Click on it.
+ - Verify highlight in DOM view.
+
+id: 01200
+label: Execute simple CSS search in document
+desc:
+ - Switch to CSS mode.
+ - Verify that "ignore case" checkbox is disabled.
+ - Search for "#numberone".
+ - Verify that you get 1 proper hit.
+ - Search for "[class=testclass]".
+ - Verify that you get 2 hits.
+
+id: 01300
+label: Execute simple XPath search in document
+desc:
+ - Switch to XPath mode.
+ - Verify that "ignore case" checkbox is disabled.
+ - Search for "//[@class="testclass"]".
+ - Verify that you get 2 proper hits.
+
+
+
+DOM.Breadcrumbs
+***************
+
+id: 00100
+label: Updating of breadcrumbs
+desc:
+  - Click on different elements in the DOM view
+  - Verify that the breadcrumbs update
+
+id: 00200
+label: Hover breadcrumbs
+desc:
+  - Verify that there are at least two visible breadcrumbs
+  - Hover all of them
+  - Verify that the elements are spotlighted in the host
+
+id: 00300
+label: Clicking breadcrumbs
+desc:
+  - Click a breadcrumb
+  - Verify that the corresponding element is selected in the DOM view
+
+id: 00400
+label: Navigation buttons on resizing
+desc:
+  - Verify that the breadcrumb trail is long but fits inside the window
+  - Resize the window so that the breadcrumbs don't fit
+  - Verify that that navigation buttons appear on both sides
+
+id: 00500
+label: Navigation buttons on long breadcrumb trail
+desc:
+  - Click on a deeply nested element so that the breadcrumb trail is too long to fit inside the window
+  - Verify that that navigation buttons appear on both sides
+  - Verify that the end of the breadcrumb trail is visible and that the right button is disabled
+  - Click on a shallow element
+  - Verify that the buttons disappear
+
+id: 00600
+label: Interacting with navigation buttons
+desc:
+  - Click on a navigation button
+  - Verify that the breadcrumbs move in that direction
+  - Click and hold a navigation button
+  - Verify that the breadcrumb trail is continously moving
+
+id: 00700
+label: Dragging the breadcrumb bar
+desc:
+  - Verify that the breadcrumb trail is too long to fit into the window
+  - Grab the bar and drag it
+  - Verify that it's possible to drag
+
+id: 00800
+label: Scrolling the breadcrumb bar
+desc:
+  - Verify that the breadcrumb trail is too long to fit into the window
+  - Use the mousewheel on top of the bar
+  - Verify that it scrolls
+
+DOM.Contextmenu
+***************
+
+url: ./test-cases/dom/nodes.html
+
+id: 00100
+label: General context menu of DOM tree
+desc:
+  - Right-click an empty area in DOM tree.
+  - Verify that only general menu options show up in context menu (3 options, see below).
+  - Verify that "Represent the DOM as a node tree" triggers the Tree View (also verify switching option off).
+  - Verify that "Show comment nodes" triggers the right behaviour (also verify switching option off).
+  - Verify that "Keep elements highlighted when selecting a different element" triggers the right behaviour (also verify switching option off).
+
+url: ./test-cases/dom/matching-style-declarations.html
+
+id: 00200
+label: Context menu for element node
+desc:
+  - Right-click the name of the 'body' element in DOM tree.
+  - Verify that general menu options show up at the bottom in context menu.
+  - Verify that "Add attribute" option is present in context menu.
+  - Verify that "Edit markup" option is present in context menu.
+  - Verify that "Remove node" option is present in context menu.
+  - Verify that "Expand/collapse subtree" option is present in context menu.
+
+id: 00300
+label: Context menu for element node: Edit markup
+desc:
+  - Right-click the name of the 'body' element in DOM tree.
+  - Click "Edit markup" in the context menu.
+  - Verify that you entered edit markup mode for the selected element (the whole body content is editable).
+
+id: 00400
+label: Context menu for element node: cancel add attribute
+desc:
+  - Right-click the name of the body element in DOM tree.
+  - Click "Add attribute" in the context menu.
+  - Verify that you get a new edit field for the new attribute.
+  - Type "onload=".
+  - Verify that new edit field is opened for the attribute value.
+  - Type "f()" and press Escape (cancel input).
+  - Verify that new attribute is NOT shown for the element.
+
+id: 00500
+label: Context menu for element node: Add attribute
+desc:
+  - Right-click the name of the body element in DOM tree.
+  - Click "Add attribute" in the context menu.
+  - Verify that you get a new edit field for the new attribute.
+  - Type "onload=".
+  - Verify that new edit field is opened for the attribute value.
+  - Type "f()" and press Enter.
+  - Verify that new attribute is shown for the element.
+
+id: 00600
+label: Context menu for element node: Remove node
+desc:
+  - Expand the whole DOM tree if it was not expanded.
+  - Right-click the name of the first <p> element in DOM tree.
+  - Click "Remove node".
+  - Verify that the clicked node is removed from the DOM tree.
+
+id: 00700
+label: Context menu for element node: Expand subtree
+desc:
+  - Reload page to have a collapsed DOM tree.
+  - Right click <body> element.
+  - Click "Expand subtree".
+  - Verify that the whole DOM tree is expanded under <body>.
+
+id: 00800
+label: Context menu for element node: Collapse subtree
+desc:
+  - Expand the whole DOM tree.
+  - Right-click the name of the <body> element.
+  - Click "Collapse subtree".
+  - Verify that only subtree of <body> is collapsed in the view.
+
+id: 00900
+label: Context menu for element node: General settings
+desc:
+  - Right-click the name of <body> element.
+  - Verify that "Represent the DOM as a node tree" triggers the Tree View (also verify switching option off).
+  - Verify that "Show comment nodes" triggers the right behaviour (also verify switching option off).
+  - Verify that "Keep elements highlighted when selecting a different element" triggers the right behaviour (also verify switching option off).
+
+id: 01000
+label: Context menu for attribute name: Edit attribute
+desc:
+  - Expand the DOM tree.
+  - Right-click the attribute name "id" of the first <p> element.
+  - Click "Edit attribute".
+  - Verify that you entered edit attribute name mode.
+
+id: 01100
+label: Context menu for attribute name: Add attribute
+desc:
+  - Expand the DOM tree.
+  - Right-click the attribute name "id" of the first <p> element.
+  - Click "Add attribute" in the context menu.
+  - Verify that you get a new edit field for the new attribute.
+
+id: 01200
+label: Context menu for attribute name: Edit markup
+desc:
+  - Expand the DOM tree.
+  - Right-click the attribute name "id" of the first <p> element.
+  - Click "Edit markup" in the context menu.
+  - Verify that you entered edit markup mode for the selected element (the whole <p> content is editable).
+
+id: 01300
+label: Context menu for attribute name: Remove node
+desc:
+  - Expand the whole DOM tree if it was not expanded.
+  - Right-click the "id" attribute name of the first <p> element in DOM tree.
+  - Click "Remove node".
+  - Verify that the clicked element is removed from the DOM tree.
+
+id: 01400
+label: Context menu for attribute name: General settings
+desc:
+  - Expand the DOM tree.
+  - Right-click the attribute name "id" of the first <p> element.
+  - Verify that "Represent the DOM as a node tree" triggers the Tree View (also verify switching option off).
+  - Verify that "Show comment nodes" triggers the right behaviour (also verify switching option off).
+  - Verify that "Keep elements highlighted when selecting a different element" triggers the right behaviour (also verify switching option off).
+
+id: 01500
+label: Context menu for attribute value: Edit attribute value
+desc:
+  - Expand the DOM tree.
+  - Right-click the attribute value of "id" of the first <p> element.
+  - Click "Edit attribute".
+  - Verify that you entered edit attribute value mode.
+
+id: 01600
+label: Context menu for attribute value: Add attribute
+desc:
+  - Expand the DOM tree.
+  - Right-click the attribute value of "id" of the first <p> element.
+  - Click "Add attribute" in the context menu.
+  - Verify that you get a new edit field for the new attribute.
+
+id: 01700
+label: Context menu for attribute value: Edit markup
+desc:
+  - Expand the DOM tree.
+  - Right-click the attribute value of "id" of the first <p> element.
+  - Click "Edit markup" in the context menu.
+  - Verify that you entered edit markup mode for the selected element (the whole <p> content is editable).
+
+id: 01800
+label: Context menu for attribute value: Remove node
+desc:
+  - Expand the whole DOM tree if it was not expanded.
+  - Right-click the value of "id" attribute of the first <p> element in DOM tree.
+  - Click "Remove node".
+  - Verify that the clicked element is removed from the DOM tree.
+
+id: 01900
+label: Context menu for attribute value: General settings
+desc:
+  - Expand the DOM tree.
+  - Right-click the attribute value of "id" of the first <p> element.
+  - Verify that "Represent the DOM as a node tree" triggers the Tree View (also verify switching option off).
+  - Verify that "Show comment nodes" triggers the right behaviour (also verify switching option off).
+  - Verify that "Keep elements highlighted when selecting a different element" triggers the right behaviour (also verify switching option off).
+
+id: 02000
+label: Context menu for styles: Specification for style descriptor of computed style
+desc:
+  - Expand the whole DOM tree if it was not expanded.
+  - Click on the first <p> element in DOM tree.
+  - Select "Styles" on right panel.
+  - Unfold computed styles.
+  - Right-click the first style descriptor in computed styles.
+  - Verify that menu contains only one element.
+  - Select "Specification for ...".
+  - Verify that the browser has opened a new tab with the specification of the descriptor.
+
+id: 02100
+label: Context menu for styles: Specification for style descriptor of style
+desc:
+  - Expand the whole DOM tree if it was not expanded.
+  - Click on the first <p> element in DOM tree.
+  - Select "Styles" on right panel.
+  - Right-click background-color in '.foo'.
+  - Select "Specification for background-color".
+  - Verify that the browser has opened a new tab with the specification of the descriptor.
+
+id: 02200
+label: Context menu for styles: Add declaration
+desc:
+  - Expand the whole DOM tree if it was not expanded.
+  - Click on the first <p> element in DOM tree.
+  - Select "Styles" on right panel.
+  - Right-click background-color in '.foo'.
+  - Select "Add declaration".
+  - Verify that new declaration edit mode is opened.
+
+id: 02300
+label: Context menu for styles: Edit declaration
+desc:
+  - Expand the whole DOM tree if it was not expanded.
+  - Click on the first <p> element in DOM tree.
+  - Select "Styles" on right panel.
+  - Right-click background-color in '.foo'.
+  - Select "Edit declaration".
+  - Verify that the declaration edit mode is opened on the declation which was clicked.
+
+id: 02400
+label: Context menu for styles: Disable all declarations
+desc:
+  - Expand the whole DOM tree if it was not expanded.
+  - Click on the first <p> element in DOM tree.
+  - Select "Styles" on right panel.
+  - Right-click background-color in '.foo'.
+  - Select "Disable all declarations".
+  - Verify that all declarations are disabled but still shown.
+  - Verify that the effect of declarations is gone from the host (paragraph 1-2 are affected).
+
+id: 02500
+label: Context menu for styles: Open color picker
+desc:
+  - Expand the whole DOM tree if it was not expanded.
+  - Click on the first <p> element in DOM tree.
+  - Select "Styles" on right panel.
+  - Right-click background-color in '.foo'.
+  - Select "Open color picker".
+  - Verify that color picker is opene with the same color as specified.
+
+id: 02600
+label: Context menu for styles: Specification for style descriptor of default style values
+desc:
+  - Expand the whole DOM tree if it was not expanded.
+  - Click on the first <p> element in DOM tree.
+  - Select "Styles" on right panel.
+  - Right-click display in 'default values'.
+  - Verify that context menu contains only one element.
+  - Select "Specification for display".
+  - Verify that the browser has opened a new tab with the specification of the descriptor.
+
+Statusbar
+*********
+
+url: http://aleto.ch
+
+id: 00100
+label: Status info
+deprecated: true
+desc:
+  - Select some elements in the DOM
+  - Verify that the statusbar is updated with an according breadcrumb
+  - Serach for some tokens.
+  - Verify that the statusbar is updated with the matching count
+
+id: 00200
+label: Breadcrumb navigation
+deprecated: true
+desc:
+  - Select some elements in the DOM
+  - Verify that elements are highlighted on hover in the host
+  - Verify that elements are selected on click in the host and in the DOM.
+
+url: http://nzz.ch
+
+id: 00300
+label: Toggle long breadcrumbs
+deprecated: true
+desc:
+  - Select a deep nested element in the document so that the breadcrumb is shortened,
+    e.g. starts with 3 dots.
+  - Verify that you can expand and collaps the breadcrump with the small toggle icon
+    to the right of the status icon.
+
+url: http://www.aleto.ch
+
+id: 00400
+label: Connection status
+deprecated: true
+desc:
+  - Set a breakpoint on line 18 scrollFolders.js
+  - Hover over the titles in the document
+  - Verify that the status icon updates while stepping into the code
+
+Scripts.Source
+**************
+
+url: ./test-cases/scripts-source/scripts.html
+
+id: 00100
+label: Reload button
+desc:
+  - Go to the above url
+  - Open or connect the debugger after that
+  - Switch to the Scripts
+  - Press the reload button in the info box "Click the reload button above to fetch the scripts for the selected window".
+  - Verify that you get 3 scripts in the dropdown and that you can select each of them.
+
+url: ./test-cases/scripts-source/callstack.html
+
+id: 00200
+label: Set breakpoint
+desc:
+  - Set a breakpoint on line 4, 'var aa = 1;'.
+  - Verify that a breakpoint is displayed on the clicked line.
+  - Press the 'e()' button
+  - Verify that the engine stops on line 4, e.g that the script is displayed
+    and that an arrow points to the breakpoint
+
+id: 00300
+label: Remove breakpoint
+desc:
+  - Remove the previous set breakpoint on line 4, 'var aa = 1;'.
+  - Verify that a breakpoint disappears on the clicked line.
+  - Press the 'Continue' button in the debugger
+  - Press the 'e()' button
+  - Verify that the engine does not stops on line 4 and that no arrow is displayed on that line.
+
+id: 00400
+label: Breakpoint, Continue
+desc:
+  - Set a breakpoint on line 4, 'var aa = 1;'.
+  - Press the 'e()' button
+  - Verify that the 'Continue' button changes from disabled to enabled.
+  - Press the 'Continue' button.
+  - Verify that that the stopped pointer arrow disappears and that the button gets disabled.
+  - Repeat several times and verify that it always works as described above.
+
+id: 00500
+label: Breakpoint, Continue with keyboard
+desc:
+  - The same as the previous test, but use the F8 key instead of the mouse. (F5 on Mac)
+
+id: 00600
+label: Breakpoint, Step into
+desc:
+  - Set a breakpoint on line 23, 'var ee = 1;'.
+  - Press the 'e()' button.
+  - Verify that the engine stops on that line
+  - Press the 'Step Into' button continuously.
+  - Verify that the stop arrow follows the execution flow,
+    e.g. arrives at some point at 'var aa = 1;' and
+    finishes one call after the other.
+
+id: 00700
+label: Breakpoint, Step into with keyboard
+desc:
+  - The same as the previous test, but use the F11 key instead the mouse. (F7 on Mac)
+
+id: 00800
+label: Breakpoint, Step Over
+desc:
+  - Set a breakpoint on line 23, 'var ee = 1;'.
+  - Press the 'e()' button.
+  - Verify that the engine stops on that line
+  - Pressing the 'Step Into' button continuously till you get to the line 'c();'.
+  - Now press the 'Step Over' button.
+  - Verify that engine stops right after 'c()' and does not follow the execution flow of 'c()'.
+
+id: 00900
+label: Breakpoint, Step Over with keyboard
+desc:
+  - The same as the previous test, but use the F11 and F10 key instead the mouse. (F7 and F6 on Mac)
+
+id: 01000
+label: Breakpoint, Step Out
+desc:
+  - Set a breakpoint on line 23, 'var ee = 1;'.
+  - Press the 'e()' button
+  - Press the 'Step Into' button continuously till you get to 'var cc = 1;'.
+  - Now press the 'Step Out' button continuously.
+  - Verify that the engine stops at 'c()', then 'd()' and then finishes. - TODO: test slightly wrong I think, it stops at e() too as we now get the event handler
+
+id: 01100
+label: Breakpoint, Step Out with keyboard
+desc:
+  - The same as the previous test, but use the F11 and Shift-F11 key instead the mouse. (F7 and Shift-F7 on Mac)
+
+url: ./test-cases/scripts-source/scripts.html
+
+id: 01200
+label: Stop at new script
+desc:
+  - Open Dragonfly
+  - Turn the 'Stop at new script' switch on.
+  - Load the test url.
+  - Verify that the engine stops for each new script (use the continue button), e.g. three times - TODO (+browser.js, right?)
+  - Verify that the setting can be turned off.
+
+url: ./test-cases/scripts-source/parse-error.html
+
+id: 01300
+label: Parse error
+desc:
+  - Open Dragonfly
+  - Turn the 'Show where a JavaScript error occurs' switch on.
+  - Go tho the test url
+  - Verify that the Script Source pane opens,
+    the first non parsable token is highlighted,
+    e.g. the dot in 'var aa.a = 1;',
+    any following code is greyed out and
+    an info box with a hint for the cause of the error is displayed.
+  - Verify that the setting can be turned off.
+
+url: http://aleto.ch
+
+id: 01400
+label: Log threads
+deprecated: true
+desc:
+  - Turn the 'Log threads' switch on.
+  - Open 'Thread Log' view
+  - Hover over the document of the above url
+  - Verify that all threads are logged.
+
+id: 01500
+label: Search
+desc:
+  - Search for 'default'.
+  - Verify that you 5 hits and that the view scrolls on enter to each of them.
+
+Scripts.Search bar and window
+*****************************
+
+url: ./test-cases/scripts/searchbar-window/search.html
+
+id: 00100
+label: Switch between search bar and window
+deprecated: true
+desc:
+  - Select the 'Scripts' tab
+  - Press the search button at the end of the toolbar to show the search bar
+  - Press the 'More' button on the search bar
+  - Verify that the search bar disappears and a search window gets displayed instead
+  - Press the 'Less' button on the search window
+  - Verify that the window closes and the search bar gets displayed instead
+  - Switch between 'More' and 'Less' several times and verify that it works
+  - Switch to 'More' and close the search window with the close button
+  - Hit the search button on the tool bar again and verify that the search window opens directly
+  - Switch back to 'Less', close the search bar, hit the search button again and verify that it now opens the search bar
+
+id: 00200
+label: Perform a search in the search window
+deprecated: true
+desc:
+  - Open the test url
+  - Select the 'Scripts' tab, hit the search button and hit the 'More' button to open the search window
+  - Verify that the search field has focus
+  - Type 'abrax' and hit enter
+  - Verify that the string 'Matches for "abrax": Match 1 out of 4' appears in the tool bar
+  - Verify that four matches are displayed in the window
+  - Verify that the first match is highlighted differently
+  - Verify that for each match the according source line including line number is displayed
+  - Hit 'Enter'
+  - Verify that the match highlight moves down
+  - Hit 'Shift Enter'
+  - Verify that the match highlight moves in the other direction
+  - Verify that the match highlight can be moved in the same way with 'F3' and 'Shift F3'
+  - Verify that the match highlight can be moved in the same way with the buttons close to the search field
+  - Hit 'Ctrl Enter'
+  - Verify that the file of the highlighted match is displayed in the source view
+  - Verify that for each match the according file can be displayed with 'Ctrl Enter'
+
+Scripts.Search tab
+******************
+
+url: ./test-cases/dom/searchtab/search.html
+id: 00100
+label: Focus the search tab in Scripts view
+desc:
+ - Open the testcase in scripts view.
+ - Click search tab on the right.
+ - Verify that tab changed and search field got focused.
+ - Focus another tab.
+ - Press search shortcut on keyboard (Ctrl-F).
+ - Verify that search tab is selected and search field got focus.
+ - Verify that ignore case is turned on by default.
+
+id: 00200
+label: Execute simple text search on document with ignore case
+desc:
+ - Make sure that ignore case checkbox is ENABLED.
+ - Select the first script on page (not browser.js).
+ - Search for "test" in text mode.
+ - Verify that you get 2 lines with a total of 4 hits (different cases).
+ - Verify that the first hit is highlighted in yellow.
+ - Verify that other hits are highlighted in grey.
+ - Verify that search field says 1/4 on the right side.
+
+id: 00300
+label: Walking through results in script search tab
+desc:
+ - Press Enter in search field.
+ - Verify that highlight moves to the next match.
+ - Verify that you can iterate through each highlight by pressing Enter.
+ - Verify the you can iterate through them backwards by Shift-Enter.
+ - Verify that turnaround works when you reach the ends of the list.
+ - Verify that hit counter in the right side of the search field is updated properly.
+
+id: 00400
+label: Focusing results in script search tab
+desc:
+ - Walk through results by using Enter and focus them using Ctrl-Enter.
+ - Verify that all individual highlighted string hits can be focused.
+ - Verify that all focused hits bring up the relevant line in script view.
+ - Verify that matching string is highlighted in line.
+ - Click all highlighted hits one by one.
+ - Verify that all focused hits bring up the relevant line in script view.
+ - Verify that matching string is highlighted in script view.
+
+id: 00500
+label: Execute simple case-dependent text search in script
+desc:
+ - Click on ignore case checkbox to set it DISABLED.
+ - Verify that search is executed immediately.
+ - Verify that you get 1 line with 2 hits.
+ - Verify that the first hit is highlighted in yellow.
+ - Verify that the other hit is highlighted in grey.
+ - Verify that search field says 1/2 on the right side.
+ - Click ignore case checkbox.
+ - Verify that search is executed immediately and you got the previous case-independent search result back.
+
+id: 00600
+label: Execute search in another script
+desc:
+ - Search for "test" in normal case-insensitive mode.
+ - Verify that you get hits from the DOM.
+ - Change the displayed script to the second script in the same runtime.
+ - Focus search field.
+ - Press Enter.
+ - Verify that you get hits from the displayed script (3 hits in 2 lines).
+
+id: 00700
+label: Click search result from another runtime
+desc:
+ - Search for "test" in normal case-insensitive mode (in the first script of the runtime).
+ - Verify that you get hits from the DOM.
+ - Change the displayed script to the second script.
+ - Click one of the hits in the search tab.
+ - Verify that the hit is properly shown in its script (view switched back to the correct script).
+
+id: 00800
+label: Click search result from outdated runtime
+desc:
+ - Search for "test" in normal case-insensitive mode.
+ - Verify that you get hits from the script.
+ - Change URL to anything else containing scripts (e.g.: http://www.sg.hu).
+ - Click one of the hits in the search tab.
+ - Verify that warning dialog is presented about expired content and re-running search.
+ - Click cancel.
+ - Verify that nothing has changed.
+ - Click the hit again.
+ - Click OK this time.
+ - Verify that search has been executed on the new runtime.
+
+id: 00900
+label: Execute simple case-independent regexp search on script
+desc:
+ - Make sure that ignore case checkbox to set it ENABLED.
+ - Switch to regexp mode.
+ - Search for "test.*"[;\n]{1,2}".
+ - Verify that you get lines with 2 hits with proper highlight.
+ - Click on the hits.
+ - Verify the highlight in script view, too (\n is not highlighted).
+
+id: 01000
+label: Execute simple case-dependent regexp search on script
+desc:
+ - Make sure that ignore case checkbox to set it DISABLED.
+ - Switch to regexp mode.
+ - Search for "test.*"[;\n]{1,2}".
+ - Verify that you get 1 hit.
+ - Change script to the first script of the iframe.
+ - Focus search field.
+ - Press Enter to repeat the search.
+ - Verify that you get one hit now.
+ - Click on it.
+ - Verify highlight in DOM view.
+
+id: 01100
+label: Execute a search on all scripts on the page
+desc:
+ - Make sure that ignore case checkbox to set it ENABLED.
+ - Make sure that all files checkbox to set it ENABLED.
+ - Search for "test" in text search mode.
+ - Verify that you get hits from 3 files.
+ - Click through all of the hits.
+ - Verify the highlight in script view, too.
+ - Verify that all files checkbox can be disabled and search is re-executed instantly.
+
+id: 01200
+label: Execute a search including injected script content
+desc:
+ - Make sure that ignore case checkbox to set it ENABLED.
+ - Make sure that all files checkbox to set it ENABLED.
+ - Make sure that injected checkbox to set it DISABLED.
+ - Search for "test" in text search mode.
+ - Verify that you get hits from 3 files.
+ - Click on injected checkbox to enable it.
+ - Verify that the search is instantly executed and updated with contents of browser.js.
+ - Verify that the option can be turned off.
+
+Scripts.Call Stack
+******************
+
+id: 00100
+label: Set breakpoint, Callstack
+url: ./test-cases/scripts-source/callstack.html
+desc:
+  - Set a breakpoint on line 4, 'var aa = 1;'.
+  - Press the 'e()' button.
+  - Verify that the Call Stack view displays the call stack.
+  - Verify that each entry can be selected in the callstack.
+  - Verify that the source view is updated on selecting an entry in the callstack.
+  - Verify that the Inspection view is updated with the according scope.
+
+Scripts.Inspection
+******************
+
+id: 00100
+label: Hide default properties
+deprecated: true
+desc:
+  - Do 'dir(window)' in the command line.
+  - Select and unselect the *hide default properties' switch.
+  - Verify that the according properties are shown or hidden in the view.
+
+url: ./test-cases/js-inspection/inspectable-js-objects.html
+
+id: 00200
+label: Inspectable js objects
+desc:
+  - Go to the url above.
+  - Verify that three entries appear in Scripts > State > Inspection: 'arguments', 'this' and 'ele'
+
+id: 00300
+label: Expand inspectable objects
+desc:
+  - Go to the url above.
+  - Expand 'this'.
+  - Verify that all properties of the window object are expanded.
+  - Expand 'this.document'.
+  - Verify that all propeties of the document are expanded.
+
+id: 00400
+label: Expand inspectable objects and change the view.
+desc:
+  - Go to the url above.
+  - Expand 'this'.
+  - Verify that all properties of the window object are expanded.
+  - Expand 'this.document'.
+  - Verify that all properties of the document are expanded.
+  - Change to an other view, e.g. Error Console.
+  - Switch back to Scripts.
+  - Verify that all expanded properties are still expanded.
+
+id: 00500
+label: Collapse inspectable objects
+desc:
+  - Go to the url above.
+  - Expand 'this'.
+  - Collapse 'this'.
+  - Verify that all expanded properties are removed.
+  - Expand 'this'.
+  - Expand 'this.document'.
+  - Collapse 'this'.
+  - Verify that all expanded properties are removed.
+  - Expand 'this'.
+  - Expand 'this.document'.
+  - Collapse 'this.document'.
+  - Verify that all properties of document are removed.
+
+id: 00600
+label: Setting 'Show the prototypes'.
+desc:
+  - Go to the url above.
+  - Ensure that 'Show the prototypes' is on.
+  - Expand 'ele'.
+  - Verify that the whole prototype chain is displayed
+    (HTMLHtmlElementPrototype, HTMLElementPrototype, ElementPrototype, NodePrototype, Object)
+  - Collapse 'ele'.
+  - Turn the setting off.
+  - Expand 'ele'.
+  - Verify that there is no prototype displayed.
+
+id: 00700
+label: Setting 'Show non enumerable properties'.
+desc:
+  - Go to the url above.
+  - Ensure that 'Show non enumerable properties' is on.
+  - Expand 'this'.
+  - Verify that all non enumerable properties are displayed, e.g. a lot of
+    HTML<some element name>Element interfaces.
+  - Collapse 'this'.
+  - Turn the setting off.
+  - Expand 'this'.
+  - Verify that all the non enumerables are not displayed.
+
+id: 00800
+label: Setting 'Show default null and empty string values'.
+desc:
+  - Go to the url above.
+  - Ensure that 'Show default null and empty string values' is on.
+  - Expand 'ele'.
+  - Verify that all default values, which are either null or an empty string, are displayed.
+    (onclick and friends, title).
+  - Turn the setting off.
+  - Verify that they now all disappear.
+
+id: 00900
+label: Setting Inspection 'Default collapsed prototype objects' in Settings
+desc:
+  - Go to the url above.
+  - Ensure that "Show the prototypes" and "Show non-enumerable properties" are on.
+  - Ensure that Settings Inspection 'Default collapsed prototype objects' is '*'.
+  - Expand 'this'.
+  - Verify that the 'Object' prototype is displayed and
+    that none of its properties is shown.
+  - Delete Settings Inspection 'Default collapsed prototype objects' and confirm with 'Apply'.
+  - Collapse 'this'.
+  - Expand 'this'.
+  - Verify that the 'Object' prototype is displayed and all its properties are expanded.
+
+Scripts.Command Line
+********************
+
+url: ./test-cases/scripts-source/callstack.html
+
+id: 00100
+label: Autosuggest
+desc:
+  - Set a breakpoint on line 23, 'var ee = 1;'.
+  - Press the 'e()' button.
+  - Focus the command line.
+  - Hit tab.
+  - Verify that you get the variables of the scope
+  - Use 'Step Into' and verify for each scope that you get the correct variables.
+  - Type 'this.'.
+  - Hit tab repeatedly.
+  - Verify that you get all properties of the window.
+  - Start to write something after the dot and hit tab again.
+  - Verify that the property gets completed with all matches.
+
+id: 00200
+label: History navigation.
+desc:
+  - Use the up and down arrows.
+  - Verify that you get all previous submitted lines.
+
+id: 00300
+label: Object links.
+desc:
+  - Type e.g. 'this' and hit enter.
+  - Verify that the result is the correct object displayed as link.
+  - Click the link.
+  - Verify that the according object is displayed.
+
+id: 00400
+label: Built-in commands
+desc:
+  - Create some entries and type clear().
+  - Verify that the view gets cleared.
+  - Type e.g. 'dir(this)'
+  - Verify that the according object is displayed in the Inspection view.
+
+Scripts.Contextmenu
+**************
+
+url: ./test-cases/scripts-source/scripts.html
+
+id: 00100
+label: Contextmenu in source view: general
+desc:
+  - Right-click in script source panel in script view below the actual script source.
+  - Verify that you get one menu option: Show where a JavaScript error occurs
+  - Click that option.
+  - Verify that it works as expected. - TODO: does a script error occur here at all? hard to check otherwise?
+  - Click option again to disable it.
+  - Check that the functionality has been disabled.
+
+id: 00200
+label: Contextmenu in source view: source line general options
+desc:
+  - Right-click in script source panel in script view on an actual script line.
+  - Verify that you get menu option: Add breakpoint
+  - Verify that you get menu option: Show where a JavaScript error occurs
+  - Click "Show where a JavaScript error occurs".
+  - Verify that it works as expected.
+  - Click option again to disable it.
+  - Check that the functionality has been disabled.
+
+id: 00300
+label: Contextmenu in source view: source line add breakpoint
+desc:
+  - Right-click in script source panel in script view on an actual script line.
+  - Verify that you get menu option: Add breakpoint
+  - Verify that you get menu option: Show where a JavaScript error occurs
+  - Click "Add breakpoint".
+  - Verify that breakpoint is added to selected line.
+
+id: 00400
+label: Contextmenu in source view: source line add condition on breakpoint
+desc:
+  - Right-click in script source panel in script view on script line with breakpoint.
+  - Verify that you get menu option: Add condition
+  - Verify that you get menu option: Disable breakpoint
+  - Verify that you get menu option: Delete breakpoint
+  - Verify that you get menu option: Show where a JavaScript error occurs
+  - Click "Add condition".
+  - Verify that you can add condition to the selected breakpoint.
+
+id: 00500
+label: Contextmenu in source view: source line edit condition on breakpoint
+desc:
+  - Right-click in script source panel in script view on script line with breakpoint that has a condition.
+  - Click "Edit condition".
+  - Verify that you can edit condition for the selected breakpoint.
+
+id: 00600
+label: Contextmenu in source view: source line disable breakpoint
+desc:
+  - Right-click in script source panel in script view on script line with breakpoint.
+  - Click "Disable breakpoint".
+  - Verify that the breakpoint is disabled.
+
+id: 00700
+label: Contextmenu in source view: source line enable breakpoint
+desc:
+  - Right-click in script source panel in script view on script line with disabled breakpoint.
+  - Verify that you get menu option: Edit condition
+  - Verify that you get menu option: Enable breakpoint
+  - Verify that you get menu option: Delete breakpoint
+  - Verify that you get menu option: Show where a JavaScript error occurs
+  - Click "Enable breakpoint".
+  - Verify that the breakpoint is enabled.
+
+id: 00800
+label: Contextmenu in source view: source line delete breakpoint
+desc:
+  - Right-click in script source panel in script view on script line with breakpoint.
+  - Click "Delete breakpoint".
+  - Verify that the breakpoint is deleted.
+
+id: 00900
+label: Contextmenu in breakpoint list: general
+desc:
+  - Add breakpoint on a source line.
+  - Switch to breakpoint list in right panel.
+  - Right-click the existing breakpoint.
+  - Verify that you get menu option: Add condition
+  - Verify that you get menu option: Delete breakpoint
+  - Verify that you get menu option: Disable all breakpoints
+  - Verify that you get menu option: Delete all breakpoints
+
+id: 01000
+label: Contextmenu in breakpoint list: add condition
+desc:
+  - Right-click the existing breakpoint.
+  - Click on: Add condition
+  - Verify that you get enter condition edit mode.
+  - Add a non-empty condition.
+
+id: 01100
+label: Contextmenu in breakpoint list: edit condition
+desc:
+  - Right-click the existing breakpoint.
+  - Click on: Edit condition
+  - Verify that you get enter condition edit mode.
+
+id: 01200
+label: Contextmenu in breakpoint list: delete breakpoint
+desc:
+  - Right-click the existing breakpoint.
+  - Click on: Delete breakpoint
+  - Verify that the breakpoint is deleted.
+
+id: 01300
+label: Contextmenu in breakpoint list: disable all breakpoints
+desc:
+  - Add 2 breakpoints in 2 different scripts.
+  - Right-click an existing breakpoint in the breakpoint list.
+  - Click on: Disable all breakpoints
+  - Verify that all the breakpoints are disabled.
+
+id: 01400
+label: Contextmenu in breakpoint list: delete all breakpoints
+desc:
+  - Right-click an existing breakpoint in the breakpoint list.
+  - Click on: Delete all breakpoints
+  - Verify that all the breakpoints are deleted.
+
+
+Console HUD
+***********
+
+id: 00100
+label: Toggle console
+desc:
+  - Verify that the console is toggled by the console button and Esc
+  - Verify that the console gets focus when shown
+
+id: 00200
+label: Resizing console
+desc:
+  - Verify that the console can be resized at the top
+
+Console
+*******
+
+url: ./test-cases/repl/console_api.html
+
+id: 00100
+label: Console API: console.log
+desc:
+  - Click "console.log" button.
+  - Verify that "Phlebotinum" is printed on the command line
+
+id: 00200
+label: Console API: console.log command line
+desc:
+  - Type 'console.log("hello")' on the command line
+  - Verify that "hello" is printed on the command line
+
+id: 00300
+label: Console API: console.debug
+desc:
+  - Click "console.debug" button.
+  - Verify that "Phlebotinum" is printed on the command line
+
+id: 00400
+label: Console API: console.info
+desc:
+  - Click "console.info" button.
+  - Verify that "Phlebotinum" is printed on the command line
+
+id: 00500
+label: Console API: console.warn
+desc:
+  - Click "console.warn" button.
+  - Verify that "Phlebotinum" is printed on the command line
+
+id: 00600
+label: Console API: console.error
+desc:
+  - Click "console.error" button.
+  - Verify that "Phlebotinum" is printed on the command line
+
+id: 00700
+label: Console API: console.assert
+desc:
+  - Click "console.assert" button.
+  - Verify that "false, Phlebotinum" is printed on the command line
+  - Verify that "ERROR" is NOT printed on the command line
+
+id: 00800
+label: Console API: console.dir
+desc:
+  - Click "console.dir" button.
+  - Verify that an expanded list of properties on the body object is shown
+
+id: 00900
+label: Console API: console.dir command line
+desc:
+  - Type "console.dir(document.body)" on the command line
+  - Verify that an expanded list of properties on the body object is shown
+
+id: 01000
+label: Console API: console.dir alias
+desc:
+  - Type "dir(document.body)" on the command line
+  - Verify that an expanded list of properties on the body object is shown
+
+id: 01100
+label: Console API: console.dirxml
+desc:
+  - Click "console.dirxml" button.
+  - Verify that an expanded dom tree representing the body of the document is shown.
+
+id: 01200
+label: Console API: console.dirxml command line
+desc:
+  - Type "console.dirxml(document.body)" on the command line
+  - Verify that an expanded dom tree representing the body of the document is shown.
+
+id: 01300
+label: Console API: console.dirxml alias
+desc:
+  - Type "dirxml(document.body)" on the command line
+  - Verify that an expanded dom tree representing the body of the document is shown.
+
+id: 01400
+label: Console API: console.group
+desc:
+  - Click the "console.group" button
+  - Verify that a group was added to the command line and that the text "Phlebotinum" is in the group
+  - Enter some text
+  - Verify that the text appears at the root level, not inside the group
+  - Verify that clicking the +/- button expands and collapses the group.
+
+id: 01500
+label: Console API: console.time
+desc:
+  - Click the "console.time" button
+  - Verify that "test: 1000ms (1000308µsec)" is printed in the console. The numbers will be slightly different but should be close to 1000ms.
+
+id: 01600
+label: Console API: console.trace
+desc:
+  - Click the "console.trace" button
+  - Verify that a stack trace is printed in the console
+
+id: 01700
+label: Command line API: clear
+desc:
+  - Create some entries and type clear().
+  - Verify that the view gets cleared.
+  - Verify that the typed history was NOT cleared.
+
+url: ./test-cases/repl/keys_values.html
+
+id: 01800
+label: Command line API: keys
+desc:
+  - Load the page
+  - Type "keys(dict)"
+  - Verify that "Array" is added to the console
+  - Click the Array link
+  - Verify that the array is of length 2 and contains the values "foo" and "bar"
+
+id: 01900
+label: Command line API: values
+desc:
+  - Load the page
+  - Type "values(dict)"
+  - Verify that "Array" is added to the console
+  - Click the Array link
+  - Verify that the array is of length 2 and contains the values "1" and "2"
+
+url: ./test-cases/repl/misc_selection.html
+
+id: 02200
+label: Command line API: $1 $2
+desc:
+  - Load the page
+  - Click on the "<p>" element in the dom view
+  - Type $0 in the REPL view
+  - Verify that HTMLParagraphElement is printed in the view
+  - Click on the "<h1>" element in the dom view
+  - Type $0 in the REPL view
+  - Verify that HTMLHeadingElement is printed in the view
+  - Type $1 in the REPL view
+  - Verify that HTMLParagraphElement is printed in the view
+
+id: 02300
+label: Command line API: $()
+desc:
+  - Enter $("i") in the command line
+  - Verify that HTMLElement is printed in the view
+
+id: 02400
+label: Command line API: $() on sites using jquery/other libs
+desc:
+  - Navigate to a site that uses jquery, like http://jquery.com
+  - Enter $("body") in the command line
+  - Verify that a jQuery object with the body element is printed in the view
+
+id: 02500
+label: Command line API: $$()
+desc:
+  - Enter $$(".c") in the command line
+  - Verify that NodeList is printed in the view
+  - Verify that the NodeList has a single item
+
+id: 02600
+label: Command line API: $x()
+desc:
+  - Enter $x("//body") in the command line
+  - Verify that Array is printed in the view
+  - Verify that the Array has a single item
+
+id: 02700
+label: Autocomplete, not stopped
+deprecated: true
+desc:
+  - Type "docu"
+  - Press tab
+  - Verify that the input is expanded to "document"
+  - Continue typing "b", so input is "document.b"
+  - Press tab
+  - Verify that the input is the same and that the expansions "baseURI, bgColor, body" are shown above the input
+  - Continue typying "o"
+  - Press tab
+  - Verify that the input is expanded to "document.body"
+
+url: ./test-cases/repl/autocomplete_stopped.html
+
+id: 02800
+label: Autocomplete, stopped
+deprecated: true
+desc:
+  - Navigate to url
+  - Verify that debugger has stopped
+  - Type "f"
+  - Press tab
+  - Verify that input is expanded to "foo"
+  - Clear input
+  - Type "b"
+  - Press tab
+  - Verify that the input is the same and that the expansions "bar, baz" are shown above the input
+
+id: 02900
+label: History navigation
+desc:
+  - Use the up and down arrows.
+  - Verify that you get all previous submitted lines.
+  - Verify that the history contains no more entries than the repl -> Max items in typed history to remember setting
+
+id: 03000
+label: ctrl-w
+desc:
+  - (test not valid on mac)
+  - Enter some text.
+  - Press ctrl-w
+  - Verify that all text up to the closest whitespace is deleted
+
+id: 03100
+label: ctrl-k
+desc:
+  - Enter some text.
+  - Move the cursor to the middle of the line
+  - Press ctrl-k
+  - Verify that all text after the cursor is deleted
+
+id: 03200
+label: ctrl-a
+desc:
+  - Enter some text.
+  - Press ctrl-a
+  - Verify that the cursor moved to the start of the line
+
+id: 03300
+label: ctrl-l
+desc:
+  - Create some entries
+  - Press ctrl-l or cmd-k
+  - Verify that the view gets cleared.
+  - Verify that the typed history was NOT cleared.
+
+id: 03400
+label: single line / multi line toggling
+desc:
+  - Press shift-enter
+  - Verify that the input box changes appearance
+  - Verify that the pressing tab inserts a tab character
+  - Verify that up/down/left/right moves the cursor inside the text box
+  - Press shift-enter
+  - Press ctrl-enter
+  - Verify that the input is evaluated
+
+id: 03500
+label: Pasting text
+desc:
+  - Copy some text that contains multiple lines
+  - Paste the text into the command line
+  - Verify that all the text is visible
+  - Verify that the input box changed apperance and is in multi line mode
+
+id: 03600
+label: Welcome message
+desc:
+  - Switch to the command line view
+  - Verify that the first line in the view contains the Opera version and core version
+
+id: 03700
+label: List-like object unpacking
+desc:
+  - Type [1, "foo", window] in the command line and hit enter
+  - Verify that the output is Array[1, "foo", Window]
+  - Verify that clicking Array opens the array object for inspection
+  - Verify that clicking Window opens the window object for inspection
+  - Type document.body.childNodes and hit enter
+  - Verify that NodeList[<number of elements>] is shown.
+
+id: 03800
+label: Help command
+desc:
+  - Type //help()
+  - Verify that a list of available commands is printed
+  - type //man()
+  - Verify that the output is identical to the output from the help command
+
+id: 03900
+label: jquery command
+desc:
+  - Type //jquery()
+  - Verify jquery is loaded
+
+id: 04000
+label: Autocomplete, not stopped
+desc:
+  - Type "docu"
+  - Press tab
+  - Verify that the input is expanded to "document"
+  - Continue typing "b", so input is "document.b"
+  - Press tab
+  - Verify that the input is the same and that the expansions "baseURI, bgColor, body" are shown above the input
+  - Verify that baseURI is highlighted
+  - Continue typing "o"
+  - Press tab
+  - Verify that the input is expanded to "document.body"
+  - Type document.b
+  - Press tab multiple times
+  - Verify that a list of completions is shown and that the highlight moves forward when pressing tab
+  - Verify that pressing the right arrow key has the same effect as pressing tab
+  - Verify that pressing shift-tab moves the higlight backwards.
+  - Verify that pressing the right arrow key has the same effect as pressing shift-tab
+  - Press enter.
+  - Verify that the higlighted word is entered in the console
+  - Type document.b
+  - Press tab
+  - Press "."
+  - Verify that the highlighted word is entered in the console
+  - Verify that the keys [, ], (, ) have the samme effect as "."
+
+url: ./test-cases/repl/autocomplete_stopped.html
+
+id: 04050
+label: Autocomplete, stopped
+desc:
+  - Navigate to url
+  - Verify that debugger has stopped
+  - Type "f"
+  - Press tab
+  - Verify a list of expansions are displayed, and that "foo" is one of the entries
+  - Clear input
+  - Type "w"
+  - Press tab
+  - Verify that the input The list of completions include contents of the global scope. "window" should be one of the entries.
+  - Press continue, to resume running script
+  - Verify that debugger has stopped
+  - Type "p"
+  - Press tab
+  - Verify that phlebotinum is in the tab completion list
+  - type c
+  - press tab
+  - verify that closure is in the autocomplete list
+
+
+url: ./test-cases/repl/unpack-list-alikes.html
+
+id: 04100
+label: Unpack list alikes
+desc:
+  - Open the test case
+  - Ensure that 'Unpack objects which have list-like behavior in the console' in settings &gt; 'General' is checked
+  - Uncheck 'Enable smart-printing for Element objects in the console' in settings &gt; 'General'
+  - Open the command line (hit 'escape' or hit the command line button)
+  - Hit the 'console.log([1,2,3,4])' button
+  - Verify that you get 'Array[1, 2, 3, 4]' in the command line (ignore a '[object Array]' before that)
+  - Verify that 'Array' is clickable and opens the 'Inspection' view with the Array
+  - Hit 'console.log(document.all)' button
+  - Verify that you get 'HTMLCollection[HTMLHtmlElement, HTMLHeadElement, HTMLBodyElement, HTMLParagraphElement, HTMLInputElement, HTMLParagraphElement, HTMLInputElement, HTMLParagraphElement, HTMLInputElement, HTMLParagraphElement, HTMLInputElement]' (ignore a '[object HTMLCollection]' before that)
+  - Verify that 'HTMLCollection' is clickable and opens the 'Inspection' view with the HTMLCollection
+  - Verify that each element in the list is clickable and shows the according element in the DOM tree
+  - Hit the 'console.log(document.childNodes)' button
+  - Verify that you get 'NodeList[DocumentType, HTMLHtmlElement]' in the command line (ignore a '[object HTMLCollection]' before that)
+  - Verify that each object of type Element is clickable and shows the according element in the DOM tree
+  - Verify that other objects are clickable too and open the according 'Inspection' view
+  - Hit the 'console.log(xPathResult)' button
+  - Verify that you get 'XPathResult[HTMLParagraphElement, HTMLParagraphElement, HTMLParagraphElement, HTMLParagraphElement]' in the command line (ignore a '[object XPathResult]' before that)
+  - Verify that all objects are clickable and open the appropriated view
+  - Write '[1,2,3,4]', 'document.all' and 'document.childNodes' in the command line
+  - Verify that you get the same output back as before (without the ignorable line)
+  - Write 'console.log([1,2,3,4])', 'console.log(document.all)' and 'console.log(document.childNodes)' in the command line
+  - Verify that you get the same output as before, except that each output is followed by a 'undefined' return statement
+
+id: 04200
+label: Setting for unpack list alikes
+desc:
+  - Open the test case
+  - Uncheck 'Unpack objects which have list-like behavior in the console' in settings &gt; 'General'
+  - Open the command line (hit 'escape' or hit the command line button)
+  - Hit the 'console.log([1,2,3,4])' button
+  - Verify that the output is now only a clickable 'Array' (ignore a '[object Array]' before that)
+  - Hit 'console.log(document.all)' button
+  - Verify that the ourtput is now only a clickable 'HTMLCollection' (ignore a '[object HTMLCollection]' before that)
+  - Hit the 'console.log(document.childNodes)' button
+  - Verify that the output is now only a clickable 'NodeList' (ignore a '[object HTMLCollection]' before that)
+  - Hit the 'console.log(xPathResult)' button
+  - Verify that the output is now only a clickable 'XPathResult'
+
+id: 04300
+label: User friendly object representation
+desc:
+  - Open the test case
+  - Ensure that 'Unpack objects which have list-like behavior in the console' in settings &gt; 'General' is checked
+  - Enable 'Enable smart-printing for Element objects in the console' in settings &gt; 'General'
+  - Open the command line (hit 'escape' or hit the command line button)
+  - Hit 'console.log(document.all)' button
+  - Verify that you get 'HTMLCollection[html, head, body, p, input.foo, p, input#bar, p, input, p, input]'
+  - Verify that all objects are clickable and open the appropriated view
+  - Hit the 'console.log(document.childNodes)' button
+  - Verify that you get 'NodeList[DocumentType, html]' in the command line
+  - Verify clickability
+  - Hit the 'console.log(xPathResult)' button
+  - Verify that you get 'XPathResult[p, p, p, p]' in the command line
+  - Verify clickability
+  - Write 'console.log(document.all)' and 'console.log(document.childNodes)' in the command line
+  - Verify that you get the same output as before, except that each output is followed by a 'undefined' return statement
+
+id: 04400
+label: Inline expandableJS and DOM objects
+desc:
+  - Open the test case
+  - Ensure that 'Expand objects inline in the console' in settings &gt; 'General' is checked
+  - Enable 'Enable smart-printing for Element objects in the console' in settings &gt; 'General'
+  - Enable 'Unpack objects which have list-like behavior in the console' in settings &gt; 'General'
+  - Open the command line (hit 'escape' or hit the command line button)
+  - Hit 'console.log(document.all)' button
+  - Verify that you get '+HTMLCollection[' followed by a sequence of DOM nodes, represented in the same way as in the 'Documents' tab (either markup or tree style)
+  - Verify that all objects with an expander can be expanded in place
+  - Hit the 'console.log(document.childNodes)' button
+  - Verify that you get '+NodeList[+DocumentType, +html]' in the command line
+  - Verify expandability in place
+  - Hit the 'console.log(xPathResult)' button
+  - Verify that you get '+XPathResult[+p, +p, +p, +p]' in the command line
+  - Verify expandability in place
+
+id: 04500
+label: multiple inline expandableJS and DOM objects in one line
+desc:
+  - Open the test case
+  - Ensure that 'Expand objects inline in the console' in settings &gt; 'General' is checked
+  - Enable 'Enable smart-printing for Element objects in the console' in settings &gt; 'General'
+  - Enable 'Unpack objects which have list-like behavior in the console' in settings &gt; 'General'
+  - Open the command line (hit 'escape' or hit the command line button)
+  - Enter [1, "foo", window, function () { return "bar" }, document.getElementsByTagName("p")]
+  - Verify expandability in place for all objects.
+  - Verify that multiple objects are expandable from the returned array at the proper place.
+
+Scripts.Breakpoints
+*******************
+
+url: ./test-cases/breakpoints/breakpoints.html
+
+id: 00100
+label: Default breakpoint
+desc:
+  - Open the test case
+  - Select the 'Scripts' tab and reload the document
+  - Select the 'Breakpoints' panel and expand the 'Breakpoints' section
+  - Set a breakpoint on line 8 in script 'a.js'
+  - Verify that the 'Breakpoints' view get a new entry with a checked checkbox, the filename of the script with the line number and the according source code of that line
+  - Uncheck the checkbox
+  - Verify that the breakpoint in the script source now looks like a disabled breakpoint
+  - Click the breakpoint in the source view
+  - Verify that the panel view is updated and the breakpoint is checked now
+  - Verify that the breakpoint works by hitting the 'test' button
+  - Reload the host document
+  - Verify that the breakpoint is still in the source file and the panel
+  - Disable he breakpoint
+  - Reload the host document again
+  - Verify that the breakpoint is still disabled in the source view and the panel
+  - Verify that the breakpoint has no effect by hitting the 'test' button
+
+
+id: 00200
+label: Conditional breakpoint
+desc:
+  - Open the test case // todo: check if the test case is now tricky enough for newest core versions. The loop was optimized away, added some random numbers.
+  - Select the 'Scripts' tab and reload the document
+  - Select the 'Breakpoints' panel and expand the 'Breakpoints' section
+  - Set a breakpoint on line 8 in script 'a.js'
+  - Right click the breakpoint in the panel and select 'Add condition'
+  - Type 'i > 8'
+  - Verify that the breakpoint in the source view now looks like a breakpoint with a condition
+  - Hit the 'test' button
+  - Verify that the engine stops
+  - Open the command line and submit 'i'
+  - Verify that 'i' has the value 9
+  - Uncheck the breakpoint in the panel
+  - Verify that the breakpoint looks like a disabled breakpoint with condition in the source view
+  - Enable the breakpoint in the source view
+  - Verify that the view in the panel is updated accordingly and the breakpoint is checked
+  - Reload the host document
+  - Hit the 'test' button
+  - Verify that the engines stops and 'i' still has the value 9
+  - Disable the breakpoint
+  - Reload the host document
+  - Verify that the breakpoint looks like a disabled breakpoint in the source view and the panel
+  - Verify that the breakpoint no longer has any effect by hitting the 'test' button
+
+id: 00300
+label: Delete breakpoint
+desc:
+  - Open the test case
+  - Select the 'Scripts' tab and reload the document
+  - Select the 'Breakpoints' panel and expand the 'Breakpoints' section
+  - Set a breakpoint on line 8 in script 'a.js'
+  - Verify that the breakpoint works by hitting the 'test' button
+  - Right click the breakpoint in the panel and select 'Delete'
+  - Verify that the breakpoints disappears in the panel and the the source view
+  - Verify that the engine doesn't stop on any breakpoint by hitting 'test'
+  - Reload the host document and hit 'test'
+  - Verify that there is no longer a breakpoint
+
+id: 00400
+label: Disable and delete all breakpoints
+desc:
+  - Open the test case
+  - Select the 'Scripts' tab and reload the document
+  - Select the 'Breakpoints' panel and expand the 'Breakpoints' section
+  - Set breakpoints on line 8 in script 'a.js', 'b.js', 'c.js' and 'd.js'
+  - Add to all breakpoints the condition 'i > 8'
+  - Hit the 'test' button
+  - Verify that the engine stops in each script exactly once (use the 'Continue' button or 'F8' ('F5' on Mac) to continue)
+  - Right click the breakpoint panel and select 'Disable all'
+  - Verify that all breakpoints are unchecked
+  - Verify that in each script in the source view the breakpoints look like disabled conditional breakpoints
+  - Hit the 'test' button again
+  - Verify that none breakpoint stops the engine
+  - Enable all breakpoints again and verify that they stop properly
+  - Right click the breakpoint panel and select 'Delete all'
+  - Verify that all breakpoints are removed from the panel
+  - Verify for each script that all breakpoints are removed in the source view
+  - Hit the 'test' button
+  - Verify that no breakpoint stops the execution
+
+Scripts.Event Breakpoints
+*************************
+
+url: ./test-cases/event-breakpoints/simple-event.html
+
+id: 00100
+label: Quick find
+desc:
+  - Open the 'Event Breakpoint view' (Toolbar button in scripts)
+  - Type 'mouse' in the 'Quick find' field
+  - Verify that 'DOM level 3' is expanded and displays 'mousedown', 'mouseenter',
+    'mouseleave', 'mousemove', 'mouseout', 'mouseover', 'mouseup'
+
+id: 00200
+label: Simple event
+desc:
+  - Go to the url above
+  - Open the 'Event Breakpoint view'
+  - Quick find 'click' and check 'click'
+  - Click into the host document
+  - Verify that the debugger stops on entering the 'a' function
+
+url: ./test-cases/event-breakpoints/multiple-events.html
+
+id: 00300
+label: Multiple events
+desc:
+  - Go to the url above
+  - Open the 'Event Breakpoint view'
+  - Check 'keydown', 'keyup', 'keypress', 'input'
+  - Type something in the texatarea of the tests document
+  - Verify that the debugger stops on entering the 'a' function
+  - Verify that the event type is 'keydown' in e.g. the inspection or the REPL tab
+  - Press the 'Continue' button
+  - Verify that the debugger stops three more times with event type 'keypress', 'keyup', 'input'
+
+url: ./test-cases/event-breakpoints/multiple-listeners.html
+
+id: 00400
+label: Multiple listeners
+desc:
+  - Go to the url above
+  - Open the 'Event Breakpoint view'
+  - Check 'input'
+  - Type something in the textarea
+  - Verify that the debugger stops on entering the 'a' function
+  - Press the 'Continue' button
+  - Verify that the debugger stops three more times on entering 'b', 'c' and 'd'
+
+url: ./test-cases/event-breakpoints/modifier-event.html
+
+id: 00500
+label: Modifier Event
+desc:
+  - Go to the url above
+  - Open the 'Event Breakpoint view'
+  - Check 'DomNodeRemoved'
+  - Press the 'test' button in the test document
+  - Verify that the debugger stops on entering the 'a' function
+
+url: ./test-cases/event-breakpoints/attribute-event-handler.html
+
+id: 00600
+label: Element attribute event handler
+desc:
+  - Go to the url above
+  - Open the 'Event Breakpoint view'
+  - Check 'click'
+  - Click 'paragraph with a 'onclick' attribute' in the test document
+  - Verify that the debugger stops in the according callback
+
+url: ./test-cases/event-breakpoints/custom-event.html
+
+id: 00700
+label: Custom event
+desc:
+  - Go to the url above
+  - Open the 'Event Breakpoint view'
+  - Open the 'Custom Events' section
+  - Press 'the 'Edit' button
+  - Enter 'test' and save
+  - Check 'test'
+  - Press the 'Dispatch custom event 'test'' button in the test document
+  - Verify that the debugger stops on entering the 'test' function
+
+Scripts.Watches
+*******************
+
+url: ./test-cases/breakpoints/breakpoints.html
+
+id: 00100
+label: Add a watch
+desc:
+  - Open the test case
+  - Select the 'Scripts' tab and reload the document
+  - Set a breakpoint on line 8 in script 'a.js'
+  - Select the 'State' tab and expand the 'Watches' section
+  - Click the 'Add' button, write 'i' and add the watch by hitting 'Enter'
+  - Verify that 'i' now has the value 'Error'
+  - Hit the 'test' button
+  - Verify that 'i' has now the value 0
+  - Continue with hitting the 'Continue' button or with 'F8'
+  - Verify that i updates accordingly and fals back to 'Error' at the end
+  - Add an other watch 'document'
+  - Verify that 'document' is an expandable entry
+
+id: 00200
+label: Right click option for a watch entry
+desc:
+  - Select the 'Scripts' tab and reload the document
+  - Select the 'State' tab and expand the 'Watches' section
+  - Add a watch 'document'
+  - Right click the watch and select 'Edit'
+  - Change the value to 'window'
+  - Verify that the entry is now an expandable 'Window' object
+  - Right click the watch and select 'Delete'
+  - Verify that the watch is removed from the view
+  - Right click the panel, select 'Add' and verify that you can some watch
+
+
+
+Network.Request Log
+*******************
+
+url: ./test-cases/network/img-js-css.html
+
+id: 00100
+label: Request table
+desc:
+  - Go to the url above
+  - Verify that the request table makes sense
+  - Reload the document
+  - Verify that the table still makes sense
+
+id: 00200
+label: Request and response detail
+desc:
+  - Expand some of the entries
+  - Verify that the info in 'Summary', 'Headers' and 'Raw' makes sense - TODO: N/A for the network tab?
+
+id: 00300
+label: Clear log
+desc:
+  - Press the 'Clear log' button
+  - Verify that the view gets cleared.
+
+Storage.Cookies
+***************
+
+url: ./test-cases/storages/create-storages.php
+
+url: ./test-cases/storages/check-storages.html
+
+id: 00100
+label: Inspect cookies
+desc:
+  - Go to the above url in the above order
+  - Verify that you see cookie a - m
+  - In case the host has the cookie-service:
+  - If the host protocol is https, verify that cookie "w", if you see it, has a secure checkmark
+  - Verify that you see cookie "x" and that it is marked as http-only
+  - Verify that you see at least one cookie prefixed with "y" and at least one with "z"
+  - Verify that the path values of these cookie match exactly what is implied in value
+  - Verify that you do not see cookies with the name FAILED
+
+id: 00200
+label: Delete cookies
+desc:
+  - Delete some of the cookies
+  - Reload the document
+  - Verify that the deleted cookies are gone.
+  - In case the host has the cookie-service:
+  - Select multiple cookies and delete them (context-menu)
+
+id: 00300
+label: Edit cookies
+desc:
+  - Double click some of the cookie values.
+  - Change the value and save.
+  - Reload the document
+  - Verify that the values still are changed
+  - In case the host has the cookie-service:
+  - Edit a cookies name and try to confirm by pressing 'enter' or clicking outside of the current row
+  - Verify that the name has changed, but all other values are still the same
+  - Edit the expiry date to be in one hour (choose today in the date picker and adjust the time manually)
+  - Verify that the expiry value fits and that the tooltip shows the absolute time
+  - Go into edit mode again, change a value and try to cancel by pressing 'esc'
+  - Verify that the value hasn't changed
+  - Right-click and remove a column from the table by unchecking 'Name'
+  - Verify that when you then try to edit, 'Name' is shown again.
+  In case there are checkboxes for "HTTP only" (depends on service-version):
+  - Edit another cookie
+  - Check the box on a cookie and save by clicking outside
+  - Verify that the checkmark is shown. Execute "javascript:alert(document.cookie)" and verify the cookie is not shown
+
+id: 00400
+label: Delete all cookies
+desc:
+  - Press the 'Delete all' button / right-click and select 'Remove cookie of domain/path'
+  - Reload the document.
+  - Verify that all cookies are gone.
+  - In case the host has the cookie-service:
+  - Execute "javascript:alert(document.cookie)" and verify it's empty.
+
+id: 00500
+label: Add new cookies
+desc:
+  - Press the add button
+  - Add some key and value
+  - Reload the document
+  - Verify that there is a new created cookie with the according key and value.
+  - In case the host has the cookie-service:
+  - Press the Add button 3 times.
+  - Put in a1 and a2 for the names of the first two, make a1 HTTP-only, make a2 expire tomorrow, press "enter"
+  - Verify that two cookie were added with the given properties.
+  - Execute "javascript:alert(document.cookie)" and verify only a1 is shown.
+
+id: 00600
+label: Refresh
+desc:
+  - Execute "javascript:(function(){document.cookie='jscookie'})()"
+  - Press the update button (if existing) or choose 'Refresh' from the context menu
+  - Verify that a cookie with the name 'jscookie' shows up.
+
+id: 00700
+label: Sort cookies
+desc:
+  In case the host has the cookie-service:
+  - Sort the table by Name, Value and Expires
+  - Reverse the order by clicking again
+  - Verify that the order makes sense
+
+id: 00800
+label: Group cookies
+desc:
+  In case the host has the cookie-service:
+  - Switch to 'No grouping' in the context menu
+  - Verify that the group headers are gone
+
+url: ./test-cases/storages/cookie-expiry.html
+
+id: 00900
+label: Cookie expiry
+desc:
+  In case the host has the cookie-service:
+  - Verify that expires matches what value says, at least within the first few seconds
+  - Verify that you can watch 'exp_test_b' expire without any further action
+  - Sort by Name and Expires and verify the order makes sense and doesn't change when switching between the two
+
+url: http://scope.bitbucket.org/tests/add-remove-runtime/index.html?open=http://opera.com/
+
+id: 01000
+label: Cookie domain changing
+desc:
+  In case the host has the cookie-service:
+  - Add a cookie to www.opera.com, with the name "foo"
+  - Press Enter to submit it
+  - Edit it and change the domain to scope.bitbucket.org
+  - Press Enter to submit it
+  - Verify that the cookie shows up in the correct runtime now and that no values have changed
+  - In case the domain can be edited to anything (depends on service-version):
+  - Edit again and change the domain to bitbucket.org
+  - Verify the domain is changed, but the cookie still shows up in the right runtime
+  - In case there are checkboxes for "Secure" (depends on service-version):
+  - Add another cookie named "foo_secure" and check the "is secure" box.
+  - Verify that it doesn't show up anymore
+  - Add an iframe with the url "https://scope.bitbucket.org" to the testcase
+  - Verify that the runtime is now listed and that the "foo_secure" cookie shows up
+
+url: http://scope.bitbucket.org/tests/add-remove-runtime/index.html?open=http://t/,http://207.223.240.182/
+
+id: 01100
+label: Local domains and ip addresses
+desc:
+  In case the host has the cookie-service:
+  - Skip the warning in the left iframe by pressing "Continue"
+  - Verify that the following runtimes are listed: http://scope.bitbucket.org/tests/add-remove-runtime/index.html, http://207.223.240.182/, http://t/
+  - Add a cookie to each of them and verify they get added
+  - Edit the one you have set for t/, change the domain to scope.bitbucket.org and the path to /tests/
+  - Verify that the cookie is shown in the scope.bitbucket.org runtime, but nowhere else (known issue: Won't be shown when host has cookie-service < 1.1 - CORE-35207)
+
+Storage.Local Storage
+*********************
+
+url: ./test-cases/storages/create-storages.php
+
+url: ./test-cases/storages/check-storages.html
+
+id: 00100
+label: Inspect local storage
+desc:
+  - Go to the above url in the above order
+  - Verify that you see local storage item a - m
+  - Sort by Name and Value and verify the order makes sense and doesn't change when switching between the two
+
+url: ./test-cases/storages/check-storages.html
+
+id: 00200
+label: Delete local storage items
+desc:
+  - Delete some of the local storage items
+  - Reload the document
+  - Verify that the deleted items are gone.
+
+id: 00300
+label: Edit local storage items
+desc:
+  - Double click some of the item values.
+  - Change the value and save.
+  - Reload the document
+  - Verify that the values still are changed
+
+id: 00400
+label: Delete all local storage items
+desc:
+  - Press the 'Delete all' button
+  - Reload the document.
+  - Verify that all local storage items are gone.
+
+id: 00500
+label: Add new local storage items
+desc:
+  - Press the add button
+  - Add some key and value
+  - Reload the document
+  - Verify that there is a new created item with the according key and value.
+
+Storage.Session Storage
+*********************
+
+url: ./test-cases/storages/create-storages.php
+
+url: ./test-cases/storages/check-storages.html
+
+id: 00100
+label: Inspect session storage
+desc:
+  - Go to the above url in the above order
+  - Verify that you see session storage item a - m
+  - Sort by Name and Value and verify the order makes sense and doesn't change when switching between the two
+
+url: ./test-cases/storages/check-storages.html
+
+id: 00200
+label: Delete session storage items
+desc:
+  - Delete some of the session storage items
+  - Reload the document
+  - Verify that the deleted items are gone.
+
+id: 00300
+label: Edit session storage items
+desc:
+  - Double click some of the item values.
+  - Change the value and save.
+  - Reload the document
+  - Verify that the values still are changed
+
+id: 00400
+label: Delete all session storage items
+desc:
+  - Press the 'Delete all' button
+  - Reload the document.
+  - Verify that all session storage items are gone.
+
+id: 00500
+label: Add new session storage items
+desc:
+  - Press the add button
+  - Add some key and value
+  - Reload the document
+  - Verify that there is a new created item with the according key and value.
+
+# TODO create a W3C widget with storage items
+
+Error Console.All Console.JavaScript Console.CSS
+************************************************
+
+url: ./test-cases/error-console/error.html
+
+id: 00100
+label: Inspect errors
+desc:
+  - Go to the url above
+  - Verify that there are 3 JS errors, 1 CSS, 1 Storage, and 1 SVG error
+  - Verify that there is a tab shown for each error type
+  - Verify that the JS and CSS entries can be expanded to see the details
+  - Verify that only the JS errors is in the JavaScript pane
+  - Verify that only the CSS error is in the CSS pane
+  - Verify that the error count on the top tab matches the number of errors shown
+
+id: 00200
+label: Expand all
+desc:
+  - Select and unselect the 'Expand all' switch
+  - Verify that the entries are expanded and collapse accordingly
+  - Verify that in all tabs
+
+id: 00300
+label: Filter errors
+desc:
+  - Go to the "All" tab
+  - Type or paste "foo" into the filter field
+  - Verify that 3 errors are shown and 4 matches are highlighted
+  - Verify that the first (JS) Error is expanded
+  - Verify that the error count on the top tab is now 3
+
+id: 00400
+label: CSS Filter
+desc:
+  - Remove the filter
+  - Go to Settings, Error Log
+  - Enable "Use CSS Filter"
+  - Verify that the error count went down to 3
+  - Remove "_line-height" from the field
+  - Verify that the error count is back at 4
+
+id: 00450
+label: Error references
+desc:
+  - Verify that 1 JS error has the location "error.html:16"
+  - Verify that 2 JS errors have the location "error-one.js:18"
+  - Verify that the CSS error has the location "error.html:4"
+  - Verify that the SVG error has the location "error.svg"
+  - Verify that the Storage error has the location "error.html"
+  - Verify that you can click each location to see the line highlighted in Resources
+
+id: 00500
+label: Clearing
+desc:
+  - Change the filter text to "message" and press the 'Clear Log' button
+  - Remove the filter and verify that 3 errors are still shown
+  - Switch to the js panel
+  - Press the 'Clear Log' button
+  - Switch back to "All" and verify that 2 errors are still shown
+  - Switch to the css panel
+  - Right-click. If you have ConsoleLogger 2.1, you'll have a "Clear all errors" option
+  - Select it
+  - Verify that all errors are removed, and the specific error tabs are hidden
+  - Reload the page and verify the errors are back, and the specific tabs are shown again
+
+Utilities.Color Picker
+**********************
+
+url: http://www.nzz.ch
+
+# TODO: test completely outdated
+# id: 00100
+# label: Pixel Magnifier
+# desc:
+#   - Hover over the page
+#   - Verify that the screenshot area is updated accordingly
+#   - Click some where on a image
+#   - Verify that the updating of the screenshot area stops.
+#   - Change the Area in the dropdown
+#   - Verify that the screenshot area is updated accordingly
+#   - Change the scale
+#   - Verify that the screenshot area is update accordingly
+#   - Press the 'Reset default values' button.
+#   - Verify that the values and the screenshot area are reset.
+
+id: 00200
+label: Color Picker
+desc:
+  - Select an image
+  - Click in the screenshot area.
+  - Verify that the screenshot highlights the selected area and updates the average color of the selected area.
+  - Change the 'Average color' in the dropdown.
+  - Click again in the screenshot.
+  - Verify that the average color is updated accordingly.
+
+id: 00300
+label: Store colors
+desc:
+  - Select some colors and store them.
+  - Verify that they are displayed as 'stored colors'.
+  - Press 'Manage stored colors'.
+  - Delete some of the store colors.
+  - Press 'Done'.
+  - Verify that the colors are removed.
+
+Settings.Settings
+*****************
+
+id: 00050
+label: Settings window
+desc:
+  - Check if settings button is visible.
+  - Click settings button.
+  - Verify that the button is styled as pressed.
+  - Verify that settings window appears and background is faded.
+  - Verify that UI elements other than settings window are disabled/inaccessible.
+  - Click settings button again.
+  - Verify that the button styled as unpressed.
+  - Verify that settings window disappeared.
+
+id: 00100
+label: Expand sections
+deprecated: true
+desc:
+  - Expand all the sections
+  - Verify that the sections display additional info and settings
+
+id: 00150
+label: Settings tabs
+desc:
+  - Verify if all tabs are clickable in settings window.
+  - Verify that contents are properly changed.
+
+id: 00175
+label: General settings
+desc:
+  - Uncheck "Hide browser-specific contexts, such as mail and feed windows" checkbox.
+  - Open a bookmark manager window.
+  - Verify that the new window is shown in debug context menu.
+  - Check "Show only browser windows..." checkbox.
+  - Verify that the bookmarks window is not shown in debug context menu.
+
+id: 00200
+label: Remote debug
+deprecated: true
+desc:
+  - Start Dragonfly with the Opera built-in proxy
+  - Unfold 'Remote Debug'
+  - Select 'Remote Debug' and press 'Apply'
+  - Connect an other Opera instance to Dragonfly
+  - Verify that the connection succeeds and that Dragonfly seems to work.
+  - Uncheck 'Remote Debug' and press 'Apply'
+  - Verify that Dragonfly debugs the client instance.
+  - Repeat several times the above steps.
+  - Verify that reconnecting to a remote Opera instance always works.
+
+id: 00300
+label: Host highlight
+deprecated: true
+desc:
+  - Expand 'Spotlight' and expand 'Advanced'
+  - Change some colors
+  - Switch back to DOM
+  - Verify that the colors for the highlight have changed accordingly.
+  - Go back to 'Spotlight' and press 'Reset Default Colors'
+  - Verify that the colors have changed back.
+
+id: 00400
+label: Shortcut Configuration, Quick find
+deprecated: true
+desc:
+  - Keyboard shortcuts tab
+  - Type 'ctrl' in the 'Quick find' field
+  - Verify that all shortcuts with a 'ctrl' token are displayed
+
+id: 00450
+label: Keyboard shortcuts, Quick find
+desc:
+  - Click Keyboard shortcuts tab
+  - Expand 'Shortcut Config'
+  - Type 'ctrl' in the 'Quick find' (try 'cmd' on mac)
+  - Verify that all shortcuts with a 'ctrl' or 'cmd' token are displayed
+
+id: 00500
+label: Shortcut Configuration
+deprecated: true
+desc:
+  - Expand 'Shortcut Config'
+  - Expand 'Keyboard shortcuts Global'
+  - Change the shortcut for select-all to 'ctrl b' or 'cmd d' on mac
+  - Press the 'Save' button
+  - Verify that 'ctrl b' or 'cmd d' now selects all text
+  - Press the 'Reset all to defaults' button
+  - Verify that 'ctrl b' no longer selects all text
+  - Expand 'Keyboard shortcuts Global'
+  - Change 'f8' to 'f80'
+  - Press the 'save' button
+  - Verify that a 'Invalid keyboard shortcut' label is added to the changed shortcut
+
+id: 00600
+label: Keyboard shortcuts
+desc:
+  - Expand 'Keyboard shortcuts Global'
+  - Change 'ctrl a' to 'ctrl b'
+  - Click 'Apply' button
+  - Verify that 'ctrl b' now selects all text
+  - Press the 'Reset to defaults' button
+  - Verify that 'ctrl b' no longer selects all text
+  - Expand 'Keyboard shortcuts Global'
+  - Change 'f8' to 'f80'
+  - Click 'Apply' button
+  - Verify that a 'Invalid keyboard shortcut' label is added to the changed shortcut
+
+id: 00700
+label: About tab
+desc:
+  - Verify contents of the About tab
+  - Verify that the system related information is present and correct.
+
+General
+*******
+
+id: 00100
+label: Dock and undock
+desc:
+  - Dock and undock the Dragonfly window
+  - Verify that all views have still the same information.
+
+id: 00200
+label: Dragonfly menu
+deprecated: true
+desc:
+  - Verify that 'Reload Debug Context' works
+  - Focus an other window than the current debug context.
+  - Verify that 'Select Active Window' works
+  - Verify that each open tab can be selected as debug context.
+
+# TODO: test unfinished
+# id: 00300
+# label: Debug context menu display
+# desc:
+#   - Click debug context menu dropdown.
+#   - Verify that the menu opens and button is styled as pressed.
+#   - Verify that the settings
+
+Remote debug
+************
+
+id: 00100
+label: Enable remote debug mode
+desc:
+  - Click remote debug button.
+  - Verify that remote debug dialog appears.
+  - Verify that port shown by default is 7001.
+  - Click Apply button.
+  - Verify that displayed instructions are correct.
+  - Connect your opera instance according to instructions.
+  - Verify that the debugging context is properly displayed.
+  - Verify that remote debug button shows an animation for remote debug.
+
+id: 00200
+label: Disable remote debug mode
+desc:
+  - Click remote debug button.
+  - Verify that displayed window has the button "Cancel Remote Debug".
+  - Click button.
+  - Verify that you are returned to debugging your previous environment.
+
+id: 00300
+label: Dragonfly startup in remote debug mode
+desc:
+  - Enable remote debug mode in Dragonfly on port 7101.
+  - Close Dragonfly.
+  - Open Dragonfly.
+  - Verify that Dragonfly starts up in remote debug mode.
+  - Verify that port number is 7101.
+
+id: 00400
+label: Warn on port conflict
+desc:
+  - Choose a port that is already taken and apply
+  - Verify that there's an error message
+  - Verify that the local connection is set up when dismissing the overlay
+
+id: 00500
+label: Local connection setup
+desc:
+  - Choose a port and click apply, but don't connect
+  - Dismiss the overlay
+  - Verify that remote debug mode is turning off
+
+Overlays
+********
+
+id: 00100
+label: Show overlay
+desc:
+  - Click the settings button
+  - Verify that the overlay is shown
+  - Hide it, do the same with other overlays
+
+id: 00200
+label: Hide overlay
+desc:
+  - Click the settings button while the settings overlay is visible
+  - Verify that the overlay hides
+  - Do the same with other overlays
+
+id: 00300
+label: Hide overlay by Esc
+desc:
+  - Press Esc while the settings overlay is visible
+  - Verify that the overlay hides
+  - Do the same with other overlays
+
+Status badges/icons
+*******************
+
+id: 00100
+label: Badge when stopped
+desc:
+  - Set a breakpoint and hit it
+  - Verify that the Script tab gets a badge showing that the script is stopped
+
+id: 00200
+label: Error count
+desc:
+  - Go to a page with errors
+  - Verify that the Error tab gets a badge with the number of errors
+  - Verify that the badge gets hidden when pressing Clear log in the Errors Tab
+  - Verify that the error count starts on 0 next time
+
+
+Resource view
+*************
+
+id: 00100
+label: Smoke test
+desc:
+  - Load a page
+  - Open dragonfly
+  - Verify that nothing is shown in the resource tab, except a prompt and a button to reload
+  - Click the button
+  - Verify that the page in the opera instance being debugged is loaded
+
+id: 00200
+label: requests that didn't result in a resource are disregarded
+desc:
+  - Open dragonfly
+  - Load http://www.ikke.no
+  - Verify that the resource view shows a single html document. There must be no favicon.ico in the resource list
+
+id: 00300
+label: Request type detection
+desc:
+  - Open a web site
+  - Verify that all the image files on the page have the correct icon and type in the resource view
+
+id: 00400
+label: Mime to type mapping
+desc:
+  - Open a page
+  - Enable showing mime types in resource view. Right click table, select "mime types"
+  - Verify that the mime type and type columns match
+
+id: 00500
+label: Grouping
+desc:
+  - Open a page
+  - Group by host by selecting it from the menu on right clicking the table.
+  - Verify that the resources are sorted by the host they were loaded from
+  - Group by type by selecting it from the menu on right clicking the table.
+  - Verify that the resources are sorted by the file type
+
+id: 00600
+label: Sorting
+desc:
+  - Open a page
+  - Sort the resources by clicking one of the column headers
+  - Verify that the resource is sorted by the selected column
+  - Sort the resources by using the right click menu on the table
+  - Verify that the resource is sorted by the selected column
+
+id: 00700
+label: Detail view generic
+desc:
+  - click on a resource in the resource table
+  - verify that a temporary tab is opened and focused
+  - verify that the url shown at the top of the detail view is correct
+  - verify that the metadata can be shown by clicking the arrow
+  - verify that the metadata can be collapsed by clicking the arrow again
+
+id: 00800
+label: Image detail view
+desc:
+  - load a page that contains an image
+  - click the image in the resource table
+  - verify that a temporary tab is opened and focused
+  - verify that the image is shown in the temporary tab
+  - verify that closing the temporary tab returns to the resource list
+
+id: 00900
+label: Markup detail view
+desc:
+  - load a page
+  - click the html resource in the resource table
+  - verify that a temporary tab is opened and focused
+  - verify that the html source for the resource is shown and syntax higlighted
+  - verify that closing the temporary tab returns to the resource list
+
+id: 01000
+label: Javascript detail view
+desc:
+  - load a page that contains a javascriptfile
+  - click the javascript resource in the resource table
+  - verify that a temporary tab is opened and focused
+  - verify that the javascript source for the resource is shown and syntax higlighted
+  - verify that closing the temporary tab returns to the resource list
+
+
+Network view log
+****************
+
+id: 00100
+label: Smoke test
+desc:
+  - Load a page
+  - open dragonfly
+  - verify that there are no network resources listed in the network tab, only a prompt and button for reloading debugged page
+  - click button
+  - verify that the debugged page reloads and that a graph of the network  activity is shown
+
+id: 00200
+label: Fit to width
+desc:
+  - Load a page that takes several seconds to load
+  - Verify that there is a horizontal scrollbar for the network graph
+  - Verify that clicking the fit to width button scales the graph to the available screen width
+  - Verify that clicking the fit to width button again reverts to the previous state
+
+id: 00300
+label: Pause
+desc:
+  - Load a page
+  - click the pause button
+  - reload the debugged page
+  - verify that the network graph is not updated
+  - click the pause button
+  - verify that the network graph is updated
+
+id: 00400
+label: Request list hover sync
+desc:
+  - Load a page
+  - Hover a url on the left hand side of the graph view
+  - Verify at the url, and the graph bar are highlighted when hovered.
+  - Hover the graph part of a request.
+  - Verify that the url and the graph bar are highlighted
+
+id: 00500
+label: Request details
+desc:
+  - Load a page
+  - Click a request
+  - Verify that the details view is shown
+
+url: ./test-cases/network/send.html?submit_all
+id: 00600
+label: Async requests
+desc:
+  - Load test-cases/network/send.html?submit_all
+  - Verify that you see a waterfall of lots of requests, some resources take very long
+  - Verify that you see 302 redirects
+  - Verify that the details of each request makes sense
+  - Turn Content tracking on in Network-Options and reload the page
+  - Verify that you can see the Response body in the details page
+  - Submit one of the forms manually by pressing Submit
+  - Verify another entry was added to the list
+
+Network request crafter
+***********************
+
+id: 00100
+label: Default request
+desc:
+  - Open "make request" tab in the network view
+  - Verify that it contains an example request
+  - click send request
+  - verify that the request is sent and that a response is shown in the response text area
+
+id: 00200
+label: syncing url field to request body
+desc:
+  - type a url in the url field
+  - verify that the first line of the request body text area matches the path and protocol you typed
+  - verify that the second line of the request body text area matches host you typed
+
+
+Network options
+***************
+
+id: 00100
+label: Caching
+desc:
+  - load a page
+  - open "network options" tab
+  - Check the "disable all caching" box
+  - reload the page
+  - verify in the network log view that none of the loaded pages were loaded from cache
+  - uncheck the "disable all caching" box.
+  - reload the page
+  - reload the page again
+  - verify that some resources were loaded from cache.
+
+id: 00200
+label: Content tracking
+desc:
+  - Open "network options" tab.
+  - Check the "enable global overrides" box
+  - Load a page
+  - In the network log view, look at the details for all resources
+  - Verify that the body section of the request detail view contains the response body.
+
+

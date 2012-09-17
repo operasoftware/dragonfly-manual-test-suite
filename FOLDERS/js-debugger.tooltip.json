@@ -1,0 +1,56 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "js-debugger.tooltip.tooltip-features-in-js-source", 
+            "id": "f.h.a", 
+            "label": "Tooltip features in JS source"
+        }, 
+        {
+            "file_path": "js-debugger.tooltip.advanced-tooltip-features-in-js-source-view", 
+            "id": "f.h.b", 
+            "label": "Advanced tooltip features in JS source view"
+        }, 
+        {
+            "file_path": "js-debugger.tooltip.context-menu-in-tooltips", 
+            "id": "f.h.c", 
+            "label": "Context menu in tooltips"
+        }, 
+        {
+            "file_path": "js-debugger.tooltip.tooltips-in-tooltips", 
+            "id": "f.h.d", 
+            "label": "Tooltips in tooltips"
+        }, 
+        {
+            "file_path": "js-debugger.tooltip.dfl-2900", 
+            "id": "f.h.e", 
+            "label": "DFL-2900"
+        }, 
+        {
+            "file_path": "js-debugger.tooltip.dfl-3141", 
+            "id": "f.h.f", 
+            "label": "DFL-3141"
+        }, 
+        {
+            "file_path": "js-debugger.tooltip.dfl-3333", 
+            "id": "f.h.g", 
+            "label": "DFL-3333"
+        }, 
+        {
+            "file_path": "js-debugger.tooltip.dfl-3328", 
+            "id": "f.h.h", 
+            "label": "DFL-3328"
+        }, 
+        {
+            "file_path": "js-debugger.tooltip.dfl-3336", 
+            "id": "f.h.i", 
+            "label": "DFL-3336"
+        }, 
+        {
+            "file_path": "js-debugger.tooltip.manual-selection", 
+            "id": "f.h.j", 
+            "label": "Manual selection"
+        }
+    ], 
+    "path": "js-debugger/tooltip"
+}

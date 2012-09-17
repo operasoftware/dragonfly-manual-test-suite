@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Press the Expand button.", 
+        "Verify that the whole document tree is displayed."
+    ], 
+    "file_path": "dom-inspector.expand-all-nodes", 
+    "folder_path": "dom-inspector", 
+    "id": "c.d", 
+    "label": "Expand all nodes", 
+    "url": "http://dev.opera.com"
+}

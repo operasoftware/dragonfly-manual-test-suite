@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Ensure that all scripts of the document are loaded.", 
+        "Expand the whole body in the Documents.", 
+        "Hover some of the listener icons and verify that you get a tooltip.", 
+        "Verify that the tooltip shows the same list as before but instead of the hints about missing JS source files each listener has now a line explaining in which file they are added."
+    ], 
+    "file_path": "js-debugger.event-listeners.listener-tooltip-with-js-source-files-loaded", 
+    "folder_path": "js-debugger.event-listeners", 
+    "id": "f.b.e", 
+    "label": "Listener tooltip with JS source files loaded", 
+    "url": "./js-debugger/event-listeners/single-runtime.html"
+}

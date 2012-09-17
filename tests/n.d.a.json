@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Open the test case.", 
+        "Verify that all short cuts on the test case are recognized."
+    ], 
+    "file_path": "ui-framework.key-input.shortcut-bindings", 
+    "folder_path": "ui-framework.key-input", 
+    "id": "n.d.a", 
+    "label": "Shortcut bindings", 
+    "url": "./DFL/test-scripts/test-scripts/keyidentifier.html"
+}

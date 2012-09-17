@@ -1,0 +1,19 @@
+{
+    "desc": [
+        "In the test, click \"Set cookies\".", 
+        "In Storage > Cookies in Dragonfly:", 
+        "Verify that you see a cookie named \"i-am-http-only\" and that it has a checkmark in the HTTPOnly column.", 
+        "Verify that you see a cookie named \"i-have-a-path\" and that it has a value in the Path column that makes sense.", 
+        "Verify that you see cookies named \"a\" to \"e\".", 
+        "Verify that all of the cookies above expire with the session.", 
+        "In the test, click \"Add https iframe\".", 
+        "You may need to press \"Continue\" in that iframe, also login to homes/.", 
+        "Verify that a runtime is added.", 
+        "Verify that you see a cookie named \"i-am-secure\" and that it has a checkmark in the Secure column."
+    ], 
+    "file_path": "cookie-inspector.inspect-cookies", 
+    "folder_path": "cookie-inspector", 
+    "id": "b.a", 
+    "label": "Inspect cookies", 
+    "url": "http://people.opera.com/dherzog/cookies/"
+}

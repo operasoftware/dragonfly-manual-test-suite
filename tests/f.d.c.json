@@ -1,0 +1,17 @@
+{
+    "desc": [
+        "Go to the test page.", 
+        "Start to type something.", 
+        "Verify that only the scripts with a match in the path are displayed.", 
+        "Verify that the whole path is displayed if the match is in a previously hidden part.", 
+        "Verify that the script content in the small snippets of e.g. Inline scripts is never matched.", 
+        "Select some scripts of a filtered option list.", 
+        "Open the option list again.", 
+        "Verify that you can navigate in your previous filter views with shift arrow up and down."
+    ], 
+    "file_path": "js-debugger.js-dropdown.script-select-filter-script", 
+    "folder_path": "js-debugger.js-dropdown", 
+    "id": "f.d.c", 
+    "label": "Script select filter script", 
+    "url": "./js-debugger/js-dropdown/index.html"
+}

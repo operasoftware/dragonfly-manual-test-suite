@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Go to the test page.", 
+        "Hover 'document' on line 64 and hover 'HTMLBodyElemen' in the tooltip.", 
+        "Verify that you get a tooltip on top of the tooltip with '<body>' as content."
+    ], 
+    "file_path": "js-debugger.tooltip.tooltips-in-tooltips", 
+    "folder_path": "js-debugger.tooltip", 
+    "id": "f.h.d", 
+    "label": "Tooltips in tooltips", 
+    "url": "./js-debugger/tooltip/index.html"
+}

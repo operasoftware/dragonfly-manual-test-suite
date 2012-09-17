@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Press the Export button.", 
+        "Verify that the current view is displayed in a new tab."
+    ], 
+    "file_path": "dom-inspector.export", 
+    "folder_path": "dom-inspector", 
+    "id": "c.e", 
+    "label": "Export", 
+    "url": "http://dev.opera.com"
+}

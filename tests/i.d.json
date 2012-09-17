@@ -1,0 +1,17 @@
+{
+    "desc": [
+        "Click a request.", 
+        "Verify that the detail overlay view is shown.", 
+        "Verify that the up / down keys get you the next / previous request's detail view.", 
+        "Verify that the no lines are wrapped when \"Wrap long lines\" is on.", 
+        "Verify that the headline contains the url and (if applicable) method, response-code and -phrase.", 
+        "Verify that the first line (if applicable) of each request/response is syntax highlighted.", 
+        "Verify that headers are syntax highlighted and that the header name has a context menu entry that opens the according specification (if applicable).", 
+        "Verify that the escape key closes the details view."
+    ], 
+    "file_path": "network-inspector.request-details", 
+    "folder_path": "network-inspector", 
+    "id": "i.d", 
+    "label": "Request details", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

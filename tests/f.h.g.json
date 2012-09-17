@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Open the testcase in Scripts and get the scripts.", 
+        "Verify that you get a tooltip if you hover one of the inner brackets.", 
+        "Verify that you don't get a tooltip nor an error when you hover one of the outer brackets.", 
+        "Verify that you get a tooltip when you haver one of the outer brackets while holding down shift."
+    ], 
+    "file_path": "js-debugger.tooltip.dfl-3333", 
+    "folder_path": "js-debugger.tooltip", 
+    "id": "f.h.g", 
+    "label": "DFL-3333", 
+    "url": "data:text/html,<script>var x = [\"div\", [\"foo\"]];</script>"
+}

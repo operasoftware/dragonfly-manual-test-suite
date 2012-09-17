@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "In the test, click \"Set expiry test cookies\".", 
+        "Verify that expires matches what value says, within the first few seconds.", 
+        "Verify that you can watch \"exp_test_b\" expire within about 15 seconds."
+    ], 
+    "file_path": "cookie-inspector.cookie-expiry", 
+    "folder_path": "cookie-inspector", 
+    "id": "b.f", 
+    "label": "Cookie expiry", 
+    "url": "http://people.opera.com/dherzog/cookies/"
+}

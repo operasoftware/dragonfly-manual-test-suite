@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Open the testcase.", 
+        "Verify that the JS and CSS entries can be expanded to see the details.", 
+        "Collapse them again.", 
+        "Press expand all and verify all Errors are expanded again."
+    ], 
+    "file_path": "error-console.expand-collapse-errors", 
+    "folder_path": "error-console", 
+    "id": "e.b", 
+    "label": "Expand/collapse errors", 
+    "url": "./error-console/error.html"
+}

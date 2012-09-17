@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Go to Scripts and reload.", 
+        "When stopping in the first debugger statement, press \"Step over\" until the last debugger statement is reached.", 
+        "Expand the second return value from the top (the object). Filter by \"for\".", 
+        "Verify that the \"for_me\" string is highlighted.", 
+        "Switch to another top tab and back, and make sure the filtered values are still the same.", 
+        "Remove the filter and verify that all return values are visible."
+    ], 
+    "file_path": "js-debugger.return-values.filtering", 
+    "folder_path": "js-debugger.return-values", 
+    "id": "f.e.c", 
+    "label": "Filtering", 
+    "url": "./js-debugger/return-values/return-values-multiple.html"
+}

@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Select a document with (i)frames.", 
+        "Verify that you can select each document in the dropdown."
+    ], 
+    "file_path": "dom-inspector.document-select", 
+    "folder_path": "dom-inspector", 
+    "id": "c.i", 
+    "label": "Document select", 
+    "url": "data:text/html,<iframe src=\"http://opera.com/\"></iframe>"
+}

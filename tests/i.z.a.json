@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Click the \"Clear\" button.", 
+        "Reload the testcase.", 
+        "Reload the testcase once more.", 
+        "Verify that the context is reset and you don't see resources twice."
+    ], 
+    "file_path": "network-inspector.multiple-top-runtimes.reload-same-window-id", 
+    "folder_path": "network-inspector.multiple-top-runtimes", 
+    "id": "i.z.a", 
+    "label": "Reload same window id", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

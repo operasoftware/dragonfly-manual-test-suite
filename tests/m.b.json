@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Inspect body", 
+        "Change 'background' to 'background-color', and submit", 
+        "Make sure that no other background-* properties are present"
+    ], 
+    "file_path": "style-inspector.changing-a-property-to-another", 
+    "folder_path": "style-inspector", 
+    "id": "m.b", 
+    "label": "Changing a property to another", 
+    "url": "./style-inspector/b.html"
+}

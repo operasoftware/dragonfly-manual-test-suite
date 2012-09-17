@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Load the TC and open the Listener view in the side panel.", 
+        "Verify that each runtime has its section.", 
+        "Verify that a section behaves in the same way as the view with a single runtime."
+    ], 
+    "file_path": "js-debugger.event-listeners.listener-view-in-the-side-panel-with-multiple-runtimes", 
+    "folder_path": "js-debugger.event-listeners", 
+    "id": "f.b.j", 
+    "label": "Listener view in the side panel with multiple runtimes", 
+    "url": "./js-debugger/event-listeners/multiple-runtimes.html"
+}

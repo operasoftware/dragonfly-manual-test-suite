@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Select all columns by clicking the checkboxes.", 
+        "Click the \"Reset columns\" button.", 
+        "Verify the column selection is back to default.", 
+        "Click the \"Reset sort\" button.", 
+        "Verify the order has changed and the table appears unsorted now (no arrow on the header)."
+    ], 
+    "file_path": "ui-framework.sortable-table.resetting", 
+    "folder_path": "ui-framework.sortable-table", 
+    "id": "n.e.d", 
+    "label": "Resetting", 
+    "url": "DFL/test-scripts/ui-framework/sortable-table/advanced.html"
+}

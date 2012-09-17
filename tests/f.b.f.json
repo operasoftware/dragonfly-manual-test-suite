@@ -1,0 +1,21 @@
+{
+    "desc": [
+        "Ensure that all scripts of the document are loaded.", 
+        "Expand the whole body in Documents.", 
+        "Hover some of the listener icons and hover some of the handlers.", 
+        "Verify that the event handler function is shown in a tooltip.", 
+        "Verify that this tooltip now shows the file name at the top and the line numbers of the source file.", 
+        "Verify that you can set and remove breakpoints on the line numbers.", 
+        "Hover the filename at the top.", 
+        "Verify that this shows the full URI of the source file in a tooltip.", 
+        "Click the file name at the top.", 
+        "Verify that this switches to Scripts and highlights the whole event handler function.", 
+        "Go back to Document, hover some listener icon and click the handler directly.", 
+        "Verify that this highlights the handler function in Scripts too."
+    ], 
+    "file_path": "js-debugger.event-listeners.interaction-with-the-handlers-in-the-tooltip-with-js-source-files-loaded", 
+    "folder_path": "js-debugger.event-listeners", 
+    "id": "f.b.f", 
+    "label": "Interaction with the handlers in the tooltip with JS source files loaded", 
+    "url": "./js-debugger/event-listeners/single-runtime.html"
+}

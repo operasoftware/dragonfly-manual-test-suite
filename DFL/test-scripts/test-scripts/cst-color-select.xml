@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title> </title>
+<link rel='stylesheet' href="../../src/ui-style/ui.css"/>
+<script src="../../src/scripts/dom.js"/>
+<script src="../../src/scripts/Colors.js"/>
+
+<script src="../../src/ui-scripts/cst-select.js"/>
+<script src="../../src/ui-strings/ui_strings-en.js"/>
+<script><![CDATA[
+window.EventHandler || ( window.EventHandler = {} );
+
+
+var test_select = new CstSelectColor("test", [54, 68, 130, .3 * 255], "test-handler");
+var test_select_2 = new CstSelectColor("test-2", [0, 255, 0, 1 * 255]);
+
+onload = function()
+{
+  var tmpl = 
+  [
+    [
+      "div",
+      "some text: ",
+      test_select.template(),
+      " some more text"
+    ],
+    [
+      "div",
+      "some text: ",
+      test_select_2.template("disabled"),
+      " some more text"
+    ],
+    [
+      "div",
+      "some text: ",
+      test_select_2.template(),
+      " some more text"
+    ],
+    [
+      "div",
+      "some text: ",
+      test_select.template(),
+      " some more text",
+      'style', 'position:absolute; bottom: 50px;right: 50px'
+    ]
+  ];
+
+  document.getElementsByTagName('body')[0].render(tmpl);
+}
+
+document.addEventListener
+(
+  'change', 
+  function(event)
+  {
+    if( event.target.getAttribute('cst-id') )
+    {
+      opera.postError
+      (
+        'cst-id: ' + event.target.getAttribute('cst-id') + '\n' +
+        'value: ' + event.target.value + '\n' +
+        'index: ' + window['cst-selects'][event.target.getAttribute('cst-id')].getSelectedValue() /* */
+      )
+    }
+  }, 
+  false
+);
+
+]]></script>
+
+</head>
+<body>
+<p><input type="button" value="test modal" onclick="alert(this)"/></p>
+</body>
+</html>

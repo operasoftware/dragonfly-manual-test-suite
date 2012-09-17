@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Expand the whole body in Documents.", 
+        "Verify that the body and the p's have an icon indicating that they have listeners attached.", 
+        "Switch 'Represent the DOM as node tree' in the context menu.", 
+        "Verify that the nodes still have that icon.", 
+        "Verify that the document node has now such an icon too."
+    ], 
+    "file_path": "js-debugger.event-listeners.listener-icons-in-the-dom-view", 
+    "folder_path": "js-debugger.event-listeners", 
+    "id": "f.b.a", 
+    "label": "Listener icons in the DOM view", 
+    "url": "./js-debugger/event-listeners/single-runtime.html"
+}

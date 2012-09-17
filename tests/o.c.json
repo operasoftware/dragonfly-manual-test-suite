@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Go to Scripts > State and expand Watches.", 
+        "Add a watch 'foo\\\"bar' (without the surrounding quotes).", 
+        "Verify that the according value is \"Syntax error\" in a red color.", 
+        "Right click the watch an select \"Delete watch\".", 
+        "Verify that the watch gets removed."
+    ], 
+    "file_path": "watches.watch-with-invalid-syntax", 
+    "folder_path": "watches", 
+    "id": "o.c", 
+    "label": "Watch with invalid syntax", 
+    "url": "./watches/breakpoints.html"
+}

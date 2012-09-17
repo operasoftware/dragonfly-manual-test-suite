@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Set a breakpoint on line 23, 'var ee = 1;'.", 
+        "Press the 'e()' button.", 
+        "Verify that the engine stops on that line.", 
+        "Press the 'Step Into' button continuously.", 
+        "Verify that the stop arrow follows the execution flow, e.g. arrives at some point at 'var aa = 1;' and finishes one call after the other."
+    ], 
+    "file_path": "js-debugger.script-source.breakpoint-step-into", 
+    "folder_path": "js-debugger.script-source", 
+    "id": "f.f.f", 
+    "label": "Breakpoint, Step into", 
+    "url": "./js-debugger/script-source/callstack.html"
+}

@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Go to Utilities > Color Palette, add a color if there is none", 
+        "Double click a row to open the color picker", 
+        "Verify that the color palette in the color picker is greyed out and that it doesn't open when hovering it", 
+        "Verify that the alpha input is disabled"
+    ], 
+    "file_path": "color-inspector.disabled-palette-and-alpha-input", 
+    "folder_path": "color-inspector", 
+    "id": "a.k", 
+    "label": "Disabled palette and alpha input", 
+    "url": "./color-inspector/a.html"
+}

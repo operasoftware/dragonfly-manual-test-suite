@@ -1,0 +1,16 @@
+{
+    "desc": [
+        "Reload the testcase.", 
+        "In the test, click \"Open elg.no in tab 1\".", 
+        "Verify that the index document of http://people.opera.com/dherzog/network/ is still shown.", 
+        "Verify that the resources from elg.no are added to the list.", 
+        "Leave the tab with elg.no open, but switch back to the testcase.", 
+        "Reload.", 
+        "Verify that the resources from elg.no are now on top, and the reloaded resources from the testcase are shown after that."
+    ], 
+    "file_path": "network-inspector.multiple-top-runtimes.add-window-to-debug-context", 
+    "folder_path": "network-inspector.multiple-top-runtimes", 
+    "id": "i.z.b", 
+    "label": "Add window to debug context", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

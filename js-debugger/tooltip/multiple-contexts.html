@@ -1,0 +1,19 @@
+<!doctype html>
+<title>Multiple contexts</title>
+<script>window.foo = "top context";</script>
+<div>
+<iframe src="data:text/html,
+<!doctype html>
+<title>Child contexts 1</title>
+<script>window.foo = 'Child context 1';</script>
+"></iframe>
+<iframe src="data:text/html,
+<!doctype html>
+<title>Child contexts 2</title>
+<script>window.foo = 'Child context 2';</script>
+"></iframe>
+<iframe src="data:text/html,
+<!doctype html>
+<title>Child contexts 3</title>
+<script>window.foo = 'Child context 3';</script>
+"></iframe>

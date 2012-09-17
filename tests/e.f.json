@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Open the testcase.", 
+        "Go to Settings, Error Log.", 
+        "Enable \"Use CSS Filter\".", 
+        "Verify that the error count went down by one.", 
+        "Remove \"_line-height\" from the field.", 
+        "Verify that the error count is back up."
+    ], 
+    "file_path": "error-console.css-filter", 
+    "folder_path": "error-console", 
+    "id": "e.f", 
+    "label": "CSS Filter", 
+    "url": "./error-console/error.html"
+}

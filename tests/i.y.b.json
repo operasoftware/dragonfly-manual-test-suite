@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Go to Settings.", 
+        "Uncheck \"Track content\".", 
+        "Load the test.", 
+        "In the test, click \"Post - multipart/form-data, 5 redirects on server\".", 
+        "Open the detail views of the \"receive.php\" entries.", 
+        "Verify that only the \"receive.php\" with the 200 OK response has a response body."
+    ], 
+    "file_path": "network-inspector.content-tracking.empty-response-bodies-with-content-tracking-off", 
+    "folder_path": "network-inspector.content-tracking", 
+    "id": "i.y.b", 
+    "label": "Empty response bodies with content-tracking off", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

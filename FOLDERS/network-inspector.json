@@ -1,0 +1,119 @@
+{
+    "dirs": [
+        {
+            "label": "content-tracking", 
+            "path": "network-inspector.content-tracking"
+        }, 
+        {
+            "label": "multiple-top-runtimes", 
+            "path": "network-inspector.multiple-top-runtimes"
+        }, 
+        {
+            "label": "network-profiling", 
+            "path": "network-inspector.network-profiling"
+        }
+    ], 
+    "files": [
+        {
+            "file_path": "network-inspector.smoke-test", 
+            "id": "i.a", 
+            "label": "Smoke test"
+        }, 
+        {
+            "file_path": "network-inspector.pause", 
+            "id": "i.b", 
+            "label": "Pause"
+        }, 
+        {
+            "file_path": "network-inspector.switch-graph-data-view", 
+            "id": "i.c", 
+            "label": "Switch graph/data view"
+        }, 
+        {
+            "file_path": "network-inspector.request-details", 
+            "id": "i.d", 
+            "label": "Request details"
+        }, 
+        {
+            "file_path": "network-inspector.request-details-multipart", 
+            "id": "i.e", 
+            "label": "Request details - Multipart"
+        }, 
+        {
+            "file_path": "network-inspector.request-details-forms", 
+            "id": "i.f", 
+            "label": "Request details - Forms"
+        }, 
+        {
+            "file_path": "network-inspector.network-summary", 
+            "id": "i.g", 
+            "label": "Network summary"
+        }, 
+        {
+            "file_path": "network-inspector.search", 
+            "id": "i.h", 
+            "label": "Search"
+        }, 
+        {
+            "file_path": "network-inspector.type-filters", 
+            "id": "i.i", 
+            "label": "Type Filters"
+        }, 
+        {
+            "file_path": "network-inspector.xhr-filter", 
+            "id": "i.k", 
+            "label": "XHR filter"
+        }, 
+        {
+            "file_path": "network-inspector.error-displaying", 
+            "id": "i.l", 
+            "label": "Error displaying"
+        }, 
+        {
+            "file_path": "network-inspector.url-param-display", 
+            "id": "i.m", 
+            "label": "URL param display"
+        }, 
+        {
+            "file_path": "network-inspector.unload-event-display", 
+            "id": "i.n", 
+            "label": "Unload event display"
+        }, 
+        {
+            "file_path": "network-inspector.data-uris", 
+            "id": "i.u", 
+            "label": "Data URIs"
+        }, 
+        {
+            "file_path": "network-inspector.clear", 
+            "id": "i.o", 
+            "label": "Clear"
+        }, 
+        {
+            "file_path": "network-inspector.cached-requests", 
+            "id": "i.s", 
+            "label": "Cached Requests"
+        }, 
+        {
+            "file_path": "network-inspector.empty-response-bodies", 
+            "id": "i.v", 
+            "label": "Empty response bodies"
+        }, 
+        {
+            "file_path": "network-inspector.multiple-requests-and-responses", 
+            "id": "i.w", 
+            "label": "Multiple requests and responses"
+        }, 
+        {
+            "file_path": "network-inspector.sequence-tooltips", 
+            "id": "i.q", 
+            "label": "Sequence tooltips"
+        }, 
+        {
+            "file_path": "network-inspector.network-header-tokenizer", 
+            "id": "i.x", 
+            "label": "Network header tokenizer"
+        }
+    ], 
+    "path": "network-inspector"
+}

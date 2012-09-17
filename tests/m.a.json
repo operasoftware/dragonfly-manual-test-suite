@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Inspect body", 
+        "Edit 'color' and place the cursor at the beginning of the textarea", 
+        "Press the up button to cycle through all properties", 
+        "When all properties has been cycled through, submit", 
+        "Make sure that no more than one property is applied"
+    ], 
+    "file_path": "style-inspector.cycling-through-properties", 
+    "folder_path": "style-inspector", 
+    "id": "m.a", 
+    "label": "Cycling through properties", 
+    "url": "./style-inspector/a.html"
+}

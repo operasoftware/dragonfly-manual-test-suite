@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Open testcase, go to Scripts and reload.", 
+        "Select '\"a.b.c.d\".split(\".\")[1]' manually.", 
+        "Press shift.", 
+        "Verify that you get a tooltip with \"b\"."
+    ], 
+    "file_path": "js-debugger.tooltip.manual-selection", 
+    "folder_path": "js-debugger.tooltip", 
+    "id": "f.h.j", 
+    "label": "Manual selection", 
+    "url": "./js-debugger/tooltip/manual-selection.html"
+}

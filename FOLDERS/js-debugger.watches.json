@@ -1,0 +1,21 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "js-debugger.watches.add-a-watch", 
+            "id": "f.i.a", 
+            "label": "Add a watch"
+        }, 
+        {
+            "file_path": "js-debugger.watches.right-click-option-for-a-watch-entry", 
+            "id": "f.i.b", 
+            "label": "Right click option for a watch entry"
+        }, 
+        {
+            "file_path": "js-debugger.watches.add-invalid-watch", 
+            "id": "f.i.c", 
+            "label": "Add invalid watch"
+        }
+    ], 
+    "path": "js-debugger/watches"
+}

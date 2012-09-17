@@ -1,0 +1,61 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "color-inspector.show-and-hide-colorpicker", 
+            "id": "a.a", 
+            "label": "Show and hide colorpicker"
+        }, 
+        {
+            "file_path": "color-inspector.edit-color-with-visual-controls", 
+            "id": "a.b", 
+            "label": "Edit color with visual controls"
+        }, 
+        {
+            "file_path": "color-inspector.edit-color-with-inputs", 
+            "id": "a.c", 
+            "label": "Edit color with inputs"
+        }, 
+        {
+            "file_path": "color-inspector.color-palette", 
+            "id": "a.d", 
+            "label": "Color palette"
+        }, 
+        {
+            "file_path": "color-inspector.color-swatch-for-currentcolor", 
+            "id": "a.e", 
+            "label": "Color swatch for 'currentColor'"
+        }, 
+        {
+            "file_path": "color-inspector.color-swatch-for-inherit", 
+            "id": "a.f", 
+            "label": "Color swatch for 'inherit'"
+        }, 
+        {
+            "file_path": "color-inspector.color-swatch-for-transparent", 
+            "id": "a.g", 
+            "label": "Color swatch for 'transparent'"
+        }, 
+        {
+            "file_path": "color-inspector.adjust-color-with-mousewheel-in-the-x-y-field", 
+            "id": "a.h", 
+            "label": "Adjust color with mousewheel in the x y field"
+        }, 
+        {
+            "file_path": "color-inspector.adjust-color-with-mousewheel-on-the-z-axis", 
+            "id": "a.i", 
+            "label": "Adjust color with mousewheel on the z axis"
+        }, 
+        {
+            "file_path": "color-inspector.canceling-a-colorpicker", 
+            "id": "a.j", 
+            "label": "Canceling a colorpicker"
+        }, 
+        {
+            "file_path": "color-inspector.disabled-palette-and-alpha-input", 
+            "id": "a.k", 
+            "label": "Disabled palette and alpha input"
+        }
+    ], 
+    "path": "color-inspector"
+}

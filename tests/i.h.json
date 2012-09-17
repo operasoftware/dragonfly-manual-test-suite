@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "In the test, click the Get via XHR button.", 
+        "Search for \"search-for-me\".", 
+        "Verify that the string is highlighted in the URL list."
+    ], 
+    "file_path": "network-inspector.search", 
+    "folder_path": "network-inspector", 
+    "id": "i.h", 
+    "label": "Search", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

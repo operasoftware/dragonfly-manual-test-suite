@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Ensure that you open Dragonfly after you have loaded the TC.", 
+        "Expand the whole body in the Documents.", 
+        "Hover some of the listener icons and hover some of the handlers.", 
+        "Verify that the event handler function is shown in an tooltip.", 
+        "Click some of the handlers and verify that nothing happens."
+    ], 
+    "file_path": "js-debugger.event-listeners.interaction-with-the-handlers-in-the-tooltip-without-js-source-files", 
+    "folder_path": "js-debugger.event-listeners", 
+    "id": "f.b.c", 
+    "label": "Interaction with the handlers in the tooltip without JS source files", 
+    "url": "./js-debugger/event-listeners/single-runtime.html"
+}

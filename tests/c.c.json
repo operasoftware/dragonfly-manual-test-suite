@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Bring up the context menu for a pseudo element.", 
+        "Make sure that it doesn't have additional items than the default context menu for the view."
+    ], 
+    "file_path": "dom-inspector.pseudo-elements-context-menu", 
+    "folder_path": "dom-inspector", 
+    "id": "c.c", 
+    "label": "Pseudo elements context menu", 
+    "url": "./style-inspector/pseudo-test.html"
+}

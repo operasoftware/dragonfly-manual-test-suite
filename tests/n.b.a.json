@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Go to the test case.", 
+        "Open the \"Styles\" panel in the DOM view and expand the \"New Style\" section.", 
+        "Copy and paste the text of the host document in the new style input.", 
+        "Verify that the input area expands without scroll bars.", 
+        "Delete the whole content.", 
+        "Verify that the input are collapse to one line."
+    ], 
+    "file_path": "ui-framework.auto-adjust.auto-adjust-textarea", 
+    "folder_path": "ui-framework.auto-adjust", 
+    "id": "n.b.a", 
+    "label": "Auto adjust textarea", 
+    "url": "./ui-framework/auto-adjust/index.html"
+}

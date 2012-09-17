@@ -1,0 +1,17 @@
+{
+    "desc": [
+        "Click the Data view button.", 
+        "Close and re-open Dragonfly.", 
+        "Verify that the Network view is still shown in data mode.", 
+        "Reload the debugged window to fetch its resources.", 
+        "Sort by Size by clicking the table header.", 
+        "Hover the rows and verify that the list on the left is in the same order as the table.", 
+        "Click the Graph view button.", 
+        "Verify that the waterfall is displayed in the correct (original) order."
+    ], 
+    "file_path": "network-inspector.switch-graph-data-view", 
+    "folder_path": "network-inspector", 
+    "id": "i.c", 
+    "label": "Switch graph/data view", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

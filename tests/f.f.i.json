@@ -1,0 +1,10 @@
+{
+    "desc": [
+        "The same as the previous test, but use the F11 and F10 key (F7 and F6 on Mac) instead the mouse."
+    ], 
+    "file_path": "js-debugger.script-source.breakpoint-step-over-with-keyboard", 
+    "folder_path": "js-debugger.script-source", 
+    "id": "f.f.i", 
+    "label": "Breakpoint, Step Over with keyboard", 
+    "url": "./js-debugger/script-source/callstack.html"
+}

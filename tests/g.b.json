@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Open the console and verify that there is an entry 'Object'.", 
+        "Expand it and its first prototype.", 
+        "Click all getters and verify that you get the according values.", 
+        "Expand the 'a' member and its first prototype.", 
+        "Click all getters and verify that you get the according values."
+    ], 
+    "file_path": "js-object-inspector.getters", 
+    "folder_path": "js-object-inspector", 
+    "id": "g.b", 
+    "label": "Getters", 
+    "url": "./js-object-inspector/getters.html"
+}

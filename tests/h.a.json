@@ -1,0 +1,10 @@
+{
+    "desc": [
+        "Verify that all tests pass."
+    ], 
+    "file_path": "libs.uri-class", 
+    "folder_path": "libs", 
+    "id": "h.a", 
+    "label": "URI class", 
+    "url": "./DFL/tests/uri.qunit.html"
+}

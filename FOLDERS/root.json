@@ -1,0 +1,114 @@
+{
+    "dirs": [
+        {
+            "label": "breakpoints", 
+            "path": "breakpoints"
+        }, 
+        {
+            "label": "built-in-debug-mode", 
+            "path": "built-in-debug-mode"
+        }, 
+        {
+            "label": "color-inspector", 
+            "path": "color-inspector"
+        }, 
+        {
+            "label": "cookie-inspector", 
+            "path": "cookie-inspector"
+        }, 
+        {
+            "label": "dom-inspector", 
+            "path": "dom-inspector"
+        }, 
+        {
+            "label": "dom-layout", 
+            "path": "dom-layout"
+        }, 
+        {
+            "label": "dom-search", 
+            "path": "dom-search"
+        }, 
+        {
+            "label": "error-console", 
+            "path": "error-console"
+        }, 
+        {
+            "label": "general-issues", 
+            "path": "general-issues"
+        }, 
+        {
+            "label": "js-debugger", 
+            "path": "js-debugger"
+        }, 
+        {
+            "label": "js-object-inspector", 
+            "path": "js-object-inspector"
+        }, 
+        {
+            "label": "js-search", 
+            "path": "js-search"
+        }, 
+        {
+            "label": "keyboard-input", 
+            "path": "keyboard-input"
+        }, 
+        {
+            "label": "libs", 
+            "path": "libs"
+        }, 
+        {
+            "label": "make-request", 
+            "path": "make-request"
+        }, 
+        {
+            "label": "network-inspector", 
+            "path": "network-inspector"
+        }, 
+        {
+            "label": "network-options", 
+            "path": "network-options"
+        }, 
+        {
+            "label": "profiler", 
+            "path": "profiler"
+        }, 
+        {
+            "label": "remote-debug-panel", 
+            "path": "remote-debug-panel"
+        }, 
+        {
+            "label": "repl", 
+            "path": "repl"
+        }, 
+        {
+            "label": "resource-inspector", 
+            "path": "resource-inspector"
+        }, 
+        {
+            "label": "settings-manager", 
+            "path": "settings-manager"
+        }, 
+        {
+            "label": "storage-inspector", 
+            "path": "storage-inspector"
+        }, 
+        {
+            "label": "style-inspector", 
+            "path": "style-inspector"
+        }, 
+        {
+            "label": "ui-framework", 
+            "path": "ui-framework"
+        }, 
+        {
+            "label": "utilities", 
+            "path": "utilities"
+        }, 
+        {
+            "label": "watches", 
+            "path": "watches"
+        }
+    ], 
+    "files": [], 
+    "path": ""
+}

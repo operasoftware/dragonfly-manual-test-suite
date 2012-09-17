@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Add \"a\\\"a\" as watch.", 
+        "Verify that it evaluates to \"Synatx error\", displayed in red.", 
+        "Verify that you can still edit and delete that watch"
+    ], 
+    "file_path": "js-debugger.watches.add-invalid-watch", 
+    "folder_path": "js-debugger.watches", 
+    "id": "f.i.c", 
+    "label": "Add invalid watch", 
+    "url": "./js-debugger/watches/test-cases/breakpoints/breakpoints.html"
+}

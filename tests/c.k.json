@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Go to the test page and select some element.", 
+        "Reload the host an verify that the previous selected element gets reselected in Documents."
+    ], 
+    "file_path": "dom-inspector.dfl-1360", 
+    "folder_path": "dom-inspector", 
+    "id": "c.k", 
+    "label": "DFL-1360", 
+    "url": "http://www.aleto.ch"
+}

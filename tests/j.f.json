@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Start the profiler.", 
+        "Reload the document.", 
+        "Stop after circa one second.", 
+        "Click the Style recalculation legend label.", 
+        "Verify that a table appears with two selectors.", 
+        "Verify that clicking any other legend label clears the table and shows \"No details\"."
+    ], 
+    "file_path": "profiler.aggregated-event-details", 
+    "folder_path": "profiler", 
+    "id": "j.f", 
+    "label": "Aggregated event details", 
+    "url": "./profiler/profiler-test.html"
+}

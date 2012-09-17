@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Click the radio buttons to change the grouping option.", 
+        "Verify that the items in the table are now grouped accordingly.", 
+        "Sort by each column by clicking it.", 
+        "Verify that clicking a columns again reverses the order."
+    ], 
+    "file_path": "ui-framework.sortable-table.basic-test", 
+    "folder_path": "ui-framework.sortable-table", 
+    "id": "n.e.a", 
+    "label": "Basic test", 
+    "url": "DFL/test-scripts/ui-framework/sortable-table/basic.html"
+}

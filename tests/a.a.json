@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Inspect \"test\"", 
+        "Verify that a small color swatch appears at the end of the color declaration for 'h1'", 
+        "Click the color swatch", 
+        "Verify that a color picker is shown", 
+        "Verify that the color picker is closed on clicking \"Cancel\", \"OK\", outside the popup or by pressing Esc", 
+        "Verify that the color picker is centered vertically in relation the the color swatch (if there is enough space) and that an arrow points to the color swatch"
+    ], 
+    "file_path": "color-inspector.show-and-hide-colorpicker", 
+    "folder_path": "color-inspector", 
+    "id": "a.a", 
+    "label": "Show and hide colorpicker", 
+    "url": "./color-inspector/b.html"
+}

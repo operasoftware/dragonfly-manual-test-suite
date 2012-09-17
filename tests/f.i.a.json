@@ -1,0 +1,21 @@
+{
+    "desc": [
+        "Open the test case", 
+        "Select the 'Scripts' tab and reload the document", 
+        "Set a breakpoint on line 8 in script 'a.js'", 
+        "Select the 'State' tab and expand the 'Watches' section", 
+        "Click the 'Add' button, write 'i' and add the watch by hitting 'Enter'", 
+        "Verify that 'i' now has the value 'Error'", 
+        "Hit the 'test' button", 
+        "Verify that 'i' has now the value 0", 
+        "Continue with hitting the 'Continue' button or with 'F8'", 
+        "Verify that i updates accordingly and fals back to 'Error' at the end", 
+        "Add an other watch 'document'", 
+        "Verify that 'document' is an expandable entry"
+    ], 
+    "file_path": "js-debugger.watches.add-a-watch", 
+    "folder_path": "js-debugger.watches", 
+    "id": "f.i.a", 
+    "label": "Add a watch", 
+    "url": "./js-debugger/watches/test-cases/breakpoints/breakpoints.html"
+}

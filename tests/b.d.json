@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "In the test, click \"Set cookies\".", 
+        "Open the context menu and select \"Remove cookie of domain/path\".", 
+        "In the test, click \"Show cookies\".", 
+        "Verify that there are no cookies shown in the test and in the Dragonfly UI."
+    ], 
+    "file_path": "cookie-inspector.delete-all-cookies", 
+    "folder_path": "cookie-inspector", 
+    "id": "b.d", 
+    "label": "Delete all cookies", 
+    "url": "http://people.opera.com/dherzog/cookies/"
+}

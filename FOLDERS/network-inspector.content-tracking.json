@@ -1,0 +1,26 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "network-inspector.content-tracking.network-details-with-content-tracking-off", 
+            "id": "i.y.a", 
+            "label": "Network details with content-tracking off"
+        }, 
+        {
+            "file_path": "network-inspector.content-tracking.empty-response-bodies-with-content-tracking-off", 
+            "id": "i.y.b", 
+            "label": "Empty response bodies with content-tracking off"
+        }, 
+        {
+            "file_path": "network-inspector.content-tracking.multiple-responses-with-content-tracking-off", 
+            "id": "i.y.c", 
+            "label": "Multiple responses with content-tracking off"
+        }, 
+        {
+            "file_path": "network-inspector.content-tracking.turning-content-tracking-back-on", 
+            "id": "i.y.d", 
+            "label": "Turning content-tracking back on"
+        }
+    ], 
+    "path": "network-inspector/content-tracking"
+}

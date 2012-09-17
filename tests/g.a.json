@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Open the test case, expand the whole DOM and select the div element.", 
+        "Go to Properties and expand the 'style' property.", 
+        "Verify that the number properties are displayed above the named properties.", 
+        "Verify that the number and the named properties are sorted correctly."
+    ], 
+    "file_path": "js-object-inspector.sorting-of-properties-in-object-inspection", 
+    "folder_path": "js-object-inspector", 
+    "id": "g.a", 
+    "label": "Sorting of properties in object inspection", 
+    "url": "./js-object-inspector/a.html"
+}

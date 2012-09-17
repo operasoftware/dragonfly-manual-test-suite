@@ -1,0 +1,21 @@
+{
+    "dirs": [
+        {
+            "label": "propertyfinder", 
+            "path": "repl.propertyfinder"
+        }
+    ], 
+    "files": [
+        {
+            "file_path": "repl.xpath-result-types", 
+            "id": "k.a", 
+            "label": "XPath result types"
+        }, 
+        {
+            "file_path": "repl.friendly-printer-results", 
+            "id": "k.b", 
+            "label": "Friendly printer results"
+        }
+    ], 
+    "path": "repl"
+}

@@ -1,0 +1,17 @@
+{
+    "desc": [
+        "Go to the test page.", 
+        "Verify that the filter has no clear button.", 
+        "Type something.", 
+        "Verify that the clear button appears.", 
+        "Clear the filter with the keyboard.", 
+        "Verify that the button disappears.", 
+        "Type something and hit the clear button.", 
+        "Verify that the filter gets cleared and the button disappears."
+    ], 
+    "file_path": "js-debugger.js-dropdown.script-select-clear-button", 
+    "folder_path": "js-debugger.js-dropdown", 
+    "id": "f.d.d", 
+    "label": "Script select clear button", 
+    "url": "./js-debugger/js-dropdown/index.html"
+}

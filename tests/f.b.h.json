@@ -1,0 +1,18 @@
+{
+    "desc": [
+        "Load the TC and open the Listener view in the side panel.", 
+        "Verify that you see an update button and several event types with an expander icon.", 
+        "Expand and collapse some of the event types.", 
+        "Verify that all nodes with a listener are shown.", 
+        "Verify that expanding the 'click' also shows the 'document' node.", 
+        "Verify that expanding the 'load' shows the 'window' object.", 
+        "Verify that the listener icons show the same tooltip as in the DOM view.", 
+        "Verify that when you click an node it is selected and displayed in the DOM view.", 
+        "Verify that when you click the 'window' or the 'document' object it is displayed in the Inspection panel."
+    ], 
+    "file_path": "js-debugger.event-listeners.listener-view-in-the-side-panel", 
+    "folder_path": "js-debugger.event-listeners", 
+    "id": "f.b.h", 
+    "label": "Listener view in the side panel", 
+    "url": "./js-debugger/event-listeners/single-runtime.html"
+}

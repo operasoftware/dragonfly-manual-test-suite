@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Select the <a> element", 
+        "Make sure the :link pseudo class is visible", 
+        "From the dropdown, check all pseudo classes and make sure they all get visible", 
+        "Select another element and make sure the same pseudo classes still apply"
+    ], 
+    "file_path": "style-inspector.pseudo-classes", 
+    "folder_path": "style-inspector", 
+    "id": "m.m", 
+    "label": "Pseudo classes", 
+    "url": "./style-inspector/pseudo-test.html"
+}

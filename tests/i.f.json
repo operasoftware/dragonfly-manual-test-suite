@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "In the test, click the \"Post - application/x-www-form-urlencoded\" button.", 
+        "Open the according detail view.", 
+        "Verify that in parsed mode, separate Name - Value pairs are shown as the request body.", 
+        "Verify that in raw mode, the request body is shown as one encoded string."
+    ], 
+    "file_path": "network-inspector.request-details-forms", 
+    "folder_path": "network-inspector", 
+    "id": "i.f", 
+    "label": "Request details - Forms", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

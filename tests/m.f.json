@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Expand both sections, Computed Styles and Styles", 
+        "Search for a property, e.g. margin", 
+        "Verify that both section collapse to only contain the matching properties"
+    ], 
+    "file_path": "style-inspector.search", 
+    "folder_path": "style-inspector", 
+    "id": "m.f", 
+    "label": "Search", 
+    "url": "./style-inspector/matching-style-declarations.html"
+}

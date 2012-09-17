@@ -1,0 +1,26 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "js-debugger.configuration.stop-at-new-script", 
+            "id": "f.a.a", 
+            "label": "Stop at new script"
+        }, 
+        {
+            "file_path": "js-debugger.configuration.parse-error", 
+            "id": "f.a.b", 
+            "label": "Parse error"
+        }, 
+        {
+            "file_path": "js-debugger.configuration.break-on-exceptions", 
+            "id": "f.a.c", 
+            "label": "Break on exceptions"
+        }, 
+        {
+            "file_path": "js-debugger.configuration.default-settings", 
+            "id": "f.a.d", 
+            "label": "Default settings."
+        }
+    ], 
+    "path": "js-debugger/configuration"
+}

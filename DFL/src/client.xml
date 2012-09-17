@@ -1,0 +1,64 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<!-- command set_rel_base_url -->
+<script><![CDATA[
+var lang_dict = 
+{
+  /*
+    supported languages in Dragonfly + previously supported languages
+  */
+  "be": "be",
+  "bg": "bg",
+  "cs": "cs",
+  "da": "da",
+  "de": "de",
+  "el": "el",
+  "en": "en",
+  "en-GB": "en",
+  "es-ES": "es-ES",
+  "es-LA": "es-LA",
+  "et": "et",
+  "fi": "fi",
+  "fr": "fr",
+  "fr-CA": "fr-CA",
+  "fy": "fy",
+  "he": "he",
+  "hi": "hi",
+  "hr": "hr",
+  "hu": "hu",
+  "id": "id",
+  "it": "it",
+  "ja": "ja",
+  "ka": "ka",
+  "ko": "ko",
+  "lt": "lt",
+  "mk": "mk",
+  "nl": "nl",
+  "nb": "nb", // sort NO_nn and NO_nb together
+  "nn": "nn",
+  "pl": "pl",
+  "pt": "pt",
+  "pt-BR": "pt-BR",
+  "ro": "ro",
+  "ru": "ru",
+  "sk": "sk",
+  "sr": "sr",
+  "sv": "sv",
+  "ta": "ta",
+  "te": "te",
+  "tr": "tr",
+  "uk": "uk",
+  "vi": "vi",
+  "zh-cn": "zh-cn",
+  "zh-tw": "zh-tw",
+};
+var lang = navigator.browserLanguage in lang_dict && lang_dict[navigator.browserLanguage] || "en"; 
+document.cookie = "ui-lang=" + 
+  lang +
+  "; expires=" + ( new Date( new Date().getTime() + 360*24*60*60*1000 ) ).toGMTString() +
+  "; path=/";
+location.href = "./client-" + lang + ".xml";
+]]></script>
+</html>
+

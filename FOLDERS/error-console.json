@@ -1,0 +1,51 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "error-console.inspect-errors", 
+            "id": "e.a", 
+            "label": "Inspect errors"
+        }, 
+        {
+            "file_path": "error-console.expand-collapse-errors", 
+            "id": "e.b", 
+            "label": "Expand/collapse errors"
+        }, 
+        {
+            "file_path": "error-console.error-count-batch", 
+            "id": "e.c", 
+            "label": "Error count batch"
+        }, 
+        {
+            "file_path": "error-console.clear", 
+            "id": "e.d", 
+            "label": "Clear"
+        }, 
+        {
+            "file_path": "error-console.filter-errors", 
+            "id": "e.e", 
+            "label": "Filter errors"
+        }, 
+        {
+            "file_path": "error-console.css-filter", 
+            "id": "e.f", 
+            "label": "CSS Filter"
+        }, 
+        {
+            "file_path": "error-console.error-location", 
+            "id": "e.g", 
+            "label": "Error location"
+        }, 
+        {
+            "file_path": "error-console.list-existing-messages", 
+            "id": "e.h", 
+            "label": "List existing messages"
+        }, 
+        {
+            "file_path": "error-console.limit-maximum-of-errors-that-are-shown", 
+            "id": "e.i", 
+            "label": "Limit maximum of errors that are shown"
+        }
+    ], 
+    "path": "error-console"
+}

@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "unfold Computed Styles and Styles", 
+        "select some elements in the DOM", 
+        "Verify that the styles are updated"
+    ], 
+    "file_path": "style-inspector.matching-style-rules", 
+    "folder_path": "style-inspector", 
+    "id": "m.d", 
+    "label": "Matching style rules", 
+    "url": "./style-inspector/matching-style-declarations.html"
+}

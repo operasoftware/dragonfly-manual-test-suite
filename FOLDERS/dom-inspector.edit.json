@@ -1,0 +1,16 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "dom-inspector.edit.edit-attributes", 
+            "id": "c.l.a", 
+            "label": "Edit attributes"
+        }, 
+        {
+            "file_path": "dom-inspector.edit.edit-markup", 
+            "id": "c.l.b", 
+            "label": "Edit markup"
+        }
+    ], 
+    "path": "dom-inspector/edit"
+}

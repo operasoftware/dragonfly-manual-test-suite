@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "In the test, click the \"Get via XHR\" button.", 
+        "Verify that the URL tooltip shows the URL prefixed with \"Unreferenced \u2013 \"."
+    ], 
+    "file_path": "network-inspector.unload-event-display", 
+    "folder_path": "network-inspector", 
+    "id": "i.n", 
+    "label": "Unload event display", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

@@ -1,0 +1,46 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "cookie-inspector.inspect-cookies", 
+            "id": "b.a", 
+            "label": "Inspect cookies"
+        }, 
+        {
+            "file_path": "cookie-inspector.delete-cookies", 
+            "id": "b.b", 
+            "label": "Delete cookies"
+        }, 
+        {
+            "file_path": "cookie-inspector.edit-cookies", 
+            "id": "b.c", 
+            "label": "Edit cookies"
+        }, 
+        {
+            "file_path": "cookie-inspector.delete-all-cookies", 
+            "id": "b.d", 
+            "label": "Delete all cookies"
+        }, 
+        {
+            "file_path": "cookie-inspector.add-new-cookies", 
+            "id": "b.e", 
+            "label": "Add new cookies"
+        }, 
+        {
+            "file_path": "cookie-inspector.cookie-expiry", 
+            "id": "b.f", 
+            "label": "Cookie expiry"
+        }, 
+        {
+            "file_path": "cookie-inspector.updating", 
+            "id": "b.g", 
+            "label": "Updating"
+        }, 
+        {
+            "file_path": "cookie-inspector.multiple-domains", 
+            "id": "b.h", 
+            "label": "Multiple domains"
+        }
+    ], 
+    "path": "cookie-inspector"
+}

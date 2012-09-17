@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Verify that a correct summary of the requests is displayed at the bottom of the main view.", 
+        "Click the Images filter button.", 
+        "Verify that the summary says \"1 Request\" in singular, and that the size is less than in the unfiltered view."
+    ], 
+    "file_path": "network-inspector.network-summary", 
+    "folder_path": "network-inspector", 
+    "id": "i.g", 
+    "label": "Network summary", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

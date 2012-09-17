@@ -1,0 +1,20 @@
+{
+    "desc": [
+        "Set a breakpoint on the line 'var ee = 1;'.", 
+        "Press 'e()' button and be stopped.", 
+        "Go to Network, press Improve Accuracy of timing button.", 
+        "Confirm dialog.", 
+        "Reload.", 
+        "Verify that there is no stop batch on Scripts.", 
+        "Press enable button in Scripts (to re-enable other services).", 
+        "Reload.", 
+        "Verify that the stop pointer points to the correct line number.", 
+        "Submit '1' in the console.", 
+        "Verify that you get a return value."
+    ], 
+    "file_path": "ui-framework.enabling-disabling-services.dfl-3282-can-t-inspect-when-being-stopped-after-re-enabling-services", 
+    "folder_path": "ui-framework.enabling-disabling-services", 
+    "id": "n.c.a", 
+    "label": "DFL-3282, Can't inspect when being stopped after re-enabling services", 
+    "url": "./js-debugger/script-source/callstack.html"
+}

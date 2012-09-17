@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Open the testcase.", 
+        "Verify that there are 3 JS errors, 1 CSS, 1 Storage, and 1 SVG error, and each tab shows the error(s) of it's type."
+    ], 
+    "file_path": "error-console.inspect-errors", 
+    "folder_path": "error-console", 
+    "id": "e.a", 
+    "label": "Inspect errors", 
+    "url": "./error-console/error.html"
+}

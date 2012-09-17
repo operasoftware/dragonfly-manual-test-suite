@@ -1,0 +1,152 @@
+﻿#js-source-scroll-content,
+#js-source-scroll-container
+{
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+#js-source-scroll-content
+{
+  left: 40px;
+}
+
+#js-source-scroll-container {
+  /* the correct width is set dynamically 
+     to scroll bar width in JsSourceView */
+  width: 50px;
+}
+
+.js-source-content div
+{
+  color: #000;
+  white-space: pre;
+  padding-left: 10px;
+  -o-tab-size: 4;
+}
+
+.js-source-content .not-error
+{
+  display: inline-block;
+  padding-left: 10px;
+  margin-left: -10px;
+}
+
+.js-source-content .first-error-line,
+.js-source-content .stop-at-error
+{
+  position: relative;
+  overflow: visible;
+}
+
+.js-source-content .stop-at-error
+{
+  background-color: rgba(255, 0, 0, 0.15);
+}
+
+.error-description
+{
+  position: absolute;
+  white-space: pre-wrap;
+  left: 30px;
+  top: 30px;
+  height: auto !important;
+  z-index: 1;
+  box-shadow: 0px 0px 0px 1px rgba(153, 0, 0, 0.27),
+              inset 0px 1px 0px 0px rgba(255, 255, 255, 0.2),
+              inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2),
+              0px 1px 6px 0px rgba(25, 0, 0, 0.36);
+  background: #f2c9c9;
+  color: #5c0909 !important;
+}
+
+/* line number */ 
+.js-source-line-numbers
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #f3f3f3;
+  width: 40px;
+  border-right: 1px solid #e6e6e6;
+}
+
+.js-source-line-numbers li
+{
+  position: relative;
+}
+
+.js-source-line-numbers .break-point
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  background: transparent url('../ui-images/line-types.png') no-repeat 0 0;
+}
+
+.js-source-line-numbers input,
+.js-source-line-numbers .line-number
+{
+  width: 37px;
+  text-align: right;
+  border: none;
+  margin: 0;
+  padding: 0;
+  padding-right: 3px;
+  background-color: transparent;
+  height: 100%; /* should be the same as the line height .js-source-content li */ 
+  font-size: inherit;
+  font-family: inherit;
+  vertical-align: middle;
+  color: #b3b3b3;
+  display: inline-block;
+}
+
+.js-source-line-numbers input:hover
+{
+  background-color: #f0f0f0;
+}
+
+.js-tooltip-examine-container
+{
+  box-sizing: border-box;
+  overflow: auto;
+  border-top: 30px solid transparent;
+  margin: -8px;
+  padding: 8px;
+}
+
+.js-tooltip-examine
+{
+  min-width: 280px;
+}
+
+.js-tooltip .filter
+{
+  float: right;
+  margin-top: -2px;
+  margin-right: -2px;
+}
+
+.js-identifier-selected,
+.js-identifier-selected-first,
+.js-identifier-selected-between,
+.js-identifier-selected-last 
+{
+  color: #000000;
+  background-color: #c5daf1;
+  border-color: transparent;
+}
+
+.selected-js-source-line .js-identifier-selected,
+.selected-js-source-line .js-identifier-selected-first,
+.selected-js-source-line .js-identifier-selected-between,
+.selected-js-source-line .js-identifier-selected-last
+{
+  background-color: #a2c3e8;
+}

@@ -1,0 +1,10 @@
+{
+    "desc": [
+        "The same as the previous test, but use the F8 key (F5 on Mac) instead of the mouse."
+    ], 
+    "file_path": "js-debugger.script-source.breakpoint-continue-with-keyboard", 
+    "folder_path": "js-debugger.script-source", 
+    "id": "f.f.e", 
+    "label": "Breakpoint, Continue with keyboard", 
+    "url": "./js-debugger/script-source/callstack.html"
+}

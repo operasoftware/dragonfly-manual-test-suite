@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Open the testcase, enable \"Break on exceptions\" and load scripts.", 
+        "Verify that the 'document' is selected correctly after the error bubble."
+    ], 
+    "file_path": "js-debugger.tooltip.dfl-3141", 
+    "folder_path": "js-debugger.tooltip", 
+    "id": "f.h.f", 
+    "label": "DFL-3141", 
+    "url": "./js-debugger/tooltip/index.html"
+}

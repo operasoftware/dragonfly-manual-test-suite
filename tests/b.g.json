@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "In the test, click \"Increase value of cookie a\".", 
+        "Open the context menu, select \"Update\".", 
+        "Verify that you get the updated value of \"a\"."
+    ], 
+    "file_path": "cookie-inspector.updating", 
+    "folder_path": "cookie-inspector", 
+    "id": "b.g", 
+    "label": "Updating", 
+    "url": "http://people.opera.com/dherzog/cookies/"
+}

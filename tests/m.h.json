@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Add a new property without submitting it", 
+        "Press Escape", 
+        "Make sure the property is removed from the view, and that the old style is re-applied"
+    ], 
+    "file_path": "style-inspector.escaping", 
+    "folder_path": "style-inspector", 
+    "id": "m.h", 
+    "label": "Escaping", 
+    "url": "./style-inspector/matching-style-declarations.html"
+}

@@ -1,4 +1,0 @@
-label: Resize window horizontally
-desc:
-  - Open Dragonfly and resize the window horizontally.
-  - Verify that the legends get ellipsis till they disappear completely.

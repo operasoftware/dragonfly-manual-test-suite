@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Inspect the body element", 
+        "Make sure that one rule has 'color: inherit' with a swatch that is styled as a white square with a diagonal gray line"
+    ], 
+    "file_path": "color-inspector.color-swatch-for-inherit", 
+    "folder_path": "color-inspector", 
+    "id": "a.f", 
+    "label": "Color swatch for 'inherit'", 
+    "url": "./color-inspector/a.html"
+}

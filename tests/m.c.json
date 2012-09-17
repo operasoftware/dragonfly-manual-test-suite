@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Inspect body", 
+        "Make sure the data URI is shortened for the background property"
+    ], 
+    "file_path": "style-inspector.shortening-of-large-data-uris", 
+    "folder_path": "style-inspector", 
+    "id": "m.c", 
+    "label": "Shortening of large data URIs", 
+    "url": "./style-inspector/c.html"
+}

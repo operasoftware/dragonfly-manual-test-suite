@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Click \"Add data uri\".", 
+        "Verify that a data URI shows up the list of requests.", 
+        "Verify you can read the markup if you click it."
+    ], 
+    "file_path": "network-inspector.data-uris", 
+    "folder_path": "network-inspector", 
+    "id": "i.u", 
+    "label": "Data URIs", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

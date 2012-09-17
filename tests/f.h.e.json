@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Open the testcase.", 
+        "Verify that in all three situations 'window', 'window.document' and 'window.document.body' shows a tooltip."
+    ], 
+    "file_path": "js-debugger.tooltip.dfl-2900", 
+    "folder_path": "js-debugger.tooltip", 
+    "id": "f.h.e", 
+    "label": "DFL-2900", 
+    "url": "./js-debugger/tooltip/DFL-2900.html"
+}

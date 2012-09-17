@@ -1,0 +1,21 @@
+{
+    "dirs": [
+        {
+            "label": "tooltip", 
+            "path": "js-object-inspector.tooltip"
+        }
+    ], 
+    "files": [
+        {
+            "file_path": "js-object-inspector.sorting-of-properties-in-object-inspection", 
+            "id": "g.a", 
+            "label": "Sorting of properties in object inspection"
+        }, 
+        {
+            "file_path": "js-object-inspector.getters", 
+            "id": "g.b", 
+            "label": "Getters"
+        }
+    ], 
+    "path": "js-object-inspector"
+}

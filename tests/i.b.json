@@ -1,0 +1,17 @@
+{
+    "desc": [
+        "Click the pause button.", 
+        "Reload the debugged page.", 
+        "Verify that pause button is now off again.", 
+        "Click the pause button.", 
+        "Click one of the buttons in the test.", 
+        "Verify that you don't see an additional resource being added.", 
+        "Click the pause button to unpause.", 
+        "Verify that the additional request is shown."
+    ], 
+    "file_path": "network-inspector.pause", 
+    "folder_path": "network-inspector", 
+    "id": "i.b", 
+    "label": "Pause", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Expand the body element", 
+        "Go to Settings -> Documents", 
+        "Enable/disable \"Show pseudo elements\" and make sure they get visible/hidden"
+    ], 
+    "file_path": "style-inspector.pseudo-element-setting", 
+    "folder_path": "style-inspector", 
+    "id": "m.k", 
+    "label": "Pseudo element setting", 
+    "url": "./style-inspector/pseudo-test.html"
+}

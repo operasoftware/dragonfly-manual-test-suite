@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Add a property", 
+        "Search for it and make sure it shows up"
+    ], 
+    "file_path": "style-inspector.searching-for-a-newly-added-property", 
+    "folder_path": "style-inspector", 
+    "id": "m.g", 
+    "label": "Searching for a newly added property", 
+    "url": "./style-inspector/matching-style-declarations.html"
+}

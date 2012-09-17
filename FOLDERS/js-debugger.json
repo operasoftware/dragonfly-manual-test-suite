@@ -1,0 +1,42 @@
+{
+    "dirs": [
+        {
+            "label": "configuration", 
+            "path": "js-debugger.configuration"
+        }, 
+        {
+            "label": "event-listeners", 
+            "path": "js-debugger.event-listeners"
+        }, 
+        {
+            "label": "execution-context", 
+            "path": "js-debugger.execution-context"
+        }, 
+        {
+            "label": "js-dropdown", 
+            "path": "js-debugger.js-dropdown"
+        }, 
+        {
+            "label": "return-values", 
+            "path": "js-debugger.return-values"
+        }, 
+        {
+            "label": "script-source", 
+            "path": "js-debugger.script-source"
+        }, 
+        {
+            "label": "security", 
+            "path": "js-debugger.security"
+        }, 
+        {
+            "label": "tooltip", 
+            "path": "js-debugger.tooltip"
+        }, 
+        {
+            "label": "watches", 
+            "path": "js-debugger.watches"
+        }
+    ], 
+    "files": [], 
+    "path": "js-debugger"
+}

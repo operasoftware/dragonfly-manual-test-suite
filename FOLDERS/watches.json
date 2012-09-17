@@ -1,0 +1,21 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "watches.add-a-watch", 
+            "id": "o.a", 
+            "label": "Add a watch"
+        }, 
+        {
+            "file_path": "watches.right-click-option-for-a-watch-entry", 
+            "id": "o.b", 
+            "label": "Right click option for a watch entry"
+        }, 
+        {
+            "file_path": "watches.watch-with-invalid-syntax", 
+            "id": "o.c", 
+            "label": "Watch with invalid syntax"
+        }
+    ], 
+    "path": "watches"
+}

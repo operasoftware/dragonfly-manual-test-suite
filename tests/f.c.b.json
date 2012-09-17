@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Load the test case, open Dragonfly and reload the document.", 
+        "Select all the different scripts an verify that the tooltip always shows the correct value for 'window.foo'."
+    ], 
+    "file_path": "js-debugger.execution-context.tooltip-evaluation-context", 
+    "folder_path": "js-debugger.execution-context", 
+    "id": "f.c.b", 
+    "label": "Tooltip evaluation context", 
+    "url": "./js-debugger/execution-context/multiple-contexts.html"
+}

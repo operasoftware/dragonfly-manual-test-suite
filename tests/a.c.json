@@ -1,0 +1,17 @@
+{
+    "desc": [
+        "Inspect \"test\"", 
+        "Click the color swatch of the color declaration to open the color picker", 
+        "Edit the value of one of the inputs", 
+        "Verify that the other inputs are updated accordingly", 
+        "Verify that the color example under the color space box changes accordingly", 
+        "Verify that the color in the host document changes accordingly", 
+        "Verify the above for each of the inputs", 
+        "Verify that alpha values can be changed"
+    ], 
+    "file_path": "color-inspector.edit-color-with-inputs", 
+    "folder_path": "color-inspector", 
+    "id": "a.c", 
+    "label": "Edit color with inputs", 
+    "url": "./color-inspector/b.html"
+}

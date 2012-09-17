@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Add a new property", 
+        "Switch to some other view and then back", 
+        "Make sure the newly added property is still visible", 
+        "Do the same, but instead of adding a new property, delete one, and make sure it's still removed when switching the view back"
+    ], 
+    "file_path": "style-inspector.switching-view", 
+    "folder_path": "style-inspector", 
+    "id": "m.i", 
+    "label": "Switching view", 
+    "url": "./style-inspector/matching-style-declarations.html"
+}

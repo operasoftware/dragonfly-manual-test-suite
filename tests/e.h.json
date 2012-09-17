@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Open the testcase.", 
+        "Open Dragonfly after that.", 
+        "Verify that 6 Errors (or more, from previous) are shown."
+    ], 
+    "file_path": "error-console.list-existing-messages", 
+    "folder_path": "error-console", 
+    "id": "e.h", 
+    "label": "List existing messages", 
+    "url": "./error-console/error.html"
+}

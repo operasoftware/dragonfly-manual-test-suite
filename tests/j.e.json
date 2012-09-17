@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Start the profiler.", 
+        "Reload the document.", 
+        "Stop after circa one second.", 
+        "Click a Style recalculation event.", 
+        "Verify that a table appears with one selector match and that it has one hit.", 
+        "Verify that there is a total self time for the events at the bottom."
+    ], 
+    "file_path": "profiler.single-event-details", 
+    "folder_path": "profiler", 
+    "id": "j.e", 
+    "label": "Single event details", 
+    "url": "./profiler/profiler-test.html"
+}

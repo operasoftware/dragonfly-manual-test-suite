@@ -1,0 +1,11 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "js-debugger.security.dfl-2882-script-syntax-error-load-dragonfly-in-dragonfly", 
+            "id": "f.g.a", 
+            "label": "DFL-2882, script syntax error load dragonfly in dragonfly"
+        }
+    ], 
+    "path": "js-debugger/security"
+}

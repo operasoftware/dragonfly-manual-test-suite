@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Click the \"Clear\" button.", 
+        "In the test, click \"Open elg.no in tab 1\".", 
+        "Click \"Get via XHR\".", 
+        "Click \"Open ulv.no in tab 1\".", 
+        "Verify that you now see receive.php first in the waterfall view, followed by resources from ulv.no.", 
+        "Verify that no Resources from elg.no are shown anymore."
+    ], 
+    "file_path": "network-inspector.multiple-top-runtimes.switch-content-of-additional-windows-in-debug-context", 
+    "folder_path": "network-inspector.multiple-top-runtimes", 
+    "id": "i.z.c", 
+    "label": "Switch content of additional windows in debug context", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

@@ -1,0 +1,16 @@
+{
+    "desc": [
+        "Go to Settings.", 
+        "Uncheck \"Track content\".", 
+        "In the test, click \"Get via XHR\".", 
+        "Check \"Track content\".", 
+        "Click \"Get via XHR\" again.", 
+        "Verify that the detail view of the first entry tells you that you need to turn on content-tracking.", 
+        "Verify that the detail view of the second entry shows you the body."
+    ], 
+    "file_path": "network-inspector.content-tracking.turning-content-tracking-back-on", 
+    "folder_path": "network-inspector.content-tracking", 
+    "id": "i.y.d", 
+    "label": "Turning content-tracking back on", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Click the \"Clear\" button.", 
+        "Verify that the \"Reload to see Resources\" view is shown."
+    ], 
+    "file_path": "network-inspector.clear", 
+    "folder_path": "network-inspector", 
+    "id": "i.o", 
+    "label": "Clear", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

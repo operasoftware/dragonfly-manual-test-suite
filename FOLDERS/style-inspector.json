@@ -1,0 +1,86 @@
+{
+    "dirs": [
+        {
+            "label": "new-style", 
+            "path": "style-inspector.new-style"
+        }
+    ], 
+    "files": [
+        {
+            "file_path": "style-inspector.cycling-through-properties", 
+            "id": "m.a", 
+            "label": "Cycling through properties"
+        }, 
+        {
+            "file_path": "style-inspector.changing-a-property-to-another", 
+            "id": "m.b", 
+            "label": "Changing a property to another"
+        }, 
+        {
+            "file_path": "style-inspector.shortening-of-large-data-uris", 
+            "id": "m.c", 
+            "label": "Shortening of large data URIs"
+        }, 
+        {
+            "file_path": "style-inspector.matching-style-rules", 
+            "id": "m.d", 
+            "label": "Matching style rules"
+        }, 
+        {
+            "file_path": "style-inspector.show-initial-values-in-computed-style-panel", 
+            "id": "m.e", 
+            "label": "Show initial values in computed style panel"
+        }, 
+        {
+            "file_path": "style-inspector.search", 
+            "id": "m.f", 
+            "label": "Search"
+        }, 
+        {
+            "file_path": "style-inspector.searching-for-a-newly-added-property", 
+            "id": "m.g", 
+            "label": "Searching for a newly added property"
+        }, 
+        {
+            "file_path": "style-inspector.escaping", 
+            "id": "m.h", 
+            "label": "Escaping"
+        }, 
+        {
+            "file_path": "style-inspector.switching-view", 
+            "id": "m.i", 
+            "label": "Switching view"
+        }, 
+        {
+            "file_path": "style-inspector.toggle-property", 
+            "id": "m.j", 
+            "label": "Toggle property"
+        }, 
+        {
+            "file_path": "style-inspector.pseudo-element-setting", 
+            "id": "m.k", 
+            "label": "Pseudo element setting"
+        }, 
+        {
+            "file_path": "style-inspector.pseudo-elements", 
+            "id": "m.l", 
+            "label": "Pseudo elements"
+        }, 
+        {
+            "file_path": "style-inspector.pseudo-classes", 
+            "id": "m.m", 
+            "label": "Pseudo classes"
+        }, 
+        {
+            "file_path": "style-inspector.quick-declaration-insertion", 
+            "id": "m.n", 
+            "label": "Quick declaration insertion"
+        }, 
+        {
+            "file_path": "style-inspector.changing-color-format", 
+            "id": "m.o", 
+            "label": "Changing color format"
+        }
+    ], 
+    "path": "style-inspector"
+}

@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "Go to Scripts and reload.", 
+        "When stopping in the first debugger statement, press \"Step over\" until the last debugger statement is reached.", 
+        "Verify that the Return Values section displays the return values of all the functions that returned in the last step.", 
+        "Verify that return values that are objects can be expanded.", 
+        "Press \"Continue\" and verify that the section is updated with \"No return values\"."
+    ], 
+    "file_path": "js-debugger.return-values.multiple-return-value", 
+    "folder_path": "js-debugger.return-values", 
+    "id": "f.e.b", 
+    "label": "Multiple return value", 
+    "url": "./js-debugger/return-values/return-values-multiple.html"
+}

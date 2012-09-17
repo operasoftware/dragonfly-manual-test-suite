@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Open Dragonfly and resize the window horizontally.", 
+        "Verify that the legends get ellipsis till they disappear completely."
+    ], 
+    "file_path": "ui-framework.resize-window-horizontally", 
+    "folder_path": "ui-framework", 
+    "id": "n.a", 
+    "label": "Resize window horizontally", 
+    "url": "./ui-framework/"
+}

@@ -1,0 +1,12 @@
+{
+    "desc": [
+        "Load the TC and open the Listener view in the side panel.", 
+        "Expand some of the event types.", 
+        "Press the update button and verify that all the extended types will stay expanded."
+    ], 
+    "file_path": "js-debugger.event-listeners.update-listener-view-in-the-side-panel", 
+    "folder_path": "js-debugger.event-listeners", 
+    "id": "f.b.i", 
+    "label": "Update listener view in the side panel", 
+    "url": "./js-debugger/event-listeners/single-runtime.html"
+}

@@ -1,0 +1,11 @@
+{
+    "desc": [
+        "Open the testcase in Scripts and get the scripts.", 
+        "Verify that you get a tooltip for each 'if', 'while', 'switch' expression when you hold down the shift key."
+    ], 
+    "file_path": "js-debugger.tooltip.dfl-3328", 
+    "folder_path": "js-debugger.tooltip", 
+    "id": "f.h.h", 
+    "label": "DFL-3328", 
+    "url": "./js-debugger/tooltip/control-keywords.html"
+}

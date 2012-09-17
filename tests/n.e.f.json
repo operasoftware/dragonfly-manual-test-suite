@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Click the Brand header.", 
+        "Click the Brand header again to reverse.", 
+        "Verify that the Porsches are in (unreversed) order of Initial Pos and after that are the BMWs.", 
+        "Click the Color header.", 
+        "Verify that black Porsches are listed before black BMWs.", 
+        "Verify that black cars are listed before azure cars."
+    ], 
+    "file_path": "ui-framework.sortable-table.stable-sorting-reverse", 
+    "folder_path": "ui-framework.sortable-table", 
+    "id": "n.e.f", 
+    "label": "Stable sorting reverse", 
+    "url": "DFL/test-scripts/ui-framework/sortable-table/sorting.html"
+}

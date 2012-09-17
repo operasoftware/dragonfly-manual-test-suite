@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Double click a tag name.", 
+        "Change the content.", 
+        "Verify that the changes apply instantly in the host.", 
+        "Verify that you can remove and edit also the body and html element."
+    ], 
+    "file_path": "dom-inspector.edit.edit-markup", 
+    "folder_path": "dom-inspector.edit", 
+    "id": "c.l.b", 
+    "label": "Edit markup", 
+    "url": "./dom-inspector/edit/index.html"
+}

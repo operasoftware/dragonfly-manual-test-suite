@@ -1,0 +1,15 @@
+{
+    "desc": [
+        "Go to the test page.", 
+        "Click the script select", 
+        "Verify that the list of all available scripts is shown.", 
+        "Verify that the scripts are grouped by the direcory path.", 
+        "Verify that the selected script is highlighted.", 
+        "Verify that the filter at the top is focused."
+    ], 
+    "file_path": "js-debugger.js-dropdown.script-select", 
+    "folder_path": "js-debugger.js-dropdown", 
+    "id": "f.d.a", 
+    "label": "Script select", 
+    "url": "./js-debugger/js-dropdown/index.html"
+}

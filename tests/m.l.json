@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Make sure after/before/first-letter and first-line pseudo elements show up in the DOM view only for elements that are descendants of the <html> element", 
+        "Select a pseudo element", 
+        "Make sure that the Style side panel is is showing the style for the pseudo element only (i.e. not the styling for the element itself)", 
+        "Make sure that the style can be edited"
+    ], 
+    "file_path": "style-inspector.pseudo-elements", 
+    "folder_path": "style-inspector", 
+    "id": "m.l", 
+    "label": "Pseudo elements", 
+    "url": "./style-inspector/pseudo-test.html"
+}

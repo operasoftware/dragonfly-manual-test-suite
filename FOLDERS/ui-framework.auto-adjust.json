@@ -1,0 +1,11 @@
+{
+    "dirs": [], 
+    "files": [
+        {
+            "file_path": "ui-framework.auto-adjust.auto-adjust-textarea", 
+            "id": "n.b.a", 
+            "label": "Auto adjust textarea"
+        }
+    ], 
+    "path": "ui-framework/auto-adjust"
+}

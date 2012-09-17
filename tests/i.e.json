@@ -1,0 +1,14 @@
+{
+    "desc": [
+        "In the test, click the \"Post - multipart/form-data\" button.", 
+        "Open the according detail view.", 
+        "Verify that each part of the request is divided visually. Headers and body of each part should be separated clearly.", 
+        "With the \"Show raw requests and responses\" on:", 
+        "Verify that each part of the request is divided by the actual boundary. The last boundary should end with an extra \"--\"."
+    ], 
+    "file_path": "network-inspector.request-details-multipart", 
+    "folder_path": "network-inspector", 
+    "id": "i.e", 
+    "label": "Request details - Multipart", 
+    "url": "http://people.opera.com/dherzog/network/"
+}

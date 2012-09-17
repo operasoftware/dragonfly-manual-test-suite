@@ -1,0 +1,118 @@
+message <span class="message">GetEventsArg</span>
+{
+  message <span class="message">Interval</span>
+  {
+    <span class="comment">/** 
+     * The start of the `Interval`. If not present, this is an left-open
+     * `Interval` ([-inf, N]).
+     */</span>
+    optional <span class="number">double</span> start = 1; 
+    <span class="comment">/** 
+     * The end of the `Interval`. If not present, this is an right-open
+     * `Interval` ([N, +inf]).
+     */</span>
+    optional <span class="number">double</span> end   = 2; 
+  }
+  <span class="comment">/** 
+   * Describes different ways `Events` can be returned.
+   */</span>
+  enum Mode
+  {
+    <span class="comment">/** 
+     * Return each `Event` unprocessed.
+     * 
+     * When using this mode, each `Event` in the `Timeline` may contain
+     * type specific data, which provides additional information about the
+     * `Event`, such as the `Area` that was painted for `PAINT` `Events`.
+     */</span>
+    ALL = 1;
+    <span class="comment">/** 
+     * Reduce all `Events` of the same type into the same *virtual* `Event`.
+     * Timing information and number of hits will then be summarized into
+     * that single `Event` (for each type).
+     * 
+     * This makes it possible to provide a summary which says how much time
+     * was spent in total on a certain activity, e.g. CSS selector matching.
+     */</span>
+    REDUCE_UNIQUE_TYPES = 2;
+    <span class="comment">/** 
+     * Reduce all equal `Events` into the same *virtual* `Event`. Timing
+     * information and number of hits will then be summarized into a single
+     * *virtual* `Event`.
+     * 
+     * An `Event` is equal to another `Event` if they both have the same
+     * type, and both have the same type-specific data. For instance, two
+     * CSS selector matching `Events` are equal if they have the same
+     * selector text.
+     * 
+     * This makes it possible to pinpoint specific performance problems in
+     * the profiling session. For instance, an overview of total time spent
+     * matching a single CSS selector can be provided.
+     */</span>
+    REDUCE_UNIQUE_EVENTS = 3;
+    <span class="comment">/** 
+     * Reduce all `Events` (regardless of their types and content) into the
+     * same *virtual* `Event`. This creates a summary of the total time
+     * recording across all `Event` types. The returned `Event` will have
+     * type 'GENERIC', and contain no type-specific data.
+     * 
+     * When using this mode, another `Event` *may* be returned which
+     * represents the total execution time for the OS process in the
+     * profiling `Interval`. The execution time includes time spent in user
+     * mode and kernel mode for the current process, and does not include
+     * child processes. The `Event` is only present if the build supports
+     * this feature.
+     */</span>
+    REDUCE_ALL = 4;
+  }
+
+  <span class="comment">/** 
+   * ID of the `Session` to get `Events` from.
+   */</span>
+  required <span class="number">uint32   </span> sessionID     = 1; 
+  <span class="comment">/** 
+   * ID of the `Timeline` to get `Events` from.
+   */</span>
+  required <span class="number">uint32   </span> timelineID    = 2; 
+  <span class="comment">/** 
+   * How `Events` should be processed before they are returned.
+   */</span>
+  optional <span class="number">Mode     </span> mode          = 3; 
+  <span class="comment">/** 
+   * If present, this `Event` will be used as the root for the iteration
+   * instead of the `Timeline` itself. The `Event` specified here will not be
+   * included in the response. (The highest level `Events` in the response
+   * will be the specified `Event`'s immediate children).
+   * 
+   * This can be used with a non-default `Mode` to produce subtree summaries.
+   * 
+   * This, combined with the `maxDepth` option is useful for UIs where the
+   * `Timeline` is manually expanded by the user.
+   */</span>
+  optional <span class="number">uint32   </span> eventID       = 4; 
+  <span class="comment">/** 
+   * If present, return only `Events` down to the specified level. The
+   * smallest allowed vaule is '1', which represents the root `Event`'s
+   * immediate children. (A value of '0' represents the root `Event` itself,
+   * which is either the timeline, or the `Event` specified by `eventID`).
+   * A value of 2 represents the root `Event`'s grandchildren, and so forth.
+   * 
+   * A value of '1' will be useful for creating a UI where the user manually
+   * expands an `Event` he or she is interested in.
+   */</span>
+  optional <span class="number">uint32   </span> maxDepth      = 5; 
+  <span class="comment">/** 
+   * If non-empty, include only the specified types in the result. An empty
+   * list means all `Event` types will be included.
+   */</span>
+  repeated <span class="number">EventType</span> eventTypeList = 6; 
+  <span class="comment">/** 
+   * If present, include only `Events` whose `Interval` overlaps this
+   * `Interval`. If the option is not present, the entire `Timeline` may be
+   * included (subject to restrictions set by other options).
+   * 
+   * This option can be combined with any `Mode`, to produce a summary of
+   * parts of the `Timeline`.
+   */</span>
+  optional <span class="message">Interval </span> interval      = 7; 
+}

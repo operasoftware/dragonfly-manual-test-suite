@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "Search for \"div<style\" in Documents > Search.", 
+        "Verify that you get one hit.", 
+        "Clich the hit.", 
+        "Verify the the according node is highlighted in Documents."
+    ], 
+    "file_path": "dom-search.dfl-3071", 
+    "folder_path": "dom-search", 
+    "id": "d.a", 
+    "label": "DFL-3071", 
+    "url": "./dom-inspector/a.html"
+}

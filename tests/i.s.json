@@ -1,0 +1,13 @@
+{
+    "desc": [
+        "When the test is loaded, reload it until you see requests that appear \"Cached\" (different styling in the list, shows \"Cached\" in the URL tooltip).", 
+        "Open the details of such a request.", 
+        "Verify that there is no \"Request\" or \"Response\" headlines.", 
+        "Verify that you see the content of the file."
+    ], 
+    "file_path": "network-inspector.cached-requests", 
+    "folder_path": "network-inspector", 
+    "id": "i.s", 
+    "label": "Cached Requests", 
+    "url": "http://people.opera.com/dherzog/network"
+}
