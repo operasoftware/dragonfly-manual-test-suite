@@ -2,7 +2,7 @@ label: Listener icons in the DOM view
 url: ./single-runtime.html
 desc:
   - Expand the whole body in Documents.
-  - Verify that the body and the p's have an icon indicating that they have 
+  - Verify that the body and the p's have an icon indicating that they have
     listeners attached.
   - Switch 'Represent the DOM as node tree' in the context menu.
   - Verify that the nodes still have that icon.
@@ -15,9 +15,9 @@ desc:
   - Expand the whole body in Documents.
   - Hover some of the listener icons and verify that you get a tooltip.
   - Verify that the tooltip shows a list for all attached listeners.
-  - Verify that for each listener the event type, the listening phase, the event 
-    handler and a hint that JS source files are missing are shown. 
-  - Verify that listeners added as attributes are named 'attribute handlers' and 
+  - Verify that for each listener the event type, the listening phase, the event
+    handler and a hint that JS source files are missing are shown.
+  - Verify that listeners added as attributes are named 'attribute handlers' and
     the others 'event target handler'.
 
 label: Interaction with the handlers in the tooltip without JS source files
@@ -46,8 +46,8 @@ desc:
   - Ensure that all scripts of the document are loaded.
   - Expand the whole body in the Documents.
   - Hover some of the listener icons and verify that you get a tooltip.
-  - Verify that the tooltip shows the same list as before but instead of the hints 
-    about missing JS source files each listener has now a line explaining in which 
+  - Verify that the tooltip shows the same list as before but instead of the hints
+    about missing JS source files each listener has now a line explaining in which
     file they are added.
 
 label: Interaction with the handlers in the tooltip with JS source files loaded
@@ -57,13 +57,13 @@ desc:
   - Expand the whole body in Documents.
   - Hover some of the listener icons and hover some of the handlers.
   - Verify that the event handler function is shown in a tooltip.
-  - Verify that this tooltip now shows the file name at the top and the line 
+  - Verify that this tooltip now shows the file name at the top and the line
     numbers of the source file.
   - Verify that you can set and remove breakpoints on the line numbers.
   - Hover the filename at the top.
   - Verify that this shows the full URI of the source file in a tooltip.
   - Click the file name at the top.
-  - Verify that this switches to Scripts and highlights the whole event handler 
+  - Verify that this switches to Scripts and highlights the whole event handler
     function.
   - Go back to Document, hover some listener icon and click the handler directly.
   - Verify that this highlights the handler function in Scripts too.
@@ -74,11 +74,11 @@ desc:
   - Ensure that all scripts of the document are loaded.
   - Expand the whole body in Documents.
   - Hover some of the listener icons and hover some of the source positions.
-  - Verify that this shows the whole path of the file where the listener is 
+  - Verify that this shows the whole path of the file where the listener is
     added in a tooltip.
   - Click the source position.
-  - Verify that this switches to Scripts and highlights the line where the 
-    listener is added. 
+  - Verify that this switches to Scripts and highlights the line where the
+    listener is added.
 
 label: Listener view in the side panel
 url: ./single-runtime.html
@@ -91,7 +91,7 @@ desc:
   - Verify that expanding the 'load' shows the 'window' object.
   - Verify that the listener icons show the same tooltip as in the DOM view.
   - Verify that when you click an node it is selected and displayed in the DOM view.
-  - Verify that when you click the 'window' or the 'document' object it is 
+  - Verify that when you click the 'window' or the 'document' object it is
     displayed in the Inspection panel.
 
 label: Update listener view in the side panel
@@ -107,3 +107,10 @@ desc:
   - Load the TC and open the Listener view in the side panel.
   - Verify that each runtime has its section.
   - Verify that a section behaves in the same way as the view with a single runtime.
+
+label: Many event listeners
+url: ./many-listeners.html
+desc:
+  - Load the TC and open the DOM view.
+  - Hover the "ev" icon to get the event listener tooltip.
+  - Verify that you can reach all event listeners in the tooltip with scrolling.
