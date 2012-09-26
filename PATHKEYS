@@ -91,6 +91,10 @@
                 "dirs": {}, 
                 "short": "k"
             }, 
+            "dfl-3444": {
+                "dirs": {}, 
+                "short": "l"
+            }, 
             "document_select": {
                 "dirs": {}, 
                 "short": "i"
@@ -106,7 +110,7 @@
                         "short": "b"
                     }
                 }, 
-                "short": "l"
+                "short": "m"
             }, 
             "expand_all_nodes": {
                 "dirs": {}, 
@@ -213,6 +217,10 @@
                         "dirs": {}, 
                         "short": "b"
                     }, 
+                    "parse_error_on_first_line_with_error_offset_of_0_(dfl-3366)": {
+                        "dirs": {}, 
+                        "short": "e"
+                    }, 
                     "stop_at_new_script": {
                         "dirs": {}, 
                         "short": "a"
@@ -257,6 +265,10 @@
                     "listener_view_in_the_side_panel_with_multiple_runtimes": {
                         "dirs": {}, 
                         "short": "j"
+                    }, 
+                    "many_event_listeners": {
+                        "dirs": {}, 
+                        "short": "k"
                     }, 
                     "update_listener_view_in_the_side_panel": {
                         "dirs": {}, 
@@ -354,6 +366,10 @@
                         "dirs": {}, 
                         "short": "i"
                     }, 
+                    "dfl-3366": {
+                        "dirs": {}, 
+                        "short": "l"
+                    }, 
                     "reload_button": {
                         "dirs": {}, 
                         "short": "a"
@@ -408,6 +424,14 @@
                         "dirs": {}, 
                         "short": "i"
                     }, 
+                    "dfl-3481": {
+                        "dirs": {}, 
+                        "short": "k"
+                    }, 
+                    "inspect_\"char\"_variable.": {
+                        "dirs": {}, 
+                        "short": "l"
+                    }, 
                     "manual_selection": {
                         "dirs": {}, 
                         "short": "j"
@@ -433,6 +457,10 @@
                         "dirs": {}, 
                         "short": "c"
                     }, 
+                    "dfl-3463": {
+                        "dirs": {}, 
+                        "short": "d"
+                    }, 
                     "right_click_option_for_a_watch_entry": {
                         "dirs": {}, 
                         "short": "b"
@@ -449,6 +477,10 @@
                 "dirs": {}, 
                 "short": "b"
             }, 
+            "prototype_object_getter": {
+                "dirs": {}, 
+                "short": "c"
+            }, 
             "sorting_of_properties_in_object_inspection": {
                 "dirs": {}, 
                 "short": "a"
@@ -460,7 +492,7 @@
                         "short": "a"
                     }
                 }, 
-                "short": "c"
+                "short": "d"
             }
         }, 
         "short": "g"
@@ -478,7 +510,7 @@
         "dirs": {
             "cached_requests": {
                 "dirs": {}, 
-                "short": "s"
+                "short": "p"
             }, 
             "clear": {
                 "dirs": {}, 
@@ -503,31 +535,19 @@
                         "short": "d"
                     }
                 }, 
-                "short": "y"
-            }, 
-            "data_uri": {
-                "dirs": {}, 
-                "short": "r"
+                "short": "u"
             }, 
             "data_uris": {
                 "dirs": {}, 
-                "short": "u"
-            }, 
-            "details_and_filtering": {
-                "dirs": {}, 
-                "short": "j"
+                "short": "n"
             }, 
             "empty_response_bodies": {
                 "dirs": {}, 
-                "short": "v"
+                "short": "q"
             }, 
             "error_displaying": {
                 "dirs": {}, 
-                "short": "l"
-            }, 
-            "incomplete_warning": {
-                "dirs": {}, 
-                "short": "p"
+                "short": "k"
             }, 
             "multiple-top-runtimes": {
                 "dirs": {
@@ -537,13 +557,9 @@
                     }, 
                     "incomplete_warning_-_documents_with_parent_documents": {
                         "dirs": {}, 
-                        "short": "f"
-                    }, 
-                    "incomplete_warning_-_multiple_windows": {
-                        "dirs": {}, 
                         "short": "e"
                     }, 
-                    "incomplete_warning_-_simple": {
+                    "incomplete_warning_-_multiple_windows": {
                         "dirs": {}, 
                         "short": "d"
                     }, 
@@ -556,11 +572,11 @@
                         "short": "c"
                     }
                 }, 
-                "short": "z"
+                "short": "v"
             }, 
             "multiple_requests_and_responses": {
                 "dirs": {}, 
-                "short": "w"
+                "short": "r"
             }, 
             "network-profiling": {
                 "dirs": {
@@ -573,11 +589,11 @@
                         "short": "b"
                     }
                 }, 
-                "short": "t"
+                "short": "w"
             }, 
             "network_header_tokenizer": {
                 "dirs": {}, 
-                "short": "x"
+                "short": "t"
             }, 
             "network_summary": {
                 "dirs": {}, 
@@ -605,7 +621,7 @@
             }, 
             "sequence_tooltips": {
                 "dirs": {}, 
-                "short": "q"
+                "short": "s"
             }, 
             "smoke_test": {
                 "dirs": {}, 
@@ -621,15 +637,15 @@
             }, 
             "unload_event_display": {
                 "dirs": {}, 
-                "short": "n"
+                "short": "m"
             }, 
             "url_param_display": {
                 "dirs": {}, 
-                "short": "m"
+                "short": "l"
             }, 
             "xhr_filter": {
                 "dirs": {}, 
-                "short": "k"
+                "short": "j"
             }
         }, 
         "short": "i"
@@ -675,6 +691,10 @@
         "dirs": {
             "friendly_printer_results": {
                 "dirs": {}, 
+                "short": "c"
+            }, 
+            "objects_with_length_property.": {
+                "dirs": {}, 
                 "short": "b"
             }, 
             "propertyfinder": {
@@ -684,7 +704,7 @@
                         "short": "a"
                     }
                 }, 
-                "short": "c"
+                "short": "d"
             }, 
             "xpath_result_types": {
                 "dirs": {}, 

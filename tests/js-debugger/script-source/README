@@ -88,3 +88,8 @@ label: Breakpoint, Step Out with keyboard
 url: ./callstack.html
 desc:
   - The same as the previous test, but use the F11 and Shift-F11 key (F7 and Shift-F7 on Mac) instead the mouse.
+
+label: DFL-3366
+url: data:text/html,<script>if else;</script>
+desc:
+  - Verify that you get a proper error bubble.

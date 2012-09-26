@@ -34,4 +34,10 @@ desc:
   - Verify that it evaluates to "Synatx error", displayed in red.
   - Verify that you can still edit and delete that watch
 
-  
+label: DFL-3463
+url: data:text/html,<script>var a = 1;</script>
+desc:
+  - Open Dragonfly.
+  - Go to Scripts panel.
+  - Open the Watches panel.
+  - Verify that it doesn't throw.
