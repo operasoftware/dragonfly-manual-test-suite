@@ -1,0 +1,12 @@
+<!doctype html>
+<title>many event listeners</title>
+<script>
+
+window.onload = function()
+{
+  var t = function(x) { alert(x); };
+
+  for (var i = 0; i < 100; i++)
+    document.body.addEventListener("click", t.bind(null, i), false);
+}
+</script>

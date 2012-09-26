@@ -14,3 +14,10 @@ desc:
   - Click all getters and verify that you get the according values.
   - Expand the 'a' member and its first prototype.
   - Click all getters and verify that you get the according values.
+
+label: Prototype object getter
+url: data:text/html,<h1>test</h1>
+desc:
+  - Select any element in the DOM view, go to Properties, go to the bottom of the list.
+  - Expand Object, click the __proto__ getter and expand it.
+  - Verify that you can expand prototypes of the expanded __proto__ object.
