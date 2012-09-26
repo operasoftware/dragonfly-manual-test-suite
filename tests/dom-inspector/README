@@ -79,3 +79,9 @@ desc:
   - Go to the test page and select some element.
   - Reload the host an verify that the previous selected element gets
     reselected in Documents.
+
+label: DFL-3444
+url: data:text/html,<iframe src="http://www.opera.com"></iframe>
+desc:
+  - Expand the whole DOM.
+  - Verify that the iframe has no expander.

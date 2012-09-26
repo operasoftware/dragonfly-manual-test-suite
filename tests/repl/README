@@ -7,3 +7,9 @@ desc:
     * $x("string(//body/@class)") should return a string ("a")
     * $x("//body/@class = 'a'") should return a boolean (true)
 
+label: Objects with length property.
+url: data:text/html,<script>console.log(new Object("foo"))</script>
+desc:
+  - Open the console and reload the TC.
+  - Verify the logged object is not represented as a list alike.
+

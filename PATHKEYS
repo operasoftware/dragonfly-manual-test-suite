@@ -54,6 +54,10 @@
                 "dirs": {}, 
                 "short": "l"
             }, 
+            "dfl-3444": {
+                "dirs": {}, 
+                "short": "m"
+            }, 
             "document_select": {
                 "dirs": {}, 
                 "short": "j"
@@ -168,9 +172,17 @@
                         "dirs": {}, 
                         "short": "c"
                     }, 
+                    "default_settings.": {
+                        "dirs": {}, 
+                        "short": "d"
+                    }, 
                     "parse_error": {
                         "dirs": {}, 
                         "short": "b"
+                    }, 
+                    "parse_error_on_first_line_with_error_offset_of_0_(dfl-3366)": {
+                        "dirs": {}, 
+                        "short": "e"
                     }, 
                     "stop_at_new_script": {
                         "dirs": {}, 
@@ -216,6 +228,10 @@
                     "listener_view_in_the_side_panel_with_multiple_runtimes": {
                         "dirs": {}, 
                         "short": "j"
+                    }, 
+                    "many_event_listeners": {
+                        "dirs": {}, 
+                        "short": "k"
                     }, 
                     "update_listener_view_in_the_side_panel": {
                         "dirs": {}, 
@@ -313,6 +329,10 @@
                         "dirs": {}, 
                         "short": "i"
                     }, 
+                    "dfl-3366": {
+                        "dirs": {}, 
+                        "short": "n"
+                    }, 
                     "parse_error": {
                         "dirs": {}, 
                         "short": "m"
@@ -375,6 +395,18 @@
                         "dirs": {}, 
                         "short": "i"
                     }, 
+                    "dfl-3366": {
+                        "dirs": {}, 
+                        "short": "l"
+                    }, 
+                    "dfl-3481": {
+                        "dirs": {}, 
+                        "short": "k"
+                    }, 
+                    "inspect_\"char\"_variable.": {
+                        "dirs": {}, 
+                        "short": "m"
+                    }, 
                     "manual_selection": {
                         "dirs": {}, 
                         "short": "j"
@@ -400,6 +432,10 @@
                         "dirs": {}, 
                         "short": "c"
                     }, 
+                    "dfl-3463": {
+                        "dirs": {}, 
+                        "short": "d"
+                    }, 
                     "right_click_option_for_a_watch_entry": {
                         "dirs": {}, 
                         "short": "b"
@@ -412,9 +448,21 @@
     }, 
     "js-object-inspector": {
         "dirs": {
+            "__proto___geter_of_object": {
+                "dirs": {}, 
+                "short": "d"
+            }, 
             "getters": {
                 "dirs": {}, 
                 "short": "b"
+            }, 
+            "prototype_object_getter": {
+                "dirs": {}, 
+                "short": "f"
+            }, 
+            "prototype_object_getter.": {
+                "dirs": {}, 
+                "short": "e"
             }, 
             "sorting_of_properties_in_object_inspection": {
                 "dirs": {}, 
@@ -599,6 +647,10 @@
     }, 
     "repl": {
         "dirs": {
+            "objects_with_length_property.": {
+                "dirs": {}, 
+                "short": "c"
+            }, 
             "propertyfinder": {
                 "dirs": {
                     "qunit_repl_propertyfinder": {

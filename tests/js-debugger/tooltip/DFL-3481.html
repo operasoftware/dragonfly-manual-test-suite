@@ -1,0 +1,12 @@
+<!doctype html>
+<title>DFL-3481</title>
+<script>
+function myfunction()
+{
+
+};
+</script>
+<script>
+  myfunction.apply(this);
+</script>
+<p>This test passes when myfunction can be inspected in the tooltip after inspecting its function body from the tooltip.</p>

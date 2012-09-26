@@ -99,3 +99,19 @@ desc:
   - Select '"a.b.c.d".split(".")[1]' manually.
   - Press shift.
   - Verify that you get a tooltip with "b".
+
+label: DFL-3481
+url: ./DFL-3481.html
+desc:
+  - In the script view, go to the second inline script.
+  - Inspect 'myfunction' with the tooltip.
+  - Inspect the function body my hovering 'Function'.
+  - Click the name to get to the body in the scripts view.
+  - Go back to the second inline script.
+  - Inspect 'myfunction' with the tooltip.
+
+label: Inspect "char" variable.
+url: data:text/html,<script>var char = 7; debugger;</script>
+desc:
+  - Open the script view and reload the TC.
+  - Verify that you get a tooltip for "char".
