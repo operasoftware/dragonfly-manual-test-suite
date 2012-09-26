@@ -179,11 +179,9 @@ window.CustomElements.AutoScrollHeightFeature = function()
     if (!this.value)
     {
       this.style.height = "auto";
-      this.rows = 1;
     }
     else
     {
-      this.rows = 0;
       this.style.height = "0";
       this.style.height = this.scrollHeight + delta + "px";
     }

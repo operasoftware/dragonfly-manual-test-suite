@@ -13,3 +13,10 @@ desc:
   - Open the console and reload the TC.
   - Verify the logged object is not represented as a list alike.
 
+label: Friendly printer results
+url: ./friendly-printed.html
+desc:
+  - Open the Console and verify that you see the following in order:
+    * The current date and time in a human readable form.
+    * "Invalid date".
+

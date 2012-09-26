@@ -100,6 +100,10 @@
 
   var configure_test_run = function()
   {
+    if (!_options.test_run)
+      return;
+
+    var single_tests = [];
     _options.test_run.forEach(function(component)
     {
       var parts = component.split(".");
@@ -126,9 +130,24 @@
         }
         var h3 = document.querySelector("[data-file-path=\"" + comp + "\"]");
         if (h3)
-          add_single_test(h3);
+          single_tests.push(h3);
+
       };
     });
+
+    if (single_tests.length > 1)
+    {
+      var unsorted = single_tests.slice();
+      single_tests = [];
+      FOR_EACH(document.querySelectorAll("[data-file-path]"), function(h3)
+      {
+        var index = unsorted.indexOf(h3);
+        if (index > -1)
+          single_tests.push(unsorted.splice(index, 1)[0]);
+      });
+    }
+
+    single_tests.forEach(add_single_test);
 
     _test_path_list.forEach(function(comp)
     {
@@ -140,7 +159,11 @@
     if (!_options.test_run.length)
     {
       freeze_configuration();
-      setTimeout(close_unrelated_folders, 0);
+      setTimeout(function()
+      {
+        close_unrelated_folders();
+        show_test(null, null, _test_id_list[_cursor], expand_current_close_others);
+      }, 0);
     }
   };
 
@@ -208,6 +231,9 @@
 
   var show_test = function(event, target, test_id, cb)
   {
+    if (!(test_id || target))
+      return;
+
     if (target && _test_id_list.indexOf(target.dataset.id) > -1)
       _cursor = _test_id_list.indexOf(target.dataset.id);
 
@@ -317,6 +343,8 @@
     _test_id_map = Object.create(null);
     _cursor = 0;
     _current_test = null;
+    if (_is_frozen)
+      freeze_configuration();
     show_initial_view();
   };
 
@@ -336,6 +364,7 @@
       document.body.classList.add("frozen");
       hide_components(document.querySelectorAll(".sidepanel h3"));
       hide_tests(document.querySelectorAll(".sidepanel .test"));
+      show_test(null, null, _test_id_list[_cursor], expand_current_close_others);
     }
   };
 
@@ -555,7 +584,11 @@
     FOR_EACH(h3s, function(h3)
     {
       var comp = h3.dataset.path;
-      if (comp && !_test_path_list.some(function(path) { return path.startswith(comp); }))
+      var contains_path = function(path)
+      {
+        return path.startswith(comp) || comp.startswith(path);
+      };
+      if (comp && !_test_path_list.some(contains_path))
         h3.parentNode.classList.add("hidden");
     })
   };
