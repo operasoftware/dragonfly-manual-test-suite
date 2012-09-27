@@ -66,6 +66,8 @@ desc:
   - Verify that "c1" does not show up (because the test is not on https).
   - In the test, click "Show cookies".
   - Verify that that list makes sense.
+  - Add a cookie with the string ""\'" as both name and value.
+  - Verify that the cookie is added correctly.
 
 label: Cookie expiry
 url: http://people.opera.com/dherzog/cookies/
