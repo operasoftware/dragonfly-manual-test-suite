@@ -61,7 +61,7 @@ desc:
   - Give "a" some value.
   - Set the Secure checkmark on "b".
   - Press Enter.
-  - Verify that "a" was were added with the according value.
+  - Verify that "a" was added with the according value.
   - Verify that "b" does not show up (because the test is not on https).
   - In the test, click "Show cookies".
   - Verify that the list makes sense.
