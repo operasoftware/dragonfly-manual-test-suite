@@ -85,3 +85,9 @@ url: data:text/html,<iframe src="http://www.opera.com"></iframe>
 desc:
   - Expand the whole DOM.
   - Verify that the iframe has no expander.
+
+label: Embedded SVG
+url: data:text/html,<div><svg></svg><div></div></div><div></div>
+desc:
+  - Expand the whole DOM.
+  - Verify that all elements are show in lower case.

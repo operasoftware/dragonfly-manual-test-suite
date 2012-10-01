@@ -93,3 +93,11 @@ label: DFL-3366
 url: data:text/html,<script>if else;</script>
 desc:
   - Verify that you get a proper error bubble.
+
+label: DFL-3565
+url: data:text/html,<script>var aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa = 1;%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0avar b = 2;</script>
+desc:
+  - Open Scripots and reload the TC.
+  - Ensure that you have vertical but no horizontal scrollbars.
+  - Resize horizontally till you get horizontal scrollbars.
+  - Verify that you don't get double scrolbars.
