@@ -17,7 +17,7 @@ label: Friendly printer results
 url: ./friendly-printed.html
 desc:
   - Open the Console and verify that you see the following in order:
-    * The current date and time in a human readable form.
+    * The current date and time in a human readable form, including the time zone.
     * "Invalid date".
 
 label: DFL-3551
