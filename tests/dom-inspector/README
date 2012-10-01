@@ -86,6 +86,12 @@ desc:
   - Expand the whole DOM.
   - Verify that the iframe has no expander.
 
+label: Embedded SVG
+url: data:text/html,<div><svg></svg><div></div></div><div></div>
+desc:
+  - Expand the whole DOM.
+  - Verify that all elements are shown in lower case.
+
 label: DFL-3513
 url: data:text/html,<script><![CDATA[]]></script>
 desc:

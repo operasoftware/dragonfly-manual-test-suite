@@ -1,0 +1,10 @@
+label: Dev tools with file protocol
+desc:
+  - Set "Developer Tools URL" to a local Dragonfly file on the file protocol.
+  - Open Dragonfly and verify that it doesn't throw.
+  - Verify the a link to the github repo is displayed in settings > About.
+
+label: Services in debug mode.
+desc:
+  - Start Dragonfly with the debug flag.
+  - Verify that the overlay service is listed in Debug > Test Messages, Service List.
