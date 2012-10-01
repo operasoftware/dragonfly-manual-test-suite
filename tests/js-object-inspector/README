@@ -21,3 +21,12 @@ desc:
   - Select any element in the DOM view, go to Properties, go to the bottom of the list.
   - Expand Object, click the __proto__ getter and expand it.
   - Verify that you can expand prototypes of the expanded __proto__ object.
+
+label: Search in expanded properties
+url: data:text/html,<script>window.A = {foo:"bar"}</script>
+desc:
+  - JS-tooltip on window.
+  - Expand A.
+  - Search for "foo".
+  - Verify that "foo" is highlighted and the parent property is grayed out.
+
