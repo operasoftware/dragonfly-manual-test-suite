@@ -5,7 +5,7 @@ desc:
 
 label:  DFL-3418
 desc:
-  - Have DF wide enough so that main toolbar buttons have labels visible.
+  - Have Dragonfly wide enough so that main toolbar buttons have labels visible.
   - Resize width of the window in one, quick move to half the width or so.
   - Verify that the tabs lose the labels and become just icons.
 

@@ -122,7 +122,7 @@ desc:
   - Open TC and reload.
   - When it stops, inspect "document" and focus the filter field.
     Search for e.g. "all" so that the "tooltip" is not underneath the mouse cursor anymore.
-  - Verify that the tooltip doesn't disapper on moving the mouse cursor while not
+  - Verify that the tooltip doesn't disappear on moving the mouse cursor while not
     leaving the source view.
   - Verify that it closes the tooltip on leaving the source view with the mouse cursor.
 
