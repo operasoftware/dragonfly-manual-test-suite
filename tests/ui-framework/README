@@ -2,3 +2,15 @@ label: Resize window horizontally
 desc:
   - Open Dragonfly and resize the window horizontally.
   - Verify that the legends get ellipsis till they disappear completely.
+
+label:  DFL-3418
+desc:
+  - Have Dragonfly wide enough so that main toolbar buttons have labels visible.
+  - Resize width of the window in one, quick move to half the width or so.
+  - Verify that the tabs lose the labels and become just icons.
+
+label: Shortcuts of disabled views
+desc:
+  - Enable profiling and open the console.
+  - Use a console shortcut, e.g. "Ctrl l".
+  - Verify that it doesn't throw an error and the shortcut triggers the default action if any.

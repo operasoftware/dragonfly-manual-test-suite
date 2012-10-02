@@ -20,3 +20,12 @@ desc:
     * The current date and time in a human readable form, including the time zone.
     * "Invalid date".
 
+label: DFL-3551
+url: data:text/html,<h2>test</h2>
+desc:
+  - Select an element in DOM.
+  - Type '$0.i', then <tab>.
+  - Click the line where you typed, after "i".
+  - Press the left key to move the cursor left.
+  - Verify that it doesn't throw.
+

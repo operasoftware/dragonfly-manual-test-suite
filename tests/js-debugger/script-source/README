@@ -93,3 +93,17 @@ label: DFL-3366
 url: data:text/html,<script>if else;</script>
 desc:
   - Verify that you get a proper error bubble.
+
+label: DFL-3565
+url: data:text/html,<script>var aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa = 1;%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0a%0avar b = 2;</script>
+desc:
+  - Open Scripts and reload the TC.
+  - Ensure that you have vertical but no horizontal scrollbars.
+  - Resize horizontally till you get horizontal scrollbars.
+  - Verify that you don't get double scrollbars.
+
+label: DFL-2502 Scroll script with mouse wheel/trackpad
+url: ./long-source.html
+desc:
+  - Verify that scrolling script vertically with mouse wheel or trackpad works properly (direction and speed is as expected).
+  - Verify that scrolling horizontally using mouse wheel or trackpad works properly (requires mouse with horizontal mouse wheel or trackpad).
