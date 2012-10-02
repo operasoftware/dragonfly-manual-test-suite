@@ -157,14 +157,17 @@
     });
 
     if (!_options.test_run.length)
+      finalize_configuration();
+  };
+
+  var finalize_configuration = function()
+  {
+    freeze_configuration();
+    setTimeout(function()
     {
-      freeze_configuration();
-      setTimeout(function()
-      {
-        close_unrelated_folders();
-        show_test(null, null, _test_id_list[_cursor], expand_current_close_others);
-      }, 0);
-    }
+      close_unrelated_folders();
+      show_test(null, null, _test_id_list[_cursor], expand_current_close_others);
+    }, 0);
   };
 
   var set_test_state = function(state)
@@ -454,7 +457,17 @@
         if (_options.test_run && _options.test_run.length)
           configure_test_run();
         else if (_test_id_list.length)
-          show_test(null, null, _test_id_list[_cursor], expand_current_test);
+        {
+          if (_is_frozen)
+          {
+            var button = document.querySelector("[data-handler=\"freeze-configuration\"]");
+            if (button)
+              button.value = "Unfreeze configuration";
+            show_test(null, null, _test_id_list[_cursor], expand_current_test);
+          }
+          else
+            finalize_configuration();
+        }
       });
     }
     catch(e)
@@ -586,6 +599,9 @@
       var comp = h3.dataset.path;
       var contains_path = function(path)
       {
+        // E.g. test-run with repl must include repl.propertyfinder
+        // but a test run for repl.dfl-3551 must not include repl.propertyfinder.
+        // Currently this does not work.
         return path.startswith(comp) || comp.startswith(path);
       };
       if (comp && !_test_path_list.some(contains_path))

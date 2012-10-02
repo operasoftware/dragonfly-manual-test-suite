@@ -95,6 +95,10 @@
                 "dirs": {}, 
                 "short": "l"
             }, 
+            "dfl-3513": {
+                "dirs": {}, 
+                "short": "o"
+            }, 
             "document_select": {
                 "dirs": {}, 
                 "short": "i"
@@ -111,6 +115,10 @@
                     }
                 }, 
                 "short": "m"
+            }, 
+            "embedded_svg": {
+                "dirs": {}, 
+                "short": "n"
             }, 
             "expand_all_nodes": {
                 "dirs": {}, 
@@ -200,6 +208,19 @@
             }
         }, 
         "short": "e"
+    }, 
+    "general-issues": {
+        "dirs": {
+            "dev_tools_with_file_protocol": {
+                "dirs": {}, 
+                "short": "a"
+            }, 
+            "services_in_debug_mode.": {
+                "dirs": {}, 
+                "short": "b"
+            }
+        }, 
+        "short": "p"
     }, 
     "js-debugger": {
         "dirs": {
@@ -366,9 +387,17 @@
                         "dirs": {}, 
                         "short": "i"
                     }, 
+                    "dfl-2502_scroll_script_with_mouse_wheel/trackpad": {
+                        "dirs": {}, 
+                        "short": "n"
+                    }, 
                     "dfl-3366": {
                         "dirs": {}, 
                         "short": "l"
+                    }, 
+                    "dfl-3565": {
+                        "dirs": {}, 
+                        "short": "m"
                     }, 
                     "reload_button": {
                         "dirs": {}, 
@@ -428,6 +457,10 @@
                         "dirs": {}, 
                         "short": "k"
                     }, 
+                    "dfl-3608": {
+                        "dirs": {}, 
+                        "short": "m"
+                    }, 
                     "inspect_\"char\"_variable.": {
                         "dirs": {}, 
                         "short": "l"
@@ -480,6 +513,10 @@
             "prototype_object_getter": {
                 "dirs": {}, 
                 "short": "c"
+            }, 
+            "search_in_expanded_properties": {
+                "dirs": {}, 
+                "short": "e"
             }, 
             "sorting_of_properties_in_object_inspection": {
                 "dirs": {}, 
@@ -554,6 +591,10 @@
                     "add_window_to_debug_context": {
                         "dirs": {}, 
                         "short": "b"
+                    }, 
+                    "dfl-3588": {
+                        "dirs": {}, 
+                        "short": "f"
                     }, 
                     "incomplete_warning_-_documents_with_parent_documents": {
                         "dirs": {}, 
@@ -689,6 +730,10 @@
     }, 
     "repl": {
         "dirs": {
+            "dfl-3551": {
+                "dirs": {}, 
+                "short": "e"
+            }, 
             "friendly_printer_results": {
                 "dirs": {}, 
                 "short": "c"
@@ -812,6 +857,10 @@
                 }, 
                 "short": "b"
             }, 
+            "dfl-3418": {
+                "dirs": {}, 
+                "short": "f"
+            }, 
             "enabling-disabling-services": {
                 "dirs": {
                     "dfl-3282,_can't_inspect_when_being_stopped_after_re-enabling_services": {
@@ -833,6 +882,10 @@
             "resize_window_horizontally": {
                 "dirs": {}, 
                 "short": "a"
+            }, 
+            "shortcuts_of_disabled_views": {
+                "dirs": {}, 
+                "short": "g"
             }, 
             "sortable-table": {
                 "dirs": {
