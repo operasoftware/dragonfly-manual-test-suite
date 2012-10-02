@@ -55,6 +55,5 @@ desc:
   - Click the "Clear" button.
   - In the test, click "Open this page in tab 1".
   - Click the "Clear" button again.
-  - In tab 1, click "Get via XHR".
-  - In tab 1, click "Open this page in tab 2".
-  - Verify that clicking the reload button reloads tab 1.
+  - In the tab you opened in step 2, click "Get via XHR", then "Open this page in tab 2".
+  - Verify that clicking the reload button shown in the Network view reloads the tab you opened in step 2.
