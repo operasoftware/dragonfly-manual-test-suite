@@ -1,5 +1,0 @@
-label: Keyboard shortcuts
-url: ../DFL/test-scripts/test-scripts/keyidentifier.html
-desc:
-  - Verify that all shortcuts are detected when you press them.
-  - No default actions should be spawned.
