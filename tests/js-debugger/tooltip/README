@@ -110,6 +110,15 @@ desc:
   - Go back to the second inline script.
   - Inspect 'myfunction' with the tooltip.
 
+label: Set breakpoints from function source tooltip
+url: ./tooltip-breakpoints.html
+desc:
+  - In the script view, go to "b.js".
+  - Inspect "func" with the JS tooltip.
+  - Hover "Function" to open the function source in another tooltip.
+  - Set breakpoints in lines 9, 10, 11.
+  - Verify that the breakpoints are set and show up in the breakpoints panel.
+
 label: Inspect "char" variable.
 url: data:text/html,<script>var char = 7; debugger;</script>
 desc:
