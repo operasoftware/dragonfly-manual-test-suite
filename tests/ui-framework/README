@@ -14,3 +14,12 @@ desc:
   - Enable profiling and open the console.
   - Use a console shortcut, e.g. "Ctrl l".
   - Verify that it doesn't throw an error and the shortcut triggers the default action if any.
+
+label: DFL-3662
+url: http://people.opera.com/dherzog/network/
+desc:
+  - In the network view, open the network details of a resource.
+  - Place the cursor over the area where you can resize the overlay.
+  - Press escape to close the overlay.
+  - (When you still see the resize cursor, move the cursor a few pixels down).
+  - Verify that the get the default cursor now, and thereby that the resizer is gone.
