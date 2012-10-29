@@ -98,3 +98,9 @@ desc:
   - Expand the whole DOM.
   - Verify that everything shows up as expected and that no exception is thrown.
 
+label: DFL-3650 Control characters break the script view
+url: ../js-debugger/script-source/control-characters.html
+desc:
+  - Expand the whole DOM.
+  - Verify that the DOM view works and that Dragonfly doesn't throw.
+
