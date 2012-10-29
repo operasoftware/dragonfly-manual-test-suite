@@ -1,0 +1,5 @@
+label: DFL-3639: URL line in Storage tab is cut off
+url: http://people.opera.com/dherzog/cookies/
+desc:
+  - Open the Local storage view.
+  - Verify that the URL of the test is displayed properly and is not cut off in any way.
