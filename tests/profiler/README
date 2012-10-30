@@ -48,7 +48,7 @@ desc:
   - Reload the document.
   - Stop after circa one second.
   - Click a Style recalculation event.
-  - Verify that a table appears with one selector match and that it has one hit.
+  - Verify that an overlay with a table appears with one selector match and that it has one hit.
   - Verify that there is a total self time for the events at the bottom.
 
 label: Aggregated event details
@@ -58,17 +58,8 @@ desc:
   - Reload the document.
   - Stop after circa one second.
   - Click the Style recalculation legend label.
-  - Verify that a table appears with two selectors.
-  - Verify that clicking any other legend label clears the table and shows "No details".
-
-label: Changing start time
-url: ./profiler-test.html
-desc:
-  - Start the profiler.
-  - Reload the document.
-  - Stop after circa one second.
-  - Click the "Change start time to first event" button next to the record button.
-  - Verify that the start of the timeline is set to the start time of the first event, i.e. there is no empty space at the start of the timeline.
+  - Verify that an overlay with a table appears with two selectors.
+  - Verify that clicking any other legend label closes the overlay.
 
 label: No recorded data
 url: ./profiler-test.html
@@ -76,4 +67,26 @@ desc:
   - Start the profiler.
   - Stop the profiler immediately.
   - Verify that a message says "No data".
+
+label: Zooming
+url: http://opera.com/
+desc:
+  - Start the profiler.
+  - Reload the document.
+  - Stop when the document has loaded.
+  - Verify that a semi-transparent blue overlay cover the events in the upper timeline.
+  - Verify that you can change the size of the overlay by dragging one of the edges.
+  - Verify that you can drag the overlay by grabbing it and moving the mouse.
+  - Verify that when changing the position of the overlay, the zoomable area updates underneath,
+    and that the times next to the legend labels updates.
+  - Verify that the zoomable area stays the same when switching to another tab and back,
+    and when resizing the window.
+  - Verify that clicking in the top timeline outside of the overlay resets the zoomer and hides
+    the overlay.
+  - Click and drag on an empty area in the top timeline and verify that the zoomable area
+    updates with the chosen interval.
+  - Verify that double clicking the overlay resets the zoomer and hides the overlay.
+  - Grab the overlay and verify that it can be moved with arrow left and right, and page up
+    and page down.
+  - Grab the edges and verify that you can resize the overlay by using arrow left and right.
 
