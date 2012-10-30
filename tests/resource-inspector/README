@@ -6,14 +6,14 @@ desc:
   - Verify that the correct line is highlighted in Resources.
   - Return to the Documents tab.
   - Inspect the paragraph and click the according link in the Styles panel.
-  - Verify that the correct line is highlighted in Resources regardless of the size of the Dragonfly window
+  - Verify that the correct line is highlighted in Resources regardless of the size of the Dragonfly window.
 
 label: Tree view - Minimum width
 url: https://ssl.opera.com:8004/p01/dragonfly-manual-test-suite/tests/resource-inspector/index.htm
 desc:
   - Go to the Resources panel in Dragonfly.
   - Resize the two views of the Resource panel.
-  - Verify that the the minimum width of both panels fit their input field.
+  - Verify that the minimum width of both panels fit their input field.
 
 label: Tree view - Expand collapse, tooltip
 url: https://ssl.opera.com:8004/p01/dragonfly-manual-test-suite/tests/resource-inspector/index.htm
@@ -22,9 +22,9 @@ desc:
   - Click the reload button to fetch the resources.
   - Verify that the resources appear as a structured tree, grouped by window, document, type of resources.
   - Verify that you can expand/collapse each subtree by clicking on the nodes of the tree.
-  - Verify that you can expand/collapse a whole subtree by holding SHIFT down when clicking a corresponding node of the tree.
-   - Verify that the number of resources of each type ( on the left hand side of the type name ) add up for the document they directly belong to.
-   - Verify that the full URL of the resources and documents appears in the tooltip when hovering them in the tree.
+  - Verify that this expands/collapses a whole subtree when combined with the SHIFT key.
+  - Verify that the number of resources of each type add up for the document they directly belong to.
+  - Verify that the full URL of the resources and documents appears in the tooltip when hovering them in the tree.
 
 label: Tree view - Cross origin resources
 url: ./index.htm
@@ -32,35 +32,31 @@ desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
   - Expand different types of resources.
-  - Verify that the host ( or protocol in case of data: URIs ) of the resources and documents on a different domain than the document they belong to is displayed after the name of the resource or document.
+  - Verify that the host of the cross origin resources is displayed after the name of the resource.
+  - Verify that applies for cross origin documents too.
+  - Verify that the host is replaced by "data:" for data: URI resources.
 
-label: Detail view - Markup, Stylesheets and Scripts
+label: Detail view - Overview
 url: ./index.htm
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
-  - Select some resources of type Markup, Stylesheets and Scripts
-  - Verify that the resources are formatted as expected.
-  - ( In the overview of the resource )
-  - Verify that the first line shows the full URL with a link to open the resource in a new tab.
-  - Verify that the second line shows the mimeType sent by the server, followed by the guessed type and the character encoding if available.
-  - Verify that the last line shows the full size in bytes shows in the tooltip of the human readable size.
-  - ( In the view of the resource )
-  - Verify that the resource is formatted properly.
-  - Verify that scrollbars only appear when necessary.
+  - Verify that each type of resource is formatted as expected.
+  - Verify that scrollbars only appear when necessary in the view of the resource.
+  - Verify that the first line of the overview shows the full URL with a link to open the resource in a new tab.
+  - Verify that the second line of the overview shows the mimeType sent by the server followed by the guessed type.
+  - Verify that the second line of the overview shows the character encoding when available.
+  - Verify that the last line of the overview shows the size of the resource in a human readable format.
+  - Verify that the human reabable size has a tooltip showing the full size in bytes.
 
 label: Detail view - Images
 url: ./index.htm
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
-  - Select some images
-  - ( In the overview of the resource )
-  - Verify that the first line shows the full URL with a link to open the resource in a new tab.
-  - Verify that the second line shows the mimeType sent by the server, followed by the guessed type and the character encoding if available.
-  - Verify that the last line shows the full size in bytes shows in the tooltip of the human readable size.
-  - Verify that the last line also show the intrinsic resolution of the image or "vector graphic" for SVG images.
-  - ( In the view of the resource )
+  - Select some images.
+  - Verify that the last line of the overview also shows the intrinsic resolution of bitmap images.
+  - Verify that the last line of the overview also shows "vector graphic" for SVG images.
   - Verify that the image is resized to fit horizontaly in the view.
 
 label: Detail view - Fonts
@@ -68,28 +64,16 @@ url: ./index.htm
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
-  - Select a font
-  - ( In the overview of the resource )
-  - Verify that the first line shows the full URL with a link to open the resource in a new tab.
-  - Verify that the second line shows the mimeType sent by the server, followed by the guessed type and the character encoding if available.
-  - Verify that the last line shows the full size in bytes shows in the tooltip of the human readable size.
-  - ( In the view of the resource )
+  - Select a font.
   - Verify that the text uses the right web font.
-  - Verify that you can edit text displayed using the web font.
-  - Verify that scrollbars only appear when necessary.
-
+  - Verify that you can edit the text displayed using the web font.
 
 label: Detail view - Others
 url: ./index.htm
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
-  - Select a font
-  - ( In the overview of the resource )
-  - Verify that the first line shows the full URL with a link to open the resource in a new tab.
-  - Verify that the second line shows the mimeType sent by the server, followed by the guessed type and the character encoding if available.
-  - Verify that the last line shows the full size in bytes shows in the tooltip of the human readable size.
-  - ( In the view of the resource )
+  - Select a resource in the Other group.
   - Verify that the view only shows a link to open the resource in a new tab.
 
 label: Detail view - Search
@@ -97,17 +81,20 @@ url: https://ssl.opera.com:8004/p01/dragonfly-manual-test-suite/tests/resource-i
 desc:
   - Inspect the H1 in Dragonfly.
   - Click the link for the stylesheet in the Styles panel.
-  - Type "or" in the Search field
-  - Verify that parts of this view match
-  - Verify that you can navigate between matches using F3, shift F3
+  - Type "or" in the Search field.
+  - Verify that parts of this view match.
+  - Verify that you can navigate between matches using F3, shift F3.
+  - Click the reload button to fetch the resources.
+  - Verify that the Search works fine for Markup and Script resources too.
 
 label: Tree view - Token filter
 url: https://ssl.opera.com:8004/p01/dragonfly-manual-test-suite/tests/resource-inspector/index.htm
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
-  - Type "or" in the Filter field
-  - Verify that the tree is filtered to show all resources whose URL matches the filter
+  - Type "or" in the Filter field.
+  - Verify that the tree is filtered to show all resources whose URL matches the filter.
+  - Verify that the URL of the resources is trimmed just enough to show all the matches.
 
 label: Tree view - Keyboard navigation
 url: https://ssl.opera.com:8004/p01/dragonfly-manual-test-suite/tests/resource-inspector/index.htm
@@ -128,7 +115,7 @@ desc:
   - Select another debugging context.
   - Verify that the tree of resources disappeared and shows the reload button to fetch the resources instead.
 
-label: Tree view - new tabs
+label: Tree view - Multiple debugging contexts
 url: https://ssl.opera.com:8004/p01/dragonfly-manual-test-suite/tests/resource-inspector/index.htm
 desc:
   - Go to the Resources panel in Dragonfly.
@@ -136,7 +123,7 @@ desc:
   - In the host, click the link open elg.no in tab 1.
   - Verify that the new tab appear in the Tree view.
   - In the host, click the link open ulv.no in tab 1.
-  - Verify that the new tab  changed to ulv.no in the Tree view.
+  - Verify that the new tab changed to ulv.no in the Tree view.
   - In the host, click the link open ulv.no in tab 2.
   - Verify that the new tab appeared in the Tree view.
   - In the host, click the link open elg.no in tab 2.
