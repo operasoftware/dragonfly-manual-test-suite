@@ -64,9 +64,9 @@ desc:
 label: No recorded data
 url: ./profiler-test.html
 desc:
-  - start the profiler.
-  - stop the profiler immediately.
-  - verify that a message says "no data".
+  - Start the profiler.
+  - Stop the profiler immediately.
+  - Verify that a message says "No data".
 
 label: Zooming
 url: http://opera.com/
