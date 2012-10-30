@@ -1,5 +1,5 @@
 label: Line highlighting in Detail view of the Resource Inspector
-url: https://ssl.opera.com:8004/p01/dragonfly-manual-test-suite/tests/resource-inspector/index.htm
+url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-inspector/
 desc:
   - Inspect the H1 in Dragonfly.
   - Click the link for the stylesheet in the Styles panel.
@@ -9,14 +9,14 @@ desc:
   - Verify that the correct line is highlighted in Resources regardless of the size of the Dragonfly window.
 
 label: Tree view - Minimum width
-url: https://ssl.opera.com:8004/p01/dragonfly-manual-test-suite/tests/resource-inspector/index.htm
+url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-inspector/
 desc:
   - Go to the Resources panel in Dragonfly.
   - Resize the two views of the Resource panel.
   - Verify that the minimum width of both panels fit their input field.
 
 label: Tree view - Expand collapse, tooltip
-url: https://ssl.opera.com:8004/p01/dragonfly-manual-test-suite/tests/resource-inspector/index.htm
+url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-inspector/
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
@@ -77,7 +77,7 @@ desc:
   - Verify that the view only shows a link to open the resource in a new tab.
 
 label: Detail view - Search
-url: https://ssl.opera.com:8004/p01/dragonfly-manual-test-suite/tests/resource-inspector/index.htm
+url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-inspector/
 desc:
   - Inspect the H1 in Dragonfly.
   - Click the link for the stylesheet in the Styles panel.
@@ -88,7 +88,7 @@ desc:
   - Verify that the Search works fine for Markup and Script resources too.
 
 label: Tree view - Token filter
-url: https://ssl.opera.com:8004/p01/dragonfly-manual-test-suite/tests/resource-inspector/index.htm
+url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-inspector/
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
@@ -97,7 +97,7 @@ desc:
   - Verify that the URL of the resources is trimmed just enough to show all the matches.
 
 label: Tree view - Keyboard navigation
-url: https://ssl.opera.com:8004/p01/dragonfly-manual-test-suite/tests/resource-inspector/index.htm
+url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-inspector/
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
@@ -108,7 +108,7 @@ desc:
   - Verify that the keyboard navigation works in combination with the token Filter.
 
 label: Tree view - Switching debugging context
-url: https://ssl.opera.com:8004/p01/dragonfly-manual-test-suite/tests/resource-inspector/index.htm
+url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-inspector/
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
@@ -116,7 +116,7 @@ desc:
   - Verify that the tree of resources disappeared and shows the reload button to fetch the resources instead.
 
 label: Tree view - Multiple debugging contexts
-url: https://ssl.opera.com:8004/p01/dragonfly-manual-test-suite/tests/resource-inspector/index.htm
+url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-inspector/
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
