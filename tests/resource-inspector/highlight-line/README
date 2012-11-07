@@ -1,9 +1,0 @@
-label: Line highlighting in Resources
-url: ./index.html
-desc:
-  - Inspect the H1 in Dragonfly.
-  - Click the link for the stylesheet in the Styles panel.
-  - Verify that the correct line is highlighted in Resources.
-  - Inspect the paragraph and click the according link in the Styles panel.
-  - Verify that the correct line is highlighted in Resources.
-  

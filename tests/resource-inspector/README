@@ -5,7 +5,7 @@ desc:
   - Click the link for the stylesheet in the Styles panel.
   - Verify that the correct line is highlighted in Resources.
   - Return to the Documents tab.
-  - Inspect the paragraph and click the according link in the Styles panel.
+  - Inspect a H2 and click the according link in the Styles panel.
   - Verify that the correct line is highlighted in Resources regardless of the size of the Dragonfly window.
 
 label: Tree view - Minimum width
@@ -27,7 +27,7 @@ desc:
   - Verify that the full URL of the resources and documents appears in the tooltip when hovering them in the tree.
 
 label: Tree view - Cross origin resources
-url: ./index.htm
+url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-inspector/
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
@@ -37,7 +37,7 @@ desc:
   - Verify that the host is replaced by "data:" for data: URI resources.
 
 label: Detail view - Overview
-url: ./index.htm
+url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-inspector/
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
@@ -50,7 +50,7 @@ desc:
   - Verify that the human reabable size has a tooltip showing the full size in bytes.
 
 label: Detail view - Images
-url: ./index.htm
+url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-inspector/
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
@@ -60,7 +60,7 @@ desc:
   - Verify that the image is resized to fit horizontaly in the view.
 
 label: Detail view - Fonts
-url: ./index.htm
+url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-inspector/
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
@@ -69,7 +69,7 @@ desc:
   - Verify that you can edit the text displayed using the web font.
 
 label: Detail view - Others
-url: ./index.htm
+url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-inspector/
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
