@@ -67,6 +67,7 @@ desc:
   - Select a font.
   - Verify that the text uses the right web font.
   - Verify that you can edit the text displayed using the web font.
+  - Verify that the edited text is restored after switching to another debugging context or font.
 
 label: Detail view - Others
 url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-inspector/
@@ -83,7 +84,9 @@ desc:
   - Click the link for the stylesheet in the Styles panel.
   - Type "or" in the Search field.
   - Verify that parts of this view match.
+  - Verify that only the content of the resource matches, not the overview of the resource above it.
   - Verify that you can navigate between matches using F3, shift F3.
+  - Verify that this scrolls the matches into view.
   - Click the reload button to fetch the resources.
   - Verify that the Search works fine for Markup and Script resources too.
 
@@ -92,9 +95,10 @@ url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-insp
 desc:
   - Go to the Resources panel in Dragonfly.
   - Click the reload button to fetch the resources.
-  - Type "or" in the Filter field.
-  - Verify that the tree is filtered to show all resources whose URL matches the filter.
+  - Type "lev" in the Filter field.
+  - Verify that the tree is filtered to show all resources whose URL matches the filter regardless of the case.
   - Verify that the URL of the resources is trimmed just enough to show all the matches.
+
 
 label: Tree view - Keyboard navigation
 url: http://people.opera.com/p01/dragonfly-manual-test-suite/tests/resource-inspector/
@@ -130,5 +134,8 @@ desc:
   - Verify that the new tab changed to elg.no in the Tree view.
   - In the host, close the tab 1.
   - Verify that the tab that pointed to ulv.no disapeared from the Tree view.
-
+  - In the host, click the link to open the Long tab title page.
+  - Verify that the new tab appeared in the Tree view.
+  - Verify that the title of the new tab is trimmed.
+  - Verify that the full title of the new tab appears in the tooltip.
 
